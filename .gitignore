@@ -210,3 +210,33 @@ __marimo__/
 .claude*
 .agents
 .agents-*
+
+# EnergyPlus Simulation Results and Temporary Files
+runs/
+gl2_results/
+gl2_sets/
+
+# OpenStudio Model files
+*.osm
+
+# EnergyPlus Reference Documents
+docs/*.pdf
+
+# Backups and Logs (excluding BIPV_Image_Prompts)
+backups/degree/
+backups/scratch/
+backups/scripts/
+backups/sim_file_backup/
+backups/sim_file_main/
+backups/sim_folder_backup/
+backups/sim_folder_main/
+backups/*.log
+backups/*.audit
+
+# Weather and non-PV data files
+data/*.epw
+data/*.ddy
+data/Kwangju_Hourly_Solar_Radiation.csv
+data/comparison_monthly.csv
+data/bipv_transmittance_annual.csv
+bipv_transmittance_annual.csv
