@@ -22,6 +22,7 @@ def convert_eso_to_csv(eso_path, csv_path):
     var_dict = {}
     headers_list = []
     energy_to_rate_codes = set()
+    energy_sum_only_codes = set()
 
     with open(eso_path, "r", encoding="utf-8") as f:
         in_dictionary = True
@@ -39,6 +40,7 @@ def convert_eso_to_csv(eso_path, csv_path):
 
             if line == "End of Data Dictionary":
                 in_dictionary = False
+                name_to_code = {v: k for k, v in var_dict.items()}
                 continue
 
             if in_dictionary:
@@ -67,6 +69,8 @@ def convert_eso_to_csv(eso_path, csv_path):
                                     "Generator Produced DC Electricity Energy [J]",
                                     "Generator Produced DC Electricity Rate [W]",
                                 )
+                            elif "[J]" in full_name:
+                                energy_sum_only_codes.add(code)
 
                             var_dict[code] = full_name
                             headers_list.append(full_name)
@@ -110,9 +114,10 @@ def convert_eso_to_csv(eso_path, csv_path):
                         row_dict = _aggregate_hour(
                             current_time_info,
                             hourly_substeps,
-                            var_dict,
+                            name_to_code,
                             headers_list,
                             energy_to_rate_codes,
+                            energy_sum_only_codes,
                         )
                         rows.append(row_dict)
                         hourly_substeps = []
@@ -137,9 +142,10 @@ def convert_eso_to_csv(eso_path, csv_path):
             row_dict = _aggregate_hour(
                 current_time_info,
                 hourly_substeps,
-                var_dict,
+                name_to_code,
                 headers_list,
                 energy_to_rate_codes,
+                energy_sum_only_codes,
             )
             rows.append(row_dict)
 
@@ -156,8 +162,8 @@ def convert_eso_to_csv(eso_path, csv_path):
     return True
 
 
-def _aggregate_hour(time_info, substeps, var_dict, headers_list, energy_to_rate_codes):
-    """시간 단위로 서브스텝 집계: 에너지(J)→합산 후 W 변환, 나머지→평균"""
+def _aggregate_hour(time_info, substeps, name_to_code, headers_list, energy_to_rate_codes, energy_sum_only_codes):
+    """시간 단위로 서브스텝 집계: 에너지(J)→합산 혹은 합산 후 W 변환, 나머지→평균"""
     row_dict = {
         "Month": time_info["Month"],
         "Day": time_info["Day"],
@@ -167,12 +173,16 @@ def _aggregate_hour(time_info, substeps, var_dict, headers_list, energy_to_rate_
     n = len(substeps)
 
     for h in headers_list:
-        code_for_h = [k for k, v in var_dict.items() if v == h][0]
+        code_for_h = name_to_code[h]
 
         if code_for_h in energy_to_rate_codes:
             # J→W: 서브스텝의 J 값을 합산 후, 3600초(1시간)로 나눠서 시간평균 W
             total_j = sum(step.get(code_for_h, 0.0) for step in substeps)
             row_dict[h] = total_j / 3600.0  # J / 3600s = W
+        elif code_for_h in energy_sum_only_codes:
+            # 에너지 J 단위 합산 유지 (평균내지 않고 그대로 합산)
+            total_j = sum(step.get(code_for_h, 0.0) for step in substeps)
+            row_dict[h] = total_j
         else:
             # 평균
             total = sum(step.get(code_for_h, 0.0) for step in substeps)
