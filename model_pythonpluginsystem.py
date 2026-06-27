@@ -12,16 +12,17 @@ from pyenergyplus.plugin import EnergyPlusPlugin
 import math
 
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
-CANOPY_LENGTH = 3.0
-CANOPY_WIDTH = 3.0
-CANOPY_AREA = CANOPY_LENGTH * CANOPY_WIDTH
+CANOPY_LENGTH = 4 / 3  # 1.33333333333333 m
+CANOPY_WIDTH = 2.0
+CANOPY_AREA = CANOPY_LENGTH * CANOPY_WIDTH  # 2.6666666666666665 m²
 
 PV_GROSS_AREA = 2.379132
 PV_PACKING_FACTOR = 0.9189
 PV_ACTIVE_AREA = PV_GROSS_AREA * PV_PACKING_FACTOR  # 2.186184 m²
 PV_RATED_POWER = 250.0
-PV_MULTIPLIER = CANOPY_AREA / PV_ACTIVE_AREA
-PV_TOTAL_RATED_POWER = PV_RATED_POWER * PV_MULTIPLIER  # ~1029.19 W
+PV_MULTIPLIER = CANOPY_AREA / PV_ACTIVE_AREA  # ~1.219781
+PV_TOTAL_RATED_POWER = PV_RATED_POWER * PV_MULTIPLIER  # ~304.95 W
+
 
 
 class KineticBIPVPlugin(EnergyPlusPlugin):
@@ -35,9 +36,12 @@ class KineticBIPVPlugin(EnergyPlusPlugin):
         self.BIPV_Tilt_Angle = 0.0
         self.BIPV_Incident_Solar = 0.0
         self.BIPV_Power_Generation = 0.0
+        self.BIPV_Efficiency = 0.0
         self.bipv_tilt_angle = 0.0
         self.bipv_incident_solar = 0.0
         self.bipv_power_generation = 0.0
+        self.bipv_efficiency = 0.0
+        self.last_valid_eff = 0.08
 
     def on_begin_zone_timestep_before_set_current_weather(self, state) -> int:
         if not self.api.exchange.api_data_fully_ready(state):
@@ -64,12 +68,15 @@ class KineticBIPVPlugin(EnergyPlusPlugin):
             self.api.exchange.set_global_value(state, self.handles["bipv_tilt"], 0.0)
             self.api.exchange.set_global_value(state, self.handles["bipv_rad"], 0.0)
             self.api.exchange.set_global_value(state, self.handles["bipv_power"], 0.0)
+            self.api.exchange.set_global_value(state, self.handles["bipv_eff"], 0.0)
             self.BIPV_Tilt_Angle = 0.0
             self.BIPV_Incident_Solar = 0.0
             self.BIPV_Power_Generation = 0.0
+            self.BIPV_Efficiency = 0.0
             self.bipv_tilt_angle = 0.0
             self.bipv_incident_solar = 0.0
             self.bipv_power_generation = 0.0
+            self.bipv_efficiency = 0.0
             return 0
  
         # 4. 주간 제어: 태양 고도 정면 추적 최적각 계산 (최적 회전 각도 = 태양 고도각)
@@ -100,16 +107,42 @@ class KineticBIPVPlugin(EnergyPlusPlugin):
         else:
             actual_pv_power = self._predict_pv_power(optimal_solar_rad, out_temp)
  
+        # 7.1. 발전 효율 센서 핸들 실시간 취득
+        eff_sensor_handle = self.handles["pv_eff_sensors"].get(best_angle, -1)
+        if eff_sensor_handle == -1:
+            eff_sensor_handle = self.api.exchange.get_variable_handle(
+                state, "Generator PV Array Efficiency", f"Generator_BIPV_A{best_angle:02d}"
+            )
+            if eff_sensor_handle != -1:
+                self.handles["pv_eff_sensors"][best_angle] = eff_sensor_handle
+ 
+        # 발전 효율 최종 결정
+        if eff_sensor_handle != -1:
+            actual_pv_eff = self.api.exchange.get_variable_value(state, eff_sensor_handle)
+            # EnergyPlus API 1타임스텝 지연 에러 및 제어 천이 시 0.0 출력 방지 Fallback 적용
+            if actual_pv_eff > 0.0:
+                self.last_valid_eff = actual_pv_eff
+            elif optimal_solar_rad > 0.0:
+                actual_pv_eff = self.last_valid_eff
+        else:
+            if optimal_solar_rad > 0.0:
+                actual_pv_eff = self.last_valid_eff
+            else:
+                actual_pv_eff = 0.0
+ 
         self.api.exchange.set_global_value(state, self.handles["bipv_tilt"], float(best_angle))
         self.api.exchange.set_global_value(state, self.handles["bipv_rad"], optimal_solar_rad)
         self.api.exchange.set_global_value(state, self.handles["bipv_power"], actual_pv_power)
+        self.api.exchange.set_global_value(state, self.handles["bipv_eff"], actual_pv_eff)
  
         self.BIPV_Tilt_Angle = float(best_angle)
         self.BIPV_Incident_Solar = optimal_solar_rad
         self.BIPV_Power_Generation = actual_pv_power
+        self.BIPV_Efficiency = actual_pv_eff
         self.bipv_tilt_angle = float(best_angle)
         self.bipv_incident_solar = optimal_solar_rad
         self.bipv_power_generation = actual_pv_power
+        self.bipv_efficiency = actual_pv_eff
  
         return 0
 
@@ -126,20 +159,22 @@ class KineticBIPVPlugin(EnergyPlusPlugin):
         self.handles["trans_actuators"] = {}
         self.handles["avail_actuators"] = {}
         for angle in ANGLES:
-            # pyenergyplus API 규격인 "Schedule:Constant" 로 복원하여 핸들 획득 정합성 회복
+            # pyenergyplus API 규격인 "Schedule:Compact" 로 복원하여 핸들 획득 정합성 회복
             self.handles["trans_actuators"][angle] = self.api.exchange.get_actuator_handle(
-                state, "Schedule:Constant", "Schedule Value", f"TransSched_BIPV_A{angle:02d}"
+                state, "Schedule:Compact", "Schedule Value", f"TransSched_BIPV_A{angle:02d}"
             )
             self.handles["avail_actuators"][angle] = self.api.exchange.get_actuator_handle(
-                state, "Schedule:Constant", "Schedule Value", f"AvailSched_BIPV_A{angle:02d}"
+                state, "Schedule:Compact", "Schedule Value", f"AvailSched_BIPV_A{angle:02d}"
             )
  
         self.handles["bipv_tilt"] = self.api.exchange.get_global_handle(state, "BIPV_Tilt_Angle")
         self.handles["bipv_rad"] = self.api.exchange.get_global_handle(state, "BIPV_Incident_Solar")
         self.handles["bipv_power"] = self.api.exchange.get_global_handle(state, "BIPV_Power_Generation")
+        self.handles["bipv_eff"] = self.api.exchange.get_global_handle(state, "BIPV_Efficiency")
  
-        # 발전 전력용 유동 센서 핸들 딕셔너리 초기화
+        # 발전 전력 및 효율용 유동 센서 핸들 딕셔너리 초기화
         self.handles["pv_power_sensors"] = {}
+        self.handles["pv_eff_sensors"] = {}
  
         # 필수 제어 핸들 검사
         any_failed = False
