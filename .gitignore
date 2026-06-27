@@ -212,8 +212,15 @@ __marimo__/
 .agents-*
 
 # EnergyPlus Simulation Results and Temporary Files
-runs/
-gl2_results/
+runs/**
+!runs/**/
+!runs/**/*.csv
+gl2_results/**
+!gl2_results/**/
+!gl2_results/**/*.csv
+run_analysis/**
+!run_analysis/**/
+!run_analysis/**/*.csv
 gl2_sets/
 
 # OpenStudio Model files
