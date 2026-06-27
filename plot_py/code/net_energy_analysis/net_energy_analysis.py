@@ -54,7 +54,7 @@ def parse_datetime(series: pd.Series) -> pd.Series:
 
 def load_case1_monthly():
     """Monthly heating, cooling (MWh) for case1. PV=0."""
-    df = pd.read_csv(RUN / "model_realscale_case1/case1.csv", skiprows=0)
+    df = pd.read_csv(RUN / "case1/case1.csv", skiprows=0)
     df.columns = df.columns.str.strip()
     dt_col = df.columns[0]
     df["dt"] = parse_datetime(df[dt_col])
@@ -79,9 +79,9 @@ def load_case1_monthly():
 
 def load_case2_annual_from_sql(angle: int):
     """Annual totals (MWh) for one case2 angle via SQLite."""
-    folder_map = {0: "model_realscale_0_v2"}
-    folder = folder_map.get(angle, f"model_realscale_{angle}")
-    sql_path = RUN / f"model_realscale_case2/{folder}/eplusout.sql"
+    folder_map = {0: "0_v2"}
+    folder = folder_map.get(angle, f"{angle}")
+    sql_path = RUN / f"case2/{folder}/eplusout.sql"
 
     conn = sqlite3.connect(sql_path)
     rows = conn.execute("""
@@ -108,9 +108,9 @@ def load_case2_annual_from_sql(angle: int):
 
 def load_case2_monthly_from_sql(angle: int):
     """Monthly totals (MWh) for one case2 angle via SQLite."""
-    folder_map = {0: "model_realscale_0_v2"}
-    folder = folder_map.get(angle, f"model_realscale_{angle}")
-    sql_path = RUN / f"model_realscale_case2/{folder}/eplusout.sql"
+    folder_map = {0: "0_v2"}
+    folder = folder_map.get(angle, f"{angle}")
+    sql_path = RUN / f"case2/{folder}/eplusout.sql"
 
     conn = sqlite3.connect(sql_path)
     rows = conn.execute("""
@@ -149,7 +149,7 @@ def load_case2_monthly_from_sql(angle: int):
 
 def load_case3_monthly():
     """Monthly heating, cooling, PV (MWh) for case3 from eplusout.csv."""
-    csv_path = RUN / "model_realscale_case3/eplusout.csv"
+    csv_path = RUN / "case3/eplusout.csv"
     df = pd.read_csv(csv_path, skiprows=0, low_memory=False)
     df.columns = df.columns.str.strip()
 

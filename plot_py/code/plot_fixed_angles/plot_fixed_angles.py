@@ -91,15 +91,15 @@ def main():
     angle_results = []
     
     for angle in angles:
-        folder_name = f"model_realscale_{angle}_v2" if angle == 0 else f"model_realscale_{angle}"
-        eso_path = os.path.join(project_root, "run_analysis", "model_realscale_case2", folder_name, "eplusout.eso")
+        folder_name = f"{angle}_v2" if angle == 0 else f"{angle}"
+        eso_path = os.path.join(project_root, "run_analysis", "case2", folder_name, "eplusout.eso")
         res = parse_eso_totals(eso_path)
         if res:
             res["angle"] = angle
             angle_results.append(res)
             
     # base 모델 데이터 수집
-    base_eso_path = os.path.join(project_root, "run_analysis", "model_realscale_case1", "eplusout.eso")
+    base_eso_path = os.path.join(project_root, "run_analysis", "case1", "eplusout.eso")
     base_res = parse_eso_totals(base_eso_path)
     
     if not angle_results:

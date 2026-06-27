@@ -87,8 +87,8 @@ def load_timestep_sql(sql_path: Path) -> pd.DataFrame:
     return df
 
 # ── load all data ──────────────────────────────────────────────────────────────
-c2_sql = RUN / "model_realscale_case2/model_realscale_90/eplusout.sql"
-c3_sql = RUN / "model_realscale_case3/eplusout.sql"
+c2_sql = RUN / "case2/90/eplusout.sql"
+c3_sql = RUN / "case3/eplusout.sql"
 
 c2 = load_timestep_sql(c2_sql)
 c3 = load_timestep_sql(c3_sql)

@@ -179,9 +179,9 @@ def plot_day(case1_path, case2_path, case3_path, pv_angles, target_date, date_la
 def main():
     import json
     project_root = r"c:\Users\taegyu\Codes\EnergyPlus_Project1"
-    case1_path = os.path.join(project_root, "run_analysis", "model_realscale_case1", "case1.csv")
-    case2_path = os.path.join(project_root, "run_analysis", "model_realscale_case2", "model_realscale_90", "case2_90.csv")
-    case3_path = os.path.join(project_root, "run_analysis", "model_realscale_case3", "case3.csv")
+    case1_path = os.path.join(project_root, "run_analysis", "case1", "case1.csv")
+    case2_path = os.path.join(project_root, "run_analysis", "case2", "90", "case2_90.csv")
+    case3_path = os.path.join(project_root, "run_analysis", "case3", "case3.csv")
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     figure_dir = os.path.normpath(os.path.join(script_dir, "..", "..", "figure", "annual_loads"))

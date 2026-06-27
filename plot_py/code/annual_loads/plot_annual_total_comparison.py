@@ -70,7 +70,7 @@ def main():
     cooling = []
     
     # 1. Case 1 (No Shade)
-    c1_path = os.path.join(project_root, "run_analysis", "model_realscale_case1", "case1.csv")
+    c1_path = os.path.join(project_root, "run_analysis", "case1", "case1.csv")
     h1, c1 = parse_case_annual_totals(c1_path)
     if h1 is not None:
         cases.append('Case 1\n(No Shade)')
@@ -79,8 +79,8 @@ def main():
         
     # 2. Case 2 (Fixed Angles 0 to 90)
     for angle in range(0, 100, 10):
-        folder_name = f"model_realscale_{angle}_v2" if angle == 0 else f"model_realscale_{angle}"
-        c2_path = os.path.join(project_root, "run_analysis", "model_realscale_case2", folder_name, f"case2_{angle}.csv")
+        folder_name = f"{angle}_v2" if angle == 0 else f"{angle}"
+        c2_path = os.path.join(project_root, "run_analysis", "case2", folder_name, f"case2_{angle}.csv")
         h2, c2 = parse_case_annual_totals(c2_path)
         if h2 is not None:
             cases.append(f'Fixed-{angle}°')
@@ -88,7 +88,7 @@ def main():
             cooling.append(c2)
             
     # 3. Case 3 (Kinetic)
-    c3_path = os.path.join(project_root, "run_analysis", "model_realscale_case3", "case3.csv")
+    c3_path = os.path.join(project_root, "run_analysis", "case3", "case3.csv")
     h3, c3 = parse_case_annual_totals(c3_path)
     if h3 is not None:
         cases.append('Case 3\n(Kinetic)')

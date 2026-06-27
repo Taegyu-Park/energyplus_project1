@@ -17,7 +17,7 @@ def main():
     # 1. 데이터 베이스 로드 및 고성능 단일 스캔 데이터 추출
     # -------------------------------------------------------------------------
     project_root = r"c:\Users\taegyu\Codes\EnergyPlus_Project1"
-    db_path = os.path.join(project_root, "run_analysis", "model_realscale_case3", "eplusout.sql")
+    db_path = os.path.join(project_root, "run_analysis", "case3", "eplusout.sql")
     
     if not os.path.exists(db_path):
         print(f"[Error] Database not found at: {db_path}")

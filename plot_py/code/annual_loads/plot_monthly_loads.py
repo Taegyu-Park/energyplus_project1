@@ -74,9 +74,9 @@ def main():
     project_root = r"c:\Users\taegyu\Codes\EnergyPlus_Project1"
     
     # 1. 데이터 경로 설정
-    case1_path = os.path.join(project_root, "run_analysis", "model_realscale_case1", "case1.csv")
-    case2_path = os.path.join(project_root, "run_analysis", "model_realscale_case2", "model_realscale_90", "case2_90.csv")
-    case3_path = os.path.join(project_root, "run_analysis", "model_realscale_case3", "case3.csv")
+    case1_path = os.path.join(project_root, "run_analysis", "case1", "case1.csv")
+    case2_path = os.path.join(project_root, "run_analysis", "case2", "90", "case2_90.csv")
+    case3_path = os.path.join(project_root, "run_analysis", "case3", "case3.csv")
     
     # 2. 데이터 파싱 (Hourly)
     c1_h_hour, c1_c_hour = parse_case_hourly_loads(case1_path)

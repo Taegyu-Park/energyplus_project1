@@ -14,7 +14,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
-ESO_PATH = r"c:\Users\taegyu\Codes\EnergyPlus_Project1\run_analysis\model_realscale_case3\eplusout.eso"
+ESO_PATH = r"c:\Users\taegyu\Codes\EnergyPlus_Project1\run_analysis\case3\eplusout.eso"
 
 # 각도 proxy 코드: {ESO_code: angle_deg}
 ANGLE_PROXY_CODES = {

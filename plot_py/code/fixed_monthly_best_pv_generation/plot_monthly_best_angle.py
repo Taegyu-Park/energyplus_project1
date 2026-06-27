@@ -54,14 +54,14 @@ def main():
     # Detect directories relative to this script
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(script_dir)))
-    case2_dir = os.path.join(project_root, "run_analysis", "model_realscale_case2")
+    case2_dir = os.path.join(project_root, "run_analysis", "case2")
     
     angles = list(range(0, 100, 10))
     angle_results = {}
     
     # Extract data for all BIPV angles
     for angle in angles:
-        folder_name = f"model_realscale_{angle}_v2" if angle == 0 else f"model_realscale_{angle}"
+        folder_name = f"{angle}_v2" if angle == 0 else f"{angle}"
         db_path = os.path.join(case2_dir, folder_name, "eplusout.sql")
         monthly_pv = get_monthly_pv(db_path)
         if monthly_pv:

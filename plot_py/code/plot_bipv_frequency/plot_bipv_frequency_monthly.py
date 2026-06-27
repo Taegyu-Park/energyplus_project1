@@ -11,7 +11,7 @@ import dartwork_mpl as dm
 
 # ── 경로 ────────────────────────────────────────────────────────────
 project_root = r"c:\Users\taegyu\Codes\EnergyPlus_Project1"
-db_path      = os.path.join(project_root, "run_analysis", "model_realscale_case3", "eplusout.sql")
+db_path      = os.path.join(project_root, "run_analysis", "case3", "eplusout.sql")
 output_dir   = os.path.join(project_root, "plot_py", "figure", "plot_bipv_frequency")
 os.makedirs(output_dir, exist_ok=True)
 

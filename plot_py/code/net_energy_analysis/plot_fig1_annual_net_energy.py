@@ -30,7 +30,7 @@ ANGLES      = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 # ── 데이터 로드 ──────────────────────────────────────────────────────
 
 def load_case1_annual():
-    df = pd.read_csv(RUN / "model_realscale_case1/case1.csv")
+    df = pd.read_csv(RUN / "case1/case1.csv")
     df.columns = df.columns.str.strip()
     heat_cols = [c for c in df.columns if "Heating Energy" in c]
     cool_cols = [c for c in df.columns if "Cooling Energy" in c]
@@ -42,8 +42,8 @@ def load_case1_annual():
 
 
 def load_case2_annual(angle: int):
-    folder = "model_realscale_0_v2" if angle == 0 else f"model_realscale_{angle}"
-    sql_path = RUN / f"model_realscale_case2/{folder}/eplusout.sql"
+    folder = "0_v2" if angle == 0 else f"{angle}"
+    sql_path = RUN / f"case2/{folder}/eplusout.sql"
     conn = sqlite3.connect(sql_path)
     rows = conn.execute("""
         SELECT rd.Name, SUM(r.Value)
@@ -67,7 +67,7 @@ def load_case2_annual(angle: int):
 
 
 def load_case3_annual():
-    df = pd.read_csv(RUN / "model_realscale_case3/eplusout.csv", low_memory=False)
+    df = pd.read_csv(RUN / "case3/eplusout.csv", low_memory=False)
     df.columns = df.columns.str.strip()
     heat_cols = [c for c in df.columns if "Heating Energy" in c]
     cool_cols = [c for c in df.columns if "Cooling Energy" in c]

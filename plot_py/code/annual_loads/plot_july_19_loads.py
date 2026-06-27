@@ -104,9 +104,9 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # 1. 파일 경로 설정
-    case1_path = os.path.join(project_root, "run_analysis", "model_realscale_case1", "case1.csv")
-    case2_path = os.path.join(project_root, "run_analysis", "model_realscale_case2", "model_realscale_90", "case2_90.csv")
-    case3_path = os.path.join(project_root, "run_analysis", "model_realscale_case3", "case3.csv")
+    case1_path = os.path.join(project_root, "run_analysis", "case1", "case1.csv")
+    case2_path = os.path.join(project_root, "run_analysis", "case2", "90", "case2_90.csv")
+    case3_path = os.path.join(project_root, "run_analysis", "case3", "case3.csv")
     
     # 2. 7월 19일 데이터 파싱
     times, c1_h, c1_c = parse_case_daily_loads(case1_path, "07/19")
