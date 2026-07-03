@@ -110,8 +110,6 @@ def main():
     ax_win.legend(loc="upper right", framealpha=0.9, fontsize=9.5, ncol=2)
     
     # ── 공통 축 서식 ─────────────────────────────────────────────────────
-    fig.suptitle("HVAC Electricity Load vs. BIPV PV Generation (Case 3)", fontsize=16, fontweight="bold", y=0.97)
-    
     # Y축 라벨
     ax_sum.set_ylabel("Power [kW]", fontweight="bold", labelpad=8)
     ax_win.set_ylabel("Power [kW]", fontweight="bold", labelpad=8)
@@ -129,7 +127,9 @@ def main():
     output_png = os.path.join(figure_dir, f"{script_name}.png")
     output_svg = os.path.join(figure_dir, f"{script_name}.svg")
     
-    dm.simple_layout(fig)
+    dm.simple_layout(fig, mt=0.12)
+    fig.suptitle("HVAC Electricity Load vs. BIPV PV Generation (Case 3)", fontsize=15, fontweight="bold", y=0.95)
+    
     fig.savefig(output_png, dpi=300, transparent=True)
     fig.savefig(output_svg, transparent=True)
     plt.close(fig)
