@@ -6,11 +6,11 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-28T13:57:44.299653</dc:date>
+    <dc:date>2026-07-03T23:40:21.325838</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -31,11 +31,11 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 32.331412 304.443885 
-L 731.833733 304.443885 
-L 731.833733 19.499707 
-L 32.331412 19.499707 
-L 32.331412 304.443885 
+    <path d="M 23.98 310.67748 
+L 737.007874 310.67748 
+L 737.007874 18.72 
+L 23.98 18.72 
+L 23.98 310.67748 
 z
 " style="fill: none"/>
    </g>
@@ -43,2983 +43,552 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m1575fe8097" d="M 0 0 
+       <path id="m864b86af0f" d="M 0 0 
 L 0 2 
 " style="stroke: #000000; stroke-width: 0.3"/>
       </defs>
       <g>
-       <use xlink:href="#m1575fe8097" x="83.514509" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="76.152771" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_1">
-      <!-- Jan -->
-      <g transform="translate(73.702634 317.443885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-4a" d="M 2584 4550 
-L 2972 4550 
-L 2972 1353 
-Q 2972 706 2598 321 
-Q 2225 -63 1597 -63 
-Q 934 -63 578 284 
-Q 222 631 222 1253 
-L 606 1253 
-Q 606 759 865 511 
-Q 1125 263 1597 263 
-Q 2031 263 2304 550 
-Q 2578 838 2584 1331 
-L 2584 4550 
-z
-" transform="scale(0.015625)"/>
-        <path id="Roboto-Light-61" d="M 2622 0 
-Q 2566 159 2550 472 
-Q 2353 216 2048 76 
-Q 1744 -63 1403 -63 
-Q 916 -63 614 209 
-Q 313 481 313 897 
-Q 313 1391 723 1678 
-Q 1134 1966 1869 1966 
-L 2547 1966 
-L 2547 2350 
-Q 2547 2713 2323 2920 
-Q 2100 3128 1672 3128 
-Q 1281 3128 1025 2928 
-Q 769 2728 769 2447 
-L 394 2450 
-Q 394 2853 769 3148 
-Q 1144 3444 1691 3444 
-Q 2256 3444 2582 3161 
-Q 2909 2878 2919 2372 
-L 2919 772 
-Q 2919 281 3022 38 
-L 3022 0 
-L 2622 0 
-z
-M 1447 269 
-Q 1822 269 2117 450 
-Q 2413 631 2547 934 
-L 2547 1678 
-L 1878 1678 
-Q 1319 1672 1003 1473 
-Q 688 1275 688 928 
-Q 688 644 898 456 
-Q 1109 269 1447 269 
-z
-" transform="scale(0.015625)"/>
-        <path id="Roboto-Light-6e" d="M 844 3381 
-L 856 2803 
-Q 1047 3116 1331 3280 
-Q 1616 3444 1959 3444 
-Q 2503 3444 2768 3137 
-Q 3034 2831 3038 2219 
-L 3038 0 
-L 2666 0 
-L 2666 2222 
-Q 2663 2675 2473 2897 
-Q 2284 3119 1869 3119 
-Q 1522 3119 1255 2901 
-Q 988 2684 859 2316 
-L 859 0 
-L 488 0 
-L 488 3381 
-L 844 3381 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-4a"/>
-       <use xlink:href="#Roboto-Light-61" transform="translate(55.029297 0)"/>
-       <use xlink:href="#Roboto-Light-6e" transform="translate(108.59375 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="76.152771" y="323.67748" transform="rotate(-0 76.152771 323.67748)">Jan</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m1575fe8097" x="137.799611" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="131.487529" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_2">
-      <!-- Feb -->
-      <g transform="translate(127.999924 317.443885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-46" d="M 3081 2125 
-L 959 2125 
-L 959 0 
-L 575 0 
-L 575 4550 
-L 3394 4550 
-L 3394 4222 
-L 959 4222 
-L 959 2453 
-L 3081 2453 
-L 3081 2125 
-z
-" transform="scale(0.015625)"/>
-        <path id="Roboto-Light-65" d="M 1797 -63 
-Q 1366 -63 1017 150 
-Q 669 363 475 742 
-Q 281 1122 281 1594 
-L 281 1728 
-Q 281 2216 470 2606 
-Q 659 2997 996 3220 
-Q 1334 3444 1728 3444 
-Q 2344 3444 2705 3023 
-Q 3066 2603 3066 1875 
-L 3066 1666 
-L 653 1666 
-L 653 1594 
-Q 653 1019 983 636 
-Q 1313 253 1813 253 
-Q 2113 253 2342 362 
-Q 2572 472 2759 713 
-L 2994 534 
-Q 2581 -63 1797 -63 
-z
-M 1728 3125 
-Q 1306 3125 1017 2815 
-Q 728 2506 666 1984 
-L 2694 1984 
-L 2694 2025 
-Q 2678 2513 2415 2819 
-Q 2153 3125 1728 3125 
-z
-" transform="scale(0.015625)"/>
-        <path id="Roboto-Light-62" d="M 3209 1656 
-Q 3209 866 2859 401 
-Q 2509 -63 1919 -63 
-Q 1213 -63 850 463 
-L 834 0 
-L 484 0 
-L 484 4800 
-L 856 4800 
-L 856 2891 
-Q 1213 3444 1913 3444 
-Q 2513 3444 2861 2986 
-Q 3209 2528 3209 1713 
-L 3209 1656 
-z
-M 2834 1722 
-Q 2834 2391 2575 2755 
-Q 2316 3119 1844 3119 
-Q 1484 3119 1234 2942 
-Q 984 2766 856 2425 
-L 856 900 
-Q 1138 263 1850 263 
-Q 2313 263 2573 628 
-Q 2834 994 2834 1722 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-46"/>
-       <use xlink:href="#Roboto-Light-65" transform="translate(56.25 0)"/>
-       <use xlink:href="#Roboto-Light-62" transform="translate(107.910156 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="131.487529" y="323.67748" transform="rotate(-0 131.487529 323.67748)">Feb</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m1575fe8097" x="192.084714" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="186.822286" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_3">
-      <!-- Mar -->
-      <g transform="translate(181.660651 317.443885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-4d" d="M 1084 4550 
-L 2763 534 
-L 4447 4550 
-L 4959 4550 
-L 4959 0 
-L 4575 0 
-L 4575 1981 
-L 4606 4013 
-L 2913 0 
-L 2616 0 
-L 928 3997 
-L 959 1994 
-L 959 0 
-L 575 0 
-L 575 4550 
-L 1084 4550 
-z
-" transform="scale(0.015625)"/>
-        <path id="Roboto-Light-72" d="M 2050 3063 
-Q 1931 3084 1797 3084 
-Q 1447 3084 1205 2889 
-Q 963 2694 859 2322 
-L 859 0 
-L 488 0 
-L 488 3381 
-L 853 3381 
-L 859 2844 
-Q 1156 3444 1813 3444 
-Q 1969 3444 2059 3403 
-L 2050 3063 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-4d"/>
-       <use xlink:href="#Roboto-Light-61" transform="translate(86.523438 0)"/>
-       <use xlink:href="#Roboto-Light-72" transform="translate(140.087891 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="186.822286" y="323.67748" transform="rotate(-0 186.822286 323.67748)">Mar</text>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m1575fe8097" x="246.369816" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="242.157043" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_4">
-      <!-- Apr -->
-      <g transform="translate(237.278879 317.443885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-41" d="M 3031 1275 
-L 966 1275 
-L 497 0 
-L 94 0 
-L 1816 4550 
-L 2181 4550 
-L 3903 0 
-L 3503 0 
-L 3031 1275 
-z
-M 1084 1603 
-L 2909 1603 
-L 1997 4081 
-L 1084 1603 
-z
-" transform="scale(0.015625)"/>
-        <path id="Roboto-Light-70" d="M 3206 1656 
-Q 3206 866 2856 401 
-Q 2506 -63 1919 -63 
-Q 1225 -63 856 425 
-L 856 -1300 
-L 484 -1300 
-L 484 3381 
-L 831 3381 
-L 850 2903 
-Q 1216 3444 1909 3444 
-Q 2516 3444 2861 2984 
-Q 3206 2525 3206 1709 
-L 3206 1656 
-z
-M 2831 1722 
-Q 2831 2369 2565 2744 
-Q 2300 3119 1825 3119 
-Q 1481 3119 1234 2953 
-Q 988 2788 856 2472 
-L 856 850 
-Q 991 559 1241 406 
-Q 1491 253 1831 253 
-Q 2303 253 2567 629 
-Q 2831 1006 2831 1722 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-41"/>
-       <use xlink:href="#Roboto-Light-70" transform="translate(62.451172 0)"/>
-       <use xlink:href="#Roboto-Light-72" transform="translate(117.871094 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="242.157043" y="323.67748" transform="rotate(-0 242.157043 323.67748)">Apr</text>
      </g>
     </g>
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m1575fe8097" x="300.654919" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="297.491801" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_5">
-      <!-- May -->
-      <g transform="translate(289.398356 317.320135) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-79" d="M 1559 538 
-L 2547 3381 
-L 2950 3381 
-L 1506 -575 
-L 1431 -750 
-Q 1153 -1366 572 -1366 
-Q 438 -1366 284 -1322 
-L 281 -1013 
-L 475 -1031 
-Q 750 -1031 920 -895 
-Q 1091 -759 1209 -428 
-L 1375 28 
-L 100 3381 
-L 509 3381 
-L 1559 538 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-4d"/>
-       <use xlink:href="#Roboto-Light-61" transform="translate(86.523438 0)"/>
-       <use xlink:href="#Roboto-Light-79" transform="translate(140.087891 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="297.491801" y="323.55373" transform="rotate(-0 297.491801 323.55373)">May</text>
      </g>
     </g>
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m1575fe8097" x="354.940021" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="352.826558" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_6">
-      <!-- Jun -->
-      <g transform="translate(345.045646 317.443885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-75" d="M 2663 428 
-Q 2325 -63 1584 -63 
-Q 1044 -63 762 251 
-Q 481 566 475 1181 
-L 475 3381 
-L 847 3381 
-L 847 1228 
-Q 847 263 1628 263 
-Q 2441 263 2656 934 
-L 2656 3381 
-L 3031 3381 
-L 3031 0 
-L 2669 0 
-L 2663 428 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-4a"/>
-       <use xlink:href="#Roboto-Light-75" transform="translate(55.029297 0)"/>
-       <use xlink:href="#Roboto-Light-6e" transform="translate(109.960938 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="352.826558" y="323.67748" transform="rotate(-0 352.826558 323.67748)">Jun</text>
      </g>
     </g>
     <g id="xtick_7">
      <g id="line2d_7">
       <g>
-       <use xlink:href="#m1575fe8097" x="409.225124" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="408.161316" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_7">
-      <!-- Jul -->
-      <g transform="translate(401.282624 317.443885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-6c" d="M 906 0 
-L 531 0 
-L 531 4800 
-L 906 4800 
-L 906 0 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-4a"/>
-       <use xlink:href="#Roboto-Light-75" transform="translate(55.029297 0)"/>
-       <use xlink:href="#Roboto-Light-6c" transform="translate(109.960938 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="408.161316" y="323.67748" transform="rotate(-0 408.161316 323.67748)">Jul</text>
      </g>
     </g>
     <g id="xtick_8">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m1575fe8097" x="463.510226" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="463.496073" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_8">
-      <!-- Aug -->
-      <g transform="translate(453.138664 317.35576) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-67" d="M 338 1722 
-Q 338 2516 689 2980 
-Q 1041 3444 1644 3444 
-Q 2334 3444 2694 2894 
-L 2713 3381 
-L 3063 3381 
-L 3063 69 
-Q 3063 -584 2697 -965 
-Q 2331 -1347 1706 -1347 
-Q 1353 -1347 1033 -1189 
-Q 713 -1031 528 -769 
-L 738 -544 
-Q 1134 -1031 1681 -1031 
-Q 2150 -1031 2412 -754 
-Q 2675 -478 2684 13 
-L 2684 438 
-Q 2325 -63 1638 -63 
-Q 1050 -63 694 406 
-Q 338 875 338 1672 
-L 338 1722 
-z
-M 716 1656 
-Q 716 1009 975 636 
-Q 1234 263 1706 263 
-Q 2397 263 2684 881 
-L 2684 2453 
-Q 2553 2778 2306 2948 
-Q 2059 3119 1713 3119 
-Q 1241 3119 978 2748 
-Q 716 2378 716 1656 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-41"/>
-       <use xlink:href="#Roboto-Light-75" transform="translate(62.451172 0)"/>
-       <use xlink:href="#Roboto-Light-67" transform="translate(117.382812 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="463.496073" y="323.589355" transform="rotate(-0 463.496073 323.589355)">Aug</text>
      </g>
     </g>
     <g id="xtick_9">
      <g id="line2d_9">
       <g>
-       <use xlink:href="#m1575fe8097" x="517.795329" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="518.830831" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_9">
-      <!-- Sep -->
-      <g transform="translate(507.816579 317.443885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-53" d="M 3150 1119 
-Q 3150 1497 2884 1717 
-Q 2619 1938 1912 2136 
-Q 1206 2334 881 2569 
-Q 419 2900 419 3438 
-Q 419 3959 848 4286 
-Q 1278 4613 1947 4613 
-Q 2400 4613 2758 4438 
-Q 3116 4263 3312 3950 
-Q 3509 3638 3509 3253 
-L 3122 3253 
-Q 3122 3719 2803 4001 
-Q 2484 4284 1947 4284 
-Q 1425 4284 1115 4051 
-Q 806 3819 806 3444 
-Q 806 3097 1084 2878 
-Q 1363 2659 1975 2492 
-Q 2588 2325 2903 2145 
-Q 3219 1966 3378 1716 
-Q 3538 1466 3538 1125 
-Q 3538 588 3108 262 
-Q 2678 -63 1975 -63 
-Q 1494 -63 1092 109 
-Q 691 281 483 590 
-Q 275 900 275 1300 
-L 659 1300 
-Q 659 819 1018 541 
-Q 1378 263 1975 263 
-Q 2506 263 2828 497 
-Q 3150 731 3150 1119 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-53"/>
-       <use xlink:href="#Roboto-Light-65" transform="translate(59.228516 0)"/>
-       <use xlink:href="#Roboto-Light-70" transform="translate(110.888672 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="518.830831" y="323.67748" transform="rotate(-0 518.830831 323.67748)">Sep</text>
      </g>
     </g>
     <g id="xtick_10">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m1575fe8097" x="572.080431" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="574.165588" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_10">
-      <!-- Oct -->
-      <g transform="translate(563.001681 317.443885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-4f" d="M 3938 2028 
-Q 3938 1400 3720 925 
-Q 3503 450 3100 193 
-Q 2697 -63 2169 -63 
-Q 1372 -63 881 507 
-Q 391 1078 391 2047 
-L 391 2516 
-Q 391 3138 611 3617 
-Q 831 4097 1234 4355 
-Q 1638 4613 2163 4613 
-Q 2688 4613 3089 4359 
-Q 3491 4106 3709 3643 
-Q 3928 3181 3938 2572 
-L 3938 2028 
-z
-M 3553 2522 
-Q 3553 3344 3181 3809 
-Q 2809 4275 2163 4275 
-Q 1528 4275 1151 3808 
-Q 775 3341 775 2503 
-L 775 2028 
-Q 775 1219 1150 745 
-Q 1525 272 2169 272 
-Q 2822 272 3187 739 
-Q 3553 1206 3553 2041 
-L 3553 2522 
-z
-" transform="scale(0.015625)"/>
-        <path id="Roboto-Light-63" d="M 1738 253 
-Q 2128 253 2392 473 
-Q 2656 694 2678 1044 
-L 3038 1044 
-Q 3022 734 2844 479 
-Q 2666 225 2370 81 
-Q 2075 -63 1738 -63 
-Q 1072 -63 683 400 
-Q 294 863 294 1644 
-L 294 1756 
-Q 294 2256 469 2640 
-Q 644 3025 970 3234 
-Q 1297 3444 1734 3444 
-Q 2291 3444 2652 3112 
-Q 3013 2781 3038 2241 
-L 2678 2241 
-Q 2653 2638 2392 2881 
-Q 2131 3125 1734 3125 
-Q 1228 3125 948 2759 
-Q 669 2394 669 1734 
-L 669 1625 
-Q 669 978 948 615 
-Q 1228 253 1738 253 
-z
-" transform="scale(0.015625)"/>
-        <path id="Roboto-Light-74" d="M 1069 4247 
-L 1069 3381 
-L 1769 3381 
-L 1769 3075 
-L 1069 3075 
-L 1069 822 
-Q 1069 541 1170 403 
-Q 1272 266 1509 266 
-Q 1603 266 1813 297 
-L 1828 -9 
-Q 1681 -63 1428 -63 
-Q 1044 -63 869 160 
-Q 694 384 694 819 
-L 694 3075 
-L 72 3075 
-L 72 3381 
-L 694 3381 
-L 694 4247 
-L 1069 4247 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-4f"/>
-       <use xlink:href="#Roboto-Light-63" transform="translate(67.675781 0)"/>
-       <use xlink:href="#Roboto-Light-74" transform="translate(119.189453 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="574.165588" y="323.67748" transform="rotate(-0 574.165588 323.67748)">Oct</text>
      </g>
     </g>
     <g id="xtick_11">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m1575fe8097" x="626.365534" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="629.500345" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_11">
-      <!-- Nov -->
-      <g transform="translate(615.859909 317.443885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-4e" d="M 3963 0 
-L 3578 0 
-L 963 3894 
-L 963 0 
-L 575 0 
-L 575 4550 
-L 963 4550 
-L 3581 653 
-L 3581 4550 
-L 3963 4550 
-L 3963 0 
-z
-" transform="scale(0.015625)"/>
-        <path id="Roboto-Light-6f" d="M 281 1741 
-Q 281 2228 470 2618 
-Q 659 3009 1004 3226 
-Q 1350 3444 1788 3444 
-Q 2463 3444 2881 2970 
-Q 3300 2497 3300 1716 
-L 3300 1638 
-Q 3300 1147 3111 755 
-Q 2922 363 2578 150 
-Q 2234 -63 1794 -63 
-Q 1122 -63 701 410 
-Q 281 884 281 1666 
-L 281 1741 
-z
-M 656 1638 
-Q 656 1031 970 642 
-Q 1284 253 1794 253 
-Q 2300 253 2614 642 
-Q 2928 1031 2928 1669 
-L 2928 1741 
-Q 2928 2128 2784 2450 
-Q 2641 2772 2381 2948 
-Q 2122 3125 1788 3125 
-Q 1288 3125 972 2733 
-Q 656 2341 656 1706 
-L 656 1638 
-z
-" transform="scale(0.015625)"/>
-        <path id="Roboto-Light-76" d="M 1541 516 
-L 2569 3381 
-L 2953 3381 
-L 1691 0 
-L 1388 0 
-L 119 3381 
-L 503 3381 
-L 1541 516 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-4e"/>
-       <use xlink:href="#Roboto-Light-6f" transform="translate(70.996094 0)"/>
-       <use xlink:href="#Roboto-Light-76" transform="translate(127.001953 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="629.500345" y="323.67748" transform="rotate(-0 629.500345 323.67748)">Nov</text>
      </g>
     </g>
     <g id="xtick_12">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m1575fe8097" x="680.650636" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m864b86af0f" x="684.835103" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_12">
-      <!-- Dec -->
-      <g transform="translate(670.531261 317.443885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-44" d="M 575 0 
-L 575 4550 
-L 1847 4550 
-Q 2406 4550 2850 4295 
-Q 3294 4041 3542 3566 
-Q 3791 3091 3791 2484 
-L 3791 2066 
-Q 3791 1456 3544 984 
-Q 3297 513 2848 256 
-Q 2400 0 1819 0 
-L 575 0 
-z
-M 959 4222 
-L 959 325 
-L 1822 325 
-Q 2541 325 2975 801 
-Q 3409 1278 3409 2091 
-L 3409 2491 
-Q 3409 3275 2981 3747 
-Q 2553 4219 1853 4222 
-L 959 4222 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-44"/>
-       <use xlink:href="#Roboto-Light-65" transform="translate(65.478516 0)"/>
-       <use xlink:href="#Roboto-Light-63" transform="translate(117.138672 0)"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="684.835103" y="323.67748" transform="rotate(-0 684.835103 323.67748)">Dec</text>
      </g>
     </g>
     <g id="text_13">
-     <!-- Month -->
-     <g transform="translate(367.001127 331.756385) scale(0.105 -0.105)">
-      <defs>
-       <path id="Roboto-Regular-4d" d="M 1303 4550 
-L 2791 838 
-L 4278 4550 
-L 5056 4550 
-L 5056 0 
-L 4456 0 
-L 4456 1772 
-L 4513 3684 
-L 3019 0 
-L 2559 0 
-L 1069 3675 
-L 1128 1772 
-L 1128 0 
-L 528 0 
-L 528 4550 
-L 1303 4550 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-6f" d="M 284 1722 
-Q 284 2219 479 2616 
-Q 675 3013 1023 3228 
-Q 1372 3444 1819 3444 
-Q 2509 3444 2936 2966 
-Q 3363 2488 3363 1694 
-L 3363 1653 
-Q 3363 1159 3173 767 
-Q 2984 375 2632 156 
-Q 2281 -63 1825 -63 
-Q 1138 -63 711 415 
-Q 284 894 284 1681 
-L 284 1722 
-z
-M 866 1653 
-Q 866 1091 1127 750 
-Q 1388 409 1825 409 
-Q 2266 409 2525 754 
-Q 2784 1100 2784 1722 
-Q 2784 2278 2520 2623 
-Q 2256 2969 1819 2969 
-Q 1391 2969 1128 2628 
-Q 866 2288 866 1653 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-6e" d="M 984 3381 
-L 1003 2956 
-Q 1391 3444 2016 3444 
-Q 3088 3444 3097 2234 
-L 3097 0 
-L 2519 0 
-L 2519 2238 
-Q 2516 2603 2352 2778 
-Q 2188 2953 1841 2953 
-Q 1559 2953 1346 2803 
-Q 1134 2653 1016 2409 
-L 1016 0 
-L 438 0 
-L 438 3381 
-L 984 3381 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-74" d="M 1222 4200 
-L 1222 3381 
-L 1853 3381 
-L 1853 2934 
-L 1222 2934 
-L 1222 838 
-Q 1222 634 1306 532 
-Q 1391 431 1594 431 
-Q 1694 431 1869 469 
-L 1869 0 
-Q 1641 -63 1425 -63 
-Q 1038 -63 841 171 
-Q 644 406 644 838 
-L 644 2934 
-L 28 2934 
-L 28 3381 
-L 644 3381 
-L 644 4200 
-L 1222 4200 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-68" d="M 1016 2972 
-Q 1400 3444 2016 3444 
-Q 3088 3444 3097 2234 
-L 3097 0 
-L 2519 0 
-L 2519 2238 
-Q 2516 2603 2352 2778 
-Q 2188 2953 1841 2953 
-Q 1559 2953 1346 2803 
-Q 1134 2653 1016 2409 
-L 1016 0 
-L 438 0 
-L 438 4800 
-L 1016 4800 
-L 1016 2972 
-z
-" transform="scale(0.015625)"/>
-      </defs>
-      <use xlink:href="#Roboto-Regular-4d"/>
-      <use xlink:href="#Roboto-Regular-6f" transform="translate(87.304688 0)"/>
-      <use xlink:href="#Roboto-Regular-6e" transform="translate(144.335938 0)"/>
-      <use xlink:href="#Roboto-Regular-74" transform="translate(199.511719 0)"/>
-      <use xlink:href="#Roboto-Regular-68" transform="translate(232.177734 0)"/>
-     </g>
+     <text style="font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="380.493937" y="337.98998" transform="rotate(-0 380.493937 337.98998)">Month</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_13">
       <defs>
-       <path id="m0d9b7f94d9" d="M 0 0 
+       <path id="m030aab9003" d="M 0 0 
 L -2 0 
 " style="stroke: #000000; stroke-width: 0.3"/>
       </defs>
       <g>
-       <use xlink:href="#m0d9b7f94d9" x="32.331412" y="304.443885" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m030aab9003" x="23.98" y="310.67748" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_14">
-      <!-- 0 -->
-      <g transform="translate(22.680787 308.943885) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-30" d="M 3172 1897 
-Q 3172 934 2819 435 
-Q 2466 -63 1778 -63 
-Q 1103 -63 743 426 
-Q 384 916 375 1850 
-L 375 2666 
-Q 375 3625 731 4119 
-Q 1088 4613 1772 4613 
-Q 2447 4613 2803 4136 
-Q 3159 3659 3172 2731 
-L 3172 1897 
-z
-M 2797 2713 
-Q 2797 3494 2542 3894 
-Q 2288 4294 1772 4294 
-Q 1266 4294 1009 3903 
-Q 753 3513 747 2750 
-L 747 1856 
-Q 747 1078 1011 665 
-Q 1275 253 1778 253 
-Q 2278 253 2536 656 
-Q 2794 1059 2797 1838 
-L 2797 2713 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-30"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="20.98" y="315.17748" transform="rotate(-0 20.98 315.17748)">0</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_14">
       <g>
-       <use xlink:href="#m0d9b7f94d9" x="32.331412" y="242.499499" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m030aab9003" x="23.98" y="247.208463" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_15">
-      <!-- 1 -->
-      <g transform="translate(22.680787 246.999499) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-31" d="M 2169 0 
-L 1794 0 
-L 1794 4100 
-L 556 3641 
-L 556 3991 
-L 2106 4566 
-L 2169 4566 
-L 2169 0 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-31"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="20.98" y="251.708463" transform="rotate(-0 20.98 251.708463)">1</text>
      </g>
     </g>
     <g id="ytick_3">
      <g id="line2d_15">
       <g>
-       <use xlink:href="#m0d9b7f94d9" x="32.331412" y="180.555112" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m030aab9003" x="23.98" y="183.739445" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_16">
-      <!-- 2 -->
-      <g transform="translate(22.680787 185.055112) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-32" d="M 3278 0 
-L 428 0 
-L 428 288 
-L 1988 2056 
-Q 2375 2503 2525 2793 
-Q 2675 3084 2675 3359 
-Q 2675 3791 2422 4042 
-Q 2169 4294 1725 4294 
-Q 1266 4294 983 4000 
-Q 700 3706 700 3238 
-L 328 3238 
-Q 328 3622 501 3937 
-Q 675 4253 995 4433 
-Q 1316 4613 1725 4613 
-Q 2350 4613 2701 4284 
-Q 3053 3956 3053 3391 
-Q 3053 3072 2854 2694 
-Q 2656 2316 2156 1750 
-L 888 316 
-L 3278 316 
-L 3278 0 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-32"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="20.98" y="188.239445" transform="rotate(-0 20.98 188.239445)">2</text>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_16">
       <g>
-       <use xlink:href="#m0d9b7f94d9" x="32.331412" y="118.610726" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m030aab9003" x="23.98" y="120.270428" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_17">
-      <!-- 3 -->
-      <g transform="translate(22.680787 123.110726) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-33" d="M 1259 2478 
-L 1647 2478 
-Q 1969 2478 2209 2592 
-Q 2450 2706 2576 2904 
-Q 2703 3103 2703 3363 
-Q 2703 3800 2456 4047 
-Q 2209 4294 1747 4294 
-Q 1309 4294 1029 4036 
-Q 750 3778 750 3356 
-L 375 3356 
-Q 375 3709 553 4001 
-Q 731 4294 1047 4453 
-Q 1363 4613 1747 4613 
-Q 2366 4613 2722 4275 
-Q 3078 3938 3078 3350 
-Q 3078 3022 2870 2745 
-Q 2663 2469 2300 2331 
-Q 2725 2213 2944 1923 
-Q 3163 1634 3163 1234 
-Q 3163 650 2781 293 
-Q 2400 -63 1763 -63 
-Q 1356 -63 1017 100 
-Q 678 263 492 555 
-Q 306 847 306 1234 
-L 681 1234 
-Q 681 800 984 526 
-Q 1288 253 1763 253 
-Q 2247 253 2517 501 
-Q 2788 750 2788 1222 
-Q 2788 1678 2495 1918 
-Q 2203 2159 1634 2159 
-L 1259 2159 
-L 1259 2478 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-33"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="20.98" y="124.770428" transform="rotate(-0 20.98 124.770428)">3</text>
      </g>
     </g>
     <g id="ytick_5">
      <g id="line2d_17">
       <g>
-       <use xlink:href="#m0d9b7f94d9" x="32.331412" y="56.666339" style="stroke: #000000; stroke-width: 0.3"/>
+       <use xlink:href="#m030aab9003" x="23.98" y="56.80141" style="stroke: #000000; stroke-width: 0.3"/>
       </g>
      </g>
      <g id="text_18">
-      <!-- 4 -->
-      <g transform="translate(22.680787 61.166339) scale(0.12 -0.12)">
-       <defs>
-        <path id="Roboto-Light-34" d="M 2725 1466 
-L 3434 1466 
-L 3434 1150 
-L 2725 1150 
-L 2725 0 
-L 2350 0 
-L 2350 1150 
-L 209 1150 
-L 209 1363 
-L 2316 4550 
-L 2725 4550 
-L 2725 1466 
-z
-M 669 1466 
-L 2350 1466 
-L 2350 4066 
-L 2184 3778 
-L 669 1466 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#Roboto-Light-34"/>
-      </g>
+      <text style="font-weight: 300; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="20.98" y="61.30141" transform="rotate(-0 20.98 61.30141)">4</text>
      </g>
     </g>
     <g id="text_19">
-     <!-- PV Generation [MWh] -->
-     <g transform="translate(16.547975 211.688476) rotate(-90) scale(0.105 -0.105)">
-      <defs>
-       <path id="Roboto-Regular-50" d="M 1128 1781 
-L 1128 0 
-L 528 0 
-L 528 4550 
-L 2206 4550 
-Q 2953 4550 3376 4169 
-Q 3800 3788 3800 3159 
-Q 3800 2497 3386 2139 
-Q 2972 1781 2200 1781 
-L 1128 1781 
-z
-M 1128 2272 
-L 2206 2272 
-Q 2688 2272 2944 2498 
-Q 3200 2725 3200 3153 
-Q 3200 3559 2944 3803 
-Q 2688 4047 2241 4056 
-L 1128 4056 
-L 1128 2272 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-56" d="M 2034 797 
-L 3334 4550 
-L 3991 4550 
-L 2303 0 
-L 1772 0 
-L 88 4550 
-L 741 4550 
-L 2034 797 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-20" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-47" d="M 3888 597 
-Q 3656 266 3242 101 
-Q 2828 -63 2278 -63 
-Q 1722 -63 1290 198 
-Q 859 459 623 940 
-Q 388 1422 381 2056 
-L 381 2453 
-Q 381 3481 861 4047 
-Q 1341 4613 2209 4613 
-Q 2922 4613 3356 4248 
-Q 3791 3884 3888 3216 
-L 3288 3216 
-Q 3119 4119 2213 4119 
-Q 1609 4119 1298 3695 
-Q 988 3272 984 2469 
-L 984 2097 
-Q 984 1331 1334 879 
-Q 1684 428 2281 428 
-Q 2619 428 2872 503 
-Q 3125 578 3291 756 
-L 3291 1778 
-L 2238 1778 
-L 2238 2266 
-L 3888 2266 
-L 3888 597 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-65" d="M 1841 -63 
-Q 1153 -63 722 389 
-Q 291 841 291 1597 
-L 291 1703 
-Q 291 2206 483 2601 
-Q 675 2997 1020 3220 
-Q 1366 3444 1769 3444 
-Q 2428 3444 2793 3009 
-Q 3159 2575 3159 1766 
-L 3159 1525 
-L 869 1525 
-Q 881 1025 1161 717 
-Q 1441 409 1872 409 
-Q 2178 409 2390 534 
-Q 2603 659 2763 866 
-L 3116 591 
-Q 2691 -63 1841 -63 
-z
-M 1769 2969 
-Q 1419 2969 1181 2714 
-Q 944 2459 888 2000 
-L 2581 2000 
-L 2581 2044 
-Q 2556 2484 2343 2726 
-Q 2131 2969 1769 2969 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-72" d="M 2072 2863 
-Q 1941 2884 1788 2884 
-Q 1219 2884 1016 2400 
-L 1016 0 
-L 438 0 
-L 438 3381 
-L 1000 3381 
-L 1009 2991 
-Q 1294 3444 1816 3444 
-Q 1984 3444 2072 3400 
-L 2072 2863 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-61" d="M 2525 0 
-Q 2475 100 2444 356 
-Q 2041 -63 1481 -63 
-Q 981 -63 661 220 
-Q 341 503 341 938 
-Q 341 1466 742 1758 
-Q 1144 2050 1872 2050 
-L 2434 2050 
-L 2434 2316 
-Q 2434 2619 2253 2798 
-Q 2072 2978 1719 2978 
-Q 1409 2978 1200 2822 
-Q 991 2666 991 2444 
-L 409 2444 
-Q 409 2697 589 2933 
-Q 769 3169 1076 3306 
-Q 1384 3444 1753 3444 
-Q 2338 3444 2669 3151 
-Q 3000 2859 3013 2347 
-L 3013 791 
-Q 3013 325 3131 50 
-L 3131 0 
-L 2525 0 
-z
-M 1566 441 
-Q 1838 441 2081 581 
-Q 2325 722 2434 947 
-L 2434 1641 
-L 1981 1641 
-Q 919 1641 919 1019 
-Q 919 747 1100 594 
-Q 1281 441 1566 441 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-69" d="M 1066 0 
-L 488 0 
-L 488 3381 
-L 1066 3381 
-L 1066 0 
-z
-M 441 4278 
-Q 441 4419 527 4516 
-Q 613 4613 781 4613 
-Q 950 4613 1037 4516 
-Q 1125 4419 1125 4278 
-Q 1125 4138 1037 4044 
-Q 950 3950 781 3950 
-Q 613 3950 527 4044 
-Q 441 4138 441 4278 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-5b" d="M 1634 4725 
-L 1038 4725 
-L 1038 -500 
-L 1634 -500 
-L 1634 -975 
-L 456 -975 
-L 456 5200 
-L 1634 5200 
-L 1634 4725 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-57" d="M 1509 1434 
-L 1597 834 
-L 1725 1375 
-L 2625 4550 
-L 3131 4550 
-L 4009 1375 
-L 4134 825 
-L 4231 1438 
-L 4938 4550 
-L 5541 4550 
-L 4438 0 
-L 3891 0 
-L 2953 3316 
-L 2881 3663 
-L 2809 3316 
-L 1838 0 
-L 1291 0 
-L 191 4550 
-L 791 4550 
-L 1509 1434 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Regular-5d" d="M 28 5200 
-L 1209 5200 
-L 1209 -975 
-L 28 -975 
-L 28 -500 
-L 631 -500 
-L 631 4725 
-L 28 4725 
-L 28 5200 
-z
-" transform="scale(0.015625)"/>
-      </defs>
-      <use xlink:href="#Roboto-Regular-50"/>
-      <use xlink:href="#Roboto-Regular-56" transform="translate(63.085938 0)"/>
-      <use xlink:href="#Roboto-Regular-20" transform="translate(126.708984 0)"/>
-      <use xlink:href="#Roboto-Regular-47" transform="translate(151.464844 0)"/>
-      <use xlink:href="#Roboto-Regular-65" transform="translate(219.580078 0)"/>
-      <use xlink:href="#Roboto-Regular-6e" transform="translate(272.558594 0)"/>
-      <use xlink:href="#Roboto-Regular-65" transform="translate(327.734375 0)"/>
-      <use xlink:href="#Roboto-Regular-72" transform="translate(380.712891 0)"/>
-      <use xlink:href="#Roboto-Regular-61" transform="translate(414.550781 0)"/>
-      <use xlink:href="#Roboto-Regular-74" transform="translate(468.945312 0)"/>
-      <use xlink:href="#Roboto-Regular-69" transform="translate(501.611328 0)"/>
-      <use xlink:href="#Roboto-Regular-6f" transform="translate(525.878906 0)"/>
-      <use xlink:href="#Roboto-Regular-6e" transform="translate(582.910156 0)"/>
-      <use xlink:href="#Roboto-Regular-20" transform="translate(638.085938 0)"/>
-      <use xlink:href="#Roboto-Regular-5b" transform="translate(662.841797 0)"/>
-      <use xlink:href="#Roboto-Regular-4d" transform="translate(689.355469 0)"/>
-      <use xlink:href="#Roboto-Regular-57" transform="translate(776.660156 0)"/>
-      <use xlink:href="#Roboto-Regular-68" transform="translate(865.380859 0)"/>
-      <use xlink:href="#Roboto-Regular-5d" transform="translate(920.458984 0)"/>
-     </g>
+     <text style="font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="8.196563" y="164.69874" transform="rotate(-90 8.196563 164.69874)">PV Generation [MWh]</text>
     </g>
    </g>
    <g id="patch_3">
-    <path d="M 64.126972 304.443885 
-L 83.514509 304.443885 
-L 83.514509 161.997722 
-L 64.126972 161.997722 
+    <path d="M 56.390358 310.67748 
+L 76.152771 310.67748 
+L 76.152771 164.725304 
+L 56.390358 164.725304 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_4">
-    <path d="M 118.412075 304.443885 
-L 137.799611 304.443885 
-L 137.799611 165.020799 
-L 118.412075 165.020799 
+    <path d="M 111.725115 310.67748 
+L 131.487529 310.67748 
+L 131.487529 167.822787 
+L 111.725115 167.822787 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_5">
-    <path d="M 172.697177 304.443885 
-L 192.084714 304.443885 
-L 192.084714 158.810141 
-L 172.697177 158.810141 
+    <path d="M 167.059873 310.67748 
+L 186.822286 310.67748 
+L 186.822286 161.459267 
+L 167.059873 161.459267 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_6">
-    <path d="M 226.98228 304.443885 
-L 246.369816 304.443885 
-L 246.369816 177.485562 
-L 226.98228 177.485562 
+    <path d="M 222.39463 310.67748 
+L 242.157043 310.67748 
+L 242.157043 180.594344 
+L 222.39463 180.594344 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_7">
-    <path d="M 281.267382 304.443885 
-L 300.654919 304.443885 
-L 300.654919 205.349477 
-L 281.267382 205.349477 
+    <path d="M 277.729388 310.67748 
+L 297.491801 310.67748 
+L 297.491801 209.144071 
+L 277.729388 209.144071 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_8">
-    <path d="M 335.552485 304.443885 
-L 354.940021 304.443885 
-L 354.940021 232.292869 
-L 335.552485 232.292869 
+    <path d="M 333.064145 310.67748 
+L 352.826558 310.67748 
+L 352.826558 236.750618 
+L 333.064145 236.750618 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_9">
-    <path d="M 389.837587 304.443885 
-L 409.225124 304.443885 
-L 409.225124 229.910755 
-L 389.837587 229.910755 
+    <path d="M 388.398902 310.67748 
+L 408.161316 310.67748 
+L 408.161316 234.309873 
+L 388.398902 234.309873 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_10">
-    <path d="M 444.12269 304.443885 
-L 463.510226 304.443885 
-L 463.510226 211.145002 
-L 444.12269 211.145002 
+    <path d="M 443.73366 310.67748 
+L 463.496073 310.67748 
+L 463.496073 215.082241 
+L 443.73366 215.082241 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_11">
-    <path d="M 498.407792 304.443885 
-L 517.795329 304.443885 
-L 517.795329 183.573463 
-L 498.407792 183.573463 
+    <path d="M 499.068417 310.67748 
+L 518.830831 310.67748 
+L 518.830831 186.832087 
+L 499.068417 186.832087 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_12">
-    <path d="M 552.692895 304.443885 
-L 572.080431 304.443885 
-L 572.080431 138.839896 
-L 552.692895 138.839896 
+    <path d="M 554.403175 310.67748 
+L 574.165588 310.67748 
+L 574.165588 140.997497 
+L 554.403175 140.997497 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_13">
-    <path d="M 606.977997 304.443885 
-L 626.365534 304.443885 
-L 626.365534 155.191152 
-L 606.977997 155.191152 
+    <path d="M 609.737932 310.67748 
+L 629.500345 310.67748 
+L 629.500345 157.751204 
+L 609.737932 157.751204 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_14">
-    <path d="M 661.2631 304.443885 
-L 680.650636 304.443885 
-L 680.650636 168.104768 
-L 661.2631 168.104768 
+    <path d="M 665.072689 310.67748 
+L 684.835103 310.67748 
+L 684.835103 170.982662 
+L 665.072689 170.982662 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #228be6; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #228be6; opacity: 0.9"/>
    </g>
    <g id="patch_15">
-    <path d="M 83.514509 304.443885 
-L 102.902045 304.443885 
-L 102.902045 136.574598 
-L 83.514509 136.574598 
+    <path d="M 76.152771 310.67748 
+L 95.915185 310.67748 
+L 95.915185 138.676443 
+L 76.152771 138.676443 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_16">
-    <path d="M 137.799611 304.443885 
-L 157.187148 304.443885 
-L 157.187148 127.28294 
-L 137.799611 127.28294 
+    <path d="M 131.487529 310.67748 
+L 151.249942 310.67748 
+L 151.249942 129.15609 
+L 131.487529 129.15609 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_17">
-    <path d="M 192.084714 304.443885 
-L 211.47225 304.443885 
-L 211.47225 91.355196 
-L 192.084714 91.355196 
+    <path d="M 186.822286 310.67748 
+L 206.584699 310.67748 
+L 206.584699 92.34406 
+L 186.822286 92.34406 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_18">
-    <path d="M 246.369816 304.443885 
-L 265.757353 304.443885 
-L 265.757353 69.67466 
-L 246.369816 69.67466 
+    <path d="M 242.157043 310.67748 
+L 261.919457 310.67748 
+L 261.919457 70.129904 
+L 242.157043 70.129904 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_19">
-    <path d="M 300.654919 304.443885 
-L 320.042456 304.443885 
-L 320.042456 75.869099 
-L 300.654919 75.869099 
+    <path d="M 297.491801 310.67748 
+L 317.254214 310.67748 
+L 317.254214 76.476806 
+L 297.491801 76.476806 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_20">
-    <path d="M 354.940021 304.443885 
-L 374.327558 304.443885 
-L 374.327558 130.999603 
-L 354.940021 130.999603 
+    <path d="M 352.826558 310.67748 
+L 372.588972 310.67748 
+L 372.588972 132.964231 
+L 352.826558 132.964231 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_21">
-    <path d="M 409.225124 304.443885 
-L 428.612661 304.443885 
-L 428.612661 141.530149 
-L 409.225124 141.530149 
+    <path d="M 408.161316 310.67748 
+L 427.923729 310.67748 
+L 427.923729 143.753964 
+L 408.161316 143.753964 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_22">
-    <path d="M 463.510226 304.443885 
-L 482.897763 304.443885 
-L 482.897763 127.902384 
-L 463.510226 127.902384 
+    <path d="M 463.496073 310.67748 
+L 483.258486 310.67748 
+L 483.258486 129.790781 
+L 463.496073 129.790781 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_23">
-    <path d="M 517.795329 304.443885 
-L 537.182866 304.443885 
-L 537.182866 109.319068 
-L 517.795329 109.319068 
+    <path d="M 518.830831 310.67748 
+L 538.593244 310.67748 
+L 538.593244 110.750075 
+L 518.830831 110.750075 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_24">
-    <path d="M 572.080431 304.443885 
-L 591.467968 304.443885 
-L 591.467968 82.063538 
-L 572.080431 82.063538 
+    <path d="M 574.165588 310.67748 
+L 593.928001 310.67748 
+L 593.928001 82.823708 
+L 574.165588 82.823708 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_25">
-    <path d="M 626.365534 304.443885 
-L 645.753071 304.443885 
-L 645.753071 125.424608 
-L 626.365534 125.424608 
+    <path d="M 629.500345 310.67748 
+L 649.262759 310.67748 
+L 649.262759 127.25202 
+L 629.500345 127.25202 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_26">
-    <path d="M 680.650636 304.443885 
-L 700.038173 304.443885 
-L 700.038173 147.105144 
-L 680.650636 147.105144 
+    <path d="M 684.835103 310.67748 
+L 704.597516 310.67748 
+L 704.597516 149.466176 
+L 684.835103 149.466176 
 z
-" clip-path="url(#pcf21d203b8)" style="fill: #f76707; opacity: 0.9"/>
+" clip-path="url(#p544e17c97d)" style="fill: #f76707; opacity: 0.9"/>
    </g>
    <g id="patch_27">
-    <path d="M 32.331412 304.443885 
-L 32.331412 19.499707 
+    <path d="M 23.98 310.67748 
+L 23.98 18.72 
 " style="fill: none; stroke: #000000; stroke-width: 0.3; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_28">
-    <path d="M 32.331412 304.443885 
-L 731.833733 304.443885 
+    <path d="M 23.98 310.67748 
+L 737.007874 310.67748 
 " style="fill: none; stroke: #000000; stroke-width: 0.3; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_20">
-    <!-- 2.30 -->
-    <g style="fill: #1e293b" transform="translate(63.259217 155.577158) scale(0.105 -0.105)">
-     <defs>
-      <path id="Roboto-Bold-32" d="M 3428 0 
-L 309 0 
-L 309 619 
-L 1781 2188 
-Q 2084 2519 2229 2766 
-Q 2375 3013 2375 3234 
-Q 2375 3538 2222 3711 
-Q 2069 3884 1784 3884 
-Q 1478 3884 1301 3673 
-Q 1125 3463 1125 3119 
-L 219 3119 
-Q 219 3534 417 3878 
-Q 616 4222 978 4417 
-Q 1341 4613 1800 4613 
-Q 2503 4613 2892 4275 
-Q 3281 3938 3281 3322 
-Q 3281 2984 3106 2634 
-Q 2931 2284 2506 1819 
-L 1472 728 
-L 3428 728 
-L 3428 0 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-2e" d="M 394 444 
-Q 394 659 539 793 
-Q 684 928 903 928 
-Q 1125 928 1270 793 
-Q 1416 659 1416 444 
-Q 1416 231 1272 98 
-Q 1128 -34 903 -34 
-Q 681 -34 537 98 
-Q 394 231 394 444 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-33" d="M 1228 2675 
-L 1709 2675 
-Q 2053 2675 2218 2847 
-Q 2384 3019 2384 3303 
-Q 2384 3578 2220 3731 
-Q 2056 3884 1769 3884 
-Q 1509 3884 1334 3742 
-Q 1159 3600 1159 3372 
-L 256 3372 
-Q 256 3728 448 4011 
-Q 641 4294 986 4453 
-Q 1331 4613 1747 4613 
-Q 2469 4613 2878 4267 
-Q 3288 3922 3288 3316 
-Q 3288 3003 3097 2740 
-Q 2906 2478 2597 2338 
-Q 2981 2200 3170 1925 
-Q 3359 1650 3359 1275 
-Q 3359 669 2917 303 
-Q 2475 -63 1747 -63 
-Q 1066 -63 633 296 
-Q 200 656 200 1247 
-L 1103 1247 
-Q 1103 991 1295 828 
-Q 1488 666 1769 666 
-Q 2091 666 2273 836 
-Q 2456 1006 2456 1288 
-Q 2456 1969 1706 1969 
-L 1228 1969 
-L 1228 2675 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-30" d="M 3372 1881 
-Q 3372 938 2981 437 
-Q 2591 -63 1838 -63 
-Q 1094 -63 700 428 
-Q 306 919 297 1834 
-L 297 2672 
-Q 297 3625 692 4119 
-Q 1088 4613 1831 4613 
-Q 2575 4613 2969 4123 
-Q 3363 3634 3372 2719 
-L 3372 1881 
-z
-M 2469 2800 
-Q 2469 3366 2314 3623 
-Q 2159 3881 1831 3881 
-Q 1513 3881 1361 3636 
-Q 1209 3391 1200 2869 
-L 1200 1763 
-Q 1200 1206 1351 936 
-Q 1503 666 1838 666 
-Q 2169 666 2316 925 
-Q 2463 1184 2469 1719 
-L 2469 2800 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-33" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="66.271565" y="158.076045" transform="rotate(-0 66.271565 158.076045)">2.30</text>
    </g>
    <g id="text_21">
-    <!-- 10° -->
-    <g style="fill: #ffffff" transform="translate(65.758709 186.549351) scale(0.105 -0.105)">
-     <defs>
-      <path id="Roboto-Bold-31" d="M 2503 0 
-L 1600 0 
-L 1600 3481 
-L 522 3147 
-L 522 3881 
-L 2406 4556 
-L 2503 4556 
-L 2503 0 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-b0" d="M 394 3750 
-Q 394 4106 647 4359 
-Q 900 4613 1244 4613 
-Q 1584 4613 1832 4361 
-Q 2081 4109 2081 3750 
-Q 2081 3391 1832 3145 
-Q 1584 2900 1244 2900 
-Q 906 2900 650 3145 
-Q 394 3391 394 3750 
-z
-M 1244 3363 
-Q 1409 3363 1517 3473 
-Q 1625 3584 1625 3750 
-Q 1625 3913 1517 4031 
-Q 1409 4150 1243 4150 
-Q 1078 4150 965 4031 
-Q 853 3913 853 3750 
-Q 853 3588 967 3475 
-Q 1081 3363 1244 3363 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-31"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="66.271565" y="189.810554" transform="rotate(-0 66.271565 189.810554)">10°</text>
    </g>
    <g id="text_22">
-    <!-- 2.25 -->
-    <g style="fill: #1e293b" transform="translate(117.54432 158.600234) scale(0.105 -0.105)">
-     <defs>
-      <path id="Roboto-Bold-35" d="M 444 2238 
-L 706 4550 
-L 3256 4550 
-L 3256 3797 
-L 1447 3797 
-L 1334 2819 
-Q 1656 2991 2019 2991 
-Q 2669 2991 3037 2587 
-Q 3406 2184 3406 1459 
-Q 3406 1019 3220 670 
-Q 3034 322 2687 129 
-Q 2341 -63 1869 -63 
-Q 1456 -63 1103 104 
-Q 750 272 545 575 
-Q 341 878 328 1266 
-L 1222 1266 
-Q 1250 981 1420 823 
-Q 1591 666 1866 666 
-Q 2172 666 2337 886 
-Q 2503 1106 2503 1509 
-Q 2503 1897 2312 2103 
-Q 2122 2309 1772 2309 
-Q 1450 2309 1250 2141 
-L 1163 2059 
-L 444 2238 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-32" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-35" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="121.606322" y="161.173528" transform="rotate(-0 121.606322 161.173528)">2.25</text>
    </g>
    <g id="text_23">
-    <!-- 10° -->
-    <g style="fill: #ffffff" transform="translate(120.043812 189.572428) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-31"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="121.606322" y="192.908037" transform="rotate(-0 121.606322 192.908037)">10°</text>
    </g>
    <g id="text_24">
-    <!-- 2.35 -->
-    <g style="fill: #1e293b" transform="translate(171.829422 152.389577) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-33" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-35" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="176.941079" y="154.810008" transform="rotate(-0 176.941079 154.810008)">2.35</text>
    </g>
    <g id="text_25">
-    <!-- 30° -->
-    <g style="fill: #ffffff" transform="translate(174.328914 183.36177) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-33"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="176.941079" y="186.544517" transform="rotate(-0 176.941079 186.544517)">30°</text>
    </g>
    <g id="text_26">
-    <!-- 2.05 -->
-    <g style="fill: #1e293b" transform="translate(226.114525 171.064997) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-35" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="232.275837" y="173.945085" transform="rotate(-0 232.275837 173.945085)">2.05</text>
    </g>
    <g id="text_27">
-    <!-- 40° -->
-    <g style="fill: #ffffff" transform="translate(228.614017 202.037191) scale(0.105 -0.105)">
-     <defs>
-      <path id="Roboto-Bold-34" d="M 2981 1713 
-L 3497 1713 
-L 3497 984 
-L 2981 984 
-L 2981 0 
-L 2078 0 
-L 2078 984 
-L 213 984 
-L 172 1553 
-L 2069 4550 
-L 2981 4550 
-L 2981 1713 
-z
-M 1072 1713 
-L 2078 1713 
-L 2078 3319 
-L 2019 3216 
-L 1072 1713 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-34"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="232.275837" y="205.679594" transform="rotate(-0 232.275837 205.679594)">40°</text>
    </g>
    <g id="text_28">
-    <!-- 1.60 -->
-    <g style="fill: #1e293b" transform="translate(280.399627 198.928913) scale(0.105 -0.105)">
-     <defs>
-      <path id="Roboto-Bold-36" d="M 2759 4597 
-L 2759 3853 
-L 2672 3853 
-Q 2059 3844 1686 3534 
-Q 1313 3225 1238 2675 
-Q 1600 3044 2153 3044 
-Q 2747 3044 3097 2619 
-Q 3447 2194 3447 1500 
-Q 3447 1056 3255 697 
-Q 3063 338 2711 137 
-Q 2359 -63 1916 -63 
-Q 1197 -63 755 437 
-Q 313 938 313 1772 
-L 313 2097 
-Q 313 2838 592 3405 
-Q 872 3972 1395 4283 
-Q 1919 4594 2609 4597 
-L 2759 4597 
-z
-M 1878 2319 
-Q 1659 2319 1481 2205 
-Q 1303 2091 1219 1903 
-L 1219 1628 
-Q 1219 1175 1397 920 
-Q 1575 666 1897 666 
-Q 2188 666 2367 895 
-Q 2547 1125 2547 1491 
-Q 2547 1863 2365 2091 
-Q 2184 2319 1878 2319 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-31"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-36" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="287.610594" y="202.494812" transform="rotate(-0 287.610594 202.494812)">1.60</text>
    </g>
    <g id="text_29">
-    <!-- 40° -->
-    <g style="fill: #ffffff" transform="translate(282.899119 229.901106) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-34"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="287.610594" y="234.229321" transform="rotate(-0 287.610594 234.229321)">40°</text>
    </g>
    <g id="text_30">
-    <!-- 1.16 -->
-    <g style="fill: #1e293b" transform="translate(334.68473 225.872305) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-31"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-31" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-36" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="342.945352" y="230.10136" transform="rotate(-0 342.945352 230.10136)">1.16</text>
    </g>
    <g id="text_31">
-    <!-- 40° -->
-    <g style="fill: #ffffff" transform="translate(337.184222 256.844498) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-34"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="342.945352" y="261.835868" transform="rotate(-0 342.945352 261.835868)">40°</text>
    </g>
    <g id="text_32">
-    <!-- 1.20 -->
-    <g style="fill: #1e293b" transform="translate(388.969832 223.49019) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-31"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-32" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="398.280109" y="227.660614" transform="rotate(-0 398.280109 227.660614)">1.20</text>
    </g>
    <g id="text_33">
-    <!-- 40° -->
-    <g style="fill: #ffffff" transform="translate(391.469324 254.462384) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-34"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="398.280109" y="259.395123" transform="rotate(-0 398.280109 259.395123)">40°</text>
    </g>
    <g id="text_34">
-    <!-- 1.51 -->
-    <g style="fill: #1e293b" transform="translate(443.254935 204.724437) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-31"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-35" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-31" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="453.614866" y="208.432982" transform="rotate(-0 453.614866 208.432982)">1.51</text>
    </g>
    <g id="text_35">
-    <!-- 40° -->
-    <g style="fill: #ffffff" transform="translate(445.754427 235.696631) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-34"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="453.614866" y="240.167491" transform="rotate(-0 453.614866 240.167491)">40°</text>
    </g>
    <g id="text_36">
-    <!-- 1.95 -->
-    <g style="fill: #1e293b" transform="translate(497.540037 177.152899) scale(0.105 -0.105)">
-     <defs>
-      <path id="Roboto-Bold-39" d="M 2422 1819 
-Q 2069 1472 1597 1472 
-Q 994 1472 631 1886 
-Q 269 2300 269 3003 
-Q 269 3450 464 3823 
-Q 659 4197 1009 4405 
-Q 1359 4613 1797 4613 
-Q 2247 4613 2597 4388 
-Q 2947 4163 3140 3741 
-Q 3334 3319 3338 2775 
-L 3338 2441 
-Q 3338 1303 2772 653 
-Q 2206 3 1169 -41 
-L 947 -44 
-L 947 709 
-L 1147 713 
-Q 2325 766 2422 1819 
-z
-M 1819 2163 
-Q 2038 2163 2195 2275 
-Q 2353 2388 2434 2547 
-L 2434 2919 
-Q 2434 3378 2259 3631 
-Q 2084 3884 1791 3884 
-Q 1519 3884 1344 3636 
-Q 1169 3388 1169 3013 
-Q 1169 2641 1339 2402 
-Q 1509 2163 1819 2163 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-31"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-39" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-35" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="508.949624" y="180.182828" transform="rotate(-0 508.949624 180.182828)">1.95</text>
    </g>
    <g id="text_37">
-    <!-- 30° -->
-    <g style="fill: #ffffff" transform="translate(500.039529 208.125092) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-33"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="508.949624" y="211.917337" transform="rotate(-0 508.949624 211.917337)">30°</text>
    </g>
    <g id="text_38">
-    <!-- 2.67 -->
-    <g style="fill: #1e293b" transform="translate(551.82514 132.419332) scale(0.105 -0.105)">
-     <defs>
-      <path id="Roboto-Bold-37" d="M 3403 4044 
-L 1644 0 
-L 691 0 
-L 2453 3819 
-L 191 3819 
-L 191 4550 
-L 3403 4550 
-L 3403 4044 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-36" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-37" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="564.284381" y="134.348238" transform="rotate(-0 564.284381 134.348238)">2.67</text>
    </g>
    <g id="text_39">
-    <!-- 10° -->
-    <g style="fill: #ffffff" transform="translate(554.324632 163.391525) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-31"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="564.284381" y="166.082747" transform="rotate(-0 564.284381 166.082747)">10°</text>
    </g>
    <g id="text_40">
-    <!-- 2.41 -->
-    <g style="fill: #1e293b" transform="translate(606.110242 148.770587) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-34" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-31" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="619.619139" y="151.101945" transform="rotate(-0 619.619139 151.101945)">2.41</text>
    </g>
    <g id="text_41">
-    <!-- 10° -->
-    <g style="fill: #ffffff" transform="translate(608.609734 179.742781) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-31"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="619.619139" y="182.836454" transform="rotate(-0 619.619139 182.836454)">10°</text>
    </g>
    <g id="text_42">
-    <!-- 2.20 -->
-    <g style="fill: #1e293b" transform="translate(660.395345 161.684204) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-32" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="674.953896" y="164.333403" transform="rotate(-0 674.953896 164.333403)">2.20</text>
    </g>
    <g id="text_43">
-    <!-- 10° -->
-    <g style="fill: #ffffff" transform="translate(662.894837 192.656397) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-31"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-b0" transform="translate(114.746094 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #ffffff" x="674.953896" y="196.067912" transform="rotate(-0 674.953896 196.067912)">10°</text>
    </g>
    <g id="text_44">
-    <!-- 2.71 -->
-    <g style="fill: #1e293b" transform="translate(82.646754 131.344566) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-37" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-31" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="86.033978" y="133.37018" transform="rotate(-0 86.033978 133.37018)">2.71</text>
    </g>
    <g id="text_45">
-    <!-- 2.86 -->
-    <g style="fill: #1e293b" transform="translate(136.931856 122.052908) scale(0.105 -0.105)">
-     <defs>
-      <path id="Roboto-Bold-38" d="M 3275 3341 
-Q 3275 3009 3109 2753 
-Q 2944 2497 2653 2344 
-Q 2984 2184 3178 1904 
-Q 3372 1625 3372 1247 
-Q 3372 641 2959 289 
-Q 2547 -63 1837 -63 
-Q 1128 -63 712 290 
-Q 297 644 297 1247 
-Q 297 1625 490 1906 
-Q 684 2188 1013 2344 
-Q 722 2497 558 2753 
-Q 394 3009 394 3341 
-Q 394 3922 781 4267 
-Q 1169 4613 1834 4613 
-Q 2497 4613 2886 4270 
-Q 3275 3928 3275 3341 
-z
-M 2466 1313 
-Q 2466 1609 2294 1787 
-Q 2122 1966 1831 1966 
-Q 1544 1966 1372 1789 
-Q 1200 1613 1200 1313 
-Q 1200 1022 1369 844 
-Q 1538 666 1838 666 
-Q 2131 666 2298 837 
-Q 2466 1009 2466 1313 
-z
-M 2372 3297 
-Q 2372 3563 2231 3723 
-Q 2091 3884 1834 3884 
-Q 1581 3884 1440 3728 
-Q 1300 3572 1300 3297 
-Q 1300 3025 1440 2859 
-Q 1581 2694 1837 2694 
-Q 2094 2694 2233 2859 
-Q 2372 3025 2372 3297 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-38" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-36" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="141.368735" y="123.849827" transform="rotate(-0 141.368735 123.849827)">2.86</text>
    </g>
    <g id="text_46">
-    <!-- 3.44 -->
-    <g style="fill: #1e293b" transform="translate(191.216959 86.125164) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-33"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-34" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-34" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="196.703493" y="87.037797" transform="rotate(-0 196.703493 87.037797)">3.44</text>
    </g>
    <g id="text_47">
-    <!-- 3.79 -->
-    <g style="fill: #1e293b" transform="translate(245.502061 64.444629) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-33"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-37" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-39" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="252.03825" y="64.823641" transform="rotate(-0 252.03825 64.823641)">3.79</text>
    </g>
    <g id="text_48">
-    <!-- 3.69 -->
-    <g style="fill: #1e293b" transform="translate(299.787164 70.639067) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-33"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-36" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-39" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="307.373008" y="71.170543" transform="rotate(-0 307.373008 71.170543)">3.69</text>
    </g>
    <g id="text_49">
-    <!-- 2.80 -->
-    <g style="fill: #1e293b" transform="translate(354.072266 125.769571) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-38" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-30" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="362.707765" y="127.657968" transform="rotate(-0 362.707765 127.657968)">2.80</text>
    </g>
    <g id="text_50">
-    <!-- 2.63 -->
-    <g style="fill: #1e293b" transform="translate(408.357369 136.300117) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-36" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-33" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="418.042522" y="138.447701" transform="rotate(-0 418.042522 138.447701)">2.63</text>
    </g>
    <g id="text_51">
-    <!-- 2.85 -->
-    <g style="fill: #1e293b" transform="translate(462.642471 122.672352) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-38" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-35" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="473.37728" y="124.484517" transform="rotate(-0 473.37728 124.484517)">2.85</text>
    </g>
    <g id="text_52">
-    <!-- 3.15 -->
-    <g style="fill: #1e293b" transform="translate(516.927574 104.089036) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-33"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-31" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-35" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="528.712037" y="105.443812" transform="rotate(-0 528.712037 105.443812)">3.15</text>
    </g>
    <g id="text_53">
-    <!-- 3.59 -->
-    <g style="fill: #1e293b" transform="translate(571.212676 76.833506) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-33"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-35" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-39" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="584.046795" y="77.517444" transform="rotate(-0 584.046795 77.517444)">3.59</text>
    </g>
    <g id="text_54">
-    <!-- 2.89 -->
-    <g style="fill: #1e293b" transform="translate(625.497779 120.194576) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-38" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-39" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="639.381552" y="121.945756" transform="rotate(-0 639.381552 121.945756)">2.89</text>
    </g>
    <g id="text_55">
-    <!-- 2.54 -->
-    <g style="fill: #1e293b" transform="translate(679.782881 141.875112) scale(0.105 -0.105)">
-     <use xlink:href="#Roboto-Bold-32"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(57.373047 0)"/>
-     <use xlink:href="#Roboto-Bold-35" transform="translate(86.425781 0)"/>
-     <use xlink:href="#Roboto-Bold-34" transform="translate(143.798828 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1e293b" x="694.716309" y="144.159913" transform="rotate(-0 694.716309 144.159913)">2.54</text>
    </g>
    <g id="text_56">
     <g id="patch_29">
-     <path d="M 53.316482 74.78428 
-L 194.735232 74.78428 
-Q 199.135232 74.78428 199.135232 70.38428 
-L 199.135232 34.390218 
-Q 199.135232 29.990218 194.735232 29.990218 
-L 53.316482 29.990218 
-Q 48.916482 29.990218 48.916482 34.390218 
-L 48.916482 70.38428 
-Q 48.916482 74.78428 53.316482 74.78428 
+     <path d="M 45.370836 75.196834 
+L 186.789586 75.196834 
+Q 191.189586 75.196834 191.189586 70.796834 
+L 191.189586 34.802772 
+Q 191.189586 30.402772 186.789586 30.402772 
+L 45.370836 30.402772 
+Q 40.970836 30.402772 40.970836 34.802772 
+L 40.970836 70.796834 
+Q 40.970836 75.196834 45.370836 75.196834 
 z
 " style="fill: #f8fafc; opacity: 0.85; stroke: #e2e8f0; stroke-width: 0.5; stroke-linejoin: miter"/>
     </g>
-    <!-- Annual Total: -->
-    <g style="fill: #1e293b" transform="translate(53.316482 42.43053) scale(0.11 -0.11)">
-     <defs>
-      <path id="Roboto-Bold-41" d="M 2975 938 
-L 1331 938 
-L 1019 0 
-L 22 0 
-L 1716 4550 
-L 2584 4550 
-L 4288 0 
-L 3291 0 
-L 2975 938 
-z
-M 1584 1697 
-L 2722 1697 
-L 2150 3400 
-L 1584 1697 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-6e" d="M 1178 3381 
-L 1206 2991 
-Q 1569 3444 2178 3444 
-Q 2716 3444 2978 3128 
-Q 3241 2813 3247 2184 
-L 3247 0 
-L 2344 0 
-L 2344 2163 
-Q 2344 2450 2219 2579 
-Q 2094 2709 1803 2709 
-Q 1422 2709 1231 2384 
-L 1231 0 
-L 328 0 
-L 328 3381 
-L 1178 3381 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-75" d="M 2372 344 
-Q 2038 -63 1447 -63 
-Q 903 -63 617 250 
-Q 331 563 325 1166 
-L 325 3381 
-L 1228 3381 
-L 1228 1197 
-Q 1228 669 1709 669 
-Q 2169 669 2341 988 
-L 2341 3381 
-L 3247 3381 
-L 3247 0 
-L 2397 0 
-L 2372 344 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-61" d="M 2306 0 
-Q 2244 122 2216 303 
-Q 1888 -63 1363 -63 
-Q 866 -63 539 225 
-Q 213 513 213 950 
-Q 213 1488 611 1775 
-Q 1009 2063 1763 2066 
-L 2178 2066 
-L 2178 2259 
-Q 2178 2494 2058 2634 
-Q 1938 2775 1678 2775 
-Q 1450 2775 1320 2665 
-Q 1191 2556 1191 2366 
-L 288 2366 
-Q 288 2659 469 2909 
-Q 650 3159 981 3301 
-Q 1313 3444 1725 3444 
-Q 2350 3444 2717 3130 
-Q 3084 2816 3084 2247 
-L 3084 781 
-Q 3088 300 3219 53 
-L 3219 0 
-L 2306 0 
-z
-M 1559 628 
-Q 1759 628 1928 717 
-Q 2097 806 2178 956 
-L 2178 1538 
-L 1841 1538 
-Q 1163 1538 1119 1069 
-L 1116 1016 
-Q 1116 847 1234 737 
-Q 1353 628 1559 628 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-6c" d="M 1300 0 
-L 394 0 
-L 394 4800 
-L 1300 4800 
-L 1300 0 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-20" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-54" d="M 3831 3791 
-L 2438 3791 
-L 2438 0 
-L 1500 0 
-L 1500 3791 
-L 125 3791 
-L 125 4550 
-L 3831 4550 
-L 3831 3791 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-6f" d="M 206 1722 
-Q 206 2225 400 2619 
-Q 594 3013 958 3228 
-Q 1322 3444 1803 3444 
-Q 2488 3444 2920 3025 
-Q 3353 2606 3403 1888 
-L 3409 1656 
-Q 3409 878 2975 407 
-Q 2541 -63 1809 -63 
-Q 1078 -63 642 406 
-Q 206 875 206 1681 
-L 206 1722 
-z
-M 1109 1656 
-Q 1109 1175 1290 920 
-Q 1472 666 1809 666 
-Q 2138 666 2322 917 
-Q 2506 1169 2506 1722 
-Q 2506 2194 2322 2453 
-Q 2138 2713 1803 2713 
-Q 1472 2713 1290 2455 
-Q 1109 2197 1109 1656 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-74" d="M 1428 4213 
-L 1428 3381 
-L 2006 3381 
-L 2006 2719 
-L 1428 2719 
-L 1428 1031 
-Q 1428 844 1500 762 
-Q 1572 681 1775 681 
-Q 1925 681 2041 703 
-L 2041 19 
-Q 1775 -63 1494 -63 
-Q 544 -63 525 897 
-L 525 2719 
-L 31 2719 
-L 31 3381 
-L 525 3381 
-L 525 4213 
-L 1428 4213 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-3a" d="M 394 444 
-Q 394 659 539 793 
-Q 684 928 903 928 
-Q 1125 928 1270 793 
-Q 1416 659 1416 444 
-Q 1416 231 1272 98 
-Q 1128 -34 903 -34 
-Q 681 -34 537 98 
-Q 394 231 394 444 
-z
-M 394 3004 
-Q 394 3219 539 3353 
-Q 684 3488 903 3488 
-Q 1125 3488 1270 3353 
-Q 1416 3219 1416 3004 
-Q 1416 2791 1272 2658 
-Q 1128 2526 903 2526 
-Q 681 2526 537 2658 
-Q 394 2791 394 3004 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-41"/>
-     <use xlink:href="#Roboto-Bold-6e" transform="translate(67.285156 0)"/>
-     <use xlink:href="#Roboto-Bold-6e" transform="translate(123.291016 0)"/>
-     <use xlink:href="#Roboto-Bold-75" transform="translate(179.296875 0)"/>
-     <use xlink:href="#Roboto-Bold-61" transform="translate(235.253906 0)"/>
-     <use xlink:href="#Roboto-Bold-6c" transform="translate(288.867188 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(315.380859 0)"/>
-     <use xlink:href="#Roboto-Bold-54" transform="translate(340.283203 0)"/>
-     <use xlink:href="#Roboto-Bold-6f" transform="translate(402.148438 0)"/>
-     <use xlink:href="#Roboto-Bold-74" transform="translate(458.691406 0)"/>
-     <use xlink:href="#Roboto-Bold-61" transform="translate(492.480469 0)"/>
-     <use xlink:href="#Roboto-Bold-6c" transform="translate(546.09375 0)"/>
-     <use xlink:href="#Roboto-Bold-3a" transform="translate(572.607422 0)"/>
-    </g>
-    <!-- • Case 2 (Opt): 23.66 MWh -->
-    <g style="fill: #1e293b" transform="translate(53.316482 55.08053) scale(0.11 -0.11)">
-     <defs>
-      <path id="Roboto-Bold-2022" d="M 422 2394 
-Q 422 2719 628 2916 
-Q 834 3113 1159 3113 
-Q 1497 3113 1698 2919 
-Q 1900 2725 1906 2409 
-L 1906 2275 
-Q 1906 1953 1701 1758 
-Q 1497 1563 1166 1563 
-Q 838 1563 630 1756 
-Q 422 1950 422 2284 
-L 422 2394 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-43" d="M 3978 1516 
-Q 3925 781 3436 359 
-Q 2947 -63 2147 -63 
-Q 1272 -63 770 526 
-Q 269 1116 269 2144 
-L 269 2422 
-Q 269 3078 500 3578 
-Q 731 4078 1161 4345 
-Q 1591 4613 2159 4613 
-Q 2947 4613 3428 4191 
-Q 3909 3769 3984 3006 
-L 3047 3006 
-Q 3013 3447 2802 3645 
-Q 2591 3844 2159 3844 
-Q 1691 3844 1458 3508 
-Q 1225 3172 1219 2466 
-L 1219 2122 
-Q 1219 1384 1442 1043 
-Q 1666 703 2147 703 
-Q 2581 703 2795 901 
-Q 3009 1100 3041 1516 
-L 3978 1516 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-73" d="M 2178 934 
-Q 2178 1100 2014 1195 
-Q 1850 1291 1488 1366 
-Q 281 1619 281 2391 
-Q 281 2841 654 3142 
-Q 1028 3444 1631 3444 
-Q 2275 3444 2661 3141 
-Q 3047 2838 3047 2353 
-L 2144 2353 
-Q 2144 2547 2019 2673 
-Q 1894 2800 1628 2800 
-Q 1400 2800 1275 2697 
-Q 1150 2594 1150 2434 
-Q 1150 2284 1292 2192 
-Q 1434 2100 1771 2033 
-Q 2109 1966 2341 1881 
-Q 3056 1619 3056 972 
-Q 3056 509 2659 223 
-Q 2263 -63 1634 -63 
-Q 1209 -63 879 89 
-Q 550 241 362 505 
-Q 175 769 175 1075 
-L 1031 1075 
-Q 1044 834 1209 706 
-Q 1375 578 1653 578 
-Q 1913 578 2045 676 
-Q 2178 775 2178 934 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-65" d="M 1903 -63 
-Q 1159 -63 692 393 
-Q 225 850 225 1609 
-L 225 1697 
-Q 225 2206 422 2607 
-Q 619 3009 980 3226 
-Q 1341 3444 1803 3444 
-Q 2497 3444 2895 3006 
-Q 3294 2569 3294 1766 
-L 3294 1397 
-L 1141 1397 
-Q 1184 1066 1404 866 
-Q 1625 666 1963 666 
-Q 2484 666 2778 1044 
-L 3222 547 
-Q 3019 259 2672 98 
-Q 2325 -63 1903 -63 
-z
-M 1800 2713 
-Q 1531 2713 1364 2531 
-Q 1197 2350 1150 2013 
-L 2406 2013 
-L 2406 2084 
-Q 2400 2384 2244 2548 
-Q 2088 2713 1800 2713 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-28" d="M 388 1850 
-Q 388 2566 578 3212 
-Q 769 3859 1141 4357 
-Q 1513 4856 1947 5050 
-L 2122 4563 
-Q 1666 4225 1409 3519 
-Q 1153 2813 1153 1869 
-L 1153 1772 
-Q 1153 825 1406 115 
-Q 1659 -594 2122 -944 
-L 1947 -1422 
-Q 1522 -1231 1155 -748 
-Q 788 -266 594 365 
-Q 400 997 388 1684 
-L 388 1850 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-4f" d="M 4144 2172 
-Q 4144 1500 3906 994 
-Q 3669 488 3226 212 
-Q 2784 -63 2213 -63 
-Q 1647 -63 1203 209 
-Q 759 481 515 986 
-Q 272 1491 269 2147 
-L 269 2372 
-Q 269 3044 511 3555 
-Q 753 4066 1195 4339 
-Q 1638 4613 2206 4613 
-Q 2775 4613 3217 4339 
-Q 3659 4066 3901 3555 
-Q 4144 3044 4144 2375 
-L 4144 2172 
-z
-M 3194 2378 
-Q 3194 3094 2937 3466 
-Q 2681 3838 2206 3838 
-Q 1734 3838 1478 3470 
-Q 1222 3103 1219 2394 
-L 1219 2172 
-Q 1219 1475 1475 1090 
-Q 1731 706 2213 706 
-Q 2684 706 2937 1076 
-Q 3191 1447 3194 2156 
-L 3194 2378 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-70" d="M 3391 1659 
-Q 3391 878 3036 407 
-Q 2681 -63 2078 -63 
-Q 1566 -63 1250 294 
-L 1250 -1300 
-L 347 -1300 
-L 347 3381 
-L 1184 3381 
-L 1216 3050 
-Q 1544 3444 2072 3444 
-Q 2697 3444 3044 2981 
-Q 3391 2519 3391 1706 
-L 3391 1659 
-z
-M 2488 1725 
-Q 2488 2197 2320 2453 
-Q 2153 2709 1834 2709 
-Q 1409 2709 1250 2384 
-L 1250 1000 
-Q 1416 666 1841 666 
-Q 2488 666 2488 1725 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-29" d="M 1903 1778 
-Q 1903 1072 1700 419 
-Q 1497 -234 1115 -734 
-Q 734 -1234 300 -1422 
-L 125 -944 
-Q 569 -609 825 87 
-Q 1081 784 1091 1691 
-L 1091 1856 
-Q 1091 2791 836 3503 
-Q 581 4216 125 4572 
-L 300 5050 
-Q 725 4866 1101 4381 
-Q 1478 3897 1686 3253 
-Q 1894 2609 1903 1919 
-L 1903 1778 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-4d" d="M 1631 4550 
-L 2800 1250 
-L 3963 4550 
-L 5194 4550 
-L 5194 0 
-L 4253 0 
-L 4253 1244 
-L 4347 3391 
-L 3119 0 
-L 2475 0 
-L 1250 3388 
-L 1344 1244 
-L 1344 0 
-L 406 0 
-L 406 4550 
-L 1631 4550 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-57" d="M 3950 1313 
-L 4563 4550 
-L 5497 4550 
-L 4488 0 
-L 3544 0 
-L 2803 3044 
-L 2063 0 
-L 1119 0 
-L 109 4550 
-L 1044 4550 
-L 1659 1319 
-L 2409 4550 
-L 3203 4550 
-L 3950 1313 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-68" d="M 1228 3013 
-Q 1588 3444 2131 3444 
-Q 3231 3444 3247 2166 
-L 3247 0 
-L 2344 0 
-L 2344 2141 
-Q 2344 2431 2219 2570 
-Q 2094 2709 1803 2709 
-Q 1406 2709 1228 2403 
-L 1228 0 
-L 325 0 
-L 325 4800 
-L 1228 4800 
-L 1228 3013 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-2022"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(35.9375 0)"/>
-     <use xlink:href="#Roboto-Bold-43" transform="translate(60.839844 0)"/>
-     <use xlink:href="#Roboto-Bold-61" transform="translate(126.269531 0)"/>
-     <use xlink:href="#Roboto-Bold-73" transform="translate(179.882812 0)"/>
-     <use xlink:href="#Roboto-Bold-65" transform="translate(231.298828 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(285.351562 0)"/>
-     <use xlink:href="#Roboto-Bold-32" transform="translate(310.253906 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(367.626953 0)"/>
-     <use xlink:href="#Roboto-Bold-28" transform="translate(392.529297 0)"/>
-     <use xlink:href="#Roboto-Bold-4f" transform="translate(427.636719 0)"/>
-     <use xlink:href="#Roboto-Bold-70" transform="translate(496.679688 0)"/>
-     <use xlink:href="#Roboto-Bold-74" transform="translate(552.978516 0)"/>
-     <use xlink:href="#Roboto-Bold-29" transform="translate(586.767578 0)"/>
-     <use xlink:href="#Roboto-Bold-3a" transform="translate(622.021484 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(650.244141 0)"/>
-     <use xlink:href="#Roboto-Bold-32" transform="translate(675.146484 0)"/>
-     <use xlink:href="#Roboto-Bold-33" transform="translate(732.519531 0)"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(789.892578 0)"/>
-     <use xlink:href="#Roboto-Bold-36" transform="translate(818.945312 0)"/>
-     <use xlink:href="#Roboto-Bold-36" transform="translate(876.318359 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(933.691406 0)"/>
-     <use xlink:href="#Roboto-Bold-4d" transform="translate(958.59375 0)"/>
-     <use xlink:href="#Roboto-Bold-57" transform="translate(1046.191406 0)"/>
-     <use xlink:href="#Roboto-Bold-68" transform="translate(1133.642578 0)"/>
-    </g>
-    <!-- • Case 3 (Kinetic): 36.9 MWh -->
-    <g style="fill: #1e293b" transform="translate(53.316482 67.940218) scale(0.11 -0.11)">
-     <defs>
-      <path id="Roboto-Bold-4b" d="M 1831 1825 
-L 1344 1300 
-L 1344 0 
-L 406 0 
-L 406 4550 
-L 1344 4550 
-L 1344 2488 
-L 1756 3053 
-L 2916 4550 
-L 4069 4550 
-L 2453 2528 
-L 4116 0 
-L 3000 0 
-L 1831 1825 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-69" d="M 1300 0 
-L 394 0 
-L 394 3381 
-L 1300 3381 
-L 1300 0 
-z
-M 341 4256 
-Q 341 4459 477 4590 
-Q 613 4722 847 4722 
-Q 1078 4722 1215 4590 
-Q 1353 4459 1353 4256 
-Q 1353 4050 1214 3919 
-Q 1075 3788 847 3788 
-Q 619 3788 480 3919 
-Q 341 4050 341 4256 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-63" d="M 1753 666 
-Q 2003 666 2159 803 
-Q 2316 941 2322 1169 
-L 3169 1169 
-Q 3166 825 2981 539 
-Q 2797 253 2476 95 
-Q 2156 -63 1769 -63 
-Q 1044 -63 625 398 
-Q 206 859 206 1672 
-L 206 1731 
-Q 206 2513 622 2978 
-Q 1038 3444 1763 3444 
-Q 2397 3444 2780 3083 
-Q 3163 2722 3169 2122 
-L 2322 2122 
-Q 2316 2384 2159 2548 
-Q 2003 2713 1747 2713 
-Q 1431 2713 1270 2483 
-Q 1109 2253 1109 1738 
-L 1109 1644 
-Q 1109 1122 1268 894 
-Q 1428 666 1753 666 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-2022"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(35.9375 0)"/>
-     <use xlink:href="#Roboto-Bold-43" transform="translate(60.839844 0)"/>
-     <use xlink:href="#Roboto-Bold-61" transform="translate(126.269531 0)"/>
-     <use xlink:href="#Roboto-Bold-73" transform="translate(179.882812 0)"/>
-     <use xlink:href="#Roboto-Bold-65" transform="translate(231.298828 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(285.351562 0)"/>
-     <use xlink:href="#Roboto-Bold-33" transform="translate(310.253906 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(367.626953 0)"/>
-     <use xlink:href="#Roboto-Bold-28" transform="translate(392.529297 0)"/>
-     <use xlink:href="#Roboto-Bold-4b" transform="translate(427.636719 0)"/>
-     <use xlink:href="#Roboto-Bold-69" transform="translate(491.113281 0)"/>
-     <use xlink:href="#Roboto-Bold-6e" transform="translate(517.626953 0)"/>
-     <use xlink:href="#Roboto-Bold-65" transform="translate(573.632812 0)"/>
-     <use xlink:href="#Roboto-Bold-74" transform="translate(627.685547 0)"/>
-     <use xlink:href="#Roboto-Bold-69" transform="translate(661.474609 0)"/>
-     <use xlink:href="#Roboto-Bold-63" transform="translate(687.988281 0)"/>
-     <use xlink:href="#Roboto-Bold-29" transform="translate(740.136719 0)"/>
-     <use xlink:href="#Roboto-Bold-3a" transform="translate(775.390625 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(803.613281 0)"/>
-     <use xlink:href="#Roboto-Bold-33" transform="translate(828.515625 0)"/>
-     <use xlink:href="#Roboto-Bold-36" transform="translate(885.888672 0)"/>
-     <use xlink:href="#Roboto-Bold-2e" transform="translate(943.261719 0)"/>
-     <use xlink:href="#Roboto-Bold-39" transform="translate(972.314453 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(1029.6875 0)"/>
-     <use xlink:href="#Roboto-Bold-4d" transform="translate(1054.589844 0)"/>
-     <use xlink:href="#Roboto-Bold-57" transform="translate(1142.1875 0)"/>
-     <use xlink:href="#Roboto-Bold-68" transform="translate(1229.638672 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; fill: #1e293b" transform="translate(45.370836 42.843084)">Annual Total:</text>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; fill: #1e293b" transform="translate(45.370836 55.493084)">• Case 2 (Opt): 23.66 MWh</text>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; fill: #1e293b" transform="translate(45.370836 68.352772)">• Case 3 (Kinetic): 36.9 MWh</text>
    </g>
    <g id="text_57">
-    <!-- Monthly PV Generation Comparison -->
-    <g transform="translate(245.082495 13.499707) scale(0.17 -0.17)">
-     <defs>
-      <path id="Roboto-Bold-79" d="M 1609 1278 
-L 2234 3381 
-L 3203 3381 
-L 1844 -525 
-L 1769 -703 
-Q 1466 -1366 769 -1366 
-Q 572 -1366 369 -1306 
-L 369 -622 
-L 506 -625 
-Q 763 -625 889 -547 
-Q 1016 -469 1088 -288 
-L 1194 -9 
-L 9 3381 
-L 981 3381 
-L 1609 1278 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-50" d="M 1344 1603 
-L 1344 0 
-L 406 0 
-L 406 4550 
-L 2181 4550 
-Q 2694 4550 3083 4362 
-Q 3472 4175 3681 3829 
-Q 3891 3484 3891 3044 
-Q 3891 2375 3433 1989 
-Q 2975 1603 2166 1603 
-L 1344 1603 
-z
-M 1344 2363 
-L 2181 2363 
-Q 2553 2363 2748 2538 
-Q 2944 2713 2944 3038 
-Q 2944 3372 2747 3578 
-Q 2550 3784 2203 3791 
-L 1344 3791 
-L 1344 2363 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-56" d="M 2088 1128 
-L 3119 4550 
-L 4163 4550 
-L 2578 0 
-L 1600 0 
-L 22 4550 
-L 1063 4550 
-L 2088 1128 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-47" d="M 4006 575 
-Q 3753 272 3290 104 
-Q 2828 -63 2266 -63 
-Q 1675 -63 1229 195 
-Q 784 453 542 943 
-Q 300 1434 294 2097 
-L 294 2406 
-Q 294 3088 523 3586 
-Q 753 4084 1186 4348 
-Q 1619 4613 2200 4613 
-Q 3009 4613 3465 4227 
-Q 3922 3841 4006 3103 
-L 3094 3103 
-Q 3031 3494 2817 3675 
-Q 2603 3856 2228 3856 
-Q 1750 3856 1500 3497 
-Q 1250 3138 1247 2428 
-L 1247 2138 
-Q 1247 1422 1519 1056 
-Q 1791 691 2316 691 
-Q 2844 691 3069 916 
-L 3069 1700 
-L 2216 1700 
-L 2216 2391 
-L 4006 2391 
-L 4006 575 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-72" d="M 2247 2534 
-Q 2063 2559 1922 2559 
-Q 1409 2559 1250 2213 
-L 1250 0 
-L 347 0 
-L 347 3381 
-L 1200 3381 
-L 1225 2978 
-Q 1497 3444 1978 3444 
-Q 2128 3444 2259 3403 
-L 2247 2534 
-z
-" transform="scale(0.015625)"/>
-      <path id="Roboto-Bold-6d" d="M 1194 3381 
-L 1222 3003 
-Q 1581 3444 2194 3444 
-Q 2847 3444 3091 2928 
-Q 3447 3444 4106 3444 
-Q 4656 3444 4925 3123 
-Q 5194 2803 5194 2159 
-L 5194 0 
-L 4288 0 
-L 4288 2156 
-Q 4288 2444 4175 2576 
-Q 4063 2709 3778 2709 
-Q 3372 2709 3216 2322 
-L 3219 0 
-L 2316 0 
-L 2316 2153 
-Q 2316 2447 2200 2578 
-Q 2084 2709 1806 2709 
-Q 1422 2709 1250 2391 
-L 1250 0 
-L 347 0 
-L 347 3381 
-L 1194 3381 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#Roboto-Bold-4d"/>
-     <use xlink:href="#Roboto-Bold-6f" transform="translate(87.597656 0)"/>
-     <use xlink:href="#Roboto-Bold-6e" transform="translate(144.140625 0)"/>
-     <use xlink:href="#Roboto-Bold-74" transform="translate(200.146484 0)"/>
-     <use xlink:href="#Roboto-Bold-68" transform="translate(233.935547 0)"/>
-     <use xlink:href="#Roboto-Bold-6c" transform="translate(289.892578 0)"/>
-     <use xlink:href="#Roboto-Bold-79" transform="translate(316.40625 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(366.601562 0)"/>
-     <use xlink:href="#Roboto-Bold-50" transform="translate(391.503906 0)"/>
-     <use xlink:href="#Roboto-Bold-56" transform="translate(456.005859 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(521.386719 0)"/>
-     <use xlink:href="#Roboto-Bold-47" transform="translate(546.289062 0)"/>
-     <use xlink:href="#Roboto-Bold-65" transform="translate(614.404297 0)"/>
-     <use xlink:href="#Roboto-Bold-6e" transform="translate(668.457031 0)"/>
-     <use xlink:href="#Roboto-Bold-65" transform="translate(724.462891 0)"/>
-     <use xlink:href="#Roboto-Bold-72" transform="translate(778.515625 0)"/>
-     <use xlink:href="#Roboto-Bold-61" transform="translate(814.990234 0)"/>
-     <use xlink:href="#Roboto-Bold-74" transform="translate(868.603516 0)"/>
-     <use xlink:href="#Roboto-Bold-69" transform="translate(902.392578 0)"/>
-     <use xlink:href="#Roboto-Bold-6f" transform="translate(928.90625 0)"/>
-     <use xlink:href="#Roboto-Bold-6e" transform="translate(985.449219 0)"/>
-     <use xlink:href="#Roboto-Bold-20" transform="translate(1041.455078 0)"/>
-     <use xlink:href="#Roboto-Bold-43" transform="translate(1066.357422 0)"/>
-     <use xlink:href="#Roboto-Bold-6f" transform="translate(1131.787109 0)"/>
-     <use xlink:href="#Roboto-Bold-6d" transform="translate(1188.330078 0)"/>
-     <use xlink:href="#Roboto-Bold-70" transform="translate(1274.902344 0)"/>
-     <use xlink:href="#Roboto-Bold-61" transform="translate(1331.201172 0)"/>
-     <use xlink:href="#Roboto-Bold-72" transform="translate(1384.814453 0)"/>
-     <use xlink:href="#Roboto-Bold-69" transform="translate(1421.289062 0)"/>
-     <use xlink:href="#Roboto-Bold-73" transform="translate(1447.802734 0)"/>
-     <use xlink:href="#Roboto-Bold-6f" transform="translate(1499.21875 0)"/>
-     <use xlink:href="#Roboto-Bold-6e" transform="translate(1555.761719 0)"/>
-    </g>
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="380.493937" y="12.72" transform="rotate(-0 380.493937 12.72)">Monthly PV Generation Comparison</text>
    </g>
    <g id="legend_1">
     <g id="patch_30">
-     <path d="M 629.58803 30.523145 
-L 646.58803 30.523145 
-L 646.58803 24.573145 
-L 629.58803 24.573145 
+     <path d="M 634.762171 29.743438 
+L 651.762171 29.743438 
+L 651.762171 23.793438 
+L 634.762171 23.793438 
 z
 " style="fill: #228be6; opacity: 0.9"/>
     </g>
     <g id="text_58">
-     <!-- Case 2 (Opt BIPV) -->
-     <g transform="translate(649.13803 30.523145) scale(0.085 -0.085)">
-      <defs>
-       <path id="Roboto-Light-43" d="M 3797 1419 
-Q 3719 700 3283 318 
-Q 2847 -63 2122 -63 
-Q 1616 -63 1227 190 
-Q 838 444 625 908 
-Q 413 1372 409 1969 
-L 409 2559 
-Q 409 3166 621 3634 
-Q 834 4103 1232 4358 
-Q 1631 4613 2150 4613 
-Q 2881 4613 3304 4217 
-Q 3728 3822 3797 3125 
-L 3409 3125 
-Q 3266 4284 2150 4284 
-Q 1531 4284 1164 3821 
-Q 797 3359 797 2544 
-L 797 1988 
-Q 797 1200 1155 731 
-Q 1513 263 2122 263 
-Q 2725 263 3031 552 
-Q 3338 841 3409 1419 
-L 3797 1419 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Light-73" d="M 2513 859 
-Q 2513 1138 2289 1306 
-Q 2066 1475 1616 1570 
-Q 1166 1666 917 1789 
-Q 669 1913 548 2091 
-Q 428 2269 428 2522 
-Q 428 2922 762 3183 
-Q 1097 3444 1619 3444 
-Q 2184 3444 2526 3164 
-Q 2869 2884 2869 2434 
-L 2494 2434 
-Q 2494 2731 2245 2928 
-Q 1997 3125 1619 3125 
-Q 1250 3125 1026 2961 
-Q 803 2797 803 2534 
-Q 803 2281 989 2142 
-Q 1175 2003 1667 1887 
-Q 2159 1772 2404 1640 
-Q 2650 1509 2769 1325 
-Q 2888 1141 2888 878 
-Q 2888 450 2542 193 
-Q 2197 -63 1641 -63 
-Q 1050 -63 683 223 
-Q 316 509 316 947 
-L 691 947 
-Q 713 619 967 436 
-Q 1222 253 1641 253 
-Q 2031 253 2272 425 
-Q 2513 597 2513 859 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Light-20" transform="scale(0.015625)"/>
-       <path id="Roboto-Light-28" d="M 438 1838 
-Q 438 2519 613 3161 
-Q 788 3803 1125 4336 
-Q 1463 4869 1850 5100 
-L 1941 4847 
-Q 1734 4700 1531 4419 
-Q 1328 4138 1168 3750 
-Q 1009 3363 911 2880 
-Q 813 2397 813 1784 
-Q 813 1131 961 528 
-Q 1109 -75 1368 -536 
-Q 1628 -997 1941 -1228 
-L 1850 -1469 
-Q 1453 -1231 1115 -701 
-Q 778 -172 608 464 
-Q 438 1100 438 1838 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Light-42" d="M 575 0 
-L 575 4550 
-L 1919 4550 
-Q 2650 4550 3028 4248 
-Q 3406 3947 3406 3359 
-Q 3406 3006 3214 2745 
-Q 3022 2484 2688 2372 
-Q 3084 2284 3326 1981 
-Q 3569 1678 3569 1281 
-Q 3569 678 3180 339 
-Q 2791 0 2097 0 
-L 575 0 
-z
-M 959 2188 
-L 959 325 
-L 2113 325 
-Q 2606 325 2895 576 
-Q 3184 828 3184 1275 
-Q 3184 1697 2907 1942 
-Q 2631 2188 2144 2188 
-L 959 2188 
-z
-M 959 2509 
-L 2009 2509 
-Q 2491 2519 2755 2736 
-Q 3019 2953 3019 3369 
-Q 3019 3806 2745 4014 
-Q 2472 4222 1919 4222 
-L 959 4222 
-L 959 2509 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Light-49" d="M 1044 0 
-L 659 0 
-L 659 4550 
-L 1044 4550 
-L 1044 0 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Light-50" d="M 959 1853 
-L 959 0 
-L 575 0 
-L 575 4550 
-L 2125 4550 
-Q 2834 4550 3245 4187 
-Q 3656 3825 3656 3191 
-Q 3656 2550 3261 2201 
-Q 2866 1853 2116 1853 
-L 959 1853 
-z
-M 959 2178 
-L 2125 2178 
-Q 2684 2178 2978 2443 
-Q 3272 2709 3272 3184 
-Q 3272 3656 2980 3936 
-Q 2688 4216 2150 4222 
-L 959 4222 
-L 959 2178 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Light-56" d="M 1947 563 
-L 1972 466 
-L 2000 563 
-L 3431 4550 
-L 3853 4550 
-L 2159 0 
-L 1791 0 
-L 97 4550 
-L 516 4550 
-L 1947 563 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Light-29" d="M 1606 1791 
-Q 1606 1103 1436 467 
-Q 1266 -169 931 -697 
-Q 597 -1225 194 -1469 
-L 103 -1228 
-Q 409 -1009 670 -550 
-Q 931 -91 1081 520 
-Q 1231 1131 1231 1847 
-Q 1231 2494 1081 3095 
-Q 931 3697 667 4170 
-Q 403 4644 103 4859 
-L 194 5100 
-Q 588 4859 922 4331 
-Q 1256 3803 1431 3159 
-Q 1606 2516 1606 1791 
-z
-" transform="scale(0.015625)"/>
-      </defs>
-      <use xlink:href="#Roboto-Light-43"/>
-      <use xlink:href="#Roboto-Light-61" transform="translate(64.941406 0)"/>
-      <use xlink:href="#Roboto-Light-73" transform="translate(118.505859 0)"/>
-      <use xlink:href="#Roboto-Light-65" transform="translate(169.140625 0)"/>
-      <use xlink:href="#Roboto-Light-20" transform="translate(220.800781 0)"/>
-      <use xlink:href="#Roboto-Light-32" transform="translate(245.117188 0)"/>
-      <use xlink:href="#Roboto-Light-20" transform="translate(300.537109 0)"/>
-      <use xlink:href="#Roboto-Light-28" transform="translate(324.853516 0)"/>
-      <use xlink:href="#Roboto-Light-4f" transform="translate(356.738281 0)"/>
-      <use xlink:href="#Roboto-Light-70" transform="translate(424.414062 0)"/>
-      <use xlink:href="#Roboto-Light-74" transform="translate(479.833984 0)"/>
-      <use xlink:href="#Roboto-Light-20" transform="translate(511.962891 0)"/>
-      <use xlink:href="#Roboto-Light-42" transform="translate(536.279297 0)"/>
-      <use xlink:href="#Roboto-Light-49" transform="translate(597.558594 0)"/>
-      <use xlink:href="#Roboto-Light-50" transform="translate(624.169922 0)"/>
-      <use xlink:href="#Roboto-Light-56" transform="translate(685.742188 0)"/>
-      <use xlink:href="#Roboto-Light-29" transform="translate(747.412109 0)"/>
-     </g>
+     <text style="font-weight: 300; font-size: 8.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: start" x="654.312171" y="29.743438" transform="rotate(-0 654.312171 29.743438)">Case 2 (Opt BIPV)</text>
     </g>
     <g id="patch_31">
-     <path d="M 629.58803 42.647598 
-L 646.58803 42.647598 
-L 646.58803 36.697598 
-L 629.58803 36.697598 
+     <path d="M 634.762171 41.867891 
+L 651.762171 41.867891 
+L 651.762171 35.917891 
+L 634.762171 35.917891 
 z
 " style="fill: #f76707; opacity: 0.9"/>
     </g>
     <g id="text_59">
-     <!-- Case 3 (Kinetic BIPV) -->
-     <g transform="translate(649.13803 42.647598) scale(0.085 -0.085)">
-      <defs>
-       <path id="Roboto-Light-4b" d="M 1600 2259 
-L 959 1628 
-L 959 0 
-L 575 0 
-L 575 4550 
-L 959 4550 
-L 959 2097 
-L 3291 4550 
-L 3775 4550 
-L 1869 2525 
-L 3922 0 
-L 3453 0 
-L 1600 2259 
-z
-" transform="scale(0.015625)"/>
-       <path id="Roboto-Light-69" d="M 906 0 
-L 531 0 
-L 531 3381 
-L 906 3381 
-L 906 0 
-z
-M 466 4359 
-Q 466 4466 534 4539 
-Q 603 4613 722 4613 
-Q 841 4613 911 4539 
-Q 981 4466 981 4359 
-Q 981 4253 911 4181 
-Q 841 4109 722 4109 
-Q 603 4109 534 4181 
-Q 466 4253 466 4359 
-z
-" transform="scale(0.015625)"/>
-      </defs>
-      <use xlink:href="#Roboto-Light-43"/>
-      <use xlink:href="#Roboto-Light-61" transform="translate(64.941406 0)"/>
-      <use xlink:href="#Roboto-Light-73" transform="translate(118.505859 0)"/>
-      <use xlink:href="#Roboto-Light-65" transform="translate(169.140625 0)"/>
-      <use xlink:href="#Roboto-Light-20" transform="translate(220.800781 0)"/>
-      <use xlink:href="#Roboto-Light-33" transform="translate(245.117188 0)"/>
-      <use xlink:href="#Roboto-Light-20" transform="translate(300.537109 0)"/>
-      <use xlink:href="#Roboto-Light-28" transform="translate(324.853516 0)"/>
-      <use xlink:href="#Roboto-Light-4b" transform="translate(356.738281 0)"/>
-      <use xlink:href="#Roboto-Light-69" transform="translate(419.824219 0)"/>
-      <use xlink:href="#Roboto-Light-6e" transform="translate(442.236328 0)"/>
-      <use xlink:href="#Roboto-Light-65" transform="translate(497.167969 0)"/>
-      <use xlink:href="#Roboto-Light-74" transform="translate(548.828125 0)"/>
-      <use xlink:href="#Roboto-Light-69" transform="translate(580.957031 0)"/>
-      <use xlink:href="#Roboto-Light-63" transform="translate(603.369141 0)"/>
-      <use xlink:href="#Roboto-Light-20" transform="translate(654.882812 0)"/>
-      <use xlink:href="#Roboto-Light-42" transform="translate(679.199219 0)"/>
-      <use xlink:href="#Roboto-Light-49" transform="translate(740.478516 0)"/>
-      <use xlink:href="#Roboto-Light-50" transform="translate(767.089844 0)"/>
-      <use xlink:href="#Roboto-Light-56" transform="translate(828.662109 0)"/>
-      <use xlink:href="#Roboto-Light-29" transform="translate(890.332031 0)"/>
-     </g>
+     <text style="font-weight: 300; font-size: 8.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: start" x="654.312171" y="41.867891" transform="rotate(-0 654.312171 41.867891)">Case 3 (Kinetic BIPV)</text>
     </g>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pcf21d203b8">
-   <rect x="32.331412" y="19.499707" width="699.502321" height="284.944178"/>
+  <clipPath id="p544e17c97d">
+   <rect x="23.98" y="18.72" width="713.027874" height="291.95748"/>
   </clipPath>
  </defs>
 </svg>

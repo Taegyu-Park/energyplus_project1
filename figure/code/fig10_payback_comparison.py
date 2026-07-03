@@ -12,6 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import dartwork_mpl as dm
+plt.rcParams['svg.fonttype'] = 'none'
 from openpyxl import load_workbook
 from openpyxl.utils import column_index_from_string
 

@@ -3,6 +3,7 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+plt.rcParams['svg.fonttype'] = 'none'
 
 def parse_case_hourly_loads(csv_path):
     heating_raw = []

@@ -13,6 +13,8 @@ import matplotlib.patches as mpatches
 import numpy as np
 import pandas as pd
 
+plt.rcParams['svg.fonttype'] = 'none'
+
 dm.style.use("presentation")
 plt.rcParams.update({"xtick.labelsize": 12, "ytick.labelsize": 12})
 
