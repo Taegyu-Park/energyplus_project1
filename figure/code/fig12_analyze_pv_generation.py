@@ -123,6 +123,7 @@ def main():
     try:
         import dartwork_mpl as dm
         dm.style.use("presentation")
+        plt.rcParams['svg.fonttype'] = 'none'
         use_darkwork = True
     except ImportError:
         plt.style.use("default")

@@ -8,6 +8,7 @@ import sqlite3
 import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+plt.rcParams['svg.fonttype'] = 'none'
 
 # ── 경로 ────────────────────────────────────────────────────────────
 script_dir   = os.path.dirname(os.path.abspath(__file__))

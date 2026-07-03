@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+plt.rcParams['svg.fonttype'] = 'none'
 
 def load_monthly_generation_mwh(file_path):
     """

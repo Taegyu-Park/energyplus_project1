@@ -3,6 +3,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 import numpy as np
 import dartwork_mpl as dm
+plt.rcParams['svg.fonttype'] = 'none'
 
 def get_monthly_pv(db_path):
     if not os.path.exists(db_path):

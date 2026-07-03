@@ -3,6 +3,7 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+plt.rcParams['svg.fonttype'] = 'none'
 
 def parse_case_annual_totals(csv_path):
     if not os.path.exists(csv_path):

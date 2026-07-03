@@ -9,6 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import dartwork_mpl as dm
+plt.rcParams['svg.fonttype'] = 'none'
 
 def main():
     # ── 경로 설정 ────────────────────────────────────────────────────────
