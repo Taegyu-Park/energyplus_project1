@@ -74,9 +74,9 @@ def main():
     width = 0.5  # Bar width
     
     # Plotting grouped bars with borders for clarity on transparent background
-    bars_white = ax.bar(x - width, gen_data["White"], width=width, color=cases["White"]["color"], edgecolor='#cbd5e1', linewidth=0.8, alpha=0.9, label="White")
-    bars_beige = ax.bar(x, gen_data["Light Gray Beige"], width=width, color=cases["Light Gray Beige"]["color"], edgecolor='#b7ab9f', linewidth=0.8, alpha=0.9, label="Light Gray Beige")
-    bars_terra = ax.bar(x + width, gen_data["Terracotta"], width=width, color=cases["Terracotta"]["color"], edgecolor='#9a3412', linewidth=0.8, alpha=0.9, label="Terracotta")
+    bars_white = ax.bar(x - width, gen_data["White"], width=width, color=cases["White"]["color"], edgecolor='#cbd5e1', linewidth=0.8, alpha=0.9, label="White (10.51%)")
+    bars_beige = ax.bar(x, gen_data["Light Gray Beige"], width=width, color=cases["Light Gray Beige"]["color"], edgecolor='#b7ab9f', linewidth=0.8, alpha=0.9, label="Light Gray Beige (14.71%)")
+    bars_terra = ax.bar(x + width, gen_data["Terracotta"], width=width, color=cases["Terracotta"]["color"], edgecolor='#9a3412', linewidth=0.8, alpha=0.9, label="Terracotta (16.39%)")
     
     # Add values on top of each bar (dark slate color for readability)
     for bar in bars_white:
