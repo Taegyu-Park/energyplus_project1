@@ -248,3 +248,10 @@ data/Kwangju_Hourly_Solar_Radiation.csv
 data/comparison_monthly.csv
 data/bipv_transmittance_annual.csv
 bipv_transmittance_annual.csv
+
+# EnergyPlus SQLite databases (usually >100MB)
+*.sql
+
+# Large simulation output CSVs (>50MB) under case_analysis
+case_analysis/normal/case3/case3.csv
+case_analysis/bipv_variation/*.csv
