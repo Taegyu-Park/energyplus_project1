@@ -127,7 +127,7 @@ for t in range(1, n_years + 1):
         net_kWh   = (HVAC_MWH[k] - net_pv) * 1000.0
         elec_cost = net_kWh * tariff_t
         om_t      = om_yr1_map[k] * (1 + r_inf) ** (t - 1)
-        rep_t     = rep_cost_map[k] * (1 + r_inf) ** t if t == rep_year_map[k] else 0.0
+        rep_t     = rep_cost_map[k] * (1 + r_inf) ** t if (t % rep_year_map[k] == 0) else 0.0
         annual_cost[k][t] = elec_cost + om_t + rep_t
 
 # ── 명목 누적 비용 (Nominal Cumulative Cost) ─────────────────────────
@@ -211,10 +211,14 @@ def draw_cost_plot(ax, cum, ylabel, title):
                     fontsize=9.5, color=colors[k], fontweight="bold", va="center",
                     arrowprops=dict(arrowstyle="-", color=colors[k], lw=0.9))
 
-    # 12년차 교체비 이벤트
+    # 12년차 & 24년차 교체비 이벤트
     ax.axvline(12, color="oc.gray5", linestyle=":", lw=dm.lw(0.8))
+    ax.axvline(24, color="oc.gray5", linestyle=":", lw=dm.lw(0.8))
     ax.text(12.3, y_top * 0.03,
             "Year 12\n(Actuator\nReplacement)",
+            color="oc.gray6", fontsize=9, va="bottom")
+    ax.text(24.3, y_top * 0.03,
+            "Year 24\n(Actuator\nReplacement)",
             color="oc.gray6", fontsize=9, va="bottom")
 
     ax.set_xlabel("Project Timeline [Years]")

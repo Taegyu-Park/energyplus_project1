@@ -136,10 +136,11 @@ def main():
             color='#1e293b'
         )
         # Optimal BIPV angle inside the bar (near the bottom)
+        user_angle = 90 - angle
         ax.text(
             bar.get_x() + bar.get_width() / 2.0, 
             yval - 0.35, 
-            f"{angle}°", 
+            f"{user_angle}°", 
             ha='center', 
             va='center', 
             fontsize=10.5, 

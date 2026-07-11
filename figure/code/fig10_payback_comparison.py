@@ -80,7 +80,7 @@ def calc_dcf(capex, pv0_kwh, drive_kwh, om_rate, rep_year, rep_cost_now):
         net_pv  = pv_t - drive_kwh
         savings = net_pv  * tariff_0 * (1 + r_elec) ** (t - 1)
         om_t    = om0     * (1 + r_inf)  ** (t - 1)
-        rep_t   = rep_cost_now * (1 + r_inf) ** t if t == rep_year else 0.0
+        rep_t   = rep_cost_now * (1 + r_inf) ** t if (t % rep_year == 0) else 0.0
         cum[t]  = cum[t - 1] + (savings - om_t - rep_t) / (1 + r_disc) ** t
     return cum
 
@@ -149,10 +149,12 @@ if pb3 is not None:
             f"Case 3 Payback\n{pb3:.1f} yr",
             color=C3, fontsize=10.5, fontweight="bold", ha="right", va="top")
 
-# ── Case 3 12년차 교체비 ────────────────────────────────────────────
+# ── Case 3 12년차 & 24년차 교체비 ───────────────────────────────────
 yr12_val = dcf3_M[12]
+yr24_val = dcf3_M[24]
 ax.plot(12, yr12_val, marker="x", color=C3, markersize=9, mew=2, zorder=5)
-ax.annotate("Actuator\nReplacement\n(Year 12)",
+ax.plot(24, yr24_val, marker="x", color=C3, markersize=9, mew=2, zorder=5)
+ax.annotate("Actuator\nReplacement\n(Year 12 & 24)",
             xy=(12, yr12_val), xytext=(8.5, -8),
             fontsize=9.5, color="oc.orange9", ha="right", va="center",
             arrowprops=dict(arrowstyle="->", color="oc.orange9", lw=1.1))
