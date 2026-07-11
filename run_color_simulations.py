@@ -9,13 +9,13 @@ from pathlib import Path
 # 설정 및 경로 정의
 # -------------------------------------------------------------
 CWD = Path(r"c:\Users\taegyu\Codes\energyplus_project1")
-IDF_PATH = CWD / "case_idf" / "case3_v2.idf"
+IDF_PATH = CWD / "case_idf" / "case3_v3.idf"
 PLUGIN_PATH = CWD / "model_pythonpluginsystem.py"
 WEATHER_PATH = CWD / "data" / "KOR_Kwangju.471560_IWEC (1).epw"
 OUT_ROOT_DIR = CWD / "case_analysis"
 
 # 백업 경로
-IDF_BACKUP = CWD / "case_idf" / "case3_v2.idf.bak"
+IDF_BACKUP = CWD / "case_idf" / "case3_v3.idf.bak"
 PLUGIN_BACKUP = CWD / "model_pythonpluginsystem.py.bak"
 
 # 색상별 성능 사양 정의
