@@ -255,3 +255,9 @@ bipv_transmittance_annual.csv
 # Large simulation output CSVs (>50MB) under case_analysis
 case_analysis/normal/case3/case3.csv
 case_analysis/bipv_variation/*.csv
+
+# Scratch and temporary folder
+scratch/
+
+# Root PDF files (typically large documentation or catalogs)
+/*.pdf
