@@ -8,8 +8,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import matplotlib as mpl
 import dartwork_mpl as dm
-plt.rcParams['svg.fonttype'] = 'none'
+mpl.rcParams['svg.fonttype'] = 'none'
 
 def main():
     # ── 경로 설정 ────────────────────────────────────────────────────────
@@ -38,6 +39,8 @@ def main():
     
     for c in heat_cols + cool_cols + [pv_col]:
         df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0.0)
+        
+    df = df.copy()  # De-fragment the DataFrame to avoid PerformanceWarning
         
     # COP 정의
     COP_HEATING = 2.5
@@ -88,7 +91,7 @@ def main():
     ax_sum.xaxis.set_major_locator(mdates.DayLocator())
     ax_sum.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
     ax_sum.grid(True, linestyle="--", alpha=0.5)
-    ax_sum.legend(loc="upper right", framealpha=0.9, fontsize=9.5, ncol=2)
+    ax_sum.legend(loc="upper right", framealpha=0, fontsize=9.5, ncol=2)
     
     # ── 2. 겨울 대표주 시각화 ─────────────────────────────────────────────
     time_win = winter_df.index
@@ -108,7 +111,7 @@ def main():
     ax_win.xaxis.set_major_locator(mdates.DayLocator())
     ax_win.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
     ax_win.grid(True, linestyle="--", alpha=0.5)
-    ax_win.legend(loc="upper right", framealpha=0.9, fontsize=9.5, ncol=2)
+    ax_win.legend(loc="upper right", framealpha=0, fontsize=9.5, ncol=2)
     
     # ── 공통 축 서식 ─────────────────────────────────────────────────────
     # Y축 라벨
@@ -128,7 +131,7 @@ def main():
     output_png = os.path.join(figure_dir, f"{script_name}.png")
     output_svg = os.path.join(figure_dir, f"{script_name}.svg")
     
-    dm.simple_layout(fig, mt=0.12)
+    dm.simple_layout(fig, margins=(0.1, 0.1, 0.08, 0.6))
     fig.suptitle("HVAC Electricity Load vs. BIPV PV Generation (Case 3)", fontsize=15, fontweight="bold", y=0.95)
     
     fig.savefig(output_png, dpi=300, transparent=True)

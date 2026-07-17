@@ -9,8 +9,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import matplotlib as mpl
 import dartwork_mpl as dm
-plt.rcParams['svg.fonttype'] = 'none'
+mpl.rcParams['svg.fonttype'] = 'none'
 
 def main():
     # ── 경로 설정 ────────────────────────────────────────────────────────
@@ -97,7 +98,7 @@ def main():
     ax_spr.xaxis.set_major_locator(mdates.DayLocator())
     ax_spr.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
     ax_spr.grid(True, linestyle="--", alpha=0.5)
-    ax_spr.legend(loc="upper right", framealpha=0.9, fontsize=9.5, ncol=2)
+    ax_spr.legend(loc="upper right", framealpha=0, fontsize=9.5, ncol=2)
     
     # ── 2. 가을 대표주 시각화 ─────────────────────────────────────────────
     time_aut = autumn_df.index
@@ -116,16 +117,21 @@ def main():
     ax_aut.xaxis.set_major_locator(mdates.DayLocator())
     ax_aut.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
     ax_aut.grid(True, linestyle="--", alpha=0.5)
-    ax_aut.legend(loc="upper right", framealpha=0.9, fontsize=9.5, ncol=2)
+    ax_aut.legend(loc="upper right", framealpha=0, fontsize=9.5, ncol=2)
     
     # ── 공통 축 서식 ─────────────────────────────────────────────────────
     ax_spr.set_ylabel("Power [kW]", fontweight="bold", labelpad=8)
     ax_aut.set_ylabel("Power [kW]", fontweight="bold", labelpad=8)
     ax_aut.set_xlabel("Time", fontweight="bold", labelpad=8)
     
-    # Y축 범위 조정
-    max_val = max(hvac_spr.max(), pv_spr.max(), hvac_aut.max(), pv_aut.max())
-    ax_spr.set_ylim(0, max_val * 1.15)
+    # Y축 범위를 혹한기/혹서기(fig14) 스케일과 맞추기 위해 8월/1월 대표주간의 최대치 사용
+    summer_df = df.loc['2026-08-01 00:00:00':'2026-08-07 23:50:00']
+    winter_df = df.loc['2026-01-29 00:00:00':'2026-02-04 23:50:00']
+    max_val_extreme = max(
+        summer_df['HVAC_Total_kW'].max(), summer_df['PV_Generation_kW'].max(),
+        winter_df['HVAC_Total_kW'].max(), winter_df['PV_Generation_kW'].max()
+    )
+    ax_spr.set_ylim(0, max_val_extreme * 1.15)
     
     # ── 이미지 저장 처리 ─────────────────────────────────────────────────
     script_name = os.path.splitext(os.path.basename(__file__))[0]
@@ -135,7 +141,7 @@ def main():
     output_png = os.path.join(figure_dir, f"{script_name}.png")
     output_svg = os.path.join(figure_dir, f"{script_name}.svg")
     
-    dm.simple_layout(fig, mt=0.12)
+    dm.simple_layout(fig, margins=(0.1, 0.1, 0.08, 0.6))
     fig.suptitle("HVAC Electricity Load vs. BIPV PV Generation (Case 2 - 90 deg - Mid Seasons)", fontsize=15, fontweight="bold", y=0.95)
     
     fig.savefig(output_png, dpi=300, transparent=True)
