@@ -32507,7 +32507,7 @@ PythonPlugin:SearchPaths,
 PythonPlugin:Instance,
     KineticBIPVPlugin,            !- Name
     Yes,                          !- Run During Warmup Days
-    model_pythonpluginsystem,     !- Module Name
+    model_pythonpluginsystem_fixed,  !- Module Name
     KineticBIPVPlugin;
 
 PythonPlugin:Variables,
