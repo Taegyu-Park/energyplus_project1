@@ -16,7 +16,7 @@ def main():
     # Setup paths
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(os.path.dirname(script_dir))
-    db_path = os.path.normpath(os.path.join(project_root, "case_analysis", "normal", "case3", "eplusout.sql"))
+    db_path = os.path.normpath(os.path.join(project_root, "case_analysis", "bipv_variation", "5zone_NSEW_korean", "case3_v3_south", "eplusout.sql"))
     
     script_name = os.path.splitext(os.path.basename(__file__))[0]
     figure_dir = os.path.normpath(os.path.join(project_root, "figure", "plot", script_name))
