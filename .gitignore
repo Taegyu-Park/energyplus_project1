@@ -267,6 +267,8 @@ case_analysis/**/*.shd
 case_analysis/**/*.mtd
 case_analysis/**/*.mdd
 case_analysis/**/*.rdd
+case_analysis/**/*.dbg
+case_analysis/**/*.mtr
 
 # Temporary & Test Simulation Directories
 test_run_dir/
