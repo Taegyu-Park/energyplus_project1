@@ -292,3 +292,10 @@ CityEnergyAnalyst/
 EnergyPlus/
 
 .codex/
+
+# Local self-shading experiments
+selfshading_test/
+selfshadig_test/
+
+# Generated figure data
+figure/**/*.csv
