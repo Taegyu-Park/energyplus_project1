@@ -1054,8 +1054,8 @@ RunPeriod,
 
 ShadowCalculation,
     PolygonClipping,              !- Shading Calculation Method
-    Periodic,                     !- Shading Calculation Update Frequency Method
-    30,                           !- Shading Calculation Update Frequency
+    Timestep,                     !- Shading Calculation Update Frequency Method
+    ,                             !- Shading Calculation Update Frequency
     15000,                        !- Maximum Figures in Shadow Overlap Calculations
     SutherlandHodgman,            !- Polygon Clipping Algorithm
     512,                          !- Pixel Counting Resolution
