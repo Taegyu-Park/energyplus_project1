@@ -280,7 +280,6 @@ scratch/
 
 # Root PDF files (typically large documentation or catalogs)
 /*.pdf
-reference/
 
 # EnergyPlus HTML reports and Error logs
 *.htm
