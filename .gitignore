@@ -223,6 +223,8 @@ run_analysis/**
 !run_analysis/**/
 !run_analysis/**/*.csv
 gl2_sets/
+DSF_new/**/run_*/
+
 
 # OpenStudio Model files
 *.osm
