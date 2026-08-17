@@ -12870,35 +12870,35 @@ Zone,
   0.0, 0.0, 0.0, 0.0, 1, 1, autocalculate, autocalculate, autocalculate;
 
 Zone,
-  Zone_Story1_Cavity_South,
+  Zone_Cavity_South,
   0.0, 0.0, 0.0, 0.0, 1, 1, autocalculate, autocalculate, autocalculate;
 
 Zone,
-  Zone_Story1_Cavity_East,
+  Zone_Cavity_East,
   0.0, 0.0, 0.0, 0.0, 1, 1, autocalculate, autocalculate, autocalculate;
 
 Zone,
-  Zone_Story1_Cavity_North,
+  Zone_Cavity_North,
   0.0, 0.0, 0.0, 0.0, 1, 1, autocalculate, autocalculate, autocalculate;
 
 Zone,
-  Zone_Story1_Cavity_West,
+  Zone_Cavity_West,
   0.0, 0.0, 0.0, 0.0, 1, 1, autocalculate, autocalculate, autocalculate;
 
 Zone,
-  Zone_Story2_Cavity_South,
+  Zone_Cavity_South,
   0.0, 0.0, 0.0, 0.0, 1, 1, autocalculate, autocalculate, autocalculate;
 
 Zone,
-  Zone_Story2_Cavity_East,
+  Zone_Cavity_East,
   0.0, 0.0, 0.0, 0.0, 1, 1, autocalculate, autocalculate, autocalculate;
 
 Zone,
-  Zone_Story2_Cavity_North,
+  Zone_Cavity_North,
   0.0, 0.0, 0.0, 0.0, 1, 1, autocalculate, autocalculate, autocalculate;
 
 Zone,
-  Zone_Story2_Cavity_West,
+  Zone_Cavity_West,
   0.0, 0.0, 0.0, 0.0, 1, 1, autocalculate, autocalculate, autocalculate;
 
 
@@ -12948,7 +12948,7 @@ BuildingSurface:Detailed,
 
 
 BuildingSurface:Detailed,
-    Story1_Core_Wall_South_Upper, Wall, Generic Interior Wall, Zone_Story1_Core, , Surface, Story1_Cavity_South_InnerWall, NoSun, NoWind, 0.5, 4,
+    Story1_Core_Wall_South_Upper, Wall, Generic Interior Wall, Zone_Story1_Core, , Surface, Cavity_South_InnerWall, NoSun, NoWind, 0.5, 4,
     -2.0, -2.0, 4.0,
     -2.0, -2.0, 2.0,
     2.0, -2.0, 2.0,
@@ -12966,7 +12966,7 @@ BuildingSurface:Detailed,
 
 
 BuildingSurface:Detailed,
-    Story1_Core_Wall_East_Upper, Wall, Generic Interior Wall, Zone_Story1_Core, , Surface, Story1_Cavity_East_InnerWall, NoSun, NoWind, 0.5, 4,
+    Story1_Core_Wall_East_Upper, Wall, Generic Interior Wall, Zone_Story1_Core, , Surface, Cavity_East_InnerWall, NoSun, NoWind, 0.5, 4,
     2.0, -2.0, 4.0,
     2.0, -2.0, 2.0,
     2.0, 2.0, 2.0,
@@ -12984,7 +12984,7 @@ BuildingSurface:Detailed,
 
 
 BuildingSurface:Detailed,
-    Story1_Core_Wall_North_Upper, Wall, Generic Interior Wall, Zone_Story1_Core, , Surface, Story1_Cavity_North_InnerWall, NoSun, NoWind, 0.5, 4,
+    Story1_Core_Wall_North_Upper, Wall, Generic Interior Wall, Zone_Story1_Core, , Surface, Cavity_North_InnerWall, NoSun, NoWind, 0.5, 4,
     2.0, 2.0, 4.0,
     2.0, 2.0, 2.0,
     -2.0, 2.0, 2.0,
@@ -13002,7 +13002,7 @@ BuildingSurface:Detailed,
 
 
 BuildingSurface:Detailed,
-    Story1_Core_Wall_West_Upper, Wall, Generic Interior Wall, Zone_Story1_Core, , Surface, Story1_Cavity_West_InnerWall, NoSun, NoWind, 0.5, 4,
+    Story1_Core_Wall_West_Upper, Wall, Generic Interior Wall, Zone_Story1_Core, , Surface, Cavity_West_InnerWall, NoSun, NoWind, 0.5, 4,
     -2.0, 2.0, 4.0,
     -2.0, 2.0, 2.0,
     -2.0, -2.0, 2.0,
@@ -13011,7 +13011,7 @@ BuildingSurface:Detailed,
 
 
 BuildingSurface:Detailed,
-    Story2_Core_Wall_South, Wall, Generic Interior Wall, Zone_Story2_Core, , Surface, Story2_Cavity_South_InnerWall, NoSun, NoWind, 0.5, 4,
+    Story2_Core_Wall_South, Wall, Generic Interior Wall, Zone_Story2_Core, , Surface, Cavity_South_InnerWall, NoSun, NoWind, 0.5, 4,
     -2.0, -2.0, 8.0,
     -2.0, -2.0, 4.0,
     2.0, -2.0, 4.0,
@@ -13020,7 +13020,7 @@ BuildingSurface:Detailed,
 
 
 BuildingSurface:Detailed,
-    Story2_Core_Wall_East, Wall, Generic Interior Wall, Zone_Story2_Core, , Surface, Story2_Cavity_East_InnerWall, NoSun, NoWind, 0.5, 4,
+    Story2_Core_Wall_East, Wall, Generic Interior Wall, Zone_Story2_Core, , Surface, Cavity_East_InnerWall, NoSun, NoWind, 0.5, 4,
     2.0, -2.0, 8.0,
     2.0, -2.0, 4.0,
     2.0, 2.0, 4.0,
@@ -13029,7 +13029,7 @@ BuildingSurface:Detailed,
 
 
 BuildingSurface:Detailed,
-    Story2_Core_Wall_North, Wall, Generic Interior Wall, Zone_Story2_Core, , Surface, Story2_Cavity_North_InnerWall, NoSun, NoWind, 0.5, 4,
+    Story2_Core_Wall_North, Wall, Generic Interior Wall, Zone_Story2_Core, , Surface, Cavity_North_InnerWall, NoSun, NoWind, 0.5, 4,
     2.0, 2.0, 8.0,
     2.0, 2.0, 4.0,
     -2.0, 2.0, 4.0,
@@ -13038,7 +13038,7 @@ BuildingSurface:Detailed,
 
 
 BuildingSurface:Detailed,
-    Story2_Core_Wall_West, Wall, Generic Interior Wall, Zone_Story2_Core, , Surface, Story2_Cavity_West_InnerWall, NoSun, NoWind, 0.5, 4,
+    Story2_Core_Wall_West, Wall, Generic Interior Wall, Zone_Story2_Core, , Surface, Cavity_West_InnerWall, NoSun, NoWind, 0.5, 4,
     -2.0, 2.0, 8.0,
     -2.0, 2.0, 4.0,
     -2.0, -2.0, 4.0,
@@ -13046,291 +13046,131 @@ BuildingSurface:Detailed,
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_South_OuterWall, Wall, Generic Exterior Wall, Zone_Story1_Cavity_South, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    -2.8, -2.8, 4.0,
-    -2.8, -2.8, 2.0,
-    2.8, -2.8, 2.0,
-    2.8, -2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_South_InnerWall, Wall, Generic Interior Wall, Zone_Story1_Cavity_South, , Surface, Story1_Core_Wall_South_Upper, NoSun, NoWind, 0.5, 4,
-    2.0, -2.0, 4.0,
-    2.0, -2.0, 2.0,
-    -2.0, -2.0, 2.0,
-    -2.0, -2.0, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_South_Floor, Floor, Generic Interior Floor, Zone_Story1_Cavity_South, , Outdoors, , SunExposed, WindExposed, 1.0, 4,
-    -2.8, -2.8, 2.0,
-    -2.8, -2.0, 2.0,
-    2.8, -2.0, 2.0,
-    2.8, -2.8, 2.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_South_Ceiling, Ceiling, Generic Interior Ceiling, Zone_Story1_Cavity_South, , Surface, Story2_Cavity_South_Floor, NoSun, NoWind, 1.0, 4,
-    2.8, -2.8, 4.0,
-    2.8, -2.0, 4.0,
-    -2.8, -2.0, 4.0,
-    -2.8, -2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_South_OuterWall, Wall, Generic Exterior Wall, Zone_Story2_Cavity_South, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    -2.8, -2.8, 8.0,
-    -2.8, -2.8, 4.0,
-    2.8, -2.8, 4.0,
-    2.8, -2.8, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_South_InnerWall, Wall, Generic Interior Wall, Zone_Story2_Cavity_South, , Surface, Story2_Core_Wall_South, NoSun, NoWind, 0.5, 4,
-    2.0, -2.0, 8.0,
-    2.0, -2.0, 4.0,
-    -2.0, -2.0, 4.0,
-    -2.0, -2.0, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_South_Floor, Floor, Generic Interior Floor, Zone_Story2_Cavity_South, , Surface, Story1_Cavity_South_Ceiling, NoSun, NoWind, 1.0, 4,
-    -2.8, -2.8, 4.0,
-    -2.8, -2.0, 4.0,
-    2.8, -2.0, 4.0,
-    2.8, -2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_South_Roof, Roof, Generic Roof, Zone_Story2_Cavity_South, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    2.8, -2.8, 8.0,
-    2.8, -2.0, 8.0,
-    -2.8, -2.0, 8.0,
-    -2.8, -2.8, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_East_OuterWall, Wall, Generic Exterior Wall, Zone_Story1_Cavity_East, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    2.8, -2.8, 4.0,
-    2.8, -2.8, 2.0,
-    2.8, 2.8, 2.0,
-    2.8, 2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_East_InnerWall, Wall, Generic Interior Wall, Zone_Story1_Cavity_East, , Surface, Story1_Core_Wall_East_Upper, NoSun, NoWind, 0.5, 4,
-    2.0, 2.0, 4.0,
-    2.0, 2.0, 2.0,
-    2.0, -2.0, 2.0,
-    2.0, -2.0, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_East_Floor, Floor, Generic Interior Floor, Zone_Story1_Cavity_East, , Outdoors, , SunExposed, WindExposed, 1.0, 4,
-    2.0, -2.8, 2.0,
-    2.0, 2.8, 2.0,
-    2.8, 2.8, 2.0,
-    2.8, -2.8, 2.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_East_Ceiling, Ceiling, Generic Interior Ceiling, Zone_Story1_Cavity_East, , Surface, Story2_Cavity_East_Floor, NoSun, NoWind, 1.0, 4,
-    2.8, -2.8, 4.0,
-    2.8, 2.8, 4.0,
-    2.0, 2.8, 4.0,
-    2.0, -2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_East_OuterWall, Wall, Generic Exterior Wall, Zone_Story2_Cavity_East, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    2.8, -2.8, 8.0,
-    2.8, -2.8, 4.0,
-    2.8, 2.8, 4.0,
-    2.8, 2.8, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_East_InnerWall, Wall, Generic Interior Wall, Zone_Story2_Cavity_East, , Surface, Story2_Core_Wall_East, NoSun, NoWind, 0.5, 4,
-    2.0, 2.0, 8.0,
-    2.0, 2.0, 4.0,
-    2.0, -2.0, 4.0,
-    2.0, -2.0, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_East_Floor, Floor, Generic Interior Floor, Zone_Story2_Cavity_East, , Surface, Story1_Cavity_East_Ceiling, NoSun, NoWind, 1.0, 4,
-    2.0, -2.8, 4.0,
-    2.0, 2.8, 4.0,
-    2.8, 2.8, 4.0,
-    2.8, -2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_East_Roof, Roof, Generic Roof, Zone_Story2_Cavity_East, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    2.8, -2.8, 8.0,
-    2.8, 2.8, 8.0,
-    2.0, 2.8, 8.0,
-    2.0, -2.8, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_North_OuterWall, Wall, Generic Exterior Wall, Zone_Story1_Cavity_North, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    2.8, 2.8, 4.0,
-    2.8, 2.8, 2.0,
-    -2.8, 2.8, 2.0,
-    -2.8, 2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_North_InnerWall, Wall, Generic Interior Wall, Zone_Story1_Cavity_North, , Surface, Story1_Core_Wall_North_Upper, NoSun, NoWind, 0.5, 4,
-    -2.0, 2.0, 4.0,
-    -2.0, 2.0, 2.0,
-    2.0, 2.0, 2.0,
-    2.0, 2.0, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_North_Floor, Floor, Generic Interior Floor, Zone_Story1_Cavity_North, , Outdoors, , SunExposed, WindExposed, 1.0, 4,
-    2.8, 2.8, 2.0,
-    2.8, 2.0, 2.0,
-    -2.8, 2.0, 2.0,
-    -2.8, 2.8, 2.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_North_Ceiling, Ceiling, Generic Interior Ceiling, Zone_Story1_Cavity_North, , Surface, Story2_Cavity_North_Floor, NoSun, NoWind, 1.0, 4,
-    -2.8, 2.8, 4.0,
-    -2.8, 2.0, 4.0,
-    2.8, 2.0, 4.0,
-    2.8, 2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_North_OuterWall, Wall, Generic Exterior Wall, Zone_Story2_Cavity_North, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    2.8, 2.8, 8.0,
-    2.8, 2.8, 4.0,
-    -2.8, 2.8, 4.0,
-    -2.8, 2.8, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_North_InnerWall, Wall, Generic Interior Wall, Zone_Story2_Cavity_North, , Surface, Story2_Core_Wall_North, NoSun, NoWind, 0.5, 4,
-    -2.0, 2.0, 8.0,
-    -2.0, 2.0, 4.0,
-    2.0, 2.0, 4.0,
-    2.0, 2.0, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_North_Floor, Floor, Generic Interior Floor, Zone_Story2_Cavity_North, , Surface, Story1_Cavity_North_Ceiling, NoSun, NoWind, 1.0, 4,
-    2.8, 2.8, 4.0,
-    2.8, 2.0, 4.0,
-    -2.8, 2.0, 4.0,
-    -2.8, 2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_North_Roof, Roof, Generic Roof, Zone_Story2_Cavity_North, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    -2.8, 2.8, 8.0,
-    -2.8, 2.0, 8.0,
-    2.8, 2.0, 8.0,
-    2.8, 2.8, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_West_OuterWall, Wall, Generic Exterior Wall, Zone_Story1_Cavity_West, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    -2.8, 2.8, 4.0,
-    -2.8, 2.8, 2.0,
-    -2.8, -2.8, 2.0,
-    -2.8, -2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_West_InnerWall, Wall, Generic Interior Wall, Zone_Story1_Cavity_West, , Surface, Story1_Core_Wall_West_Upper, NoSun, NoWind, 0.5, 4,
-    -2.0, -2.0, 4.0,
-    -2.0, -2.0, 2.0,
-    -2.0, 2.0, 2.0,
-    -2.0, 2.0, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_West_Floor, Floor, Generic Interior Floor, Zone_Story1_Cavity_West, , Outdoors, , SunExposed, WindExposed, 1.0, 4,
-    -2.8, -2.8, 2.0,
-    -2.8, 2.8, 2.0,
-    -2.0, 2.8, 2.0,
-    -2.0, -2.8, 2.0;
 
 
 
-BuildingSurface:Detailed,
-    Story1_Cavity_West_Ceiling, Ceiling, Generic Interior Ceiling, Zone_Story1_Cavity_West, , Surface, Story2_Cavity_West_Floor, NoSun, NoWind, 1.0, 4,
-    -2.0, -2.8, 4.0,
-    -2.0, 2.8, 4.0,
-    -2.8, 2.8, 4.0,
-    -2.8, -2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_West_OuterWall, Wall, Generic Exterior Wall, Zone_Story2_Cavity_West, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    -2.8, 2.8, 8.0,
-    -2.8, 2.8, 4.0,
-    -2.8, -2.8, 4.0,
-    -2.8, -2.8, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_West_InnerWall, Wall, Generic Interior Wall, Zone_Story2_Cavity_West, , Surface, Story2_Core_Wall_West, NoSun, NoWind, 0.5, 4,
-    -2.0, -2.0, 8.0,
-    -2.0, -2.0, 4.0,
-    -2.0, 2.0, 4.0,
-    -2.0, 2.0, 8.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_West_Floor, Floor, Generic Interior Floor, Zone_Story2_Cavity_West, , Surface, Story1_Cavity_West_Ceiling, NoSun, NoWind, 1.0, 4,
-    -2.8, -2.8, 4.0,
-    -2.8, 2.8, 4.0,
-    -2.0, 2.8, 4.0,
-    -2.0, -2.8, 4.0;
 
 
 
-BuildingSurface:Detailed,
-    Story2_Cavity_West_Roof, Roof, Generic Roof, Zone_Story2_Cavity_West, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
-    -2.0, -2.8, 8.0,
-    -2.0, 2.8, 8.0,
-    -2.8, 2.8, 8.0,
-    -2.8, -2.8, 8.0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -13442,249 +13282,634 @@ FenestrationSurface:Detailed,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+! =========================================================
+! SINGLE INTEGRATED 2-STORY TALL CAVITY ZONES (Height = 6.0m)
+! =========================================================
+Zone, Zone_Cavity_South, 0.0, 0.0, 0.0, 0.0, 1, 1, 67.2, 33.6;
+Zone, Zone_Cavity_East,  0.0, 0.0, 0.0, 0.0, 1, 1, 67.2, 33.6;
+Zone, Zone_Cavity_North, 0.0, 0.0, 0.0, 0.0, 1, 1, 67.2, 33.6;
+Zone, Zone_Cavity_West,  0.0, 0.0, 0.0, 0.0, 1, 1, 67.2, 33.6;
+
+
+! =========================================================
+! SINGLE INTEGRATED 2-STORY CAVITY BUILDING SURFACES
+! =========================================================
+
+! --- SOUTH CAVITY ---
+BuildingSurface:Detailed,
+    Cavity_South_OuterWall, Wall, Generic Exterior Wall, Zone_Cavity_South, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
+    -2.8, -2.8, 8.0,
+    -2.8, -2.8, 2.0,
+    2.8, -2.8, 2.0,
+    2.8, -2.8, 8.0;
+
+BuildingSurface:Detailed,
+    Cavity_South_InnerWall, Wall, Generic Interior Wall, Zone_Cavity_South, , Surface, Story1_Core_Wall_South_Upper, NoSun, NoWind, 0.5, 4,
+    2.0, -2.0, 8.0,
+    2.0, -2.0, 2.0,
+    -2.0, -2.0, 2.0,
+    -2.0, -2.0, 8.0;
+
+BuildingSurface:Detailed,
+    Cavity_South_Floor, Floor, Generic Interior Floor, Zone_Cavity_South, , Outdoors, , SunExposed, WindExposed, 1.0, 4,
+    -2.8, -2.8, 2.0,
+    -2.8, -2.0, 2.0,
+    2.8, -2.0, 2.0,
+    2.8, -2.8, 2.0;
+
+BuildingSurface:Detailed,
+    Cavity_South_Roof, Roof, Generic Roof, Zone_Cavity_South, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
+    2.8, -2.8, 8.0,
+    2.8, -2.0, 8.0,
+    -2.8, -2.0, 8.0,
+    -2.8, -2.8, 8.0;
+
+! --- EAST CAVITY ---
+BuildingSurface:Detailed,
+    Cavity_East_OuterWall, Wall, Generic Exterior Wall, Zone_Cavity_East, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
+    2.8, -2.8, 8.0,
+    2.8, -2.8, 2.0,
+    2.8, 2.8, 2.0,
+    2.8, 2.8, 8.0;
+
+BuildingSurface:Detailed,
+    Cavity_East_InnerWall, Wall, Generic Interior Wall, Zone_Cavity_East, , Surface, Story1_Core_Wall_East_Upper, NoSun, NoWind, 0.5, 4,
+    2.0, 2.0, 8.0,
+    2.0, 2.0, 2.0,
+    2.0, -2.0, 2.0,
+    2.0, -2.0, 8.0;
+
+BuildingSurface:Detailed,
+    Cavity_East_Floor, Floor, Generic Interior Floor, Zone_Cavity_East, , Outdoors, , SunExposed, WindExposed, 1.0, 4,
+    2.8, -2.8, 2.0,
+    2.0, -2.8, 2.0,
+    2.0, 2.8, 2.0,
+    2.8, 2.8, 2.0;
+
+BuildingSurface:Detailed,
+    Cavity_East_Roof, Roof, Generic Roof, Zone_Cavity_East, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
+    2.8, -2.8, 8.0,
+    2.8, 2.8, 8.0,
+    2.0, 2.8, 8.0,
+    2.0, -2.8, 8.0;
+
+! --- NORTH CAVITY ---
+BuildingSurface:Detailed,
+    Cavity_North_OuterWall, Wall, Generic Exterior Wall, Zone_Cavity_North, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
+    2.8, 2.8, 8.0,
+    2.8, 2.8, 2.0,
+    -2.8, 2.8, 2.0,
+    -2.8, 2.8, 8.0;
+
+BuildingSurface:Detailed,
+    Cavity_North_InnerWall, Wall, Generic Interior Wall, Zone_Cavity_North, , Surface, Story1_Core_Wall_North_Upper, NoSun, NoWind, 0.5, 4,
+    -2.0, 2.0, 8.0,
+    -2.0, 2.0, 2.0,
+    2.0, 2.0, 2.0,
+    2.0, 2.0, 8.0;
+
+BuildingSurface:Detailed,
+    Cavity_North_Floor, Floor, Generic Interior Floor, Zone_Cavity_North, , Outdoors, , SunExposed, WindExposed, 1.0, 4,
+    2.8, 2.8, 2.0,
+    2.8, 2.0, 2.0,
+    -2.8, 2.0, 2.0,
+    -2.8, 2.8, 2.0;
+
+BuildingSurface:Detailed,
+    Cavity_North_Roof, Roof, Generic Roof, Zone_Cavity_North, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
+    2.8, 2.8, 8.0,
+    -2.8, 2.8, 8.0,
+    -2.8, 2.0, 8.0,
+    2.8, 2.0, 8.0;
+
+! --- WEST CAVITY ---
+BuildingSurface:Detailed,
+    Cavity_West_OuterWall, Wall, Generic Exterior Wall, Zone_Cavity_West, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
+    -2.8, 2.8, 8.0,
+    -2.8, 2.8, 2.0,
+    -2.8, -2.8, 2.0,
+    -2.8, -2.8, 8.0;
+
+BuildingSurface:Detailed,
+    Cavity_West_InnerWall, Wall, Generic Interior Wall, Zone_Cavity_West, , Surface, Story1_Core_Wall_West_Upper, NoSun, NoWind, 0.5, 4,
+    -2.0, -2.0, 8.0,
+    -2.0, -2.0, 2.0,
+    -2.0, 2.0, 2.0,
+    -2.0, 2.0, 8.0;
+
+BuildingSurface:Detailed,
+    Cavity_West_Floor, Floor, Generic Interior Floor, Zone_Cavity_West, , Outdoors, , SunExposed, WindExposed, 1.0, 4,
+    -2.8, -2.8, 2.0,
+    -2.8, 2.8, 2.0,
+    -2.0, 2.8, 2.0,
+    -2.0, -2.8, 2.0;
+
+BuildingSurface:Detailed,
+    Cavity_West_Roof, Roof, Generic Roof, Zone_Cavity_West, , Outdoors, , SunExposed, WindExposed, 0.5, 4,
+    -2.0, -2.8, 8.0,
+    -2.0, 2.8, 8.0,
+    -2.8, 2.8, 8.0,
+    -2.8, -2.8, 8.0;
+
+
+! =========================================================
+! SINGLE INTEGRATED 2-STORY CAVITY FENESTRATIONS (12 Outer Glass + 8 Inner Windows)
+! =========================================================
+
+! --- SOUTH FACADE FENESTRATIONS ---
 FenestrationSurface:Detailed,
-    Story1_Cavity_South_OuterGlass, Window, DSF_Outer_LowE_Glazing, Story1_Cavity_South_OuterWall, , , , 1.0, 4,
+    Story1_Cavity_South_OuterGlass, Window, DSF_Outer_LowE_Glazing, Cavity_South_OuterWall, , , , 1.0, 4,
     -2.79, -2.8, 3.99,
     -2.79, -2.8, 2.01,
     2.79, -2.8, 2.01,
     2.79, -2.8, 3.99;
 
-
-
 FenestrationSurface:Detailed,
-    Story1_Cavity_South_FloorGlass, Window, DSF_Outer_LowE_Glazing, Story1_Cavity_South_Floor, , , , 1.0, 4,
-    -2.79, -2.79, 2.0,
-    -2.79, -2.01, 2.0,
-    2.79, -2.01, 2.0,
-    2.79, -2.79, 2.0;
-
-
-
-FenestrationSurface:Detailed,
-    Story1_Cavity_South_InnerWin, Window, Generic Double Pane, Story1_Cavity_South_InnerWall, Story1_Core_Win_South_Upper, , , 1.0, 4,
-    1.8974, -2.0, 3.8974,
-    1.8974, -2.0, 2.0,
-    -1.8974, -2.0, 2.0,
-    -1.8974, -2.0, 3.8974;
-
-
-
-FenestrationSurface:Detailed,
-    Story2_Cavity_South_OuterGlass_Lower, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_South_OuterWall, , , , 1.0, 4,
+    Story2_Cavity_South_OuterGlass_Lower, Window, DSF_Outer_LowE_Glazing, Cavity_South_OuterWall, , , , 1.0, 4,
     -2.79, -2.8, 5.99,
     -2.79, -2.8, 4.01,
     2.79, -2.8, 4.01,
     2.79, -2.8, 5.99;
 
 FenestrationSurface:Detailed,
-    Story2_Cavity_South_OuterGlass_Upper, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_South_OuterWall, , , , 1.0, 4,
+    Story2_Cavity_South_OuterGlass_Upper, Window, DSF_Outer_LowE_Glazing, Cavity_South_OuterWall, , , , 1.0, 4,
     -2.79, -2.8, 7.99,
     -2.79, -2.8, 6.01,
     2.79, -2.8, 6.01,
     2.79, -2.8, 7.99;
 
-
+FenestrationSurface:Detailed,
+    Story1_Cavity_South_InnerWin, Window, Generic Double Pane, Cavity_South_InnerWall, Story1_Core_Win_South_Upper, , , 1.0, 4,
+    1.8974, -2.0, 3.8974,
+    1.8974, -2.0, 2.0,
+    -1.8974, -2.0, 2.0,
+    -1.8974, -2.0, 3.8974;
 
 FenestrationSurface:Detailed,
-    Story2_Cavity_South_RoofGlass, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_South_Roof, , , , 1.0, 4,
-    2.79, -2.79, 8.0,
-    2.79, -2.01, 8.0,
-    -2.79, -2.01, 8.0,
-    -2.79, -2.79, 8.0;
-
-
-
-FenestrationSurface:Detailed,
-    Story2_Cavity_South_InnerWin, Window, Generic Double Pane, Story2_Cavity_South_InnerWall, Story2_Core_Win_South, , , 1.0, 4,
+    Story2_Cavity_South_InnerWin, Window, Generic Double Pane, Cavity_South_InnerWall, Story2_Core_Win_South, , , 1.0, 4,
     1.8974, -2.0, 7.8974,
     1.8974, -2.0, 4.1026,
     -1.8974, -2.0, 4.1026,
     -1.8974, -2.0, 7.8974;
 
-
-
+! --- EAST FACADE FENESTRATIONS ---
 FenestrationSurface:Detailed,
-    Story1_Cavity_East_OuterGlass, Window, DSF_Outer_LowE_Glazing, Story1_Cavity_East_OuterWall, , , , 1.0, 4,
+    Story1_Cavity_East_OuterGlass, Window, DSF_Outer_LowE_Glazing, Cavity_East_OuterWall, , , , 1.0, 4,
     2.8, -2.79, 3.99,
     2.8, -2.79, 2.01,
     2.8, 2.79, 2.01,
     2.8, 2.79, 3.99;
 
-
-
 FenestrationSurface:Detailed,
-    Story1_Cavity_East_FloorGlass, Window, DSF_Outer_LowE_Glazing, Story1_Cavity_East_Floor, , , , 1.0, 4,
-    2.01, -2.79, 2.0,
-    2.01, 2.79, 2.0,
-    2.79, 2.79, 2.0,
-    2.79, -2.79, 2.0;
-
-
-
-FenestrationSurface:Detailed,
-    Story1_Cavity_East_InnerWin, Window, Generic Double Pane, Story1_Cavity_East_InnerWall, Story1_Core_Win_East_Upper, , , 1.0, 4,
-    2.0, 1.8974, 3.8974,
-    2.0, 1.8974, 2.0,
-    2.0, -1.8974, 2.0,
-    2.0, -1.8974, 3.8974;
-
-
-
-FenestrationSurface:Detailed,
-    Story2_Cavity_East_OuterGlass_Lower, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_East_OuterWall, , , , 1.0, 4,
+    Story2_Cavity_East_OuterGlass_Lower, Window, DSF_Outer_LowE_Glazing, Cavity_East_OuterWall, , , , 1.0, 4,
     2.8, -2.79, 5.99,
     2.8, -2.79, 4.01,
     2.8, 2.79, 4.01,
     2.8, 2.79, 5.99;
 
 FenestrationSurface:Detailed,
-    Story2_Cavity_East_OuterGlass_Upper, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_East_OuterWall, , , , 1.0, 4,
+    Story2_Cavity_East_OuterGlass_Upper, Window, DSF_Outer_LowE_Glazing, Cavity_East_OuterWall, , , , 1.0, 4,
     2.8, -2.79, 7.99,
     2.8, -2.79, 6.01,
     2.8, 2.79, 6.01,
     2.8, 2.79, 7.99;
 
-
+FenestrationSurface:Detailed,
+    Story1_Cavity_East_InnerWin, Window, Generic Double Pane, Cavity_East_InnerWall, Story1_Core_Win_East_Upper, , , 1.0, 4,
+    2.0, 1.8974, 3.8974,
+    2.0, 1.8974, 2.0,
+    2.0, -1.8974, 2.0,
+    2.0, -1.8974, 3.8974;
 
 FenestrationSurface:Detailed,
-    Story2_Cavity_East_RoofGlass, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_East_Roof, , , , 1.0, 4,
-    2.79, -2.79, 8.0,
-    2.79, 2.79, 8.0,
-    2.01, 2.79, 8.0,
-    2.01, -2.79, 8.0;
-
-
-
-FenestrationSurface:Detailed,
-    Story2_Cavity_East_InnerWin, Window, Generic Double Pane, Story2_Cavity_East_InnerWall, Story2_Core_Win_East, , , 1.0, 4,
+    Story2_Cavity_East_InnerWin, Window, Generic Double Pane, Cavity_East_InnerWall, Story2_Core_Win_East, , , 1.0, 4,
     2.0, 1.8974, 7.8974,
     2.0, 1.8974, 4.1026,
     2.0, -1.8974, 4.1026,
     2.0, -1.8974, 7.8974;
 
-
-
+! --- NORTH FACADE FENESTRATIONS ---
 FenestrationSurface:Detailed,
-    Story1_Cavity_North_OuterGlass, Window, DSF_Outer_LowE_Glazing, Story1_Cavity_North_OuterWall, , , , 1.0, 4,
+    Story1_Cavity_North_OuterGlass, Window, DSF_Outer_LowE_Glazing, Cavity_North_OuterWall, , , , 1.0, 4,
     2.79, 2.8, 3.99,
     2.79, 2.8, 2.01,
     -2.79, 2.8, 2.01,
     -2.79, 2.8, 3.99;
 
-
-
 FenestrationSurface:Detailed,
-    Story1_Cavity_North_FloorGlass, Window, DSF_Outer_LowE_Glazing, Story1_Cavity_North_Floor, , , , 1.0, 4,
-    2.79, 2.79, 2.0,
-    2.79, 2.01, 2.0,
-    -2.79, 2.01, 2.0,
-    -2.79, 2.79, 2.0;
-
-
-
-FenestrationSurface:Detailed,
-    Story1_Cavity_North_InnerWin, Window, Generic Double Pane, Story1_Cavity_North_InnerWall, Story1_Core_Win_North_Upper, , , 1.0, 4,
-    -1.8974, 2.0, 3.8974,
-    -1.8974, 2.0, 2.0,
-    1.8974, 2.0, 2.0,
-    1.8974, 2.0, 3.8974;
-
-
-
-FenestrationSurface:Detailed,
-    Story2_Cavity_North_OuterGlass_Lower, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_North_OuterWall, , , , 1.0, 4,
+    Story2_Cavity_North_OuterGlass_Lower, Window, DSF_Outer_LowE_Glazing, Cavity_North_OuterWall, , , , 1.0, 4,
     2.79, 2.8, 5.99,
     2.79, 2.8, 4.01,
     -2.79, 2.8, 4.01,
     -2.79, 2.8, 5.99;
 
 FenestrationSurface:Detailed,
-    Story2_Cavity_North_OuterGlass_Upper, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_North_OuterWall, , , , 1.0, 4,
+    Story2_Cavity_North_OuterGlass_Upper, Window, DSF_Outer_LowE_Glazing, Cavity_North_OuterWall, , , , 1.0, 4,
     2.79, 2.8, 7.99,
     2.79, 2.8, 6.01,
     -2.79, 2.8, 6.01,
     -2.79, 2.8, 7.99;
 
-
+FenestrationSurface:Detailed,
+    Story1_Cavity_North_InnerWin, Window, Generic Double Pane, Cavity_North_InnerWall, Story1_Core_Win_North_Upper, , , 1.0, 4,
+    -1.8974, 2.0, 3.8974,
+    -1.8974, 2.0, 2.0,
+    1.8974, 2.0, 2.0,
+    1.8974, 2.0, 3.8974;
 
 FenestrationSurface:Detailed,
-    Story2_Cavity_North_RoofGlass, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_North_Roof, , , , 1.0, 4,
-    -2.79, 2.79, 8.0,
-    -2.79, 2.01, 8.0,
-    2.79, 2.01, 8.0,
-    2.79, 2.79, 8.0;
-
-
-
-FenestrationSurface:Detailed,
-    Story2_Cavity_North_InnerWin, Window, Generic Double Pane, Story2_Cavity_North_InnerWall, Story2_Core_Win_North, , , 1.0, 4,
+    Story2_Cavity_North_InnerWin, Window, Generic Double Pane, Cavity_North_InnerWall, Story2_Core_Win_North, , , 1.0, 4,
     -1.8974, 2.0, 7.8974,
     -1.8974, 2.0, 4.1026,
     1.8974, 2.0, 4.1026,
     1.8974, 2.0, 7.8974;
 
-
-
+! --- WEST FACADE FENESTRATIONS ---
 FenestrationSurface:Detailed,
-    Story1_Cavity_West_OuterGlass, Window, DSF_Outer_LowE_Glazing, Story1_Cavity_West_OuterWall, , , , 1.0, 4,
+    Story1_Cavity_West_OuterGlass, Window, DSF_Outer_LowE_Glazing, Cavity_West_OuterWall, , , , 1.0, 4,
     -2.8, 2.79, 3.99,
     -2.8, 2.79, 2.01,
     -2.8, -2.79, 2.01,
     -2.8, -2.79, 3.99;
 
-
-
 FenestrationSurface:Detailed,
-    Story1_Cavity_West_FloorGlass, Window, DSF_Outer_LowE_Glazing, Story1_Cavity_West_Floor, , , , 1.0, 4,
-    -2.79, -2.79, 2.0,
-    -2.79, 2.79, 2.0,
-    -2.01, 2.79, 2.0,
-    -2.01, -2.79, 2.0;
-
-
-
-FenestrationSurface:Detailed,
-    Story1_Cavity_West_InnerWin, Window, Generic Double Pane, Story1_Cavity_West_InnerWall, Story1_Core_Win_West_Upper, , , 1.0, 4,
-    -2.0, -1.8974, 3.8974,
-    -2.0, -1.8974, 2.0,
-    -2.0, 1.8974, 2.0,
-    -2.0, 1.8974, 3.8974;
-
-
-
-FenestrationSurface:Detailed,
-    Story2_Cavity_West_OuterGlass_Lower, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_West_OuterWall, , , , 1.0, 4,
+    Story2_Cavity_West_OuterGlass_Lower, Window, DSF_Outer_LowE_Glazing, Cavity_West_OuterWall, , , , 1.0, 4,
     -2.8, 2.79, 5.99,
     -2.8, 2.79, 4.01,
     -2.8, -2.79, 4.01,
     -2.8, -2.79, 5.99;
 
 FenestrationSurface:Detailed,
-    Story2_Cavity_West_OuterGlass_Upper, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_West_OuterWall, , , , 1.0, 4,
+    Story2_Cavity_West_OuterGlass_Upper, Window, DSF_Outer_LowE_Glazing, Cavity_West_OuterWall, , , , 1.0, 4,
     -2.8, 2.79, 7.99,
     -2.8, 2.79, 6.01,
     -2.8, -2.79, 6.01,
     -2.8, -2.79, 7.99;
 
-
+FenestrationSurface:Detailed,
+    Story1_Cavity_West_InnerWin, Window, Generic Double Pane, Cavity_West_InnerWall, Story1_Core_Win_West_Upper, , , 1.0, 4,
+    -2.0, -1.8974, 3.8974,
+    -2.0, -1.8974, 2.0,
+    -2.0, 1.8974, 2.0,
+    -2.0, 1.8974, 3.8974;
 
 FenestrationSurface:Detailed,
-    Story2_Cavity_West_RoofGlass, Window, DSF_Outer_LowE_Glazing, Story2_Cavity_West_Roof, , , , 1.0, 4,
-    -2.01, -2.79, 8.0,
-    -2.01, 2.79, 8.0,
-    -2.79, 2.79, 8.0,
-    -2.79, -2.79, 8.0;
-
-
-
-FenestrationSurface:Detailed,
-    Story2_Cavity_West_InnerWin, Window, Generic Double Pane, Story2_Cavity_West_InnerWall, Story2_Core_Win_West, , , 1.0, 4,
+    Story2_Cavity_West_InnerWin, Window, Generic Double Pane, Cavity_West_InnerWall, Story2_Core_Win_West, , , 1.0, 4,
     -2.0, -1.8974, 7.8974,
     -2.0, -1.8974, 4.1026,
     -2.0, 1.8974, 4.1026,
     -2.0, 1.8974, 7.8974;
 
 
+! ==========================================================================
+! 20.0 ACH NATURAL VENTILATION FOR 4 SINGLE INTEGRATED CAVITY ZONES
+! ==========================================================================
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_South_TopBottomVent,
+    Zone_Cavity_South,
+    DSF_Damper_TopBottom_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_South_OuterVent_Story1_OuterGlass,
+    Zone_Cavity_South,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_South_OuterVent_Story2_OuterGlass_Lower,
+    Zone_Cavity_South,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_South_OuterVent_Story2_OuterGlass_Upper,
+    Zone_Cavity_South,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_East_TopBottomVent,
+    Zone_Cavity_East,
+    DSF_Damper_TopBottom_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_East_OuterVent_Story1_OuterGlass,
+    Zone_Cavity_East,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_East_OuterVent_Story2_OuterGlass_Lower,
+    Zone_Cavity_East,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_East_OuterVent_Story2_OuterGlass_Upper,
+    Zone_Cavity_East,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_North_TopBottomVent,
+    Zone_Cavity_North,
+    DSF_Damper_TopBottom_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_North_OuterVent_Story1_OuterGlass,
+    Zone_Cavity_North,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_North_OuterVent_Story2_OuterGlass_Lower,
+    Zone_Cavity_North,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_North_OuterVent_Story2_OuterGlass_Upper,
+    Zone_Cavity_North,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_West_TopBottomVent,
+    Zone_Cavity_West,
+    DSF_Damper_TopBottom_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_West_OuterVent_Story1_OuterGlass,
+    Zone_Cavity_West,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_West_OuterVent_Story2_OuterGlass_Lower,
+    Zone_Cavity_West,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
+
+ZoneVentilation:DesignFlowRate,
+    Cavity_West_OuterVent_Story2_OuterGlass_Upper,
+    Zone_Cavity_West,
+    DSF_Damper_OuterSkin_Schedule,
+    AirChanges/Hour,
+    ,
+    ,
+    ,
+    20.0,                         !- Design Flow Rate (20.0 ACH)
+    Natural,
+    0.0,
+    0.7,
+    1.0, 0.0, 0.0, 0.0,
+    -50.0, , 100.0, , 100.0;
 
 ! =========================================================
 ! Thermostats & Ideal Loads HVAC for Core Zones
@@ -13745,131 +13970,27 @@ Schedule:Compact,
 
 
 
-ZoneVentilation:DesignFlowRate,
-    Story1_Cavity_South_BottomInletVent,
-    Zone_Story1_Cavity_South,
-    DSF_Damper_TopBottom_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    0.5,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
-
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_South_TopOutletVent,
-    Zone_Story2_Cavity_South,
-    DSF_Damper_TopBottom_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    0.5,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
 
 
-ZoneVentilation:DesignFlowRate,
-    Story1_Cavity_East_BottomInletVent,
-    Zone_Story1_Cavity_East,
-    DSF_Damper_TopBottom_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    0.5,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
-
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_East_TopOutletVent,
-    Zone_Story2_Cavity_East,
-    DSF_Damper_TopBottom_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    0.5,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
 
 
-ZoneVentilation:DesignFlowRate,
-    Story1_Cavity_North_BottomInletVent,
-    Zone_Story1_Cavity_North,
-    DSF_Damper_TopBottom_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    0.5,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
-
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_North_TopOutletVent,
-    Zone_Story2_Cavity_North,
-    DSF_Damper_TopBottom_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    0.5,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
 
 
-ZoneVentilation:DesignFlowRate,
-    Story1_Cavity_West_BottomInletVent,
-    Zone_Story1_Cavity_West,
-    DSF_Damper_TopBottom_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    0.5,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_West_TopOutletVent,
-    Zone_Story2_Cavity_West,
-    DSF_Damper_TopBottom_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    0.5,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -14276,182 +14397,26 @@ Output:Variable, *, Generator PV Array Efficiency, Timestep;
 ! 12 OUTER SKIN LOUVER GAP VENTILATION OBJECTS (Linked to DSF_Damper_OuterSkin_Schedule)
 ! ==========================================================================
 
-ZoneVentilation:DesignFlowRate,
-    Story1_Cavity_South_OuterVent_OuterGlass,
-    Zone_Story1_Cavity_South,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story1_Cavity_East_OuterVent_OuterGlass,
-    Zone_Story1_Cavity_East,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story1_Cavity_North_OuterVent_OuterGlass,
-    Zone_Story1_Cavity_North,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story1_Cavity_West_OuterVent_OuterGlass,
-    Zone_Story1_Cavity_West,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_South_OuterVent_OuterGlass_Lower,
-    Zone_Story2_Cavity_South,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_South_OuterVent_OuterGlass_Upper,
-    Zone_Story2_Cavity_South,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_East_OuterVent_OuterGlass_Lower,
-    Zone_Story2_Cavity_East,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_East_OuterVent_OuterGlass_Upper,
-    Zone_Story2_Cavity_East,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_North_OuterVent_OuterGlass_Lower,
-    Zone_Story2_Cavity_North,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_North_OuterVent_OuterGlass_Upper,
-    Zone_Story2_Cavity_North,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_West_OuterVent_OuterGlass_Lower,
-    Zone_Story2_Cavity_West,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
 
-ZoneVentilation:DesignFlowRate,
-    Story2_Cavity_West_OuterVent_OuterGlass_Upper,
-    Zone_Story2_Cavity_West,
-    DSF_Damper_OuterSkin_Schedule,
-    AirChanges/Hour,
-    ,
-    ,
-    ,
-    1.0,
-    Natural,
-    0.0,
-    0.7,
-    1.0, 0.0, 0.0, 0.0,
-    18.0, , 40.0, , 40.0;
+
+
+
+
+
+
+
+
+
+
+
+
