@@ -1,15 +1,16 @@
 """
-Integrated Real-Scale Kinetic BIPV & DSF Outer Skin Control with Cavity Thermal Heat Gain
-==========================================================================================
-- Target: Real-Scale Office Building (32m x 18m x 8m, 10 Zones + 2 DSF South Cavity Zones)
+Integrated Real-Scale Kinetic BIPV & DSF Outer Skin Control with 4-Facade Cavity Thermal Heat Gain
+===================================================================================================
+- Target: Real-Scale Office Building (32m x 18m x 8m, 10 Zones + 4 DSF Cavity Zones)
 - Gwangju IWEC Climate (35.13°N, 126.92°E)
 - Features:
-  1. Coupled Kinetic BIPV Sun-Tracking (0° to 90°) & STPV 20% Transmittance Preservation
+  1. Coupled Kinetic BIPV Sun-Tracking (0° to 90°) & STPV 20% Transmittance Preservation on South Facade
   2. 2-Damper System Decoupled Control (Top/Bottom Stack & Outer Skin Louver Gap)
-  3. BIPV Waste Heat Injection to DSF Cavity (BIPV/T Thermal Modeling):
-     - When closed (0° vertical in winter/cold periods), absorbs solar radiation and injects
-       the rear-side thermal waste heat (Q_absorbed - P_pv) into Zone_Cavity_South via OtherEquipment.
-     - When tilted (>0° in summer), inward heat fraction is dynamically reduced as louver opens.
+  3. 4-Facade BIPV Waste Heat Injection to DSF Cavities (BIPV/T Thermal Modeling):
+     - South Facade: 80 modules (213.33 m2), 0° closed in winter (45% inward heat gain), tilted in summer (0% inward)
+     - East Facade:  50 modules (133.33 m2), 0° vertical fixed outer skin (45% inward heat gain to Zone_Cavity_East)
+     - North Facade: 80 modules (213.33 m2), 0° vertical fixed outer skin (45% inward heat gain to Zone_Cavity_North)
+     - West Facade:  50 modules (133.33 m2), 0° vertical fixed outer skin (45% inward heat gain to Zone_Cavity_West)
 """
 
 from pyenergyplus.plugin import EnergyPlusPlugin
@@ -18,11 +19,23 @@ import math
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 
 # PV & Thermal Parameters
-PV_TOTAL_AREA = 213.333333      # m2 (80 modules * 2.186184 m2 * 1.219781 scaling)
+PV_AREAS = {
+    "South": 213.333333,  # m2 (80 modules * 2.186184 m2 * 1.219781 scaling)
+    "East":  133.333333,  # m2 (50 modules * 2.186184 m2 * 1.219781 scaling)
+    "North": 213.333333,  # m2 (80 modules * 2.186184 m2 * 1.219781 scaling)
+    "West":  133.333333   # m2 (50 modules * 2.186184 m2 * 1.219781 scaling)
+}
+
+SURF_AZIS = {
+    "South": math.pi,               # 180 deg
+    "East":  math.pi / 2.0,         # 90 deg
+    "North": 0.0,                   # 0 deg
+    "West":  3.0 * math.pi / 2.0    # 270 deg
+}
+
 PV_ABSORPTANCE = 0.90          # Solar absorptance of BIPV surface (90%)
 PV_BASE_EFFICIENCY = 0.15      # Nominal PV electrical efficiency (15%)
 INWARD_HEAT_FRAC_CLOSED = 0.45 # Inward thermal transfer fraction when louvers are fully closed (0 deg)
-INWARD_HEAT_FRAC_OPEN = 0.05   # Inward thermal transfer fraction when louvers are fully open (90 deg)
 
 
 def safe_debug(message):
@@ -43,11 +56,20 @@ class DSFKineticBIPVRealscaleThermalPlugin(EnergyPlusPlugin):
         self.dsf_topbottom_damper = 0.0
         self.dsf_outerskin_damper = 0.0
         self.operating_mode = 0.0
+
+        # South Facade
         self.bipv_incident_solar = 0.0
         self.bipv_power_generation = 0.0
         self.bipv_efficiency = 0.0
         self.bipv_waste_heat = 0.0
         self.bipv_cavity_heat_gain = 0.0
+
+        # East / North / West Facades
+        self.bipv_results = {
+            "East":  {"solar": 0.0, "power": 0.0, "waste_heat": 0.0, "cavity_heat": 0.0},
+            "North": {"solar": 0.0, "power": 0.0, "waste_heat": 0.0, "cavity_heat": 0.0},
+            "West":  {"solar": 0.0, "power": 0.0, "waste_heat": 0.0, "cavity_heat": 0.0},
+        }
 
     def on_begin_zone_timestep_before_init_heat_balance(self, state) -> int:
         if not self.api.exchange.api_data_fully_ready(state):
@@ -68,52 +90,66 @@ class DSFKineticBIPVRealscaleThermalPlugin(EnergyPlusPlugin):
 
         best_bipv_angle, mode, topbottom_damper, outerskin_damper = self._control_coupled_bipv_and_dsf(sun_alt, out_temp, dn_rad)
 
-        tilt_deg = 90.0 - best_bipv_angle
-        optimal_solar_rad = self._get_incident_solar_val(sun_alt, sun_azi, dn_rad, df_rad, tilt_deg)
+        # -------------------------------------------------------------
+        # 1. SOUTH FACADE BIPV & CAVITY HEAT GAIN
+        # -------------------------------------------------------------
+        tilt_deg_s = 90.0 - best_bipv_angle
+        solar_rad_s = self._get_incident_solar_val(sun_alt, sun_azi, dn_rad, df_rad, tilt_deg_s, SURF_AZIS["South"])
 
-        actual_pv_eff = PV_BASE_EFFICIENCY if optimal_solar_rad > 0.0 else 0.0
-        pv_power = optimal_solar_rad * PV_TOTAL_AREA * actual_pv_eff
+        actual_pv_eff_s = PV_BASE_EFFICIENCY if solar_rad_s > 0.0 else 0.0
+        pv_power_s = solar_rad_s * PV_AREAS["South"] * actual_pv_eff_s
+        total_absorbed_heat_s = solar_rad_s * PV_AREAS["South"] * PV_ABSORPTANCE
+        waste_heat_s = max(0.0, total_absorbed_heat_s - pv_power_s)
 
-        # --- BIPV Thermal Waste Heat Calculation ---
-        # Total solar radiation incident on BIPV modules [W]
-        total_solar_heat = optimal_solar_rad * PV_TOTAL_AREA
-        # Solar radiation absorbed by BIPV modules [W]
-        total_absorbed_heat = total_solar_heat * PV_ABSORPTANCE
-        # Net thermal waste heat after electric power generation [W]
-        waste_heat = max(0.0, total_absorbed_heat - pv_power)
+        inward_fraction_s = INWARD_HEAT_FRAC_CLOSED if best_bipv_angle == 0 else 0.0
+        cavity_thermal_gain_s = waste_heat_s * inward_fraction_s
 
-        # Inward Heat Fraction:
-        # - Closed (0 deg, Winter/Cold): 45% of waste heat is trapped and heats the DSF cavity
-        # - Open (>0 deg, Summer/Warm tracking): Heat completely dissipates to ambient air due to external airflow & DSF ventilation (0%)
-        if best_bipv_angle == 0:
-            inward_fraction = INWARD_HEAT_FRAC_CLOSED
-        else:
-            inward_fraction = 0.0
+        # -------------------------------------------------------------
+        # 2. EAST / NORTH / WEST FACADES (0° Vertical Fixed Outer Skin)
+        # -------------------------------------------------------------
+        cavity_thermal_gains = {"South": cavity_thermal_gain_s}
 
-        # Thermal heat injected into DSF Cavity [W]
-        cavity_thermal_gain = waste_heat * inward_fraction
+        for orient in ["East", "North", "West"]:
+            solar_rad = self._get_incident_solar_val(sun_alt, sun_azi, dn_rad, df_rad, 90.0, SURF_AZIS[orient])
+            actual_eff = PV_BASE_EFFICIENCY if solar_rad > 0.0 else 0.0
+            pv_power = solar_rad * PV_AREAS[orient] * actual_eff
+            total_absorbed = solar_rad * PV_AREAS[orient] * PV_ABSORPTANCE
+            waste_heat = max(0.0, total_absorbed - pv_power)
+            cavity_gain = waste_heat * INWARD_HEAT_FRAC_CLOSED
 
-        # --- Override Schedules ---
+            self.bipv_results[orient] = {
+                "solar": solar_rad,
+                "power": pv_power,
+                "waste_heat": waste_heat,
+                "cavity_heat": cavity_gain
+            }
+            cavity_thermal_gains[orient] = cavity_gain
+
+        # -------------------------------------------------------------
+        # 3. OVERRIDE ACTUATOR SCHEDULES
+        # -------------------------------------------------------------
         self._override_schedules(
             state,
             optimal_angle=best_bipv_angle,
             tb_damper=topbottom_damper,
             os_damper=outerskin_damper,
-            cavity_heat_gain=cavity_thermal_gain
+            cavity_gains=cavity_thermal_gains
         )
 
-        # --- Update Global Variables ---
+        # -------------------------------------------------------------
+        # 4. UPDATE GLOBAL REPORTING VARIABLES
+        # -------------------------------------------------------------
         self._update_global_variables(
             state,
             best_bipv_angle,
             topbottom_damper,
             outerskin_damper,
             mode,
-            optimal_solar_rad,
-            actual_pv_eff,
-            pv_power,
-            waste_heat,
-            cavity_thermal_gain
+            solar_rad_s,
+            actual_pv_eff_s,
+            pv_power_s,
+            waste_heat_s,
+            cavity_thermal_gain_s
         )
 
         return 0
@@ -139,7 +175,7 @@ class DSFKineticBIPVRealscaleThermalPlugin(EnergyPlusPlugin):
                 best_angle = 0
                 topbottom_damper = 0.0
 
-        # TYPE 2: DSF OUTER SKIN LOUVER GAP DAMPER CONTROL
+        # DSF OUTER SKIN LOUVER GAP DAMPER CONTROL
         outerskin_damper = 1.0 if best_angle > 0 else 0.0
 
         return best_angle, mode, topbottom_damper, outerskin_damper
@@ -170,12 +206,21 @@ class DSFKineticBIPVRealscaleThermalPlugin(EnergyPlusPlugin):
             state, "Schedule:Compact", "Schedule Value", "DSF_Damper_OuterSkin_Schedule"
         )
 
-        # CAVITY THERMAL HEAT GAIN SCHEDULE ACTUATOR
-        self.handles["cavity_heat_gain"] = exchange.get_actuator_handle(
+        # 4-FACADE CAVITY THERMAL HEAT GAIN SCHEDULE ACTUATORS
+        self.handles["cavity_heat_gain_south"] = exchange.get_actuator_handle(
             state, "Schedule:Compact", "Schedule Value", "DSF_BIPV_Cavity_HeatGain_Schedule"
         )
+        self.handles["cavity_heat_gain_east"] = exchange.get_actuator_handle(
+            state, "Schedule:Compact", "Schedule Value", "DSF_BIPV_Cavity_HeatGain_Schedule_East"
+        )
+        self.handles["cavity_heat_gain_north"] = exchange.get_actuator_handle(
+            state, "Schedule:Compact", "Schedule Value", "DSF_BIPV_Cavity_HeatGain_Schedule_North"
+        )
+        self.handles["cavity_heat_gain_west"] = exchange.get_actuator_handle(
+            state, "Schedule:Compact", "Schedule Value", "DSF_BIPV_Cavity_HeatGain_Schedule_West"
+        )
 
-        # GLOBAL VARIABLE HANDLES
+        # GLOBAL VARIABLE HANDLES - SOUTH
         self.handles["g_bipv_tilt"] = exchange.get_global_handle(state, "BIPV_Tilt_Angle")
         self.handles["g_damper"] = exchange.get_global_handle(state, "DSF_Damper_Opening")
         self.handles["g_mode"] = exchange.get_global_handle(state, "DSF_Operating_Mode")
@@ -184,6 +229,13 @@ class DSFKineticBIPVRealscaleThermalPlugin(EnergyPlusPlugin):
         self.handles["g_bipv_eff"] = exchange.get_global_handle(state, "BIPV_Efficiency")
         self.handles["g_bipv_waste_heat"] = exchange.get_global_handle(state, "BIPV_Waste_Heat")
         self.handles["g_bipv_cavity_heat"] = exchange.get_global_handle(state, "BIPV_Cavity_Heat_Gain")
+
+        # GLOBAL VARIABLE HANDLES - EAST / NORTH / WEST
+        for orient in ["East", "North", "West"]:
+            self.handles[f"g_bipv_rad_{orient.lower()}"] = exchange.get_global_handle(state, f"BIPV_Incident_Solar_{orient}")
+            self.handles[f"g_bipv_power_{orient.lower()}"] = exchange.get_global_handle(state, f"BIPV_Power_Generation_{orient}")
+            self.handles[f"g_bipv_waste_{orient.lower()}"] = exchange.get_global_handle(state, f"BIPV_Waste_Heat_{orient}")
+            self.handles[f"g_bipv_cavity_{orient.lower()}"] = exchange.get_global_handle(state, f"BIPV_Cavity_Heat_Gain_{orient}")
 
         any_failed = False
         for key, val in self.handles.items():
@@ -194,20 +246,20 @@ class DSFKineticBIPVRealscaleThermalPlugin(EnergyPlusPlugin):
                         any_failed = True
             elif val == -1:
                 safe_debug(f"DEBUG_WARN: FAILED TO GET HANDLE for sensor/actuator/global: {key}")
-                if key not in ["cavity_heat_gain", "g_bipv_waste_heat", "g_bipv_cavity_heat"]:
+                if "cavity" not in key and "waste" not in key:
                     any_failed = True
 
         if not any_failed:
-            safe_debug("DEBUG_SUCCESS: ALL REAL-SCALE THERMAL KINETIC BIPV & DSF HANDLES ACQUIRED!")
+            safe_debug("DEBUG_SUCCESS: ALL REAL-SCALE 4-FACADE THERMAL KINETIC BIPV & DSF HANDLES ACQUIRED!")
             self.need_to_get_handles = False
 
-    def _get_incident_solar_val(self, sun_alt, sun_azi, dn_rad, df_rad, tilt_deg):
+    def _get_incident_solar_val(self, sun_alt, sun_azi, dn_rad, df_rad, tilt_deg, surface_azi_rad):
         tilt_rad = math.radians(tilt_deg)
         alt_rad = math.radians(sun_alt)
         azi_rad = math.radians(sun_azi)
 
         cos_theta = (math.sin(alt_rad) * math.cos(tilt_rad) +
-                     math.cos(alt_rad) * math.sin(tilt_rad) * math.cos(azi_rad - math.pi))
+                     math.cos(alt_rad) * math.sin(tilt_rad) * math.cos(azi_rad - surface_azi_rad))
         cos_theta = max(0.0, cos_theta)
         
         i_beam = dn_rad * cos_theta
@@ -217,7 +269,7 @@ class DSFKineticBIPVRealscaleThermalPlugin(EnergyPlusPlugin):
 
         return i_beam + i_diff + i_ground
 
-    def _override_schedules(self, state, optimal_angle: int, tb_damper: float, os_damper: float, cavity_heat_gain: float):
+    def _override_schedules(self, state, optimal_angle: int, tb_damper: float, os_damper: float, cavity_gains: dict):
         exchange = self.api.exchange
 
         for angle in ANGLES:
@@ -237,28 +289,40 @@ class DSFKineticBIPVRealscaleThermalPlugin(EnergyPlusPlugin):
 
         h_tb = self.handles.get("damper_topbottom", -1)
         h_os = self.handles.get("damper_outerskin", -1)
-        h_heat = self.handles.get("cavity_heat_gain", -1)
-
         if h_tb != -1:
             exchange.set_actuator_value(state, h_tb, tb_damper)
         if h_os != -1:
             exchange.set_actuator_value(state, h_os, os_damper)
-        if h_heat != -1:
-            exchange.set_actuator_value(state, h_heat, cavity_heat_gain)
+
+        # 4-FACADE CAVITY HEAT GAINS
+        h_heat_s = self.handles.get("cavity_heat_gain_south", -1)
+        h_heat_e = self.handles.get("cavity_heat_gain_east", -1)
+        h_heat_n = self.handles.get("cavity_heat_gain_north", -1)
+        h_heat_w = self.handles.get("cavity_heat_gain_west", -1)
+
+        if h_heat_s != -1:
+            exchange.set_actuator_value(state, h_heat_s, cavity_gains.get("South", 0.0))
+        if h_heat_e != -1:
+            exchange.set_actuator_value(state, h_heat_e, cavity_gains.get("East", 0.0))
+        if h_heat_n != -1:
+            exchange.set_actuator_value(state, h_heat_n, cavity_gains.get("North", 0.0))
+        if h_heat_w != -1:
+            exchange.set_actuator_value(state, h_heat_w, cavity_gains.get("West", 0.0))
 
     def _update_global_variables(self, state, tilt: int, tb_damp: float, os_damp: float, mode: int,
-                                  solar: float, eff: float, power: float, waste_heat: float, cavity_heat: float):
+                                  solar_s: float, eff_s: float, power_s: float, waste_s: float, cavity_s: float):
         exchange = self.api.exchange
         self.bipv_tilt_angle = float(tilt)
         self.dsf_topbottom_damper = tb_damp
         self.dsf_outerskin_damper = os_damp
         self.operating_mode = float(mode)
-        self.bipv_incident_solar = solar
-        self.bipv_efficiency = eff
-        self.bipv_power_generation = power
-        self.bipv_waste_heat = waste_heat
-        self.bipv_cavity_heat_gain = cavity_heat
+        self.bipv_incident_solar = solar_s
+        self.bipv_efficiency = eff_s
+        self.bipv_power_generation = power_s
+        self.bipv_waste_heat = waste_s
+        self.bipv_cavity_heat_gain = cavity_s
 
+        # South
         g_tilt = self.handles.get("g_bipv_tilt", -1)
         g_damp = self.handles.get("g_damper", -1)
         g_mode = self.handles.get("g_mode", -1)
@@ -275,12 +339,29 @@ class DSFKineticBIPVRealscaleThermalPlugin(EnergyPlusPlugin):
         if g_mode != -1:
             exchange.set_global_value(state, g_mode, float(mode))
         if g_rad != -1:
-            exchange.set_global_value(state, g_rad, solar)
+            exchange.set_global_value(state, g_rad, solar_s)
         if g_eff != -1:
-            exchange.set_global_value(state, g_eff, eff)
+            exchange.set_global_value(state, g_eff, eff_s)
         if g_pwr != -1:
-            exchange.set_global_value(state, g_pwr, power)
+            exchange.set_global_value(state, g_pwr, power_s)
         if g_waste != -1:
-            exchange.set_global_value(state, g_waste, waste_heat)
+            exchange.set_global_value(state, g_waste, waste_s)
         if g_cavity != -1:
-            exchange.set_global_value(state, g_cavity, cavity_heat)
+            exchange.set_global_value(state, g_cavity, cavity_s)
+
+        # East / North / West
+        for orient in ["East", "North", "West"]:
+            res = self.bipv_results[orient]
+            g_r = self.handles.get(f"g_bipv_rad_{orient.lower()}", -1)
+            g_p = self.handles.get(f"g_bipv_power_{orient.lower()}", -1)
+            g_w = self.handles.get(f"g_bipv_waste_{orient.lower()}", -1)
+            g_c = self.handles.get(f"g_bipv_cavity_{orient.lower()}", -1)
+
+            if g_r != -1:
+                exchange.set_global_value(state, g_r, res["solar"])
+            if g_p != -1:
+                exchange.set_global_value(state, g_p, res["power"])
+            if g_w != -1:
+                exchange.set_global_value(state, g_w, res["waste_heat"])
+            if g_c != -1:
+                exchange.set_global_value(state, g_c, res["cavity_heat"])

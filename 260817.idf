@@ -33108,49 +33108,49 @@ SetpointManager:Scheduled,
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     ,                             !- Key Value
     Facility Net Purchased Electricity Energy,  !- Variable Name
     TimeStep;
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     ,                             !- Key Value
     Facility Total Produced Electricity Energy,  !- Variable Name
     TimeStep;
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     ,                             !- Key Value
     Generator Produced DC Electricity Energy,  !- Variable Name
     TimeStep;
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     ,                             !- Key Value
     Zone Electric Equipment Electricity Energy,  !- Variable Name
     TimeStep;
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     ,                             !- Key Value
     Zone Ideal Loads Supply Air Total Cooling Energy,  !- Variable Name
     TimeStep;
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     ,                             !- Key Value
     Zone Ideal Loads Supply Air Total Heating Energy,  !- Variable Name
     TimeStep;
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     ,                             !- Key Value
     Zone Lights Electricity Energy,  !- Variable Name
     TimeStep;
@@ -33187,6 +33187,14 @@ LifeCycleCost:NonrecurringCost,
 ! ==========================================
 ! CONSTANT SCHEDULE DEFINITIONS FOR BIPV
 ! ==========================================
+
+Schedule:Compact,
+    TransSched_BIPV_Fixed,        !- Name
+    Fraction,                     !- Schedule Type Limits Name
+    Through: 12/31,               !- Field 1
+    For: AllDays,                 !- Field 2
+    Until: 24:00,                 !- Field 3
+    0.20;                         !- Field 4
 
 Schedule:Compact,
     TransSched_BIPV_A00,          !- Name
@@ -34376,35 +34384,35 @@ Schedule:Compact,
 ! ESSENTIAL OUTPUT VARIABLES FOR PYTHON PLUGIN SENSORS
 ! ==========================================
 
-Output:Variable;
+Output:Variable,
     *,                            !- Key Value
     Site Direct Solar Radiation Rate per Area,  !- Variable Name
     Timestep;
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     *,                            !- Key Value
     Site Diffuse Solar Radiation Rate per Area,  !- Variable Name
     Timestep;
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     *,                            !- Key Value
     Site Outdoor Air Drybulb Temperature,  !- Variable Name
     Timestep;
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     *,                            !- Key Value
     Site Solar Altitude Angle,    !- Variable Name
     Timestep;
 
 !- Reporting Frequency
 
-Output:Variable;
+Output:Variable,
     *,                            !- Key Value
     Site Solar Azimuth Angle,     !- Variable Name
     Timestep;
@@ -34415,7 +34423,7 @@ Output:Variable;
 
 Shading:Building:Detailed,
     BIPV_East_Y000_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 0, 2.66666666666667,    !- X,Y,Z Vertex 1 {m}
     33.6, 0, 1.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -34424,7 +34432,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y000_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 0, 4,                   !- X,Y,Z Vertex 1 {m}
     33.6, 0, 2.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -34433,7 +34441,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y000_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 0, 5.33333333333333,    !- X,Y,Z Vertex 1 {m}
     33.6, 0, 4,                   !- X,Y,Z Vertex 2 {m}
@@ -34442,7 +34450,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y000_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 0, 6.66666666666667,    !- X,Y,Z Vertex 1 {m}
     33.6, 0, 5.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -34451,7 +34459,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y000_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 0, 8,                   !- X,Y,Z Vertex 1 {m}
     33.6, 0, 6.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -34460,7 +34468,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y020_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 1.96, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     33.6, 1.96, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -34469,7 +34477,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y020_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 1.96, 4,                !- X,Y,Z Vertex 1 {m}
     33.6, 1.96, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -34478,7 +34486,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y020_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 1.96, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     33.6, 1.96, 4,                !- X,Y,Z Vertex 2 {m}
@@ -34487,7 +34495,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y020_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 1.96, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     33.6, 1.96, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -34496,7 +34504,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y020_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 1.96, 8,                !- X,Y,Z Vertex 1 {m}
     33.6, 1.96, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -34505,7 +34513,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y039_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 3.92, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     33.6, 3.92, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -34514,7 +34522,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y039_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 3.92, 4,                !- X,Y,Z Vertex 1 {m}
     33.6, 3.92, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -34523,7 +34531,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y039_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 3.92, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     33.6, 3.92, 4,                !- X,Y,Z Vertex 2 {m}
@@ -34532,7 +34540,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y039_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 3.92, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     33.6, 3.92, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -34541,7 +34549,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y039_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 3.92, 8,                !- X,Y,Z Vertex 1 {m}
     33.6, 3.92, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -34550,7 +34558,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y059_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 5.88, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     33.6, 5.88, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -34559,7 +34567,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y059_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 5.88, 4,                !- X,Y,Z Vertex 1 {m}
     33.6, 5.88, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -34568,7 +34576,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y059_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 5.88, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     33.6, 5.88, 4,                !- X,Y,Z Vertex 2 {m}
@@ -34577,7 +34585,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y059_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 5.88, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     33.6, 5.88, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -34586,7 +34594,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y059_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 5.88, 8,                !- X,Y,Z Vertex 1 {m}
     33.6, 5.88, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -34595,7 +34603,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y078_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 7.84, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     33.6, 7.84, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -34604,7 +34612,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y078_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 7.84, 4,                !- X,Y,Z Vertex 1 {m}
     33.6, 7.84, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -34613,7 +34621,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y078_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 7.84, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     33.6, 7.84, 4,                !- X,Y,Z Vertex 2 {m}
@@ -34622,7 +34630,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y078_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 7.84, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     33.6, 7.84, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -34631,7 +34639,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y078_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 7.84, 8,                !- X,Y,Z Vertex 1 {m}
     33.6, 7.84, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -34640,7 +34648,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y098_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 9.8, 2.66666666666667,  !- X,Y,Z Vertex 1 {m}
     33.6, 9.8, 1.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34649,7 +34657,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y098_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 9.8, 4,                 !- X,Y,Z Vertex 1 {m}
     33.6, 9.8, 2.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34658,7 +34666,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y098_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 9.8, 5.33333333333333,  !- X,Y,Z Vertex 1 {m}
     33.6, 9.8, 4,                 !- X,Y,Z Vertex 2 {m}
@@ -34667,7 +34675,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y098_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 9.8, 6.66666666666667,  !- X,Y,Z Vertex 1 {m}
     33.6, 9.8, 5.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34676,7 +34684,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y098_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 9.8, 8,                 !- X,Y,Z Vertex 1 {m}
     33.6, 9.8, 6.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34685,7 +34693,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y118_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 11.76, 2.66666666666667,  !- X,Y,Z Vertex 1 {m}
     33.6, 11.76, 1.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34694,7 +34702,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y118_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 11.76, 4,               !- X,Y,Z Vertex 1 {m}
     33.6, 11.76, 2.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34703,7 +34711,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y118_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 11.76, 5.33333333333333,  !- X,Y,Z Vertex 1 {m}
     33.6, 11.76, 4,               !- X,Y,Z Vertex 2 {m}
@@ -34712,7 +34720,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y118_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 11.76, 6.66666666666667,  !- X,Y,Z Vertex 1 {m}
     33.6, 11.76, 5.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34721,7 +34729,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y118_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 11.76, 8,               !- X,Y,Z Vertex 1 {m}
     33.6, 11.76, 6.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34730,7 +34738,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y137_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 13.72, 2.66666666666667,  !- X,Y,Z Vertex 1 {m}
     33.6, 13.72, 1.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34739,7 +34747,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y137_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 13.72, 4,               !- X,Y,Z Vertex 1 {m}
     33.6, 13.72, 2.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34748,7 +34756,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y137_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 13.72, 5.33333333333333,  !- X,Y,Z Vertex 1 {m}
     33.6, 13.72, 4,               !- X,Y,Z Vertex 2 {m}
@@ -34757,7 +34765,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y137_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 13.72, 6.66666666666667,  !- X,Y,Z Vertex 1 {m}
     33.6, 13.72, 5.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34766,7 +34774,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y137_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 13.72, 8,               !- X,Y,Z Vertex 1 {m}
     33.6, 13.72, 6.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34775,7 +34783,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y157_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 15.68, 2.66666666666667,  !- X,Y,Z Vertex 1 {m}
     33.6, 15.68, 1.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34784,7 +34792,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y157_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 15.68, 4,               !- X,Y,Z Vertex 1 {m}
     33.6, 15.68, 2.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34793,7 +34801,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y157_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 15.68, 5.33333333333333,  !- X,Y,Z Vertex 1 {m}
     33.6, 15.68, 4,               !- X,Y,Z Vertex 2 {m}
@@ -34802,7 +34810,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y157_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 15.68, 6.66666666666667,  !- X,Y,Z Vertex 1 {m}
     33.6, 15.68, 5.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34811,7 +34819,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y157_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 15.68, 8,               !- X,Y,Z Vertex 1 {m}
     33.6, 15.68, 6.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34820,7 +34828,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y176_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 17.64, 2.66666666666667,  !- X,Y,Z Vertex 1 {m}
     33.6, 17.64, 1.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34829,7 +34837,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y176_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 17.64, 4,               !- X,Y,Z Vertex 1 {m}
     33.6, 17.64, 2.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34838,7 +34846,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y176_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 17.64, 5.33333333333333,  !- X,Y,Z Vertex 1 {m}
     33.6, 17.64, 4,               !- X,Y,Z Vertex 2 {m}
@@ -34847,7 +34855,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y176_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 17.64, 6.66666666666667,  !- X,Y,Z Vertex 1 {m}
     33.6, 17.64, 5.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34856,7 +34864,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_East_Y176_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 17.64, 8,               !- X,Y,Z Vertex 1 {m}
     33.6, 17.64, 6.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34865,7 +34873,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X000_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     2.1, 19.6, 2.66666666666667,  !- X,Y,Z Vertex 1 {m}
     2.1, 19.6, 1.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34874,7 +34882,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X000_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     2.1, 19.6, 4,                 !- X,Y,Z Vertex 1 {m}
     2.1, 19.6, 2.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34883,7 +34891,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X000_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     2.1, 19.6, 5.33333333333333,  !- X,Y,Z Vertex 1 {m}
     2.1, 19.6, 4,                 !- X,Y,Z Vertex 2 {m}
@@ -34892,7 +34900,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X000_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     2.1, 19.6, 6.66666666666667,  !- X,Y,Z Vertex 1 {m}
     2.1, 19.6, 5.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34901,7 +34909,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X000_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     2.1, 19.6, 8,                 !- X,Y,Z Vertex 1 {m}
     2.1, 19.6, 6.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34910,7 +34918,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X021_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     4.2, 19.6, 2.66666666666667,  !- X,Y,Z Vertex 1 {m}
     4.2, 19.6, 1.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34919,7 +34927,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X021_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     4.2, 19.6, 4,                 !- X,Y,Z Vertex 1 {m}
     4.2, 19.6, 2.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34928,7 +34936,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X021_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     4.2, 19.6, 5.33333333333333,  !- X,Y,Z Vertex 1 {m}
     4.2, 19.6, 4,                 !- X,Y,Z Vertex 2 {m}
@@ -34937,7 +34945,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X021_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     4.2, 19.6, 6.66666666666667,  !- X,Y,Z Vertex 1 {m}
     4.2, 19.6, 5.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34946,7 +34954,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X021_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     4.2, 19.6, 8,                 !- X,Y,Z Vertex 1 {m}
     4.2, 19.6, 6.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34955,7 +34963,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X042_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     6.3, 19.6, 2.66666666666667,  !- X,Y,Z Vertex 1 {m}
     6.3, 19.6, 1.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34964,7 +34972,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X042_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     6.3, 19.6, 4,                 !- X,Y,Z Vertex 1 {m}
     6.3, 19.6, 2.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -34973,7 +34981,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X042_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     6.3, 19.6, 5.33333333333333,  !- X,Y,Z Vertex 1 {m}
     6.3, 19.6, 4,                 !- X,Y,Z Vertex 2 {m}
@@ -34982,7 +34990,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X042_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     6.3, 19.6, 6.66666666666667,  !- X,Y,Z Vertex 1 {m}
     6.3, 19.6, 5.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -34991,7 +34999,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X042_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     6.3, 19.6, 8,                 !- X,Y,Z Vertex 1 {m}
     6.3, 19.6, 6.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -35000,7 +35008,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X063_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     8.4, 19.6, 2.66666666666667,  !- X,Y,Z Vertex 1 {m}
     8.4, 19.6, 1.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -35009,7 +35017,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X063_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     8.4, 19.6, 4,                 !- X,Y,Z Vertex 1 {m}
     8.4, 19.6, 2.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -35018,7 +35026,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X063_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     8.4, 19.6, 5.33333333333333,  !- X,Y,Z Vertex 1 {m}
     8.4, 19.6, 4,                 !- X,Y,Z Vertex 2 {m}
@@ -35027,7 +35035,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X063_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     8.4, 19.6, 6.66666666666667,  !- X,Y,Z Vertex 1 {m}
     8.4, 19.6, 5.33333333333333,  !- X,Y,Z Vertex 2 {m}
@@ -35036,7 +35044,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X063_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     8.4, 19.6, 8,                 !- X,Y,Z Vertex 1 {m}
     8.4, 19.6, 6.66666666666667,  !- X,Y,Z Vertex 2 {m}
@@ -35045,7 +35053,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X084_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     10.5, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     10.5, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35054,7 +35062,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X084_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     10.5, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     10.5, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35063,7 +35071,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X084_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     10.5, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     10.5, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35072,7 +35080,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X084_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     10.5, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     10.5, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35081,7 +35089,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X084_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     10.5, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     10.5, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35090,7 +35098,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X105_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     12.6, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     12.6, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35099,7 +35107,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X105_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     12.6, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     12.6, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35108,7 +35116,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X105_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     12.6, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     12.6, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35117,7 +35125,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X105_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     12.6, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     12.6, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35126,7 +35134,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X105_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     12.6, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     12.6, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35135,7 +35143,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X126_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     14.7, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     14.7, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35144,7 +35152,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X126_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     14.7, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     14.7, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35153,7 +35161,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X126_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     14.7, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     14.7, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35162,7 +35170,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X126_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     14.7, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     14.7, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35171,7 +35179,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X126_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     14.7, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     14.7, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35180,7 +35188,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X147_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     16.8, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     16.8, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35189,7 +35197,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X147_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     16.8, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     16.8, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35198,7 +35206,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X147_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     16.8, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     16.8, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35207,7 +35215,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X147_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     16.8, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     16.8, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35216,7 +35224,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X147_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     16.8, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     16.8, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35225,7 +35233,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X168_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     18.9, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     18.9, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35234,7 +35242,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X168_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     18.9, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     18.9, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35243,7 +35251,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X168_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     18.9, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     18.9, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35252,7 +35260,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X168_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     18.9, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     18.9, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35261,7 +35269,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X168_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     18.9, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     18.9, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35270,7 +35278,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X189_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     21, 19.6, 2.66666666666667,   !- X,Y,Z Vertex 1 {m}
     21, 19.6, 1.33333333333333,   !- X,Y,Z Vertex 2 {m}
@@ -35279,7 +35287,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X189_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     21, 19.6, 4,                  !- X,Y,Z Vertex 1 {m}
     21, 19.6, 2.66666666666667,   !- X,Y,Z Vertex 2 {m}
@@ -35288,7 +35296,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X189_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     21, 19.6, 5.33333333333333,   !- X,Y,Z Vertex 1 {m}
     21, 19.6, 4,                  !- X,Y,Z Vertex 2 {m}
@@ -35297,7 +35305,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X189_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     21, 19.6, 6.66666666666667,   !- X,Y,Z Vertex 1 {m}
     21, 19.6, 5.33333333333333,   !- X,Y,Z Vertex 2 {m}
@@ -35306,7 +35314,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X189_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     21, 19.6, 8,                  !- X,Y,Z Vertex 1 {m}
     21, 19.6, 6.66666666666667,   !- X,Y,Z Vertex 2 {m}
@@ -35315,7 +35323,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X210_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     23.1, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     23.1, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35324,7 +35332,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X210_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     23.1, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     23.1, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35333,7 +35341,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X210_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     23.1, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     23.1, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35342,7 +35350,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X210_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     23.1, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     23.1, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35351,7 +35359,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X210_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     23.1, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     23.1, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35360,7 +35368,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X231_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     25.2, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     25.2, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35369,7 +35377,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X231_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     25.2, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     25.2, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35378,7 +35386,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X231_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     25.2, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     25.2, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35387,7 +35395,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X231_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     25.2, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     25.2, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35396,7 +35404,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X231_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     25.2, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     25.2, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35405,7 +35413,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X252_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     27.3, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     27.3, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35414,7 +35422,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X252_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     27.3, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     27.3, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35423,7 +35431,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X252_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     27.3, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     27.3, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35432,7 +35440,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X252_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     27.3, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     27.3, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35441,7 +35449,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X252_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     27.3, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     27.3, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35450,7 +35458,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X273_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     29.4, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     29.4, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35459,7 +35467,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X273_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     29.4, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     29.4, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35468,7 +35476,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X273_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     29.4, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     29.4, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35477,7 +35485,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X273_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     29.4, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     29.4, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35486,7 +35494,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X273_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     29.4, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     29.4, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35495,7 +35503,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X294_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     31.5, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     31.5, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35504,7 +35512,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X294_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     31.5, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     31.5, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35513,7 +35521,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X294_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     31.5, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     31.5, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35522,7 +35530,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X294_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     31.5, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     31.5, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35531,7 +35539,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X294_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     31.5, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     31.5, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35540,7 +35548,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X315_Z27_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 19.6, 2.66666666666667, !- X,Y,Z Vertex 1 {m}
     33.6, 19.6, 1.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35549,7 +35557,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X315_Z40_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 19.6, 4,                !- X,Y,Z Vertex 1 {m}
     33.6, 19.6, 2.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -35558,7 +35566,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X315_Z53_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 19.6, 5.33333333333333, !- X,Y,Z Vertex 1 {m}
     33.6, 19.6, 4,                !- X,Y,Z Vertex 2 {m}
@@ -35567,7 +35575,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X315_Z67_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 19.6, 6.66666666666667, !- X,Y,Z Vertex 1 {m}
     33.6, 19.6, 5.33333333333333, !- X,Y,Z Vertex 2 {m}
@@ -35576,7 +35584,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_North_X315_Z80_A00,      !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     33.6, 19.6, 8,                !- X,Y,Z Vertex 1 {m}
     33.6, 19.6, 6.66666666666667, !- X,Y,Z Vertex 2 {m}
@@ -42785,7 +42793,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y000_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 1.96, 2.66666666666667,    !- X,Y,Z Vertex 1 {m}
     0, 1.96, 1.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -42794,7 +42802,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y000_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 1.96, 4,                   !- X,Y,Z Vertex 1 {m}
     0, 1.96, 2.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -42803,7 +42811,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y000_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 1.96, 5.33333333333333,    !- X,Y,Z Vertex 1 {m}
     0, 1.96, 4,                   !- X,Y,Z Vertex 2 {m}
@@ -42812,7 +42820,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y000_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 1.96, 6.66666666666667,    !- X,Y,Z Vertex 1 {m}
     0, 1.96, 5.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -42821,7 +42829,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y000_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 1.96, 8,                   !- X,Y,Z Vertex 1 {m}
     0, 1.96, 6.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -42830,7 +42838,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y020_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 3.92, 2.66666666666667,    !- X,Y,Z Vertex 1 {m}
     0, 3.92, 1.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -42839,7 +42847,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y020_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 3.92, 4,                   !- X,Y,Z Vertex 1 {m}
     0, 3.92, 2.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -42848,7 +42856,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y020_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 3.92, 5.33333333333333,    !- X,Y,Z Vertex 1 {m}
     0, 3.92, 4,                   !- X,Y,Z Vertex 2 {m}
@@ -42857,7 +42865,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y020_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 3.92, 6.66666666666667,    !- X,Y,Z Vertex 1 {m}
     0, 3.92, 5.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -42866,7 +42874,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y020_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 3.92, 8,                   !- X,Y,Z Vertex 1 {m}
     0, 3.92, 6.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -42875,7 +42883,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y039_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 5.88, 2.66666666666667,    !- X,Y,Z Vertex 1 {m}
     0, 5.88, 1.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -42884,7 +42892,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y039_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 5.88, 4,                   !- X,Y,Z Vertex 1 {m}
     0, 5.88, 2.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -42893,7 +42901,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y039_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 5.88, 5.33333333333333,    !- X,Y,Z Vertex 1 {m}
     0, 5.88, 4,                   !- X,Y,Z Vertex 2 {m}
@@ -42902,7 +42910,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y039_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 5.88, 6.66666666666667,    !- X,Y,Z Vertex 1 {m}
     0, 5.88, 5.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -42911,7 +42919,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y039_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 5.88, 8,                   !- X,Y,Z Vertex 1 {m}
     0, 5.88, 6.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -42920,7 +42928,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y059_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 7.84, 2.66666666666667,    !- X,Y,Z Vertex 1 {m}
     0, 7.84, 1.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -42929,7 +42937,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y059_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 7.84, 4,                   !- X,Y,Z Vertex 1 {m}
     0, 7.84, 2.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -42938,7 +42946,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y059_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 7.84, 5.33333333333333,    !- X,Y,Z Vertex 1 {m}
     0, 7.84, 4,                   !- X,Y,Z Vertex 2 {m}
@@ -42947,7 +42955,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y059_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 7.84, 6.66666666666667,    !- X,Y,Z Vertex 1 {m}
     0, 7.84, 5.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -42956,7 +42964,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y059_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 7.84, 8,                   !- X,Y,Z Vertex 1 {m}
     0, 7.84, 6.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -42965,7 +42973,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y078_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 9.8, 2.66666666666667,     !- X,Y,Z Vertex 1 {m}
     0, 9.8, 1.33333333333333,     !- X,Y,Z Vertex 2 {m}
@@ -42974,7 +42982,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y078_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 9.8, 4,                    !- X,Y,Z Vertex 1 {m}
     0, 9.8, 2.66666666666667,     !- X,Y,Z Vertex 2 {m}
@@ -42983,7 +42991,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y078_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 9.8, 5.33333333333333,     !- X,Y,Z Vertex 1 {m}
     0, 9.8, 4,                    !- X,Y,Z Vertex 2 {m}
@@ -42992,7 +43000,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y078_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 9.8, 6.66666666666667,     !- X,Y,Z Vertex 1 {m}
     0, 9.8, 5.33333333333333,     !- X,Y,Z Vertex 2 {m}
@@ -43001,7 +43009,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y078_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 9.8, 8,                    !- X,Y,Z Vertex 1 {m}
     0, 9.8, 6.66666666666667,     !- X,Y,Z Vertex 2 {m}
@@ -43010,7 +43018,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y098_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 11.76, 2.66666666666667,   !- X,Y,Z Vertex 1 {m}
     0, 11.76, 1.33333333333333,   !- X,Y,Z Vertex 2 {m}
@@ -43019,7 +43027,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y098_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 11.76, 4,                  !- X,Y,Z Vertex 1 {m}
     0, 11.76, 2.66666666666667,   !- X,Y,Z Vertex 2 {m}
@@ -43028,7 +43036,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y098_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 11.76, 5.33333333333333,   !- X,Y,Z Vertex 1 {m}
     0, 11.76, 4,                  !- X,Y,Z Vertex 2 {m}
@@ -43037,7 +43045,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y098_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 11.76, 6.66666666666667,   !- X,Y,Z Vertex 1 {m}
     0, 11.76, 5.33333333333333,   !- X,Y,Z Vertex 2 {m}
@@ -43046,7 +43054,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y098_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 11.76, 8,                  !- X,Y,Z Vertex 1 {m}
     0, 11.76, 6.66666666666667,   !- X,Y,Z Vertex 2 {m}
@@ -43055,7 +43063,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y118_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 13.72, 2.66666666666667,   !- X,Y,Z Vertex 1 {m}
     0, 13.72, 1.33333333333333,   !- X,Y,Z Vertex 2 {m}
@@ -43064,7 +43072,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y118_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 13.72, 4,                  !- X,Y,Z Vertex 1 {m}
     0, 13.72, 2.66666666666667,   !- X,Y,Z Vertex 2 {m}
@@ -43073,7 +43081,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y118_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 13.72, 5.33333333333333,   !- X,Y,Z Vertex 1 {m}
     0, 13.72, 4,                  !- X,Y,Z Vertex 2 {m}
@@ -43082,7 +43090,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y118_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 13.72, 6.66666666666667,   !- X,Y,Z Vertex 1 {m}
     0, 13.72, 5.33333333333333,   !- X,Y,Z Vertex 2 {m}
@@ -43091,7 +43099,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y118_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 13.72, 8,                  !- X,Y,Z Vertex 1 {m}
     0, 13.72, 6.66666666666666,   !- X,Y,Z Vertex 2 {m}
@@ -43100,7 +43108,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y137_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 15.68, 2.66666666666667,   !- X,Y,Z Vertex 1 {m}
     0, 15.68, 1.33333333333333,   !- X,Y,Z Vertex 2 {m}
@@ -43109,7 +43117,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y137_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 15.68, 4,                  !- X,Y,Z Vertex 1 {m}
     0, 15.68, 2.66666666666667,   !- X,Y,Z Vertex 2 {m}
@@ -43118,7 +43126,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y137_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 15.68, 5.33333333333333,   !- X,Y,Z Vertex 1 {m}
     0, 15.68, 4,                  !- X,Y,Z Vertex 2 {m}
@@ -43127,7 +43135,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y137_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 15.68, 6.66666666666667,   !- X,Y,Z Vertex 1 {m}
     0, 15.68, 5.33333333333333,   !- X,Y,Z Vertex 2 {m}
@@ -43136,7 +43144,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y137_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 15.68, 8,                  !- X,Y,Z Vertex 1 {m}
     0, 15.68, 6.66666666666667,   !- X,Y,Z Vertex 2 {m}
@@ -43145,7 +43153,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y157_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 17.64, 2.66666666666667,   !- X,Y,Z Vertex 1 {m}
     0, 17.64, 1.33333333333333,   !- X,Y,Z Vertex 2 {m}
@@ -43154,7 +43162,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y157_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 17.64, 4,                  !- X,Y,Z Vertex 1 {m}
     0, 17.64, 2.66666666666667,   !- X,Y,Z Vertex 2 {m}
@@ -43163,7 +43171,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y157_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 17.64, 5.33333333333333,   !- X,Y,Z Vertex 1 {m}
     0, 17.64, 3.99999999999999,   !- X,Y,Z Vertex 2 {m}
@@ -43172,7 +43180,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y157_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 17.64, 6.66666666666667,   !- X,Y,Z Vertex 1 {m}
     0, 17.64, 5.33333333333333,   !- X,Y,Z Vertex 2 {m}
@@ -43181,7 +43189,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y157_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 17.64, 8,                  !- X,Y,Z Vertex 1 {m}
     0, 17.64, 6.66666666666667,   !- X,Y,Z Vertex 2 {m}
@@ -43190,7 +43198,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y176_Z27_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 19.6, 2.66666666666667,    !- X,Y,Z Vertex 1 {m}
     0, 19.6, 1.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -43199,7 +43207,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y176_Z40_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 19.6, 4,                   !- X,Y,Z Vertex 1 {m}
     0, 19.6, 2.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -43208,7 +43216,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y176_Z53_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 19.6, 5.33333333333333,    !- X,Y,Z Vertex 1 {m}
     0, 19.6, 4,                   !- X,Y,Z Vertex 2 {m}
@@ -43217,7 +43225,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y176_Z67_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 19.6, 6.66666666666667,    !- X,Y,Z Vertex 1 {m}
     0, 19.6, 5.33333333333333,    !- X,Y,Z Vertex 2 {m}
@@ -43226,7 +43234,7 @@ Shading:Building:Detailed,
 
 Shading:Building:Detailed,
     BIPV_West_Y176_Z80_A00,       !- Name
-    TransSched_BIPV_A00,          !- Transmittance Schedule Name
+    TransSched_BIPV_Fixed,          !- Transmittance Schedule Name
     ,                             !- Number of Vertices
     0, 19.6, 8,                   !- X,Y,Z Vertex 1 {m}
     0, 19.6, 6.66666666666667,    !- X,Y,Z Vertex 2 {m}
@@ -56531,11 +56539,77 @@ Schedule:Compact,
     Until: 24:00,                 !- Field 3
     0.0;                          !- Field 4
 
+Schedule:Compact,
+    DSF_BIPV_Cavity_HeatGain_Schedule_East,  !- Name
+    Any Number,                   !- Schedule Type Limits Name
+    Through: 12/31,               !- Field 1
+    For: AllDays,                 !- Field 2
+    Until: 24:00,                 !- Field 3
+    0.0;                          !- Field 4
+
+Schedule:Compact,
+    DSF_BIPV_Cavity_HeatGain_Schedule_North,  !- Name
+    Any Number,                   !- Schedule Type Limits Name
+    Through: 12/31,               !- Field 1
+    For: AllDays,                 !- Field 2
+    Until: 24:00,                 !- Field 3
+    0.0;                          !- Field 4
+
+Schedule:Compact,
+    DSF_BIPV_Cavity_HeatGain_Schedule_West,  !- Name
+    Any Number,                   !- Schedule Type Limits Name
+    Through: 12/31,               !- Field 1
+    For: AllDays,                 !- Field 2
+    Until: 24:00,                 !- Field 3
+    0.0;                          !- Field 4
+
 OtherEquipment,
     DSF_South_Cavity_BIPV_HeatGain,  !- Name
     None,                         !- Fuel Type
     Zone_Cavity_South,            !- Zone or ZoneList or Space or SpaceList Name
     DSF_BIPV_Cavity_HeatGain_Schedule,  !- Schedule Name
+    EquipmentLevel,               !- Design Level Calculation Method
+    1.0,                          !- Design Level {W}
+    ,                             !- Power per Floor Area {W/m2}
+    ,                             !- Power per Person {W/person}
+    0.0,                          !- Fraction Latent
+    0.4,                          !- Fraction Radiant
+    0.0,                          !- Fraction Lost
+    0.0;                          !- Carbon Dioxide Generation Rate
+
+OtherEquipment,
+    DSF_East_Cavity_BIPV_HeatGain,   !- Name
+    None,                         !- Fuel Type
+    Zone_Cavity_East,             !- Zone or ZoneList or Space or SpaceList Name
+    DSF_BIPV_Cavity_HeatGain_Schedule_East,  !- Schedule Name
+    EquipmentLevel,               !- Design Level Calculation Method
+    1.0,                          !- Design Level {W}
+    ,                             !- Power per Floor Area {W/m2}
+    ,                             !- Power per Person {W/person}
+    0.0,                          !- Fraction Latent
+    0.4,                          !- Fraction Radiant
+    0.0,                          !- Fraction Lost
+    0.0;                          !- Carbon Dioxide Generation Rate
+
+OtherEquipment,
+    DSF_North_Cavity_BIPV_HeatGain,  !- Name
+    None,                         !- Fuel Type
+    Zone_Cavity_North,            !- Zone or ZoneList or Space or SpaceList Name
+    DSF_BIPV_Cavity_HeatGain_Schedule_North,  !- Schedule Name
+    EquipmentLevel,               !- Design Level Calculation Method
+    1.0,                          !- Design Level {W}
+    ,                             !- Power per Floor Area {W/m2}
+    ,                             !- Power per Person {W/person}
+    0.0,                          !- Fraction Latent
+    0.4,                          !- Fraction Radiant
+    0.0,                          !- Fraction Lost
+    0.0;                          !- Carbon Dioxide Generation Rate
+
+OtherEquipment,
+    DSF_West_Cavity_BIPV_HeatGain,   !- Name
+    None,                         !- Fuel Type
+    Zone_Cavity_West,             !- Zone or ZoneList or Space or SpaceList Name
+    DSF_BIPV_Cavity_HeatGain_Schedule_West,  !- Schedule Name
     EquipmentLevel,               !- Design Level Calculation Method
     1.0,                          !- Design Level {W}
     ,                             !- Power per Floor Area {W/m2}
@@ -56560,7 +56634,19 @@ PythonPlugin:Variables,
     BIPV_Power_Generation,        !- Variable Name 5
     BIPV_Efficiency,              !- Variable Name 6
     BIPV_Waste_Heat,              !- Variable Name 7
-    BIPV_Cavity_Heat_Gain;        !- Variable Name 8
+    BIPV_Cavity_Heat_Gain,        !- Variable Name 8
+    BIPV_Incident_Solar_East,     !- Variable Name 9
+    BIPV_Power_Generation_East,   !- Variable Name 10
+    BIPV_Waste_Heat_East,         !- Variable Name 11
+    BIPV_Cavity_Heat_Gain_East,   !- Variable Name 12
+    BIPV_Incident_Solar_North,    !- Variable Name 13
+    BIPV_Power_Generation_North,  !- Variable Name 14
+    BIPV_Waste_Heat_North,        !- Variable Name 15
+    BIPV_Cavity_Heat_Gain_North,  !- Variable Name 16
+    BIPV_Incident_Solar_West,     !- Variable Name 17
+    BIPV_Power_Generation_West,   !- Variable Name 18
+    BIPV_Waste_Heat_West,         !- Variable Name 19
+    BIPV_Cavity_Heat_Gain_West;   !- Variable Name 20
 
 PythonPlugin:OutputVariable,
     BIPV_Tilt_Angle,
@@ -56618,6 +56704,90 @@ PythonPlugin:OutputVariable,
     ZoneTimestep,
     W;
 
+PythonPlugin:OutputVariable,
+    BIPV_Incident_Solar_East,
+    BIPV_Incident_Solar_East,
+    Averaged,
+    ZoneTimestep,
+    W/m2;
+
+PythonPlugin:OutputVariable,
+    BIPV_Power_Generation_East,
+    BIPV_Power_Generation_East,
+    Averaged,
+    ZoneTimestep,
+    W;
+
+PythonPlugin:OutputVariable,
+    BIPV_Waste_Heat_East,
+    BIPV_Waste_Heat_East,
+    Averaged,
+    ZoneTimestep,
+    W;
+
+PythonPlugin:OutputVariable,
+    BIPV_Cavity_Heat_Gain_East,
+    BIPV_Cavity_Heat_Gain_East,
+    Averaged,
+    ZoneTimestep,
+    W;
+
+PythonPlugin:OutputVariable,
+    BIPV_Incident_Solar_North,
+    BIPV_Incident_Solar_North,
+    Averaged,
+    ZoneTimestep,
+    W/m2;
+
+PythonPlugin:OutputVariable,
+    BIPV_Power_Generation_North,
+    BIPV_Power_Generation_North,
+    Averaged,
+    ZoneTimestep,
+    W;
+
+PythonPlugin:OutputVariable,
+    BIPV_Waste_Heat_North,
+    BIPV_Waste_Heat_North,
+    Averaged,
+    ZoneTimestep,
+    W;
+
+PythonPlugin:OutputVariable,
+    BIPV_Cavity_Heat_Gain_North,
+    BIPV_Cavity_Heat_Gain_North,
+    Averaged,
+    ZoneTimestep,
+    W;
+
+PythonPlugin:OutputVariable,
+    BIPV_Incident_Solar_West,
+    BIPV_Incident_Solar_West,
+    Averaged,
+    ZoneTimestep,
+    W/m2;
+
+PythonPlugin:OutputVariable,
+    BIPV_Power_Generation_West,
+    BIPV_Power_Generation_West,
+    Averaged,
+    ZoneTimestep,
+    W;
+
+PythonPlugin:OutputVariable,
+    BIPV_Waste_Heat_West,
+    BIPV_Waste_Heat_West,
+    Averaged,
+    ZoneTimestep,
+    W;
+
+PythonPlugin:OutputVariable,
+    BIPV_Cavity_Heat_Gain_West,
+    BIPV_Cavity_Heat_Gain_West,
+    Averaged,
+    ZoneTimestep,
+    W;
+
 Output:Variable, *, Generator Produced DC Electricity Energy, Timestep;
 
 Output:Variable, *, Inverter Electricity Production Energy, Timestep;
@@ -56629,6 +56799,10 @@ Output:Variable, *, Generator PV Array Efficiency, Timestep;
 Output:Variable, *, Zone Ventilation Current Density Volume Flow Rate, Timestep;
 
 Output:Variable, *, Zone Ventilation Mass Flow Rate, Timestep;
+
+Output:Variable, *, Zone Other Equipment Total Heating Energy, Timestep;
+
+Output:Variable, *, Zone Other Equipment Total Heating Rate, Timestep;
 
 ! ==============================================================================
 ! DSF 2-DAMPER NATURAL VENTILATION SYSTEM (8 CAVITY ZONES, 20 ACH)
