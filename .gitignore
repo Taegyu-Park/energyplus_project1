@@ -300,3 +300,7 @@ selfshadig_test/
 
 # Generated figure data
 figure/**/*.csv
+
+# DSF (Double Skin Facade) archiving directory - excluded from git tracking
+DSF/
+DSF_new/
