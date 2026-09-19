@@ -33,25 +33,30 @@ def main():
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
 
-    # Query annual total (in Joules) for all PV panels
-    # Filter by Name = 'Generator Produced DC Electricity Energy' and KeyValue starting with 'PV_'
-    # We exclude warmup periods (WarmupFlag = 0)
-    query = """
-        SELECT rdd.KeyValue, SUM(rd.Value)
-        FROM ReportData rd
-        JOIN ReportDataDictionary rdd ON rd.ReportDataDictionaryIndex = rdd.ReportDataDictionaryIndex
-        JOIN Time t ON rd.TimeIndex = t.TimeIndex
-        WHERE rdd.Name = 'Generator Produced DC Electricity Energy'
-          AND rdd.KeyValue LIKE 'PV_%'
-          AND t.WarmupFlag = 0
-        GROUP BY rdd.KeyValue
-    """
-    
     print("Querying and aggregating PV generation data...")
-    c.execute(query)
-    rows = c.fetchall()
+    c.execute("""
+        SELECT ReportDataDictionaryIndex, KeyValue 
+        FROM ReportDataDictionary 
+        WHERE Name = 'Generator Produced DC Electricity Energy' AND KeyValue LIKE 'PV_%'
+    """)
+    rdd_map = {row[0]: row[1] for row in c.fetchall()}
+    
+    if not rdd_map:
+        print("Error: No PV generation RDD entries found in the database.")
+        conn.close()
+        return
+
+    rdd_ids = tuple(rdd_map.keys())
+    c.execute(f"""
+        SELECT ReportDataDictionaryIndex, SUM(Value) 
+        FROM ReportData 
+        WHERE ReportDataDictionaryIndex IN ({','.join(map(str, rdd_ids))})
+        GROUP BY ReportDataDictionaryIndex
+    """)
+    rows_raw = c.fetchall()
     conn.close()
     
+    rows = [(rdd_map[rdd_id], val_j) for rdd_id, val_j in rows_raw]
     if not rows:
         print("Error: No PV generation data found in the database.")
         return

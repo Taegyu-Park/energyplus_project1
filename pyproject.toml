@@ -3,7 +3,7 @@ name = "energyplus-project1"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = "~=3.12.0"
 dependencies = [
     "besos>=2.2.3",
     "dartwork-mpl",
@@ -11,7 +11,21 @@ dependencies = [
     "google-genai>=1.73.1",
     "google-generativeai>=0.8.6",
     "python-dotenv>=1.2.2",
+    "gymnasium>=0.29.1",
+    "stable-baselines3>=2.3.0",
+    "sb3-contrib>=2.3.0",
+    "torch",
+    "torchvision",
+    "pandas",
+    "matplotlib",
 ]
 
 [tool.uv.sources]
 dartwork-mpl = { git = "https://github.com/dartwork-repo/dartwork-mpl" }
+torch = { index = "pytorch-cu124" }
+torchvision = { index = "pytorch-cu124" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true

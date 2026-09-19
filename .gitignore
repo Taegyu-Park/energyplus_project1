@@ -304,3 +304,8 @@ figure/**/*.csv
 # DSF (Double Skin Facade) archiving directory - excluded from git tracking
 DSF/
 DSF_new/
+
+# Machine Learning model checkpoints (>50MB)
+*.pt
+*.pth
+*.bin
