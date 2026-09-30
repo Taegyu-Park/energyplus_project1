@@ -38,8 +38,7 @@ CHECKPOINT_ROOT = CURRENT_DIR / "checkpoints"
 
 # Dataset case -> (file prefix, checkpoint sub-directory)
 CASE_CONFIG = {
-    "case2": {"prefix": "case2_ks", "ckpt_dir": CHECKPOINT_ROOT / "only_case2"},
-    "case3": {"prefix": "case3_ks", "ckpt_dir": CHECKPOINT_ROOT / "only_case3"},
+    "case2": {"prefix": "case2_ks", "ckpt_dir": CHECKPOINT_ROOT},
 }
 
 # Names used by evaluate_tide.py / predict_annual_tide.py (case2 model)
@@ -56,9 +55,6 @@ FUTURE_COV_COLS = ['sun_altitude', 'sun_azimuth', 'hour_sin', 'hour_cos', 'month
 
 # Strategy 1 Target Columns: 10 Net Energy values
 STRATEGY_1_TARGETS = [f"net_energy_{a}" for a in ANGLES]
-
-# Case3 (single sun-tracking trajectory) Target Columns
-CASE3_TARGETS = ['pv_gen', 'cool_load', 'heat_load', 'net_energy']
 
 # Strategy 2 Target Columns: 30 component values (10 PV + 10 Cooling + 10 Heating)
 STRATEGY_2_TARGETS = (
@@ -257,13 +253,10 @@ def run_training(
     train_csv = DATA_DIR / f"{cfg['prefix']}_train.csv"
     val_csv   = DATA_DIR / f"{cfg['prefix']}_val.csv"
     checkpoint_dir = cfg["ckpt_dir"]
-    ckpt_tag = "case3" if case == "case3" else f"strategy{strategy}"
+    ckpt_tag = f"strategy{strategy}"
 
     # Select target configuration
-    if case == "case3":
-        target_cols = CASE3_TARGETS
-        strategy_desc = "Case3 sun-tracking only (pv_gen, cool_load, heat_load, net_energy)"
-    elif strategy == 1:
+    if strategy == 1:
         target_cols = STRATEGY_1_TARGETS
         strategy_desc = "End-to-End Net Energy (10 angles)"
     elif strategy == 2:
@@ -379,7 +372,7 @@ def run_training(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train TiDE model on BIPV Case2_KS dataset")
     parser.add_argument("--strategy", type=int, default=1, choices=[1, 2], help="1: End-to-End, 2: Component-wise")
-    parser.add_argument("--case", type=str, default="case2", choices=["case2", "case3"], help="Dataset: case2 (static angles) or case3 (sun-tracking only)")
+    parser.add_argument("--case", type=str, default="case2", choices=list(CASE_CONFIG), help="Dataset case")
     parser.add_argument("--epochs", type=int, default=30, help="Number of training epochs")
     parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
     parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate")

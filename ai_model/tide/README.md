@@ -37,7 +37,6 @@ ai_model/tide/
 └── data_preprocessing/          # 데이터셋 구축 및 전처리 유틸리티
     ├── build_case2_ks_tide_dataset.py                   # 정적 각도(0°~90°) 전수 시뮬레이션 기반 초기 데이터셋 생성기
     ├── build_case2_case3_augmented_dataset.py           # 동적 태양 추종(case3) 결합 데이터 증강기
-    ├── build_case3_ks_tide_dataset.py                   # case3(태양 추종) 단독 데이터셋 생성 + train/val/test 분할
     ├── compute_suntracking_angle_schedule.py            # 태양고도 추종 각도 스케줄 생성 (출력: 루트 data/bipv_suntracking_angles_annual.csv)
     └── split_case2_ks_dataset.py                        # 시계열 계절 블록 분할기
 ```
