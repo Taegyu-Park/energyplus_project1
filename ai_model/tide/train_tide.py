@@ -25,18 +25,26 @@ from torch.utils.data import Dataset, DataLoader
 
 # Ensure ai_model directory is in Python path for local import
 CURRENT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = CURRENT_DIR.parent
+PROJECT_ROOT = CURRENT_DIR.parent.parent
 if str(CURRENT_DIR) not in sys.path:
     sys.path.append(str(CURRENT_DIR))
 
 from tide_model import TiDEModel
 
 # ── 1. Configuration & Feature Schema ─────────────────────────────────────────
-DATA_DIR = PROJECT_ROOT / "data"
-TRAIN_CSV = DATA_DIR / "case2_ks_train.csv"
-VAL_CSV   = DATA_DIR / "case2_ks_val.csv"
-TEST_CSV  = DATA_DIR / "case2_ks_test.csv"
-CHECKPOINT_DIR = CURRENT_DIR / "checkpoints"
+LOCAL_DATA_DIR = CURRENT_DIR / "data" / "dataset"
+DATA_DIR = LOCAL_DATA_DIR if LOCAL_DATA_DIR.exists() else (PROJECT_ROOT / "data")
+CHECKPOINT_ROOT = CURRENT_DIR / "checkpoints"
+
+# Dataset case -> (file prefix, checkpoint sub-directory)
+CASE_CONFIG = {
+    "case2": {"prefix": "case2_ks", "ckpt_dir": CHECKPOINT_ROOT / "only_case2"},
+    "case3": {"prefix": "case3_ks", "ckpt_dir": CHECKPOINT_ROOT / "only_case3"},
+}
+
+# Names used by evaluate_tide.py / predict_annual_tide.py (case2 model)
+CHECKPOINT_DIR = CASE_CONFIG["case2"]["ckpt_dir"]
+TEST_CSV = DATA_DIR / "case2_ks_test.csv"
 
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 COP_COOLING = 3.0
@@ -48,6 +56,9 @@ FUTURE_COV_COLS = ['sun_altitude', 'sun_azimuth', 'hour_sin', 'hour_cos', 'month
 
 # Strategy 1 Target Columns: 10 Net Energy values
 STRATEGY_1_TARGETS = [f"net_energy_{a}" for a in ANGLES]
+
+# Case3 (single sun-tracking trajectory) Target Columns
+CASE3_TARGETS = ['pv_gen', 'cool_load', 'heat_load', 'net_energy']
 
 # Strategy 2 Target Columns: 30 component values (10 PV + 10 Cooling + 10 Heating)
 STRATEGY_2_TARGETS = (
@@ -221,6 +232,7 @@ def validate(
 # ── 4. Main Training Pipeline Runner ──────────────────────────────────────────
 def run_training(
     strategy: int = 1,
+    case: str = "case2",
     lookback_len: int = 144,
     horizon_len: int = 24,
     epochs: int = 40,
@@ -231,7 +243,7 @@ def run_training(
     device_name: str = "auto"
 ):
     print("=" * 70)
-    print(f"Starting TiDE Training Pipeline - [Strategy {strategy}]")
+    print(f"Starting TiDE Training Pipeline - [{case} / Strategy {strategy}]")
     print("=" * 70)
     
     # Device setup
@@ -241,8 +253,17 @@ def run_training(
         device = torch.device(device_name)
     print(f"[*] Compute Device: {device} ({torch.cuda.get_device_name(0) if device.type == 'cuda' else 'CPU'})")
 
+    cfg = CASE_CONFIG[case]
+    train_csv = DATA_DIR / f"{cfg['prefix']}_train.csv"
+    val_csv   = DATA_DIR / f"{cfg['prefix']}_val.csv"
+    checkpoint_dir = cfg["ckpt_dir"]
+    ckpt_tag = "case3" if case == "case3" else f"strategy{strategy}"
+
     # Select target configuration
-    if strategy == 1:
+    if case == "case3":
+        target_cols = CASE3_TARGETS
+        strategy_desc = "Case3 sun-tracking only (pv_gen, cool_load, heat_load, net_energy)"
+    elif strategy == 1:
         target_cols = STRATEGY_1_TARGETS
         strategy_desc = "End-to-End Net Energy (10 angles)"
     elif strategy == 2:
@@ -251,14 +272,14 @@ def run_training(
     else:
         raise ValueError(f"Invalid strategy {strategy}. Must be 1 or 2.")
         
-    print(f"[*] Strategy {strategy}: {strategy_desc}")
+    print(f"[*] Case: {case} | Strategy {strategy}: {strategy_desc}")
     print(f"[*] Target dimensions: {len(target_cols)}")
 
     # Load datasets
-    print(f"[*] Loading train data from: {TRAIN_CSV.name}")
-    df_train = pd.read_csv(TRAIN_CSV)
-    print(f"[*] Loading val data from: {VAL_CSV.name}")
-    df_val = pd.read_csv(VAL_CSV)
+    print(f"[*] Loading train data from: {train_csv.name}")
+    df_train = pd.read_csv(train_csv)
+    print(f"[*] Loading val data from: {val_csv.name}")
+    df_val = pd.read_csv(val_csv)
 
     train_ds = ContiguousBlockTiDEDataset(
         df=df_train,
@@ -307,10 +328,10 @@ def run_training(
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs, eta_min=1e-5)
 
-    CHECKPOINT_DIR.mkdir(parents=True, exist_ok=True)
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
     best_val_loss = float('inf')
-    best_ckpt_path = CHECKPOINT_DIR / f"tide_strategy{strategy}_best.pt"
-    scaler_path = CHECKPOINT_DIR / f"tide_strategy{strategy}_scaler.json"
+    best_ckpt_path = checkpoint_dir / f"tide_{ckpt_tag}_best.pt"
+    scaler_path = checkpoint_dir / f"tide_{ckpt_tag}_scaler.json"
 
     # Save scaler parameters
     with open(scaler_path, 'w', encoding='utf-8') as f:
@@ -332,6 +353,7 @@ def run_training(
             torch.save({
                 'epoch': ep,
                 'strategy': strategy,
+                'case': case,
                 'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
                 'val_loss': val_metrics["mse"],
@@ -357,6 +379,7 @@ def run_training(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train TiDE model on BIPV Case2_KS dataset")
     parser.add_argument("--strategy", type=int, default=1, choices=[1, 2], help="1: End-to-End, 2: Component-wise")
+    parser.add_argument("--case", type=str, default="case2", choices=["case2", "case3"], help="Dataset: case2 (static angles) or case3 (sun-tracking only)")
     parser.add_argument("--epochs", type=int, default=30, help="Number of training epochs")
     parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
     parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate")
@@ -366,6 +389,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     run_training(
         strategy=args.strategy,
+        case=args.case,
         epochs=args.epochs,
         batch_size=args.batch_size,
         lr=args.lr,

@@ -1,7 +1,7 @@
 """
 split_case2_ks_dataset.py
 =========================
-Splits 'data/case2_ks_bipv_tide_dataset.csv' into Train, Validation, and Test sets
+Splits 'ai_model/tide/data/dataset/case2_ks_bipv_tide_dataset.csv' into Train, Validation, and Test sets
 using a seasonal block-wise split strategy (Monthly balanced):
 - Train: Days 1 to 21 of each month (~69.0%)
 - Validation: Days 22 to 25 of each month (~13.2%)
@@ -16,7 +16,7 @@ import pandas as pd
 from pathlib import Path
 
 BASE_DIR = Path("C:/Users/taegyu/Codes/energyplus_project1")
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR = BASE_DIR / "ai_model" / "tide" / "data" / "dataset"
 SRC_CSV = DATA_DIR / "case2_ks_bipv_tide_dataset.csv"
 
 TRAIN_CSV = DATA_DIR / "case2_ks_train.csv"

@@ -18,7 +18,7 @@ from pathlib import Path
 # ── 1. Configuration & Constants ─────────────────────────────────────────────
 BASE_DIR = Path("C:/Users/taegyu/Codes/energyplus_project1")
 CASE_DIR = BASE_DIR / "case_analysis" / "normal" / "case2_KS"
-OUT_CSV  = BASE_DIR / "data" / "case2_ks_bipv_tide_dataset.csv"
+OUT_CSV  = BASE_DIR / "ai_model" / "tide" / "data" / "dataset" / "case2_ks_bipv_tide_dataset.csv"
 
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 COP_COOLING = 3.0

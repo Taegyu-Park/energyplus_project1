@@ -73,7 +73,7 @@ flowchart TD
 ```
 
 ### 2.2 입력 피처 구성 ($X_{t-L:t}$)
-과거 $L$ 타임스텝의 시계열 윈도우(Lookback Window) 및 미래 $H$ 스텝의 확정 힌트(Known Future)를 활용합니다. 아래는 [`data_preprocessing/build_case2_ks_tide_dataset.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/data_preprocessing/build_case2_ks_tide_dataset.py)로 구축한 `data/case2_ks_bipv_tide_dataset.csv` 기준 **현재 구현 확정 스키마**입니다:
+과거 $L$ 타임스텝의 시계열 윈도우(Lookback Window) 및 미래 $H$ 스텝의 확정 힌트(Known Future)를 활용합니다. 아래는 [`ai_model/tide/data_preprocessing/build_case2_ks_tide_dataset.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/ai_model/tide/data_preprocessing/build_case2_ks_tide_dataset.py)로 구축한 `ai_model/tide/data/dataset/case2_ks_bipv_tide_dataset.csv` 기준 **현재 구현 확정 스키마**입니다:
 1. **미래 확정 힌트 (Known Future Covariates, $t \sim t+H$)** — `FUTURE_COV_COLS`:
    - 태양 고도각(`sun_altitude`), 태양 방위각(`sun_azimuth`) (천문학적 기하 정보)
    - 시간(`hour_sin`, `hour_cos`), 월(`month_sin`, `month_cos`) 삼각함수 인코딩
@@ -142,7 +142,7 @@ TiDE 모델의 다변량 예측 강점을 살려, **"한 번에 Net Energy를 �
    - 현행 태양 추종 룰 제어(`model_pythonpluginsystem_fixed.py`)의 연간 Net Energy 산출
    - 고정각(30° 등) 제어 대비 에너지 절감량 및 하절기 셀 과열 손실 베이스라인 확보
 3. **3단계: 통합 데이터셋 구축 및 예측 전략별 TiDE 모델 훈련** — 🔶 진행 중 (전략 1 완료, 전략 2 예정)
-   - ✅ EnergyPlus `case2_KS` 각도별($0^\circ \sim 90^\circ$) 전수 시뮬레이션 결과로부터 기상, 태양 기하, 각도별 $[P_{\text{pv}}, Q_{\text{cool}}, Q_{\text{heat}}, \text{Net Energy}]$, 최적 각도 $\theta^*$를 모두 포함하는 통합 CSV 데이터셋 구축 완료 ([`data_preprocessing/build_case2_ks_tide_dataset.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/data_preprocessing/build_case2_ks_tide_dataset.py) → `data/case2_ks_bipv_tide_dataset.csv`, [`data_preprocessing/split_case2_ks_dataset.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/data_preprocessing/split_case2_ks_dataset.py) → `case2_ks_{train,val,test}.csv`)
+   - ✅ EnergyPlus `case2_KS` 각도별($0^\circ \sim 90^\circ$) 전수 시뮬레이션 결과로부터 기상, 태양 기하, 각도별 $[P_{\text{pv}}, Q_{\text{cool}}, Q_{\text{heat}}, \text{Net Energy}]$, 최적 각도 $\theta^*$를 모두 포함하는 통합 CSV 데이터셋 구축 완료 ([`ai_model/tide/data_preprocessing/build_case2_ks_tide_dataset.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/ai_model/tide/data_preprocessing/build_case2_ks_tide_dataset.py) → `data/case2_ks_bipv_tide_dataset.csv`, [`data_preprocessing/split_case2_ks_dataset.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/data_preprocessing/split_case2_ks_dataset.py) → `case2_ks_{train,val,test}.csv`)
    - ✅ **전략 1(일괄 직행 예측)** TiDE 모델 구현 및 1차 학습 완료 ([`ai_model/tide_model.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/ai_model/tide_model.py), [`ai_model/train_tide.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/ai_model/train_tide.py) → `ai_model/checkpoints/tide_strategy1_best.pt`)
    - ⬜ **전략 2(구성요소 분해 예측 후 합산)** 모델 학습 (`train_tide.py --strategy 2`)
    - ⬜ 전략 1 vs 전략 2 예측 오차(MAE/RMSE), R² 정량 비교 평가 스크립트 작성 및 결과 산출 (test set 기준)

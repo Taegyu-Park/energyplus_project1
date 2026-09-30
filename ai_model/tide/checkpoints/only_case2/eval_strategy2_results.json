@@ -1,0 +1,34 @@
+{
+  "strategy": 2,
+  "checkpoint_epoch": 3,
+  "num_samples": 7356,
+  "horizon_len": 24,
+  "metrics": {
+    "pv_generation": {
+      "mae": 0.33363771438598633,
+      "rmse": 0.5274981802416323,
+      "r2": 0.815718948841095
+    },
+    "cooling_load": {
+      "mae": 0.9600895047187805,
+      "rmse": 1.9121364946166368,
+      "r2": 0.7446732521057129
+    },
+    "heating_load": {
+      "mae": 0.6724836230278015,
+      "rmse": 1.4292924679179717,
+      "r2": 0.7017040252685547
+    },
+    "derived_net_energy": {
+      "mae": 0.6333815455436707,
+      "rmse": 1.0276159933846516,
+      "r2": 0.6757583618164062
+    }
+  },
+  "control_performance": {
+    "exact_hit_rate_pct": 22.291326808047852,
+    "tolerance_10deg_hit_rate_pct": 45.88544498821823,
+    "angle_mae_degrees": 21.492262552111654,
+    "mean_energy_regret_watts": 0.04742932692170143
+  }
+}
