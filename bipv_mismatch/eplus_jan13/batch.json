@@ -1,0 +1,21 @@
+[
+  {
+    "name": "jan13_surplus90",
+    "case": "case3",
+    "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+    "schedule": "bipv_mismatch/eplus_jan13/schedules/st_jan13_surplus90.csv",
+    "start": "01-06",
+    "days": 9,
+    "lw": true,
+    "daylight_table": "pv_lw_daylight/daylight_tables/dl_mult_FE_L400.csv",
+    "solar_distribution": "FullExterior",
+    "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+    "economizer": "DifferentialEnthalpy",
+    "pv_bandgap": 1.25,
+    "extra_outputs": [
+      "Zone Mean Air Temperature",
+      "Surface Window Transmitted Solar Radiation Energy"
+    ],
+    "out_dir": "bipv_mismatch/eplus_jan13/runs/jan13_surplus90"
+  }
+]
