@@ -1,0 +1,22 @@
+[
+ {
+  "name": "night_jan_FE_night00",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/suntrack_night00.csv",
+  "start": "01-01",
+  "days": 14,
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "pv_simple": true
+ },
+ {
+  "name": "night_jan_FE_night90",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/suntrack_night90.csv",
+  "start": "01-01",
+  "days": 14,
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "pv_simple": true
+ }
+]

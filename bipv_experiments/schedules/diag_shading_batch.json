@@ -1,0 +1,32 @@
+[
+ {
+  "name": "diag_jul_noshade",
+  "schedule": "bipv_experiments/schedules/noshade.csv"
+ },
+ {
+  "name": "diag_jul_A00",
+  "schedule": "bipv_experiments/schedules/fixed_A00.csv"
+ },
+ {
+  "name": "diag_jul_A10",
+  "schedule": "bipv_experiments/schedules/fixed_A10.csv"
+ },
+ {
+  "name": "diag_jul_A50",
+  "schedule": "bipv_experiments/schedules/fixed_A50.csv"
+ },
+ {
+  "name": "diag_jul_A90",
+  "schedule": "bipv_experiments/schedules/fixed_A90.csv"
+ },
+ {
+  "name": "diag_jul_A10_detsky",
+  "schedule": "bipv_experiments/schedules/fixed_A10.csv",
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ },
+ {
+  "name": "diag_jul_A90_detsky",
+  "schedule": "bipv_experiments/schedules/fixed_A90.csv",
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ }
+]

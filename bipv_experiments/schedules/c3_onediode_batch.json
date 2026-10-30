@@ -1,0 +1,34 @@
+[
+ {
+  "name": "c3_FE_fixed_A30_od",
+  "schedule": "bipv_experiments/schedules/fixed_A30.csv",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "pv_simple": false
+ },
+ {
+  "name": "c3_FE_suntracking_od",
+  "schedule": "bipv_experiments/schedules/suntracking_w0s90.csv",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "pv_simple": false
+ },
+ {
+  "name": "c3_FE_tide_s1_od",
+  "schedule": "bipv_experiments/schedules/tide_s1_current.csv",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "pv_simple": false
+ },
+ {
+  "name": "c3_FE_tide_s2_od",
+  "schedule": "bipv_experiments/schedules/tide_s2_current.csv",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "pv_simple": false
+ }
+]

@@ -1,0 +1,54 @@
+[
+ {
+  "name": "fixed_A00",
+  "schedule": "bipv_experiments/schedules/fixed_A00.csv"
+ },
+ {
+  "name": "fixed_A10",
+  "schedule": "bipv_experiments/schedules/fixed_A10.csv"
+ },
+ {
+  "name": "fixed_A20",
+  "schedule": "bipv_experiments/schedules/fixed_A20.csv"
+ },
+ {
+  "name": "fixed_A30",
+  "schedule": "bipv_experiments/schedules/fixed_A30.csv"
+ },
+ {
+  "name": "fixed_A40",
+  "schedule": "bipv_experiments/schedules/fixed_A40.csv"
+ },
+ {
+  "name": "fixed_A50",
+  "schedule": "bipv_experiments/schedules/fixed_A50.csv"
+ },
+ {
+  "name": "fixed_A60",
+  "schedule": "bipv_experiments/schedules/fixed_A60.csv"
+ },
+ {
+  "name": "fixed_A70",
+  "schedule": "bipv_experiments/schedules/fixed_A70.csv"
+ },
+ {
+  "name": "fixed_A80",
+  "schedule": "bipv_experiments/schedules/fixed_A80.csv"
+ },
+ {
+  "name": "fixed_A90",
+  "schedule": "bipv_experiments/schedules/fixed_A90.csv"
+ },
+ {
+  "name": "suntracking_w0s90",
+  "schedule": "bipv_experiments/schedules/suntracking_w0s90.csv"
+ },
+ {
+  "name": "tide_s1_current",
+  "schedule": "bipv_experiments/schedules/tide_s1_current.csv"
+ },
+ {
+  "name": "tide_s2_current",
+  "schedule": "bipv_experiments/schedules/tide_s2_current.csv"
+ }
+]
