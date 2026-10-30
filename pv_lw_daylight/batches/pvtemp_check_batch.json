@@ -1,0 +1,46 @@
+[
+ {
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "angle": 30,
+  "case": "case2",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "group": "tests",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25,
+  "lw": true,
+  "daylight_lx": 400,
+  "days": 7,
+  "extra_outputs": [
+   "Surface Outside Face Incident Solar Radiation Rate per Area",
+   "Generator PV Array Efficiency",
+   "Surface Outside Face Outdoor Air Drybulb Temperature",
+   "Surface Outside Face Outdoor Air Wind Speed"
+  ],
+  "name": "pvtemp_c2_A30_jan",
+  "start": "01-10"
+ },
+ {
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "angle": 30,
+  "case": "case2",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "group": "tests",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25,
+  "lw": true,
+  "daylight_lx": 400,
+  "days": 7,
+  "extra_outputs": [
+   "Surface Outside Face Incident Solar Radiation Rate per Area",
+   "Generator PV Array Efficiency",
+   "Surface Outside Face Outdoor Air Drybulb Temperature",
+   "Surface Outside Face Outdoor Air Wind Speed"
+  ],
+  "name": "pvtemp_c2_A30_aug",
+  "start": "08-10"
+ }
+]

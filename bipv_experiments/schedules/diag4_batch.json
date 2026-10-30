@@ -1,0 +1,21 @@
+[
+ {
+  "name": "diag4_jul_c3fix_A30_FE_SZ",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A30.csv",
+  "start": "07-15",
+  "days": 3,
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/runs/diag2_jul_case2_A30_FE/eplusout.eio"
+ },
+ {
+  "name": "diag4_jul_case2_A30_FE_SZ",
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "start": "07-15",
+  "days": 3,
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/runs/diag2_jul_case2_A30_FE/eplusout.eio"
+ }
+]

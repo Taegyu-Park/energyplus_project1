@@ -1,0 +1,10 @@
+[
+ {
+  "name": "c3_FE_fixed_A30",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A30.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "pv_simple": true
+ }
+]

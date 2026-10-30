@@ -1,0 +1,15 @@
+[
+ {
+  "name": "d5_c3ALT_table_jan",
+  "case": "case3",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "pv_lw_daylight/schedules/alt_0_90_hourly.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "lw": false,
+  "daylight_table": "pv_lw_daylight/daylight_tables/dl_mult_FE_L400.csv",
+  "start": "01-15",
+  "days": 3,
+  "group": "tests"
+ }
+]

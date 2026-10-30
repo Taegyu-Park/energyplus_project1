@@ -1,0 +1,65 @@
+[
+ {
+  "name": "c3_FE_ST_base",
+  "lw": false,
+  "case": "case3",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/suntracking_w0s90.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "group": "annual",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25
+ },
+ {
+  "name": "c3_FE_ST_lw",
+  "lw": true,
+  "case": "case3",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/suntracking_w0s90.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "group": "annual",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25
+ },
+ {
+  "name": "c3_FE_ST_lw_dl400",
+  "lw": true,
+  "daylight_table": "pv_lw_daylight/daylight_tables/dl_mult_FE_L400.csv",
+  "case": "case3",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/suntracking_w0s90.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "group": "annual",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25
+ },
+ {
+  "name": "c3_FE_ST_lw_dl300",
+  "lw": true,
+  "daylight_table": "pv_lw_daylight/daylight_tables/dl_mult_FE_L300.csv",
+  "case": "case3",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/suntracking_w0s90.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "group": "annual",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25
+ },
+ {
+  "name": "c3_FE_ST_lw_dl600",
+  "lw": true,
+  "daylight_table": "pv_lw_daylight/daylight_tables/dl_mult_FE_L600.csv",
+  "case": "case3",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/suntracking_w0s90.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "group": "annual",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25
+ }
+]

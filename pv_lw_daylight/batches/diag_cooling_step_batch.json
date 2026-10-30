@@ -1,0 +1,68 @@
+[
+ {
+  "name": "diag_c2_base_A30",
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "angle": 30,
+  "lw": false,
+  "group": "tests",
+  "case": "case2",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "extra_outputs": [
+   "Zone Mean Air Temperature",
+   "Zone Air Humidity Ratio",
+   "Zone Ideal Loads Supply Air Sensible Cooling Energy",
+   "Zone Ideal Loads Supply Air Latent Cooling Energy",
+   "Zone Ideal Loads Economizer Active Time",
+   "Zone Ideal Loads Outdoor Air Mass Flow Rate",
+   "Zone Ideal Loads Supply Air Mass Flow Rate",
+   "Zone Thermostat Cooling Setpoint Temperature",
+   "Site Outdoor Air Humidity Ratio"
+  ]
+ },
+ {
+  "name": "diag_c2_lw_A30",
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "angle": 30,
+  "lw": true,
+  "group": "tests",
+  "case": "case2",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "extra_outputs": [
+   "Zone Mean Air Temperature",
+   "Zone Air Humidity Ratio",
+   "Zone Ideal Loads Supply Air Sensible Cooling Energy",
+   "Zone Ideal Loads Supply Air Latent Cooling Energy",
+   "Zone Ideal Loads Economizer Active Time",
+   "Zone Ideal Loads Outdoor Air Mass Flow Rate",
+   "Zone Ideal Loads Supply Air Mass Flow Rate",
+   "Zone Thermostat Cooling Setpoint Temperature",
+   "Site Outdoor Air Humidity Ratio"
+  ]
+ },
+ {
+  "name": "diag_c2_base_A40",
+  "idf": "case_idf/case2_KS/case2_40.idf",
+  "angle": 40,
+  "lw": false,
+  "group": "tests",
+  "case": "case2",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "extra_outputs": [
+   "Zone Mean Air Temperature",
+   "Zone Air Humidity Ratio",
+   "Zone Ideal Loads Supply Air Sensible Cooling Energy",
+   "Zone Ideal Loads Supply Air Latent Cooling Energy",
+   "Zone Ideal Loads Economizer Active Time",
+   "Zone Ideal Loads Outdoor Air Mass Flow Rate",
+   "Zone Ideal Loads Supply Air Mass Flow Rate",
+   "Zone Thermostat Cooling Setpoint Temperature",
+   "Site Outdoor Air Humidity Ratio"
+  ]
+ }
+]

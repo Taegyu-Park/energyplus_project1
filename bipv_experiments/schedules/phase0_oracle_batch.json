@@ -1,0 +1,1 @@
+[{"name":"oracle_stepwise","schedule":"bipv_experiments/schedules/oracle_stepwise.csv"},{"name":"oracle_pvmax","schedule":"bipv_experiments/schedules/oracle_pvmax.csv"}]

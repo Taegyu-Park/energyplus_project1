@@ -1,0 +1,52 @@
+[
+ {
+  "name": "eco_c2_base_A30_noeco",
+  "subs": [
+   [
+    "DifferentialDryBulb(,\\s*!-- Outdoor Air Economizer Type)",
+    "NoEconomizer\\1"
+   ]
+  ],
+  "group": "tests",
+  "case": "case2",
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "angle": 30,
+  "lw": false,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "extra_outputs": [
+   "Zone Mean Air Temperature",
+   "Zone Ideal Loads Supply Air Sensible Cooling Energy",
+   "Zone Ideal Loads Supply Air Latent Cooling Energy",
+   "Zone Ideal Loads Economizer Active Time",
+   "Zone Thermostat Cooling Setpoint Temperature",
+   "Zone Thermostat Heating Setpoint Temperature"
+  ]
+ },
+ {
+  "name": "eco_c2_base_A30_enthalpy",
+  "subs": [
+   [
+    "DifferentialDryBulb(,\\s*!-- Outdoor Air Economizer Type)",
+    "DifferentialEnthalpy\\1"
+   ]
+  ],
+  "group": "tests",
+  "case": "case2",
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "angle": 30,
+  "lw": false,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "extra_outputs": [
+   "Zone Mean Air Temperature",
+   "Zone Ideal Loads Supply Air Sensible Cooling Energy",
+   "Zone Ideal Loads Supply Air Latent Cooling Energy",
+   "Zone Ideal Loads Economizer Active Time",
+   "Zone Thermostat Cooling Setpoint Temperature",
+   "Zone Thermostat Heating Setpoint Temperature"
+  ]
+ }
+]

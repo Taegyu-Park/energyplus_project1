@@ -1,0 +1,20 @@
+[
+ {
+  "name": "c2_FE_A90",
+  "idf": "case_idf/case2_KS/case2_90.idf",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "pv_simple": true
+ },
+ {
+  "name": "c2_FE_A30_pvsimple_check",
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "pv_simple": true
+ }
+]

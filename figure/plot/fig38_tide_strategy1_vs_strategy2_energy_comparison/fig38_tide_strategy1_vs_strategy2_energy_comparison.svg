@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="927.750937pt" height="531.770031pt" viewBox="0 0 927.750937 531.770031" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-22T16:55:00.494509</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 531.770031 
+L 927.750937 531.770031 
+L 927.750937 0 
+L 0 0 
+L 0 531.770031 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 63.057188 494.827406 
+L 920.550938 494.827406 
+L 920.550938 42.641406 
+L 63.057188 42.641406 
+L 63.057188 494.827406 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m4e83efccc5" d="M 0 0 
+L 0 2 
+" style="stroke: #000000; stroke-width: 0.3"/>
+      </defs>
+      <g>
+       <use xlink:href="#m4e83efccc5" x="160.08501" y="494.827406" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-weight: 500; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif" transform="translate(124.300635 507.827406)">Heating Load</text>
+      <text style="font-weight: 500; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif" transform="translate(133.578135 521.791281)">(Thermal)</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m4e83efccc5" x="325.944536" y="494.827406" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-weight: 500; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif" transform="translate(290.602661 507.827406)">Cooling Load</text>
+      <text style="font-weight: 500; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif" transform="translate(299.437661 521.791281)">(Thermal)</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m4e83efccc5" x="491.804063" y="494.827406" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-weight: 500; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif" transform="translate(453.0975 507.827406)">PV Generation</text>
+      <text style="font-weight: 500; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif" transform="translate(467.535938 521.733156)">(Electric)</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m4e83efccc5" x="657.663589" y="494.827406" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-weight: 500; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif" transform="translate(613.604839 507.827406)">HVAC Electricity</text>
+      <text style="font-weight: 500; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif" transform="translate(633.395464 521.856906)">(Electric)</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m4e83efccc5" x="823.523115" y="494.827406" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-weight: 500; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif" transform="translate(794.17374 507.703656)">Net Energy</text>
+      <text style="font-weight: 500; font-size: 12px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif" transform="translate(790.586865 521.733156)">(HVAC - PV)</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6">
+      <path d="M 63.057188 441.974497 
+L 920.550938 441.974497 
+" clip-path="url(#p69e792c4c4)" style="fill: none; stroke-dasharray: 0.9,0.45; stroke-dashoffset: 0; stroke: #dee2e6; stroke-opacity: 0.35; stroke-width: 0.3"/>
+     </g>
+     <g id="line2d_7">
+      <defs>
+       <path id="mbae3dbb323" d="M 0 0 
+L -2 0 
+" style="stroke: #000000; stroke-width: 0.3"/>
+      </defs>
+      <g>
+       <use xlink:href="#mbae3dbb323" x="63.057188" y="441.974497" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-weight: 300; font-size: 10px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="60.057188" y="445.724497" transform="rotate(-0 60.057188 445.724497)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <path d="M 63.057188 383.249043 
+L 920.550938 383.249043 
+" clip-path="url(#p69e792c4c4)" style="fill: none; stroke-dasharray: 0.9,0.45; stroke-dashoffset: 0; stroke: #dee2e6; stroke-opacity: 0.35; stroke-width: 0.3"/>
+     </g>
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#mbae3dbb323" x="63.057188" y="383.249043" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-weight: 300; font-size: 10px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="60.057188" y="386.999043" transform="rotate(-0 60.057188 386.999043)">10000</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10">
+      <path d="M 63.057188 324.523588 
+L 920.550938 324.523588 
+" clip-path="url(#p69e792c4c4)" style="fill: none; stroke-dasharray: 0.9,0.45; stroke-dashoffset: 0; stroke: #dee2e6; stroke-opacity: 0.35; stroke-width: 0.3"/>
+     </g>
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#mbae3dbb323" x="63.057188" y="324.523588" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-weight: 300; font-size: 10px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="60.057188" y="328.273588" transform="rotate(-0 60.057188 328.273588)">20000</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12">
+      <path d="M 63.057188 265.798134 
+L 920.550938 265.798134 
+" clip-path="url(#p69e792c4c4)" style="fill: none; stroke-dasharray: 0.9,0.45; stroke-dashoffset: 0; stroke: #dee2e6; stroke-opacity: 0.35; stroke-width: 0.3"/>
+     </g>
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#mbae3dbb323" x="63.057188" y="265.798134" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-weight: 300; font-size: 10px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="60.057188" y="269.548134" transform="rotate(-0 60.057188 269.548134)">30000</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_14">
+      <path d="M 63.057188 207.072679 
+L 920.550938 207.072679 
+" clip-path="url(#p69e792c4c4)" style="fill: none; stroke-dasharray: 0.9,0.45; stroke-dashoffset: 0; stroke: #dee2e6; stroke-opacity: 0.35; stroke-width: 0.3"/>
+     </g>
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#mbae3dbb323" x="63.057188" y="207.072679" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-weight: 300; font-size: 10px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="60.057188" y="210.822679" transform="rotate(-0 60.057188 210.822679)">40000</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_16">
+      <path d="M 63.057188 148.347224 
+L 920.550938 148.347224 
+" clip-path="url(#p69e792c4c4)" style="fill: none; stroke-dasharray: 0.9,0.45; stroke-dashoffset: 0; stroke: #dee2e6; stroke-opacity: 0.35; stroke-width: 0.3"/>
+     </g>
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#mbae3dbb323" x="63.057188" y="148.347224" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-weight: 300; font-size: 10px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="60.057188" y="152.097224" transform="rotate(-0 60.057188 152.097224)">50000</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_18">
+      <path d="M 63.057188 89.62177 
+L 920.550938 89.62177 
+" clip-path="url(#p69e792c4c4)" style="fill: none; stroke-dasharray: 0.9,0.45; stroke-dashoffset: 0; stroke: #dee2e6; stroke-opacity: 0.35; stroke-width: 0.3"/>
+     </g>
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#mbae3dbb323" x="63.057188" y="89.62177" style="stroke: #000000; stroke-width: 0.3"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-weight: 300; font-size: 10px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: end" x="60.057188" y="93.37177" transform="rotate(-0 60.057188 93.37177)">60000</text>
+     </g>
+    </g>
+    <g id="text_13">
+     <text style="font-weight: 700; font-size: 13px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="17.457813" y="268.734406" transform="rotate(-90 17.457813 268.734406)">Annual Energy (kWh / year)</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 102.034176 441.974497 
+L 160.08501 441.974497 
+L 160.08501 218.432531 
+L 102.034176 218.432531 
+z
+" clip-path="url(#p69e792c4c4)" style="fill: #f59e0b; opacity: 0.92"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 267.893702 441.974497 
+L 325.944536 441.974497 
+L 325.944536 121.519073 
+L 267.893702 121.519073 
+z
+" clip-path="url(#p69e792c4c4)" style="fill: #f59e0b; opacity: 0.92"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 433.753228 441.974497 
+L 491.804063 441.974497 
+L 491.804063 218.382544 
+L 433.753228 218.382544 
+z
+" clip-path="url(#p69e792c4c4)" style="fill: #f59e0b; opacity: 0.92"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 599.612754 441.974497 
+L 657.663589 441.974497 
+L 657.663589 245.739236 
+L 599.612754 245.739236 
+z
+" clip-path="url(#p69e792c4c4)" style="fill: #f59e0b; opacity: 0.92"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 765.472281 441.974497 
+L 823.523115 441.974497 
+L 823.523115 469.331189 
+L 765.472281 469.331189 
+z
+" clip-path="url(#p69e792c4c4)" style="fill: #f59e0b; opacity: 0.92"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 160.08501 441.974497 
+L 218.135844 441.974497 
+L 218.135844 243.884671 
+L 160.08501 243.884671 
+z
+" clip-path="url(#p69e792c4c4)" style="fill: #2563eb; opacity: 0.92"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 325.944536 441.974497 
+L 383.995371 441.974497 
+L 383.995371 126.886242 
+L 325.944536 126.886242 
+z
+" clip-path="url(#p69e792c4c4)" style="fill: #2563eb; opacity: 0.92"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 491.804062 441.974497 
+L 549.854897 441.974497 
+L 549.854897 231.499003 
+L 491.804062 231.499003 
+z
+" clip-path="url(#p69e792c4c4)" style="fill: #2563eb; opacity: 0.92"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 657.663589 441.974497 
+L 715.714423 441.974497 
+L 715.714423 257.709113 
+L 657.663589 257.709113 
+z
+" clip-path="url(#p69e792c4c4)" style="fill: #2563eb; opacity: 0.92"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 823.523115 441.974497 
+L 881.573949 441.974497 
+L 881.573949 468.184666 
+L 823.523115 468.184666 
+z
+" clip-path="url(#p69e792c4c4)" style="fill: #2563eb; opacity: 0.92"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 63.057188 441.974497 
+L 920.550938 441.974497 
+" clip-path="url(#p69e792c4c4)" style="fill: none; stroke: #64748b; stroke-opacity: 0.8; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 63.057188 494.827406 
+L 63.057188 42.641406 
+" style="fill: none; stroke: #000000; stroke-width: 0.3; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 63.057187 494.827406 
+L 920.550938 494.827406 
+" style="fill: none; stroke: #000000; stroke-width: 0.3; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #b45309" x="131.059593" y="209.252664" transform="rotate(-0 131.059593 209.252664)">38,066 kWh</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1d4ed8" x="189.110427" y="234.704804" transform="rotate(-0 189.110427 234.704804)">33,732 kWh</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #b45309" x="296.919119" y="112.339206" transform="rotate(-0 296.919119 112.339206)">54,568 kWh</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1d4ed8" x="354.969953" y="117.706375" transform="rotate(-0 354.969953 117.706375)">53,654 kWh</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #b45309" x="462.778645" y="209.202677" transform="rotate(-0 462.778645 209.202677)">38,074 kWh</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1d4ed8" x="520.82948" y="222.319136" transform="rotate(-0 520.82948 222.319136)">35,841 kWh</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #b45309" x="628.638172" y="236.559369" transform="rotate(-0 628.638172 236.559369)">33,416 kWh</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1d4ed8" x="686.689006" y="248.529246" transform="rotate(-0 686.689006 248.529246)">31,377 kWh</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #b45309" x="794.497698" y="488.95128" transform="rotate(-0 794.497698 488.95128)">-4,658 kWh</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle; fill: #1d4ed8" x="852.548532" y="487.804757" transform="rotate(-0 852.548532 487.804757)">-4,463 kWh</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: middle" x="491.804062" y="18.641406" transform="rotate(-0 491.804062 18.641406)">Annual Energy Performance Comparison: Baseline (Sun-Tracking) vs TiDE AI Model (South BIPV)</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_15">
+     <path d="M 620.969375 60.531875 
+L 916.150938 60.531875 
+L 916.150938 47.041406 
+L 620.969375 47.041406 
+L 620.969375 60.531875 
+z
+" style="fill: none; opacity: 0"/>
+    </g>
+    <g id="patch_16">
+     <path d="M 622.069375 56.907031 
+L 644.069375 56.907031 
+L 644.069375 49.207031 
+L 622.069375 49.207031 
+z
+" style="fill: #f59e0b; opacity: 0.92"/>
+    </g>
+    <g id="text_25">
+     <text style="font-weight: 300; font-size: 11px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: start" x="647.369375" y="56.907031" transform="rotate(-0 647.369375 56.907031)">Baseline (Sun-Tracking)</text>
+    </g>
+    <g id="patch_17">
+     <path d="M 769.496875 56.907031 
+L 791.496875 56.907031 
+L 791.496875 49.207031 
+L 769.496875 49.207031 
+z
+" style="fill: #2563eb; opacity: 0.92"/>
+    </g>
+    <g id="text_26">
+     <text style="font-weight: 300; font-size: 11px; font-family: 'Roboto', 'Lato', 'Inter', 'Open Sans', 'Arial', 'Helvetica', 'Paperlogy', 'Noto Sans CJK KR', 'Pretendard', 'Gothic A1', 'Freesentation', 'AppleGothic', 'Malgun Gothic', sans-serif; text-anchor: start" x="794.796875" y="56.907031" transform="rotate(-0 794.796875 56.907031)">TiDE AI (Optimal Control)</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p69e792c4c4">
+   <rect x="63.057188" y="42.641406" width="857.49375" height="452.186"/>
+  </clipPath>
+ </defs>
+</svg>

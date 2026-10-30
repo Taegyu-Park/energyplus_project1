@@ -1,0 +1,122 @@
+[
+ {
+  "name": "val_jan_c3fix_A00",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A00.csv",
+  "start": "01-15",
+  "days": 7
+ },
+ {
+  "name": "val_jan_case2_A00",
+  "idf": "case_idf/case2_KS/case2_0.idf",
+  "start": "01-15",
+  "days": 7,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ },
+ {
+  "name": "val_jan_c3fix_A30",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A30.csv",
+  "start": "01-15",
+  "days": 7
+ },
+ {
+  "name": "val_jan_case2_A30",
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "start": "01-15",
+  "days": 7,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ },
+ {
+  "name": "val_jan_c3fix_A60",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A60.csv",
+  "start": "01-15",
+  "days": 7
+ },
+ {
+  "name": "val_jan_case2_A60",
+  "idf": "case_idf/case2_KS/case2_60.idf",
+  "start": "01-15",
+  "days": 7,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ },
+ {
+  "name": "val_jan_c3fix_A90",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A90.csv",
+  "start": "01-15",
+  "days": 7
+ },
+ {
+  "name": "val_jan_case2_A90",
+  "idf": "case_idf/case2_KS/case2_90.idf",
+  "start": "01-15",
+  "days": 7,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ },
+ {
+  "name": "val_jul_c3fix_A00",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A00.csv",
+  "start": "07-15",
+  "days": 7
+ },
+ {
+  "name": "val_jul_case2_A00",
+  "idf": "case_idf/case2_KS/case2_0.idf",
+  "start": "07-15",
+  "days": 7,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ },
+ {
+  "name": "val_jul_c3fix_A30",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A30.csv",
+  "start": "07-15",
+  "days": 7
+ },
+ {
+  "name": "val_jul_case2_A30",
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "start": "07-15",
+  "days": 7,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ },
+ {
+  "name": "val_jul_c3fix_A60",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A60.csv",
+  "start": "07-15",
+  "days": 7
+ },
+ {
+  "name": "val_jul_case2_A60",
+  "idf": "case_idf/case2_KS/case2_60.idf",
+  "start": "07-15",
+  "days": 7,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ },
+ {
+  "name": "val_jul_c3fix_A90",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A90.csv",
+  "start": "07-15",
+  "days": 7
+ },
+ {
+  "name": "val_jul_case2_A90",
+  "idf": "case_idf/case2_KS/case2_90.idf",
+  "start": "07-15",
+  "days": 7,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ }
+]

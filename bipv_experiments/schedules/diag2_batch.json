@@ -1,0 +1,19 @@
+[
+ {
+  "name": "diag2_jul_c3fix_A30_FE",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/fixed_A30.csv",
+  "start": "07-15",
+  "days": 3,
+  "solar_distribution": "FullExterior"
+ },
+ {
+  "name": "diag2_jul_case2_A30_FE",
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "start": "07-15",
+  "days": 3,
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "solar_distribution": "FullExterior"
+ }
+]

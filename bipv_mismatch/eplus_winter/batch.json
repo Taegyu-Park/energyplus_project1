@@ -1,0 +1,86 @@
+[
+ {
+  "name": "w_suntracking_wk",
+  "case": "case3",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_experiments/schedules/suntracking_w0s90.csv",
+  "weather": "data/KOR_KJ_Gwangju.471560_TMYx.2011-2025.epw",
+  "start": "01-06",
+  "days": 10,
+  "lw": true,
+  "daylight_table": "bipv_mismatch/eplus_winter/dl_mult_tmyx2011_L400.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25,
+  "extra_outputs": [
+   "Generator Produced DC Electricity Energy",
+   "Zone Ideal Loads Supply Air Total Cooling Energy",
+   "Zone Ideal Loads Supply Air Total Heating Energy"
+  ],
+  "out_dir": "bipv_mismatch/eplus_winter/runs/w_suntracking_wk"
+ },
+ {
+  "name": "w_tide_strict_wk",
+  "case": "case3",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_mismatch/schedules/tide_mm_test_night_strict.csv",
+  "weather": "data/KOR_KJ_Gwangju.471560_TMYx.2011-2025.epw",
+  "start": "01-06",
+  "days": 10,
+  "lw": true,
+  "daylight_table": "bipv_mismatch/eplus_winter/dl_mult_tmyx2011_L400.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25,
+  "extra_outputs": [
+   "Generator Produced DC Electricity Energy",
+   "Zone Ideal Loads Supply Air Total Cooling Energy",
+   "Zone Ideal Loads Supply Air Total Heating Energy"
+  ],
+  "out_dir": "bipv_mismatch/eplus_winter/runs/w_tide_strict_wk"
+ },
+ {
+  "name": "w_tide_tie_wk",
+  "case": "case3",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_mismatch/schedules/tide_mm_test_night_tie.csv",
+  "weather": "data/KOR_KJ_Gwangju.471560_TMYx.2011-2025.epw",
+  "start": "01-06",
+  "days": 10,
+  "lw": true,
+  "daylight_table": "bipv_mismatch/eplus_winter/dl_mult_tmyx2011_L400.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25,
+  "extra_outputs": [
+   "Generator Produced DC Electricity Energy",
+   "Zone Ideal Loads Supply Air Total Cooling Energy",
+   "Zone Ideal Loads Supply Air Total Heating Energy"
+  ],
+  "out_dir": "bipv_mismatch/eplus_winter/runs/w_tide_tie_wk"
+ },
+ {
+  "name": "w_oracle_wk",
+  "case": "case3",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "schedule": "bipv_mismatch/eplus_winter/schedules/oracle_test.csv",
+  "weather": "data/KOR_KJ_Gwangju.471560_TMYx.2011-2025.epw",
+  "start": "01-06",
+  "days": 10,
+  "lw": true,
+  "daylight_table": "bipv_mismatch/eplus_winter/dl_mult_tmyx2011_L400.csv",
+  "solar_distribution": "FullExterior",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25,
+  "extra_outputs": [
+   "Generator Produced DC Electricity Energy",
+   "Zone Ideal Loads Supply Air Total Cooling Energy",
+   "Zone Ideal Loads Supply Air Total Heating Energy"
+  ],
+  "out_dir": "bipv_mismatch/eplus_winter/runs/w_oracle_wk"
+ }
+]
