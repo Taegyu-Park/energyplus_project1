@@ -1,0 +1,11 @@
+{
+  "case": "case3_v3_south_sun_tracking",
+  "simulation_model": "case3_v3_south.idf",
+  "plugin_module": "model_pythonpluginsystem_sun_tracking",
+  "total_pv_kwh": 38074.11191960206,
+  "total_cool_thermal_kwh": 54568.40253933396,
+  "total_heat_thermal_kwh": 38065.59996296748,
+  "total_thermal_load_kwh": 92634.00250230145,
+  "hvac_elec_kwh": 33415.70749829831,
+  "net_energy_kwh": -4658.404421303749
+}

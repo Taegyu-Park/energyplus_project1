@@ -1,0 +1,24 @@
+{
+    "case": "case3_v3_south_tide",
+    "control_strategy": "TiDE AI Multi-Horizon Optimal Angle Forecast",
+    "simulation_engine": "EnergyPlus 25.2.0",
+    "weather": "Kwangju IWEC",
+    "annual_results": {
+        "heating_load_thermal_kwh": 33731.51,
+        "cooling_load_thermal_kwh": 53654.46,
+        "total_thermal_load_kwh": 87385.98,
+        "pv_power_generation_elec_kwh": 35840.59,
+        "hvac_electricity_kwh": 31377.43,
+        "net_energy_elec_kwh": -4463.17
+    },
+    "comparison_vs_previous_south": {
+        "heating_load_reduction_kwh": 4334.09,
+        "heating_load_reduction_pct": 11.39,
+        "cooling_load_reduction_kwh": 913.94,
+        "cooling_load_reduction_pct": 1.67,
+        "total_thermal_reduction_kwh": 5248.02,
+        "total_thermal_reduction_pct": 5.67,
+        "hvac_electricity_saved_kwh": 2038.28,
+        "hvac_electricity_saved_pct": 6.1
+    }
+}

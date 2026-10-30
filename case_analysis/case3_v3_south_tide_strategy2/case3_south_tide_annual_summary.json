@@ -1,0 +1,10 @@
+{
+  "simulation_model": "case3_v3_south.idf",
+  "control_strategy": "TiDE AI Optimal Angle Injection (Strategy 2)",
+  "total_bipv_generation_kwh": 36936.91891914273,
+  "total_cooling_load_thermal_kwh": 55939.55551057972,
+  "total_heating_load_thermal_kwh": 36709.79363898233,
+  "total_thermal_load_kwh": 92649.34914956204,
+  "hvac_electric_consumption_kwh": 33330.4359591195,
+  "net_energy_consumption_kwh": -3606.482960023226
+}
