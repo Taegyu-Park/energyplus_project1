@@ -1,0 +1,18 @@
+[
+ {
+  "case": "case2",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25,
+  "lw": false,
+  "daylight_lx": 400,
+  "mismatch_outputs": true,
+  "weather": "data/KOR_KJ_Gwangju.471560_TMYx.2011-2025.epw",
+  "name": "mm_tmyx2011_base_A00",
+  "idf": "case_idf/case2_KS/case2_0.idf",
+  "angle": 0,
+  "out_dir": "pv_lw_daylight/runs/annual/c2_mm_tmyx2011_base_A00"
+ }
+]

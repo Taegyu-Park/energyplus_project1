@@ -1,0 +1,43 @@
+[
+ {
+  "group": "tests",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25,
+  "lw": false,
+  "start": "01-10",
+  "days": 7,
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "extra_outputs": [
+   "Surface Outside Face Thermal Radiation to Sky Heat Transfer Coefficient",
+   "Surface Outside Face Thermal Radiation to Air Heat Transfer Coefficient",
+   "Surface Outside Face Thermal Radiation to Ground Heat Transfer Coefficient",
+   "Surface Outside Face Net Thermal Radiation Heat Gain Rate"
+  ],
+  "name": "skyir_c2_base_A00",
+  "idf": "case_idf/case2_KS/case2_0.idf",
+  "angle": 0,
+  "case": "case2",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling"
+ },
+ {
+  "group": "tests",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25,
+  "lw": false,
+  "start": "01-10",
+  "days": 7,
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "extra_outputs": [
+   "Surface Outside Face Thermal Radiation to Sky Heat Transfer Coefficient",
+   "Surface Outside Face Thermal Radiation to Air Heat Transfer Coefficient",
+   "Surface Outside Face Thermal Radiation to Ground Heat Transfer Coefficient",
+   "Surface Outside Face Net Thermal Radiation Heat Gain Rate"
+  ],
+  "name": "skyir_c3_base_A00",
+  "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
+  "case": "case3",
+  "schedule": "bipv_experiments/schedules/fixed_A00.csv",
+  "solar_distribution": "FullExterior"
+ }
+]

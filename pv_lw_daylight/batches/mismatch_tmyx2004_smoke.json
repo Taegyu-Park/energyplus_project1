@@ -1,0 +1,20 @@
+[
+ {
+  "case": "case2",
+  "shadow_timestep": true,
+  "sky_diffuse": "DetailedSkyDiffuseModeling",
+  "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+  "economizer": "DifferentialEnthalpy",
+  "pv_bandgap": 1.25,
+  "lw": true,
+  "daylight_lx": 400,
+  "mismatch_outputs": true,
+  "weather": "data/KOR_KJ_Gwangju.471560_TMYx.2004-2018.epw",
+  "name": "mm_tmyx2004_smoke_A30",
+  "idf": "case_idf/case2_KS/case2_30.idf",
+  "angle": 30,
+  "group": "tests",
+  "start": "01-10",
+  "days": 2
+ }
+]
