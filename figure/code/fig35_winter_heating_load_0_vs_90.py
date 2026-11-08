@@ -83,12 +83,22 @@ def main():
         df_ang = get_south_zone_day_data(sql_p, 12, 28)
         data_by_angle[ang] = df_ang
         
+    # Load Kinetic BIPV (Sun-Tracking) Case 3 South Data
+    kinetic_sql_p = os.path.join(
+        project_root, "case_analysis", "bipv_variation", "5zone_NSEW_korean", "case3_v3_south", "eplusout.sql"
+    )
+    print("Loading simulation dataset for Kinetic BIPV (case3_v3_south)...")
+    df_kinetic = get_south_zone_day_data(kinetic_sql_p, 12, 28)
+    kinetic_kwh = df_kinetic['South_kWh'].values
+    kinetic_daily = kinetic_kwh.sum()
+    
     hours = data_by_angle[0]['Hour'].values
     
     # Prepare Summary DataFrame
     summary_dict = {'Hour': hours}
     for ang in angles:
         summary_dict[f'Angle_{ang:02d}_kWh'] = data_by_angle[ang]['South_kWh']
+    summary_dict['Kinetic_BIPV_kWh'] = kinetic_kwh
     summary_df = pd.DataFrame(summary_dict)
     
     csv_path = os.path.join(plot_dir, "fig35_winter_heating_load_all_angles_summary.csv")
@@ -100,20 +110,11 @@ def main():
     # -------------------------------------------------------------------------
     fig, ax = plt.subplots(figsize=(13.5, 7.5))
     
-    # High-aesthetic chromatic gradient palette (Red -> Magenta -> Purple -> Blue)
-    # 0 deg: High heating demand (Intense Red) -> 90 deg: Zero daytime demand (Deep Royal Blue)
-    palette = [
-        "#dc2626",  # 0°  - Vivid Crimson Red
-        "#ea580c",  # 10° - Rust Orange
-        "#d97706",  # 20° - Amber
-        "#ca8a04",  # 30° - Gold
-        "#65a30d",  # 40° - Olive Green
-        "#0d9488",  # 50° - Teal
-        "#0284c7",  # 60° - Sky Cyan
-        "#2563eb",  # 70° - Royal Blue
-        "#7c3aed",  # 80° - Violet
-        "#4338ca",  # 90° - Deep Indigo Blue
-    ]
+    # Slate Gray monotone gradient palette (Inverted: 0° Light Slate Gray -> 90° Deep Charcoal / Slate Black)
+    cmap = mpl.colors.LinearSegmentedColormap.from_list(
+        "gray_monotone_inv", ["#cbd5e1", "#94a3b8", "#64748b", "#334155", "#0f172a"]
+    )
+    palette = [mpl.colors.to_hex(cmap(i / 9)) for i in range(10)]
     
     # 1. Plot lines for each angle
     lines = []
@@ -124,34 +125,16 @@ def main():
         daily_sum = s_kwh.sum()
         color = palette[i]
         
-        # Style definition: Emphasize boundary cases (0° and 90°) & transition cases (70°, 80°)
+        # Style definition: Uniform line width across all angles
+        lw = 2.2
+        alpha = 0.95
+        zorder = 5 + i
+        
         if ang == 0:
-            lw = 3.2
-            marker = 'o'
-            ms = 6.5
-            alpha = 1.0
-            zorder = 10
             lbl = f"BIPV  0° (Daily: {daily_sum:5.1f} kWh) [Max Shading]"
         elif ang == 90:
-            lw = 3.2
-            marker = 's'
-            ms = 6.5
-            alpha = 1.0
-            zorder = 10
             lbl = f"BIPV 90° (Daily: {daily_sum:5.1f} kWh) [Horizontal Overhang, 0 kWh at 12–16h]"
-        elif ang in (70, 80):
-            lw = 2.0
-            marker = '^' if ang == 80 else 'v'
-            ms = 5.0
-            alpha = 0.95
-            zorder = 8
-            lbl = f"BIPV {ang:2d}° (Daily: {daily_sum:5.1f} kWh)"
         else:
-            lw = 1.4
-            marker = None
-            ms = 0
-            alpha = 0.75
-            zorder = 5
             lbl = f"BIPV {ang:2d}° (Daily: {daily_sum:5.1f} kWh)"
             
         line, = ax.plot(
@@ -159,8 +142,6 @@ def main():
             s_kwh, 
             color=color, 
             linewidth=lw, 
-            marker=marker, 
-            markersize=ms, 
             alpha=alpha, 
             zorder=zorder,
             label=lbl
@@ -168,35 +149,22 @@ def main():
         lines.append(line)
         labels.append(lbl)
     
-    # Annotate Zero-load convergence at 12:00-16:00 (Positioned with clean semi-transparent background to prevent line overlap)
-    ax.annotate(
-        "90° Reaches 0.0 kWh (12:00–16:00)\n(Solar Gain + Internal Gains > Thermal Loss)",
-        xy=(13.5, 0.0),
-        xytext=(13.5, 2.6),
-        ha='center',
-        fontsize=10,
-        fontweight='bold',
-        color='#1e40af',
-        bbox=dict(boxstyle="round,pad=0.35", facecolor="#ffffff", edgecolor="#93c5fd", alpha=0.85),
-        arrowprops=dict(arrowstyle="->", color='#2563eb', lw=1.6, shrinkA=3, shrinkB=4)
+    # 2. Plot Kinetic BIPV (Sun-Tracking) in distinct Vivid Orange
+    line_kinetic, = ax.plot(
+        hours,
+        kinetic_kwh,
+        color="#ea580c",  # Vivid Orange 600
+        linewidth=2.8,
+        alpha=1.0,
+        zorder=25,
+        label=f"Kinetic BIPV (Sun-Tracking) (Daily: {kinetic_daily:5.1f} kWh)"
     )
-    
-    # Annotate High Load for 0°
-    ax.annotate(
-        "0° Constant Deficit (8.4–11.0 kWh)\n(Full Solar Blocking Penalty)",
-        xy=(13, 9.9),
-        xytext=(13, 15.5),
-        ha='center',
-        fontsize=10,
-        fontweight='bold',
-        color='#b91c1c',
-        bbox=dict(boxstyle="round,pad=0.35", facecolor="#ffffff", edgecolor="#fca5a5", alpha=0.85),
-        arrowprops=dict(arrowstyle="->", color='#dc2626', lw=1.6, shrinkA=3, shrinkB=4)
-    )
+    lines.append(line_kinetic)
+    labels.append(f"Kinetic BIPV (Sun-Tracking) (Daily: {kinetic_daily:5.1f} kWh)")
     
     # Chart Styling
     ax.set_title(
-        "South Zone Diurnal Heating Load Progression across BIPV Tilt Angles (0° to 90°)\n"
+        "South Zone Diurnal Heating Load: Fixed Angles (0°–90°) vs Kinetic BIPV\n"
         "(Winter Representative Day: Dec 28 | Gwangju Climate)", 
         fontsize=14.5, 
         fontweight='bold', 

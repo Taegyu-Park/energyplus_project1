@@ -23,8 +23,8 @@ COLOR_DIFF = "#dc2626"  # Absolute difference (Crimson)
 
 
 def load_daily_table(project_root):
-    sun_path = os.path.join(project_root, "data", "bipv_suntracking_angles_annual.csv")
-    ai_path = os.path.join(project_root, "ai_model", "tide", "data", "predictions", "bipv_optimal_angles_annual.csv")
+    sun_path = os.path.join(project_root, "data", "bipv_suntracking_angles_annual_winter0_summer90.csv")
+    ai_path = os.path.join(project_root, "ai_model", "tide", "data", "predictions", "annual_tide_strategy2_optimal_angles.csv")
 
     df_sun = pd.read_csv(sun_path, parse_dates=["timestamp"])
     df_ai = pd.read_csv(ai_path, parse_dates=["timestamp"])
@@ -32,12 +32,16 @@ def load_daily_table(project_root):
     df = pd.DataFrame({
         "timestamp": df_sun["timestamp"],
         "sun_track_angle": df_sun["optimal_angle"],
-        "ai_optimal_angle": df_ai["optimal_angle"],
+        "ai_optimal_angle": df_ai["optimal_angle_pred"],
     })
     df["date"] = df["timestamp"].dt.date
     df["abs_diff"] = (df["ai_optimal_angle"] - df["sun_track_angle"]).abs()
     df["match"] = df["abs_diff"] == 0
     return df
+
+
+WINTER_DAY = "2026-12-26"
+SUMMER_DAY = "2026-07-21"
 
 
 def find_representative_days(df):
@@ -46,12 +50,10 @@ def find_representative_days(df):
         match_rate=("match", "mean"),
         n=("abs_diff", "size"),
     )
-    # Ensure full-day data (144 time steps of 10-min interval per day)
-    daily = daily[daily["n"] == 144]
-
-    max_day = daily["mean_absdiff"].idxmax()
-    min_day = daily["mean_absdiff"].idxmin()
-    return max_day, daily.loc[max_day], min_day, daily.loc[min_day]
+    # Fixed representative days: winter / summer
+    winter_day = df.loc[df["timestamp"].dt.strftime("%Y-%m-%d") == WINTER_DAY, "date"].iloc[0]
+    summer_day = df.loc[df["timestamp"].dt.strftime("%Y-%m-%d") == SUMMER_DAY, "date"].iloc[0]
+    return winter_day, daily.loc[winter_day], summer_day, daily.loc[summer_day]
 
 
 def plot_day_panel(ax, df, date, stats, title_prefix, is_max_panel):
@@ -118,18 +120,18 @@ def main():
     os.makedirs(plot_dir, exist_ok=True)
 
     df = load_daily_table(project_root)
-    max_day, max_stats, min_day, min_stats = find_representative_days(df)
+    winter_day, winter_stats, summer_day, summer_stats = find_representative_days(df)
 
     fig, (ax_max, ax_min) = plt.subplots(2, 1, figsize=(13, 10.5), sharex=True)
 
-    plot_day_panel(ax_max, df, max_day, max_stats, "Most Divergent Day", is_max_panel=True)
-    plot_day_panel(ax_min, df, min_day, min_stats, "Most Convergent Day", is_max_panel=False)
+    plot_day_panel(ax_max, df, winter_day, winter_stats, "Winter Day", is_max_panel=True)
+    plot_day_panel(ax_min, df, summer_day, summer_stats, "Summer Day", is_max_panel=False)
 
     ax_min.set_xlabel("Hour of Day", fontsize=12.5, fontweight='bold')
 
     fig.suptitle(
         "Representative Days: Sun-Tracking vs. Net-Energy AI Optimal BIPV Angle\n"
-        "(Selected by daily mean |AI − Sun-Tracking| angle difference, full year 2026)",
+        "(TiDE Strategy 2; Winter: 12/26, Summer: 7/21, 2026)",
         fontsize=15,
         fontweight='bold',
         y=1.0
