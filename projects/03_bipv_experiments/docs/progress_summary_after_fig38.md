@@ -1,7 +1,7 @@
 # fig38 이후 작업 정리 (2026-09-22 ~ 2026-10-08)
 
 - 작성일: 2026-10-09
-- 범위: `figure/plot/fig38_tide_strategy1_vs_strategy2_energy_comparison/` (9/22 16:55)를 그린 이후 진행한 모든 작업
+- 범위: `projects/02_tide_v1/figures/plot/fig38_tide_strategy1_vs_strategy2_energy_comparison/` (9/22 16:55)를 그린 이후 진행한 모든 작업
 - Net energy 정의: `냉방/3.0 + 난방/2.5 − PV` (kWh, 10개 zone 합, 10분 간격 52,560 step)
 - 각도 정의: tilt = 90° − angle → **0° = 패널 수직(벽에 붙음)**, **90° = 패널 수평**
 
@@ -39,8 +39,8 @@
 
 - **나타난 현상:** TiDE는 HVAC를 2,039 kWh 줄였지만 PV를 2,233 kWh 잃었다. 그래서 net에서 태양추적에 졌다.
 - **사용자 가설:** 특정 시점의 부하는 이전 시간의 영향(열적 관성)을 받는다. 그런데 모델은 timestep마다 argmin만 하므로 최적이 아니다.
-- **평가 모델:** case3 (`case_idf/case3_v3_KS/case3_v3_south.idf`). 10개 각도 형상을 모두 넣고, Python 플러그인이 투과율로 켜고 끈다.
-- **학습 데이터:** case2 (`case_idf/case2_KS/case2_{각도}.idf`). 각도마다 IDF가 하나씩 있다.
+- **평가 모델:** case3 (`shared/case_idf/case3_v3_KS/case3_v3_south.idf`). 10개 각도 형상을 모두 넣고, Python 플러그인이 투과율로 켜고 끈다.
+- **학습 데이터:** case2 (`shared/case_idf/case2_KS/case2_{각도}.idf`). 각도마다 IDF가 하나씩 있다.
 
 > 참고: fig38의 S1 막대(−4,463)는 9/19 모델(증강 이전) 결과였다. 9/22에 증강 데이터로 학습한 체크포인트로 S1을 다시 예측해 재실행했다.
 
@@ -71,11 +71,11 @@
   - 진단 2: 추론할 때 lookback에 실제 10각도 net 값을 넣는다. 실제 제어에서는 이 값을 알 수 없다.
 
 ### 2.3 겨울밤 0° 태양추적 시뮬레이션, fig37 (10/1)
-- 실행 결과: `case_analysis/bipv_variation/5zone_NSEW_korean/case3_v3_south_winter0_summer90`
+- 실행 결과: `projects/01_baseline_bipv/results/bipv_variation/5zone_NSEW_korean/case3_v3_south_winter0_summer90`
 - 기존 태양추적 결과와 **시간별 값까지 완전히 같았다**. 즉 밤 각도는 부하에 영향이 없다.
   - 10/6에 수정 IDF로 다시 확인했다. 1/1~1/14, 0° vs 90° 모두 5,862.8 kWh로 같았다.
   - EnergyPlus에서 차양 표면은 일사만 가린다. 그래서 밤에는 효과가 0이다.
-- 새 각도 CSV: `data/bipv_suntracking_angles_annual_winter0_summer90.csv`
+- 새 각도 CSV: `shared/data/bipv_suntracking_angles_annual_winter0_summer90.csv`
 - fig37: 대표일 12/26, 7/21. AI 선은 S2 스케줄로 그렸다.
 
 ### 2.4 fig38_1, fig38_2 (10/1)
@@ -104,7 +104,7 @@
   - Phase 1~4: 시간가변 각도 데이터 생성, TiDE 재정식화, MPC
 - 실행: case3 고정각 0~90° 연간 10개, 태양추적, 현재 S1/S2, oracle(timestep별 net 최소), oracle_pvmax. 총 15개.
 - 결과 (버그 있는 case3): oracle 오프라인 −8,728, 동적 실행 −7,624, oracle_pvmax −6,002
-- 보고서: `bipv_experiments/docs/phase0_results.md`
+- 보고서: `projects/03_bipv_experiments/docs/phase0_results.md`
   - ⚠ **무효**. 버그 있는 case3 기준이라 다시 써야 한다.
 - **결정적 발견 (사용자 지적)**
   - 고정각 결과에서 **0°를 빼면 냉방 부하가 각도와 무관하게 거의 같았다**.
@@ -121,8 +121,8 @@
 | 1 | 0° 차양이 남측 벽과 같은 평면(y=0) | EnergyPlus가 그림자를 계산하지 않음. 0°가 차양 없음과 같음 | case2처럼 y=−0.1로 이동 |
 | 2 | `SimpleSkyDiffuseModeling` + 투과율 스위칭 | 산란일사 차폐를 각도가 바뀌어도 다시 계산하지 않음 → 냉방이 각도와 무관 | `DetailedSkyDiffuseModeling` |
 
-- 수정 IDF: `bipv_experiments/idf/case3_v3_south_fixed.idf`
-  - 생성 스크립트: `bipv_experiments/idf/build_case3_v3_south_fixed.py`
+- 수정 IDF: `projects/03_bipv_experiments/idf/case3_v3_south_fixed.idf`
+  - 생성 스크립트: `projects/03_bipv_experiments/idf/build_case3_v3_south_fixed.py`
   - 원본 IDF는 건드리지 않았다.
 - 10개 각도 모두 형상이 case2와 같음을 확인했다.
 
@@ -130,7 +130,7 @@
 
 | 항목 | 문제 | 결정 |
 |---|---|---|
-| HVAC 사이징 | Ideal Loads 자동 사이징이 사이징 시점의 차양에 따라 달라진다. 이코노마이저 외기량 한도도 함께 바뀐다 | **10개 각도 사이징 결과 중 최대값으로 고정** (`bipv_experiments/sizing/case2_max_over_angles.eio`) |
+| HVAC 사이징 | Ideal Loads 자동 사이징이 사이징 시점의 차양에 따라 달라진다. 이코노마이저 외기량 한도도 함께 바뀐다 | **10개 각도 사이징 결과 중 최대값으로 고정** (`projects/03_bipv_experiments/sizing/case2_max_over_angles.eio`) |
 | 반사 (`FullExteriorWithReflections`) | 반사 계산은 투명 처리된 차양도 불투명 반사체로 취급한다 (Engineering Reference ch.6). case3에서는 쓸 수 없다 | 사용자 결정: **반사는 반드시 켠다**. 그래서 case2(반사 켬)를 기준으로 하고 case3는 반사를 끈다. 아래 방법 C로 합친다 |
 | PV 모델 | 사용자 결정: **반드시 One-Diode** | §7 참고 |
 
@@ -145,18 +145,18 @@
 
 ### 4.3 작업 폴더 규칙
 - 사용자 지시: "기존 파일 수정·삭제 금지, 루트에 폴더 따로 만들어 실행"
-  - 그 뒤로 모든 실험은 `bipv_experiments/`에서 했다.
+  - 그 뒤로 모든 실험은 `projects/03_bipv_experiments/`에서 했다.
 - 앞서 수정했던 원본 파일 3개는 복원했다.
   - `build_case2_ks_tide_dataset.py`, `model_pythonpluginsystem_ai.py`, `run_case3_south_tide_sim.py`
 - 주요 파일
 
 | 파일 | 역할 |
 |---|---|
-| `bipv_experiments/runner.py` | 독립 실행기. 옵션: 사이징 고정, solar distribution, sky diffuse, PV 모델 등. 배치 JSON 실행 |
-| `bipv_experiments/bipv_schedule_plugin.py` | 날짜 기반 인덱스로 스케줄 CSV를 재생하는 플러그인 |
-| `bipv_experiments/analysis/` | SQL 추출, 고정각 데이터셋, oracle 스케줄, 최종 비교 스크립트 |
-| `bipv_experiments/schedules/` | 각도 스케줄 CSV, 배치 JSON |
-| `bipv_experiments/runs/` | 모든 실행 결과 |
+| `projects/03_bipv_experiments/runner.py` | 독립 실행기. 옵션: 사이징 고정, solar distribution, sky diffuse, PV 모델 등. 배치 JSON 실행 |
+| `projects/03_bipv_experiments/bipv_schedule_plugin.py` | 날짜 기반 인덱스로 스케줄 CSV를 재생하는 플러그인 |
+| `projects/03_bipv_experiments/analysis/` | SQL 추출, 고정각 데이터셋, oracle 스케줄, 최종 비교 스크립트 |
+| `projects/03_bipv_experiments/schedules/` | 각도 스케줄 CSV, 배치 JSON |
+| `projects/03_bipv_experiments/runs/` | 모든 실행 결과 |
 
 ---
 
@@ -169,7 +169,7 @@
 | Net | −2,186 | −2,872 | −2,182 | **−2,924** | −2,600 | −1,999 | −1,192 | +115 | +1,998 | +4,411 |
 
 - 데이터셋
-  - `bipv_experiments/analysis/c2_RF_fixed_angle_dataset.csv` (반사 켬)
+  - `projects/03_bipv_experiments/analysis/c2_RF_fixed_angle_dataset.csv` (반사 켬)
   - `c2_FE_fixed_angle_dataset.csv` (반사 끔)
 - 스티칭: 스케줄이 고른 각도의 고정각 값을 timestep마다 가져와 합한다. 열적 관성은 무시된다.
   - 태양추적 −2,170, S1 −3,697, S2 −3,044, oracle −4,355
@@ -185,14 +185,14 @@
 ```
 
 ### 5.3 기타
-- fig39_1을 7/21로 다시 그렸다: `bipv_experiments/figures/fig39_1_summer_cooling_load_all_zones_jul21/`
+- fig39_1을 7/21로 다시 그렸다: `projects/03_bipv_experiments/figures/fig39_1_summer_cooling_load_all_zones_jul21/`
   - 주황색 선(태양추적)은 아직 버그 있는 case3 결과다.
 
 ---
 
 ## 6. 10/6: (다른 세션) lookback 144 → 36
 
-스크립트 폴더: `bipv_experiments/tide_c5/`
+스크립트 폴더: `projects/03_bipv_experiments/tide_c5/`
 
 | 단계 | 스크립트 | 결과 (test 구간 net 합, 작을수록 좋음) |
 |---|---|---|
@@ -204,7 +204,7 @@
 - 해석
   - 이력을 가리면 성능이 크게 떨어진다. 즉 모델이 실제 제어에서는 알 수 없는 "10개 각도 전체의 과거 net"에 의존한다.
   - lookback 18~72 사이 차이는 시드 노이즈 수준이다. 그래서 36을 채택했다.
-- 그림: `bipv_experiments/figures/fig37_lb36_st{1,2}_representative_days.{png,svg}`
+- 그림: `projects/03_bipv_experiments/figures/fig37_lb36_st{1,2}_representative_days.{png,svg}`
 - 시뮬레이션: `runs/c3_FE_tide_s1_lb36`, `c3_FE_tide_s2_lb36`
   - ⚠ **Simple PV로 실행돼 무효**다 (§7).
   - **One-Diode로는 아직 돌리지 않았다.**
@@ -228,7 +228,7 @@
 
 ## 8. 최종 결과 (10/8, One-Diode, 방법 C)
 
-스크립트 `bipv_experiments/analysis/final_onediode_comparison.py` → `final_onediode_comparison.csv`
+스크립트 `projects/03_bipv_experiments/analysis/final_onediode_comparison.py` → `final_onediode_comparison.csv`
 
 | 스케줄 | PV | 난방 (관성 보정) | 냉방 (관성 보정) | 스티칭 net | **최종 net** |
 |---|---|---|---|---|---|
@@ -252,7 +252,7 @@
 | 결과 | 무효 이유 |
 |---|---|
 | fig38, fig38_1, fig38_2, fig36/37의 net 수치 | 버그 있는 case3 |
-| `bipv_experiments/docs/phase0_results.md`, oracle −7,624 등 | 버그 있는 case3 |
+| `projects/03_bipv_experiments/docs/phase0_results.md`, oracle −7,624 등 | 버그 있는 case3 |
 | fig39_1의 Kinetic(주황) 선 | 버그 있는 case3 |
 | `runs/c3_FE_*` (`_od` 제외), `c3_FE_tide_s*_lb36`의 `summary.json` | Simple PV (PV 6배) |
 | `runs/corrected_pv_summary.csv` (태양추적 −8,611 등) | Simple PV 기준 (One-Diode보다 PV +14%) |
@@ -265,5 +265,5 @@
 2. **TiDE를 다시 학습한다.** 현재 S1/S2는 버그 있는 case3 값이 섞인 증강 데이터로 학습됐다. case2 반사 켬과 사이징 고정 데이터로 다시 학습하는 것을 검토한다.
 3. **관성을 고려한 결정 방식**을 도입한다. 각도 전환 페널티, 수평선 최적화(MPC) 등이다. 그래야 고정 30°와의 격차를 벌릴 수 있다.
 4. **lookback 입력 문제를 해결한다.** 실제 제어에서는 고른 각도의 이력만 존재한다.
-5. `bipv_experiments/docs/phase0_results.md`를 수정된 결과로 다시 쓴다. fig38 계열과 fig39_1 주황 선도 다시 그린다.
+5. `projects/03_bipv_experiments/docs/phase0_results.md`를 수정된 결과로 다시 쓴다. fig38 계열과 fig39_1 주황 선도 다시 그린다.
 6. `runner.py`의 summary가 Facility PV를 쓰는 문제를 정리한다. 지금은 One-Diode만 쓰므로 영향은 없다.

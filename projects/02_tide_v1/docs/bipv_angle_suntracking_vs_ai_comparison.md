@@ -2,8 +2,8 @@
 
 **작성일**: 2026-09-19
 **비교 대상**:
-- `data/bipv_suntracking_angles_annual.csv` — **태양고도 추종 각도** (EPW `KOR_Kwangju.471560_IWEC (1).epw` 기준, `model_pythonpluginsystem_fixed.py`의 웜업/폴백 로직 `min(ANGLES, key=lambda x: abs(x - sun_alt))`을 EnergyPlus 시뮬레이션 없이 재현. 생성 스크립트: [`ai_model/tide/data_preprocessing/compute_suntracking_angle_schedule.py`](../ai_model/tide/data_preprocessing/compute_suntracking_angle_schedule.py))
-- `ai_model/tide/data/predictions/bipv_optimal_angles_annual.csv` — **Net Energy 최적 각도** (`model_pythonpluginsystem_fixed.py`가 본 시뮬레이션 중 실제로 주입하는 스케줄. 냉난방 부하 + PV 발전량을 함께 고려한 Net Energy 최소화 결과)
+- `shared/data/bipv_suntracking_angles_annual.csv` — **태양고도 추종 각도** (EPW `KOR_Kwangju.471560_IWEC (1).epw` 기준, `model_pythonpluginsystem_fixed.py`의 웜업/폴백 로직 `min(ANGLES, key=lambda x: abs(x - sun_alt))`을 EnergyPlus 시뮬레이션 없이 재현. 생성 스크립트: [`projects/02_tide_v1/data_preprocessing/compute_suntracking_angle_schedule.py`](../ai_model/tide/data_preprocessing/compute_suntracking_angle_schedule.py))
+- `projects/02_tide_v1/data/predictions/bipv_optimal_angles_annual.csv` — **Net Energy 최적 각도** (`model_pythonpluginsystem_fixed.py`가 본 시뮬레이션 중 실제로 주입하는 스케줄. 냉난방 부하 + PV 발전량을 함께 고려한 Net Energy 최소화 결과)
 
 두 파일 모두 2026-01-01 00:10부터 10분 간격, 총 52,560개 타임스텝(1년)을 포함하며, 제어 각도 후보군은 동일하게 `{0, 10, 20, ..., 90}` 10단계입니다.
 
@@ -167,14 +167,14 @@
 
 ```bash
 # 1. 태양고도 추종 각도 스케줄 생성 (EnergyPlus 미실행)
-uv run python ai_model/tide/data_preprocessing/compute_suntracking_angle_schedule.py
-# -> data/bipv_suntracking_angles_annual.csv
+uv run python projects/02_tide_v1/data_preprocessing/compute_suntracking_angle_schedule.py
+# -> shared/data/bipv_suntracking_angles_annual.csv
 
 # 2. 비교 통계 재계산 (pandas)
 uv run python - <<'PYEOF'
 import pandas as pd
-sun = pd.read_csv("data/bipv_suntracking_angles_annual.csv", parse_dates=["timestamp"])
-ai  = pd.read_csv("ai_model/tide/data/predictions/bipv_optimal_angles_annual.csv", parse_dates=["timestamp"])
+sun = pd.read_csv("shared/data/bipv_suntracking_angles_annual.csv", parse_dates=["timestamp"])
+ai  = pd.read_csv("projects/02_tide_v1/data/predictions/bipv_optimal_angles_annual.csv", parse_dates=["timestamp"])
 df = sun.merge(ai, on="timestamp", suffixes=("_sun", "_ai"))
 df["diff"] = df["optimal_angle_ai"] - df["optimal_angle_sun"]
 print("match rate:", (df["diff"] == 0).mean())

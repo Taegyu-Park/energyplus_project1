@@ -1,7 +1,7 @@
 # TiDE 각도 직접 예측: 목적함수와 인수 설계
 
 ## 배경
-- 지금 구조(`bipv_mismatch/train_tide_mm.py`)는 각도별 성분 50개를 예측한 뒤 `choose_path`(Viterbi)로 각도를 고른다.
+- 지금 구조(`projects/05_bipv_mismatch/train_tide_mm.py`)는 각도별 성분 50개를 예측한 뒤 `choose_path`(Viterbi)로 각도를 고른다.
 - 제안 구조: TiDE가 **하루치 각도 궤적을 한 번에 출력**하고, 손실 함수를 **미스매치 자체**로 둔다(decision-focused learning).
 - case2 데이터에는 모든 시점에 10개 각도의 PV·수요 결과가 있으므로, 출력한 각도의 비용을 미분 가능한 형태로 바로 계산할 수 있다.
 
@@ -12,7 +12,7 @@
 - 태양추적 PV가 수요를 넘는 **잉여 구간**에서만 태양추적을 벗어나 각도를 조절한다.
 - TiDE가 줄일 대상은 이 조절 구간과 그 경계에서 생기는 미스매치(구매 + 잉여)다.
 
-### 근거: case3 1/13(IWEC) E+ 실험 (`bipv_mismatch/eplus_jan13/`)
+### 근거: case3 1/13(IWEC) E+ 실험 (`projects/05_bipv_mismatch/eplus_jan13/`)
 - `jan13_surplus90.svg`: 잉여 구간(10:20~14:10)을 90°로 고정하면 큰 잉여는 사라진다.
   대신 **구간 경계에서 PV가 수요 아래로 급락**해 부족이 생긴다(10:20 직후, 13:30~14:10).
 - `jan13_a50_10to11.svg`: 시작 경계에 50° 구간(10:00~11:00)을 끼우면 부족이 줄고 잉여가 조금 늘어, 전체 미스매치가 준다.
@@ -52,7 +52,7 @@ J_d(θ) = Σₜ [ w_def · max(Dₜ(θₜ) − Pₜ(θₜ), 0) + w_sur · max(P�
   1차는 **r = 1(1:1)** 로 학습·평가하고, 결과를 본 뒤 **부족에 가중치를 더 주는 방향(r < 1)** 으로 조정한다.
   - 1차 실행: w_sur = 1 고정, **w_def ∈ {1.0, 1.2, 1.4, 1.6}** (w_sur : w_def = 1:1, 1:1.2, 1:1.4, 1:1.6)을 한 번에 학습·비교한다.
   - **채광 항은 넣지 않는다(μ = 0)**. 수요 D에 조명 전력이 들어 있어 채광 효과는 이미 반영된다.
-  - 구현: `bipv_mismatch/tide_policy/train_tide_policy.py`
+  - 구현: `projects/05_bipv_mismatch/tide_policy/train_tide_policy.py`
   - 1/13 E+ 손익분기: 90°가 태양추적보다 나으려면 r > 0.026, 50° 버퍼가 90°보다 나으려면 r < 1.89.
     r ≤ 1 범위에서는 버퍼가 유리하다는 결론이 유지된다.
   - r이 결과를 바꾸는 경우는 P = D를 정확히 맞출 수 없을 때뿐이다(각도 격자·버퍼 묶음, 열 이월, 예측 오차).
@@ -141,8 +141,8 @@ theta = torch.where(M, theta_st + (90 - theta_st) * torch.sigmoid(z), theta_st)
    - 시작·끝 동시 버퍼
    - 버퍼 각도(40~80°)·길이(30~90분) 격자
    - 결과를 TiDE 출력과 비교할 1일 기준(상한) 성능으로 쓴다.
-2. `bipv_mismatch/train_tide_policy.py` 신규 작성 (2절 조절 구간 마스크 포함)
-3. 데이터셋·분할은 기존 그대로: train = IWEC, val = TMYx2004, test = TMYx2011 (`bipv_mismatch/dataset_final/`)
+2. `projects/05_bipv_mismatch/train_tide_policy.py` 신규 작성 (2절 조절 구간 마스크 포함)
+3. 데이터셋·분할은 기존 그대로: train = IWEC, val = TMYx2004, test = TMYx2011 (`projects/05_bipv_mismatch/dataset_final/`)
 4. 평가: 11~3월 평일, 07시 ~ 다음 날 07시 합계
    - 비교 대상: **태양추적**, **잉여 구간 90° 규칙**, TiDE. TiDE는 90° 규칙보다 미스매치가 작아야 의미가 있다.
    - 지표: 미스매치·구매·잉여·각도 이동량, 그리고 시간대별 분해(버퍼 구간 / 잉여 구간 / 잉여 이후 이월)

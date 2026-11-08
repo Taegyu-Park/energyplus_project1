@@ -29,8 +29,8 @@ fig38 결과: 시뮬레이션 기준 **Strategy 1(ST1)이 태양추적(룰베이
 ## Phase 0. 기준선 재현 (재학습 없음)
 - 위 표의 오프라인 수치를 스크립트로 재현한다. (test 구간만 따로도 집계)
 - 지표: 예측 각도의 true net 합, PV 합, 냉·난방 합, 각도 MAE, regret.
-- 룰베이스(`data/bipv_suntracking_angles_annual.csv`)와 oracle을 같은 스크립트로 같은 지표로 계산한다.
-- 수정: `evaluate_tide.py`(또는 새 `ai_model/tide/decision_metrics.py`). 입력은 `data/predictions/annual_tide_strategy1_optimal_angles.csv`의 `net_energy_pred_*`/`net_energy_true_*`.
+- 룰베이스(`shared/data/bipv_suntracking_angles_annual.csv`)와 oracle을 같은 스크립트로 같은 지표로 계산한다.
+- 수정: `evaluate_tide.py`(또는 새 `projects/02_tide_v1/decision_metrics.py`). 입력은 `data/predictions/annual_tide_strategy1_optimal_angles.csv`의 `net_energy_pred_*`/`net_energy_true_*`.
 
 ## Phase A. 후처리/결정 규칙 (기존 모델 그대로, 재학습 없음) ★ 우선
 | 실험 | 내용 |
@@ -58,7 +58,7 @@ fig38 결과: 시뮬레이션 기준 **Strategy 1(ST1)이 태양추적(룰베이
 | C3 | 각도별 물리 특성 10개: 입사각 코사인 `cos(θ_inc,a)`, 면일사량 대리값 `direct·cos(θ_inc,a)+diffuse·(1+cos a)/2` |
 | C4 | 요일/점유 스케줄(시간대 × 평일/주말), 냉방·난방 시즌 플래그, `day_of_year` 명칭 정정 |
 | C5 | 절제 실험: lookback 타깃 제거/가림(추론 시 실제값 의존 제거), lookback 길이 36/72/144/288 |
-- 새 특성은 데이터셋 CSV에 컬럼으로 추가하는 전처리 스크립트(`ai_model/tide/data_preprocessing/add_physics_features.py`)로 만든다. 기존 데이터셋은 덮어쓰지 않고 새 파일로 저장한다.
+- 새 특성은 데이터셋 CSV에 컬럼으로 추가하는 전처리 스크립트(`projects/02_tide_v1/data_preprocessing/add_physics_features.py`)로 만든다. 기존 데이터셋은 덮어쓰지 않고 새 파일로 저장한다.
 - 수정: `train_tide.py`의 `PAST_COV_COLS`/`FUTURE_COV_COLS`. `tide_model.py`는 입력 차원만 바뀜(구조 변경 없음).
 - C5는 "현재 성능이 폐루프에서도 유지되는가"를 보는 점검이다.
 
@@ -72,7 +72,7 @@ fig38 결과: 시뮬레이션 기준 **Strategy 1(ST1)이 태양추적(룰베이
 ## Phase E. 폐루프(시뮬레이션) 검증
 - Phase A~D에서 오프라인 net이 태양추적(−6,237)보다 좋은 후보 1~2개 선정.
 - `predict_annual_tide.py`로 스케줄 생성 → `run_case3_south_tide_sim.py --strategy N`으로 EnergyPlus 1년 실행(약 8시간).
-- `figure/code/fig38_*.py`를 갱신해 baseline(태양추적 −4,658) 대비 난방/냉방/PV/HVAC/Net을 비교한다.
+- `projects/02_tide_v1/figures/code/fig38_*.py`를 갱신해 baseline(태양추적 −4,658) 대비 난방/냉방/PV/HVAC/Net을 비교한다.
 - 오프라인 개선이 시뮬레이션에서도 재현되는지(순위 일치)를 기록한다.
 
 ## Strategy 2 개선안 (PV/냉방/난방 30개 분해 예측)
@@ -118,8 +118,8 @@ ST2는 ST1만큼 냉난방을 줄이지 못했고 PV도 태양추적보다 적�
 3. 모든 실험이 `docs/tide_experiment_log.md`에 표로 남는다. (재현 명령 포함)
 
 ## 수정/신규 파일 요약
-- 수정: `ai_model/tide/train_tide.py`, `predict_annual_tide.py`, `evaluate_tide.py`, `figure/code/fig38_tide_strategy1_vs_strategy2_energy_comparison.py`
-- 신규: `ai_model/tide/decision_metrics.py`, `ai_model/tide/data_preprocessing/add_physics_features.py`, `docs/tide_experiment_log.md`
+- 수정: `projects/02_tide_v1/train_tide.py`, `predict_annual_tide.py`, `evaluate_tide.py`, `projects/02_tide_v1/figures/code/fig38_tide_strategy1_vs_strategy2_energy_comparison.py`
+- 신규: `projects/02_tide_v1/decision_metrics.py`, `projects/02_tide_v1/data_preprocessing/add_physics_features.py`, `docs/tide_experiment_log.md`
 - 재사용: `ContiguousBlockTiDEDataset`, `validate()`, `run_training()`(`train_tide.py`), `bipv_suntracking_angles_annual.csv`(룰베이스), `run_case3_south_tide_sim.py`, `data/predictions/*_optimal_angles.csv`
 
 ## 검증 방법

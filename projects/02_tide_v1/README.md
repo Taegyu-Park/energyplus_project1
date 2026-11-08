@@ -1,13 +1,13 @@
 # TiDE (Time-series Dense Encoder) BIPV Net Energy Optimization Repository
 
-본 디렉터리(`ai_model/tide/`)는 Kinetic BIPV 및 동적 차양 시스템의 **Net Energy 최소화**를 위한 **Google TiDE 시계열 신경망 모델 아키텍처, 훈련 및 추론 스크립트, 체크포인트, 데이터셋 및 연간 예측 결과물**을 체계적으로 통합 관리하는 전용 폴더입니다.
+본 디렉터리(`projects/02_tide_v1/`)는 Kinetic BIPV 및 동적 차양 시스템의 **Net Energy 최소화**를 위한 **Google TiDE 시계열 신경망 모델 아키텍처, 훈련 및 추론 스크립트, 체크포인트, 데이터셋 및 연간 예측 결과물**을 체계적으로 통합 관리하는 전용 폴더입니다.
 
 ---
 
 ## 1. 디렉터리 구조 및 파일 설명
 
 ```text
-ai_model/tide/
+projects/02_tide_v1/
 ├── tide_model.py                # TiDE 신경망 구조 (DenseMLP, Residual Block, Future/Past Covariate 인코더-디코더)
 ├── train_tide.py                # 시계열 블록 기반 훈련 파이프라인 (전략 1, 전략 2 지원)
 ├── predict_annual_tide.py        # 연간(52,560 스텝) 최적 PV 각도 시퀀스 추론 및 스케줄 생성 스크립트
@@ -37,7 +37,7 @@ ai_model/tide/
 └── data_preprocessing/          # 데이터셋 구축 및 전처리 유틸리티
     ├── build_case2_ks_tide_dataset.py                   # 정적 각도(0°~90°) 전수 시뮬레이션 기반 초기 데이터셋 생성기
     ├── build_case2_case3_augmented_dataset.py           # 동적 태양 추종(case3) 결합 데이터 증강기
-    ├── compute_suntracking_angle_schedule.py            # 태양고도 추종 각도 스케줄 생성 (출력: 루트 data/bipv_suntracking_angles_annual.csv)
+    ├── compute_suntracking_angle_schedule.py            # 태양고도 추종 각도 스케줄 생성 (출력: 루트 shared/data/bipv_suntracking_angles_annual.csv)
     └── split_case2_ks_dataset.py                        # 시계열 계절 블록 분할기
 ```
 
@@ -47,13 +47,13 @@ ai_model/tide/
 
 ```bash
 # 1. 전략 2 모델 훈련 (30 Epochs, GPU)
-uv run python ai_model/tide/train_tide.py --strategy 2 --epochs 30 --device cuda
+uv run python projects/02_tide_v1/train_tide.py --strategy 2 --epochs 30 --device cuda
 
 # 2. 연간 최적 각도 스케줄 추론 (52,560 타임스텝)
-uv run python ai_model/tide/predict_annual_tide.py --strategy 2
+uv run python projects/02_tide_v1/predict_annual_tide.py --strategy 2
 
 # 3. 미학습 테스트 세트 정량 성능 평가
-uv run python ai_model/tide/evaluate_tide.py --strategy 2
+uv run python projects/02_tide_v1/evaluate_tide.py --strategy 2
 ```
 
 ---

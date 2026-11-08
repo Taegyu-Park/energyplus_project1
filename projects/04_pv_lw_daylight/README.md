@@ -9,8 +9,8 @@ kinetic BIPV 루버의 **PV 온도가 남측 외피로 내보내는 장파복사
 | `plan_pv_facade_longwave_coupling.md` | 계획서 + 구현 현황·검증·결정 사항 |
 | `compute_view_factors.py` → `view_factors.csv` | 각도별 PV 6단 ↔ 남측 창·외벽 뷰팩터 |
 | `pv_lw_plugin.py` | PV 셀 온도 → 외피 주변 표면 온도 연동, case3 조명 배율 적용, case2용 플러그인 |
-| `bipv_schedule_lw_plugin.py` | case3 각도 제어 플러그인(`bipv_experiments/bipv_schedule_plugin.py`) 확장 |
-| `run_pvlw.py` | IDF 사본 생성·패치·실행 러너 (`bipv_experiments/runner.py` 재사용) |
+| `bipv_schedule_lw_plugin.py` | case3 각도 제어 플러그인(`projects/03_bipv_experiments/bipv_schedule_plugin.py`) 확장 |
+| `run_pvlw.py` | IDF 사본 생성·패치·실행 러너 (`projects/03_bipv_experiments/runner.py` 재사용) |
 | `build_daylight_table.py` → `daylight_tables/` | case3용 각도별 조명 전력 배율 표 (case2 주광 실행 짜깁기) |
 | `analyze_results.py` → `results/` | 효과 정리표 (PV 복사, 조명, 합계, 설정조도 민감도; 연간·난방기 평일) |
 | `schedules/` | 테스트용 각도 스케줄 (0°/90° 매시 교대) |
@@ -22,13 +22,13 @@ kinetic BIPV 루버의 **PV 온도가 남측 외피로 내보내는 장파복사
 | `figures/` | 결과 그림 (PV 복사 효과 vs 각도) |
 | `move_finished_runs.py` | 폴더 이전 중 실행 결과 이동용 (일회성) |
 
-외부 의존(이동하지 않음): `bipv_experiments/runner.py`, `bipv_experiments/bipv_schedule_plugin.py`, `bipv_experiments/idf/case3_v3_south_fixed.idf`, `bipv_experiments/sizing/`, `bipv_experiments/schedules/`, case3 기준안 `bipv_experiments/runs/c3_FE_suntracking_od`, `case_idf/case2_KS/`.
+외부 의존(이동하지 않음): `projects/03_bipv_experiments/runner.py`, `projects/03_bipv_experiments/bipv_schedule_plugin.py`, `projects/03_bipv_experiments/idf/case3_v3_south_fixed.idf`, `projects/03_bipv_experiments/sizing/`, `projects/03_bipv_experiments/schedules/`, case3 기준안 `projects/03_bipv_experiments/runs/c3_FE_suntracking_od`, `shared/case_idf/case2_KS/`.
 
 ## 실행
 ```bash
-python pv_lw_daylight/run_pvlw.py --batch pv_lw_daylight/batches/case2_annual_batch.json --jobs 14
-python pv_lw_daylight/build_daylight_table.py --lx 300 400 600
-python pv_lw_daylight/analyze_results.py
+python projects/04_pv_lw_daylight/run_pvlw.py --batch projects/04_pv_lw_daylight/batches/case2_annual_batch.json --jobs 14
+python projects/04_pv_lw_daylight/build_daylight_table.py --lx 300 400 600
+python projects/04_pv_lw_daylight/analyze_results.py
 ```
 
 ## 핵심 사항

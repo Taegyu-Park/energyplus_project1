@@ -7,7 +7,7 @@
 
 ## 1. 개요 및 배경
 
-현재 [case3_v3_max.idf](file:///c:/Users/taegyu/Codes/energyplus_project1/case_idf/case3_v3_KS/case3_v3_max.idf) 모델은 태양 고도를 실시간 추종하는 외장 키네틱 BIPV 루버(남측 780개, 동/서측 각 90개)가 적용되어 있습니다. 
+현재 [case3_v3_max.idf](file:///c:/Users/taegyu/Codes/energyplus_project1/shared/case_idf/case3_v3_KS/case3_v3_max.idf) 모델은 태양 고도를 실시간 추종하는 외장 키네틱 BIPV 루버(남측 780개, 동/서측 각 90개)가 적용되어 있습니다. 
 그러나 실내 조명은 **외부 일사 및 BIPV 차양 각도와 무관하게 고정 타임 스케줄(6.896 W/m², 최대 70% 점등)**로만 동작하고 있습니다.
 
 루버가 태양을 가려 직달일사를 차단하면:
@@ -31,7 +31,7 @@ EnergyPlus의 내부 광학(SplitFlux) 엔진을 이용하여, BIPV 루버의 �
 - **조명 객체 분리**: 현재 1개의 `SpaceList`로 일괄 적용된 조명을 **코어 조명**과 **외주부(방위별) 조명**으로 분리 정의.
 
 ### [2단계 - 심화 제어] Python Plugin 연동 BIPV-조명 복합 최적 제어 (Trade-off Optimization)
-현재 [model_pythonpluginsystem_fixed.py](file:///c:/Users/taegyu/Codes/energyplus_project1/case_idf/case3_v3_KS/model_pythonpluginsystem_fixed.py)의 플러그인은 태양 고도각만을 기반으로 루버 각도를 결정합니다.
+현재 [model_pythonpluginsystem_fixed.py](file:///c:/Users/taegyu/Codes/energyplus_project1/shared/case_idf/case3_v3_KS/model_pythonpluginsystem_fixed.py)의 플러그인은 태양 고도각만을 기반으로 루버 각도를 결정합니다.
 - 조도 센서 변수(`Daylighting Lighting Power Multiplier` 또는 `Zone Lights Electric Power`)를 Python Plugin에서 모니터링
 - BIPV 각도 변경 시 발생하는 **'BIPV 발전량(+) vs 실내 조명 전력 증가(-)'**의 넷 에너지(Net Energy) 트레이드오프 분석 및 최적 각도 보정 로직 연계.
 
@@ -52,7 +52,7 @@ EnergyPlus의 내부 광학(SplitFlux) 엔진을 이용하여, BIPV 루버의 �
 ## 4. 세부 작업 계획 (Proposed Changes)
 
 ### Component 1: IDF 모델 조명 구조 재구성
-#### [MODIFY] [case3_v3_max.idf](file:///c:/Users/taegyu/Codes/energyplus_project1/case_idf/case3_v3_KS/case3_v3_max.idf)
+#### [MODIFY] [case3_v3_max.idf](file:///c:/Users/taegyu/Codes/energyplus_project1/shared/case_idf/case3_v3_KS/case3_v3_max.idf)
 1. **`Lights` 객체 세분화**:
    - `SmallOffice Building_Lighting` 단일 객체를 2개 그룹으로 분리:
      - `Core_Lighting`: 1층/2층 Core Space (기존 스케줄 그대로 유지)
@@ -74,7 +74,7 @@ EnergyPlus의 내부 광학(SplitFlux) 엔진을 이용하여, BIPV 루버의 �
 ---
 
 ### Component 2: Python Plugin 모니터링 연동 (선택적 확장)
-#### [MODIFY] [model_pythonpluginsystem_fixed.py](file:///c:/Users/taegyu/Codes/energyplus_project1/case_idf/case3_v3_KS/model_pythonpluginsystem_fixed.py)
+#### [MODIFY] [model_pythonpluginsystem_fixed.py](file:///c:/Users/taegyu/Codes/energyplus_project1/shared/case_idf/case3_v3_KS/model_pythonpluginsystem_fixed.py)
 - 각 존의 주광 조도 및 조명 소비 전력을 센서로 수집하여 BIPV 발전 출력과 동기화 모니터링.
 
 ---

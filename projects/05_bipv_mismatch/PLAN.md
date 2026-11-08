@@ -8,7 +8,7 @@
   - 수요는 HVAC만 포함.
 - **사용 형태**: 오프라인 연간 스케줄 생성. TMY 기상을 미래까지 안다고 가정하고, 결과는 EnergyPlus로 검증한다.
 - **대상**: 남측 파사드 BIPV(6단, 96모듈), 광주 IWEC, 10분 간격. 학습 데이터는 case2(고정각 0~90°)만 쓴다.
-- **현재 데이터셋(`ai_model/tide/data/dataset/`)의 문제**
+- **현재 데이터셋(`projects/02_tide_v1/data/dataset/`)의 문제**
   1. case3 결과가 섞인 증강본이다.
   2. 원본 case2_KS는 그림자를 30일마다 계산하고, 냉난방 용량을 각도마다 따로 산정한다. PV가 각도에 대해 비단조이고 라벨이 10°/40°에 몰린다.
   3. 라벨이 부호 있는 net 기준이다.
@@ -25,12 +25,12 @@
   - 여름(7~8월): 부하가 PV보다 월등히 커서 PV가 전부 부하에 쓰인다. 미스매치가 순수 부족분이라 각도로 조정할 여지가 없다(잉여 비율 IWEC·TMYx 0.0~0.1).
   - 봄·가을(4월 말~5월 초, 9월 말~10월): PV가 주간 부하를 거의 다 덮어 미스매치가 거의 전부 잉여다. 각도로 할 수 있는 일은 발전량 줄이기뿐이다.
   - 겨울: 해가 떠 있어도 아침 난방 부족과 한낮 잉여가 같은 날 공존한다(시간대 어긋남). 주간 부족·잉여 공존량 min(부족, 잉여) 중 11~3월이 IWEC 70%, TMYx 68%를 차지한다.
-  - 그림: `figure/plot/fig41_1_*`(겨울 평일), `fig43_*`(여름·가을 평일)
+  - 그림: `projects/03_bipv_experiments/figures/plot/fig41_1_*`(겨울 평일), `fig43_*`(여름·가을 평일)
 - **평가 시간대: 하루 전체** (2026-10-26 확정). 해 뜨기 전 시간은 따로 다루지 않는다.
   - 해가 떠 있는 시간만으로 잘라도 겨울은 가을처럼 되지 않는다: 주간 부족 0인 날 0/108(태양추적), 부족의 41%가 일출 후 1시간, 12%가 일몰 전 1시간, 잉여의 95%가 한낮.
   - 해 진 후 HVAC가 각도에 따라 18~29% 달라지므로(낮 일사의 축열 효과) 하루 전체로 봐야 이 효과가 잡힌다. 해 뜨기 전 부족은 각도에 따라 3~4%만 달라져 순위에 거의 영향이 없다.
 - **비교 기준안: 기존 태양고도 추적형 실행** (2026-10-26 사용자 확정, 이전에 쓰던 고정 10°는 구매 전력 기준 최선 고정각이라 새 목적과 무관)
-  - 결과: `bipv_experiments/runs/c3_FE_suntracking_od` (시계열 `bipv_experiments/analysis/c3_net_timeseries_onediode.csv`의 `*_ST` 열), IWEC
+  - 결과: `projects/03_bipv_experiments/runs/c3_FE_suntracking_od` (시계열 `projects/03_bipv_experiments/analysis/c3_net_timeseries_onediode.csv`의 `*_ST` 열), IWEC
   - 스케줄 `suntracking_w0s90`: 낮은 태양고도 최근접 10° 단위, 밤은 11~3월 0°, 그 외 90°
   - case2 고정각 결과를 이어 붙인 추적안은 쓰지 않는다: PV는 맞아도 부하는 그 각도로 계속 운전한 열적 이력을 담고 있어 실제 추적 운전과 다르다.
   - 설정 차이(참고): 그림자 Periodic, FullExterior(반사 없음), 기본 하늘 확산 모델, PV Eg 1.12. 이번 case2 실행은 그림자 Timestep, FullExteriorWithReflections, DetailedSkyDiffuseModeling, Eg 1.25. 용량 산정(`case2_max_over_angles.eio`)은 같다.
@@ -48,35 +48,35 @@
 
 ## 작업 폴더 (신규, 기존 파일은 수정하지 않음)
 ```
-energyplus_project1/bipv_mismatch/
+energyplus_project1/projects/05_bipv_mismatch/
 ├── PLAN.md                      ← 이 계획을 저장
 ├── run_case2_sim.py             ← 이번에 실행
-├── idf/case2_KS/case2_{angle}.idf   ← 출력 변수·설정을 추가한 IDF 10개 (case_idf/case2_KS와 같은 구조)
-├── case2_KS/case2_{angle}/      ← 시뮬레이션 결과 (case_analysis/normal/case2_KS와 같은 구조)
+├── idf/case2_KS/case2_{angle}.idf   ← 출력 변수·설정을 추가한 IDF 10개 (shared/case_idf/case2_KS와 같은 구조)
+├── case2_KS/case2_{angle}/      ← 시뮬레이션 결과 (projects/01_baseline_bipv/results/normal/case2_KS와 같은 구조)
 │   ├── eplusout.sql, eplusout.err, run_stdout.log, …
 ├── dataset/                     ← (Step 3) 학습 데이터셋
 └── (Step 4~6 스크립트)
 ```
 
 ## Step 1. 계획 저장
-이 문서를 `bipv_mismatch/PLAN.md`로 저장한다.
+이 문서를 `projects/05_bipv_mismatch/PLAN.md`로 저장한다.
 
 ## Step 2. case2 고정각 10개 재시뮬레이션 (이번 실행 범위)
-`bipv_mismatch/run_case2_sim.py`를 새로 만든다.
-- **입력**: `case_idf/case2_KS/case2_{a}.idf` (원본, 수정하지 않음)
-- **IDF 사본 생성**: `bipv_experiments/runner.py`의 `prepare_idf()`를 import해서 재사용한다.
+`projects/05_bipv_mismatch/run_case2_sim.py`를 새로 만든다.
+- **입력**: `shared/case_idf/case2_KS/case2_{a}.idf` (원본, 수정하지 않음)
+- **IDF 사본 생성**: `projects/03_bipv_experiments/runner.py`의 `prepare_idf()`를 import해서 재사용한다.
   - `shadow_timestep=True`: 그림자를 Periodic 30에서 Timestep으로 바꾼다.
-  - `ideal_sizing_from=bipv_experiments/sizing/case2_max_over_angles.eio`: 각도 간 용량을 통일한다.
+  - `ideal_sizing_from=projects/03_bipv_experiments/sizing/case2_max_over_angles.eio`: 각도 간 용량을 통일한다.
   - `sky_diffuse="DetailedSkyDiffuseModeling"`: SimpleSky 버그 이력(Phase 0) 때문에 c2_RF와 같게 맞춘다.
   - Solar Distribution은 원본 그대로(FullExteriorWithReflections), PV는 One-Diode.
-  - 이 조합은 기존 `bipv_experiments/runs/c2_RF_A*`와 같고, 90°까지 One-Diode로 성공한 이력이 있다. FullExterior는 90°에서 One-Diode가 실패해 pv_simple로 대체된 이력이 있어 쓰지 않는다.
+  - 이 조합은 기존 `projects/03_bipv_experiments/runs/c2_RF_A*`와 같고, 90°까지 One-Diode로 성공한 이력이 있다. FullExterior는 90°에서 One-Diode가 실패해 pv_simple로 대체된 이력이 있어 쓰지 않는다.
 - **추가할 출력 변수** (`Output:Variable,…,TimeStep`, 사본 끝에 추가. 이름은 rdd에서 확인함)
   - **Site (*)**: Outdoor Air Relative Humidity, Outdoor Air Dewpoint Temperature, Wind Speed, Sky Temperature, Horizontal Infrared Radiation Rate per Area, Total Sky Cover, Day Type Index
   - **Zone (*)**: Mean Air Temperature, Operative Temperature, Air Relative Humidity, People Occupant Count, Thermostat Heating/Cooling Setpoint Temperature, Ideal Loads Zone Sensible/Latent Heating/Cooling Energy, Lights Electricity Energy, Electric Equipment Electricity Energy (기존 Hourly와 별도로 TimeStep)
   - **남측 표면** (키를 지정: `BIPV_office_{1,2}_S..Wall_S`, `..Wall_S_Glz0`): Surface Inside Face Temperature, Surface Outside Face Incident Solar Radiation Rate per Area, Surface Window Transmitted Solar Radiation Energy (창만)
   - **PV**: Generator PV Cell Temperature. 6개 단마다 대표 발전기 1개(IDF에서 `PV_{row}_{a}_..` 첫 번째를 정규식으로 선택)
-- **IDF 저장**: 설정 변경과 출력 추가를 마친 IDF를 `bipv_mismatch/idf/case2_KS/case2_{a}.idf`에 저장한다. 결과 폴더에는 IDF를 복사하지 않고 이 파일로 실행한다. `prepare_idf()`가 결과 폴더에 만드는 `_run.idf` 사본은 idf 폴더로 옮긴다.
-- **실행**: `C:\EnergyPlusV25-2-0\energyplus.exe -w data/KOR_Kwangju.471560_IWEC (1).epw -d bipv_mismatch/case2_KS/case2_{a} bipv_mismatch/idf/case2_KS/case2_{a}.idf`
+- **IDF 저장**: 설정 변경과 출력 추가를 마친 IDF를 `projects/05_bipv_mismatch/idf/case2_KS/case2_{a}.idf`에 저장한다. 결과 폴더에는 IDF를 복사하지 않고 이 파일로 실행한다. `prepare_idf()`가 결과 폴더에 만드는 `_run.idf` 사본은 idf 폴더로 옮긴다.
+- **실행**: `C:\EnergyPlusV25-2-0\energyplus.exe -w shared/data/KOR_Kwangju.471560_IWEC (1).epw -d projects/05_bipv_mismatch/case2_KS/case2_{a} projects/05_bipv_mismatch/idf/case2_KS/case2_{a}.idf`
   - 10개를 병렬로 실행한다(각 약 4분, `run_case2_tmyx.py`의 ThreadPoolExecutor 패턴).
   - 로그는 `run_stdout.log`에 남긴다. 실패하면 각도와 exit code를 보고한다.
 
@@ -129,11 +129,11 @@ energyplus_project1/bipv_mismatch/
 1단계 HVAC 최소안, 2단계 블록 계획 최적화를 만든다. 출력은 `timestamp,optimal_angle` CSV.
 
 ## Step 6. EnergyPlus 폐루프 검증
-`bipv_experiments/runner.py`와 case3 fixed IDF, One-Diode로 실행한다. PV는 선택 각도 발전기만 합산한다. 비교 대상은 고정 30°, 태양추적, 1단계, 2단계이고, 연간 구매 전력·남는 PV·HVAC로 비교한다.
+`projects/03_bipv_experiments/runner.py`와 case3 fixed IDF, One-Diode로 실행한다. PV는 선택 각도 발전기만 합산한다. 비교 대상은 고정 30°, 태양추적, 1단계, 2단계이고, 연간 구매 전력·남는 PV·HVAC로 비교한다.
 
 ## 검증 (Step 2)
 - 10개 모두 `EnergyPlus Completed Successfully`, Severe 0인지 확인한다.
 - `Time` 테이블에서 웜업 제외 Interval=10 스텝이 52,560개인지 확인한다.
 - 추가 출력 변수가 모두 SQL에 있는지 확인한다.
-- 연간 PV·냉난방 합계를 `bipv_experiments/runs/c2_RF_A{a}/summary.json`과 비교한다(같은 설정이므로 거의 같아야 함).
+- 연간 PV·냉난방 합계를 `projects/03_bipv_experiments/runs/c2_RF_A{a}/summary.json`과 비교한다(같은 설정이므로 거의 같아야 함).
 - 각도별 PV가 원본 case2_KS보다 단조에 가까워졌는지 확인한다.

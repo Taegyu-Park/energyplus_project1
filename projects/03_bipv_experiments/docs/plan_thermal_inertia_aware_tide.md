@@ -1,7 +1,7 @@
 # 열적 관성을 반영한 TiDE 각도 결정 계획
 
 - 작성일: 2026-10-13
-- 대상 모델: `bipv_experiments/idf/case3_v3_south_fixed.idf` (One-Diode PV, FullExterior)
+- 대상 모델: `projects/03_bipv_experiments/idf/case3_v3_south_fixed.idf` (One-Diode PV, FullExterior)
 - Net energy 정의: `냉방/3.0 + 난방/2.5 − PV(선택 각도 발전기만 합산)` (kWh)
 
 ---
@@ -28,7 +28,7 @@ net_실제(t) = net_고정각[a_t](t)            ← 기존 TiDE (고정각 데�
 
 ## 1. 현재 상황 (근거 수치)
 
-`bipv_experiments/analysis/final_onediode_comparison.csv` (One-Diode, case3 fixed, 연간 kWh).
+`projects/03_bipv_experiments/analysis/final_onediode_comparison.csv` (One-Diode, case3 fixed, 연간 kWh).
 
 | 스케줄 | 스티칭 net | 실제 E+ net | 관성 손실 (net) | 난방 관성 (열) | 냉방 관성 (열) |
 |---|---:|---:|---:|---:|---:|
@@ -94,9 +94,9 @@ net_실제(t) = net_고정각[a_t](t)            ← 기존 TiDE (고정각 데�
 
 **실행 설정** (최종 비교 run과 같게)
 
-- `idf`: `bipv_experiments/idf/case3_v3_south_fixed.idf`
+- `idf`: `projects/03_bipv_experiments/idf/case3_v3_south_fixed.idf`
 - `solar_distribution: FullExterior`, `pv_simple: false` (One-Diode 필수)
-- `ideal_sizing_from: bipv_experiments/sizing/case2_max_over_angles.eio`
+- `ideal_sizing_from: projects/03_bipv_experiments/sizing/case2_max_over_angles.eio`
 - 스케줄 CSV 형식은 기존과 같다: `timestamp,optimal_angle` (10분 간격, 0~90° 10° 단위)
 - PV는 `Facility Total Produced`가 아니라 **선택 각도 발전기의 `Generator Produced DC Electricity Energy` 합**으로 계산한다. (pv_simple 버그 이후 정한 규칙)
 
@@ -104,7 +104,7 @@ net_실제(t) = net_고정각[a_t](t)            ← 기존 TiDE (고정각 데�
 - 연간 1회는 약 16시간 걸린다(`c3_FE_tide_s1_od`: 15h 46m). 병렬로 돌려도 1회와 시간이 비슷했다(Phase 0).
 - 권장: **연간 run 12개 1배치** (R1×4, R2×4, R3×3, R4×1) → 약 63만 스텝, 약 1일.
 - 연간 run을 권장하는 이유: 짧은 run은 웜업 때 첫날 각도로 축열 상태가 만들어진다. 그래서 앞 며칠을 버려야 하고, 버리는 비율만큼 비효율이다. 연간 run은 고정각 데이터와 날짜가 그대로 맞아 Δ 계산도 간단하다.
-- 필요하면 상태 변수 출력을 추가한다. IDF에는 지금 존 온도 출력이 없다. `Zone Mean Air Temperature`, 남측 벽·창 `Surface Inside Face Temperature` 등을 출력하려면 **새 IDF 사본**을 `bipv_experiments/idf/`에 만든다. 원본 IDF는 수정하지 않는다.
+- 필요하면 상태 변수 출력을 추가한다. IDF에는 지금 존 온도 출력이 없다. `Zone Mean Air Temperature`, 남측 벽·창 `Surface Inside Face Temperature` 등을 출력하려면 **새 IDF 사본**을 `projects/03_bipv_experiments/idf/`에 만든다. 원본 IDF는 수정하지 않는다.
   - 실제 건물에서는 실내 온도를 측정할 수 있으므로, 이 값을 입력으로 쓰면 "각도 이력"보다 직접적으로 축열 상태를 알려준다. (Step 3의 선택 입력)
 
 **분할**: run 단위로 나눈다. 12개 중 2개(R1 1개, R2 1개)는 test 전용으로 둔다. 기존 3개 동적 run(태양추적/S1/S2)도 **test 전용**으로 둔다. 학습에 없던 실제 전략 스케줄에서 Δ를 맞히는지가 진짜 검증이다.
@@ -122,7 +122,7 @@ net_실제(t) = net_고정각[a_t](t)            ← 기존 TiDE (고정각 데�
 | 파생 특성 | 현재 각도와 과거 평균 각도의 차, 마지막 전환 이후 경과 시간 | Step 1에서 효과가 확인된 것만 |
 | (선택) 상태 | 과거 존 온도, 표면 온도 | Step 2에서 출력을 추가했을 때만 |
 
-**모델**: 기존 TiDE 구조를 그대로 쓴다. past/future covariate 차원만 늘어난다(`tide_model.py` 구조 변경 없음). 학습 스크립트는 `train_tide.py`를 복사해 `bipv_experiments/`에 새로 만든다.
+**모델**: 기존 TiDE 구조를 그대로 쓴다. past/future covariate 차원만 늘어난다(`tide_model.py` 구조 변경 없음). 학습 스크립트는 `train_tide.py`를 복사해 `projects/03_bipv_experiments/`에 새로 만든다.
 - lookback L: Step 1에서 본 관성 감쇠 시간으로 정한다. 후보는 144(1일) / 432(3일). 하루 이상 지속되면 1시간 평균으로 다운샘플한 긴 이력을 따로 넣는다.
 - horizon H: 144(24시간). 저녁 각도가 다음 날 아침 난방에 주는 영향을 담기 위해서다.
 - **고정각 앵커 샘플**: 고정각 run에서 뽑은 샘플(각도 이력 = 계획 = 상수, Δ = 0)을 일정 비율(예: 20%) 섞는다. 이렇게 하면 "안 바꾸면 손실 0"이라는 사실을 모델이 지키게 된다. 질문에서 말한 "**학습된 것과 고정각 결과를 동시에 고려**"가 이 부분에서 구현된다.
@@ -165,7 +165,7 @@ net_실제(t) = net_고정각[a_t](t)            ← 기존 TiDE (고정각 데�
 
 ---
 
-## 4. 파일 계획 (기존 파일 수정 없음, 모두 `bipv_experiments/` 아래)
+## 4. 파일 계획 (기존 파일 수정 없음, 모두 `projects/03_bipv_experiments/` 아래)
 
 | 파일 | 내용 |
 |---|---|
@@ -178,7 +178,7 @@ net_실제(t) = net_고정각[a_t](t)            ← 기존 TiDE (고정각 데�
 | `inertia/mpc_planner.py` | 후보 생성 + CEM + 점수 계산 → 연간 스케줄 CSV |
 | `docs/inertia_experiment_log.md` | 실험 결과 누적 표 (재현 명령 포함) |
 
-재사용: `runner.py`, `bipv_schedule_plugin.py`, `analysis/sql_extract.py`, `analysis/final_onediode_comparison.py`(스티칭 계산), `ai_model/tide/tide_model.py`, 기존 TiDE S1 체크포인트(고정각 항 예측).
+재사용: `runner.py`, `bipv_schedule_plugin.py`, `analysis/sql_extract.py`, `analysis/final_onediode_comparison.py`(스티칭 계산), `projects/02_tide_v1/tide_model.py`, 기존 TiDE S1 체크포인트(고정각 항 예측).
 
 ---
 

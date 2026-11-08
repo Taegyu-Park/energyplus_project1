@@ -1,7 +1,7 @@
 # Phase 0 결과 보고: TiDE가 태양추적보다 나쁜 원인 분해
 
 - 작성일: 2026-10-04
-- 대상 모델: `case_idf/case3_v3_KS/case3_v3_south.idf` (South BIPV, 10분 간격, 연간)
+- 대상 모델: `shared/case_idf/case3_v3_KS/case3_v3_south.idf` (South BIPV, 10분 간격, 연간)
 - Net energy 정의: `냉방/3.0 + 난방/2.5 − PV 발전량` (kWh, Ideal Loads 열부하 기준)
 
 ---
@@ -23,7 +23,7 @@
 가설 외에도 다음 문제가 동시에 존재했다.
 
 1. **학습/배포 모델 불일치**
-   - TiDE 학습: case2 (`case_idf/case2_KS/case2_{각도}.idf`). 그림자 계산 30일 주기, 각도별 단일 형상.
+   - TiDE 학습: case2 (`shared/case_idf/case2_KS/case2_{각도}.idf`). 그림자 계산 30일 주기, 각도별 단일 형상.
    - 실제 적용: case3. 매 timestep 그림자 계산, 10개 각도 형상을 투과율 액추에이터로 전환.
 2. **라벨 오염**: augmented 데이터셋에서 고정각 채널 일부를 case3 태양추적 결과로 덮어씀.
 3. **평가 신뢰성**
@@ -55,9 +55,9 @@
 | `model_pythonpluginsystem_ai.py` | 환경변수 `BIPV_SCHEDULE_CSV`로 스케줄 경로 지정. 스케줄 인덱스를 **날짜·시각 기반**으로 계산(사이징/웜업 호출에도 어긋나지 않음). 웜업에는 스케줄 첫날 각도 사용 |
 | `run_case3_schedule_sim.py` (신규) | 범용 러너. 원본 IDF를 건드리지 않고 사본을 만들어 플러그인 모듈을 `model_pythonpluginsystem_ai`로 고정. 여러 스케줄 병렬 실행, `--days N` 단기 실행 지원 |
 | `run_case3_south_tide_sim.py` | 기본 실행을 새 러너로 위임 (기존 방식은 `--legacy`) |
-| `ai_model/tide/data_preprocessing/build_case2_ks_tide_dataset.py` | `extract_angle_data()`에 SQL 경로 인자 추가 (재사용 목적) |
-| `ai_model/tide/data_preprocessing/build_case3_fixed_angle_dataset.py` (신규) | case3 고정각 10개 결과 → 학습용 데이터셋 |
-| `ai_model/tide/data_preprocessing/build_oracle_schedule.py` (신규) | timestep별 net 최소 각도 스케줄 생성. 모든 각도가 동률인 스텝은 태양추적 각도 사용 |
+| `projects/02_tide_v1/data_preprocessing/build_case2_ks_tide_dataset.py` | `extract_angle_data()`에 SQL 경로 인자 추가 (재사용 목적) |
+| `projects/02_tide_v1/data_preprocessing/build_case3_fixed_angle_dataset.py` (신규) | case3 고정각 10개 결과 → 학습용 데이터셋 |
+| `projects/02_tide_v1/data_preprocessing/build_oracle_schedule.py` (신규) | timestep별 net 최소 각도 스케줄 생성. 모든 각도가 동률인 스텝은 태양추적 각도 사용 |
 
 검증: 2일 스모크 테스트에서 고정 0° run은 0° 발전기만, 태양추적 run은 1월 태양고도에 맞는 10°·20°·30° 발전기만 발전 → 스케줄이 정확히 적용됨을 확인.
 
@@ -180,7 +180,7 @@
 
 | 순서 | 내용 | 기대 효과 | 비용 |
 |---|---|---|---|
-| 1 | **case3 고정각 데이터셋**(`ai_model/tide/data/dataset/case3_fixed_angle_dataset.csv`)으로 TiDE S1/S2 재학습. 결정 방식(timestep argmin)은 유지 → E+ 검증 | oracle(−7,624)에 근접할수록 태양추적 대비 최대 ~3,000 kWh 개선 | 학습 + E+ 1회 (~12h) |
+| 1 | **case3 고정각 데이터셋**(`projects/02_tide_v1/data/dataset/case3_fixed_angle_dataset.csv`)으로 TiDE S1/S2 재학습. 결정 방식(timestep argmin)은 유지 → E+ 검증 | oracle(−7,624)에 근접할수록 태양추적 대비 최대 ~3,000 kWh 개선 | 학습 + E+ 1회 (~12h) |
 | 2 | 각도 이력을 입력으로 하는 모델 + 하루 단위 최적화(MPC) (기존 계획 Phase 1–3) | 관성 손실 ~1,100 kWh 회수 | 시간가변 각도 시뮬레이션 20~30개 (병렬 ~20h) |
 | 3 | 0° 난방 저감 메커니즘 검증 | 결과의 물리적 타당성 확보 | 분석 위주 |
 
@@ -191,8 +191,8 @@
 python run_case3_schedule_sim.py --batch data/schedules/phase0_batch.json --jobs 13
 
 # case3 고정각 데이터셋 및 oracle 스케줄 생성
-python ai_model/tide/data_preprocessing/build_case3_fixed_angle_dataset.py
-python ai_model/tide/data_preprocessing/build_oracle_schedule.py
+python projects/02_tide_v1/data_preprocessing/build_case3_fixed_angle_dataset.py
+python projects/02_tide_v1/data_preprocessing/build_oracle_schedule.py
 
 # oracle 실행 (oracle_pvmax.csv는 분석 스크립트에서 생성)
 python run_case3_schedule_sim.py --batch data/schedules/phase0_oracle_batch.json --jobs 2

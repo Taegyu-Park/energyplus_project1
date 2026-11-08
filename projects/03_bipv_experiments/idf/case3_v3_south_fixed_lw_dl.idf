@@ -1,4 +1,4 @@
-! case3_v3_south_fixed_lw_dl.idf — pv_lw_daylight/make_case3_lw_dl_idf.py 로 생성
+! case3_v3_south_fixed_lw_dl.idf — projects/04_pv_lw_daylight/make_case3_lw_dl_idf.py 로 생성
 ! case3_v3_south_fixed.idf + FullExterior + 용량 고정 + Eg 1.25 + DifferentialEnthalpy
 ! + PV 장파 연동(SurroundingSurfaces) + 주광 배율표 조명 (플러그인 bipv_schedule_lw_standalone)
 Version,

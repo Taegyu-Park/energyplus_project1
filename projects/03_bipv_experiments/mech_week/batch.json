@@ -2,14 +2,14 @@
   {
     "name": "mech_st",
     "case": "case3",
-    "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
-    "schedule": "bipv_experiments/schedules/suntracking_w0s90.csv",
+    "idf": "projects/03_bipv_experiments/idf/case3_v3_south_fixed.idf",
+    "schedule": "projects/03_bipv_experiments/schedules/suntracking_w0s90.csv",
     "start": "01-02",
     "days": 15,
     "lw": true,
-    "daylight_table": "pv_lw_daylight/daylight_tables/dl_mult_FE_L400.csv",
+    "daylight_table": "projects/04_pv_lw_daylight/daylight_tables/dl_mult_FE_L400.csv",
     "solar_distribution": "FullExterior",
-    "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+    "ideal_sizing_from": "projects/03_bipv_experiments/sizing/case2_max_over_angles.eio",
     "economizer": "DifferentialEnthalpy",
     "pv_bandgap": 1.25,
     "extra_outputs": [
@@ -18,19 +18,19 @@
       "Surface Inside Face Temperature",
       "Surface Inside Face Conduction Heat Transfer Energy"
     ],
-    "out_dir": "bipv_experiments/mech_week/runs/mech_st"
+    "out_dir": "projects/03_bipv_experiments/mech_week/runs/mech_st"
   },
   {
     "name": "mech_tide",
     "case": "case3",
-    "idf": "bipv_experiments/idf/case3_v3_south_fixed.idf",
-    "schedule": "bipv_mismatch/tide_policy/eplus_week_oracle/schedules/week_tide_oracle.csv",
+    "idf": "projects/03_bipv_experiments/idf/case3_v3_south_fixed.idf",
+    "schedule": "projects/05_bipv_mismatch/tide_policy/eplus_week_oracle/schedules/week_tide_oracle.csv",
     "start": "01-02",
     "days": 15,
     "lw": true,
-    "daylight_table": "pv_lw_daylight/daylight_tables/dl_mult_FE_L400.csv",
+    "daylight_table": "projects/04_pv_lw_daylight/daylight_tables/dl_mult_FE_L400.csv",
     "solar_distribution": "FullExterior",
-    "ideal_sizing_from": "bipv_experiments/sizing/case2_max_over_angles.eio",
+    "ideal_sizing_from": "projects/03_bipv_experiments/sizing/case2_max_over_angles.eio",
     "economizer": "DifferentialEnthalpy",
     "pv_bandgap": 1.25,
     "extra_outputs": [
@@ -39,6 +39,6 @@
       "Surface Inside Face Temperature",
       "Surface Inside Face Conduction Heat Transfer Energy"
     ],
-    "out_dir": "bipv_experiments/mech_week/runs/mech_tide"
+    "out_dir": "projects/03_bipv_experiments/mech_week/runs/mech_tide"
   }
 ]

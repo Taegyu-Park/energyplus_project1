@@ -1,7 +1,7 @@
 [
  {
   "name": "sizing_case2_A00",
-  "idf": "case_idf/case2_KS/case2_0.idf",
+  "idf": "shared/case_idf/case2_KS/case2_0.idf",
   "start": "01-01",
   "days": 1,
   "shadow_timestep": true,
@@ -9,7 +9,7 @@
  },
  {
   "name": "sizing_case2_A10",
-  "idf": "case_idf/case2_KS/case2_10.idf",
+  "idf": "shared/case_idf/case2_KS/case2_10.idf",
   "start": "01-01",
   "days": 1,
   "shadow_timestep": true,
@@ -17,7 +17,7 @@
  },
  {
   "name": "sizing_case2_A20",
-  "idf": "case_idf/case2_KS/case2_20.idf",
+  "idf": "shared/case_idf/case2_KS/case2_20.idf",
   "start": "01-01",
   "days": 1,
   "shadow_timestep": true,
@@ -25,7 +25,7 @@
  },
  {
   "name": "sizing_case2_A30",
-  "idf": "case_idf/case2_KS/case2_30.idf",
+  "idf": "shared/case_idf/case2_KS/case2_30.idf",
   "start": "01-01",
   "days": 1,
   "shadow_timestep": true,
@@ -33,7 +33,7 @@
  },
  {
   "name": "sizing_case2_A40",
-  "idf": "case_idf/case2_KS/case2_40.idf",
+  "idf": "shared/case_idf/case2_KS/case2_40.idf",
   "start": "01-01",
   "days": 1,
   "shadow_timestep": true,
@@ -41,7 +41,7 @@
  },
  {
   "name": "sizing_case2_A50",
-  "idf": "case_idf/case2_KS/case2_50.idf",
+  "idf": "shared/case_idf/case2_KS/case2_50.idf",
   "start": "01-01",
   "days": 1,
   "shadow_timestep": true,
@@ -49,7 +49,7 @@
  },
  {
   "name": "sizing_case2_A60",
-  "idf": "case_idf/case2_KS/case2_60.idf",
+  "idf": "shared/case_idf/case2_KS/case2_60.idf",
   "start": "01-01",
   "days": 1,
   "shadow_timestep": true,
@@ -57,7 +57,7 @@
  },
  {
   "name": "sizing_case2_A70",
-  "idf": "case_idf/case2_KS/case2_70.idf",
+  "idf": "shared/case_idf/case2_KS/case2_70.idf",
   "start": "01-01",
   "days": 1,
   "shadow_timestep": true,
@@ -65,7 +65,7 @@
  },
  {
   "name": "sizing_case2_A80",
-  "idf": "case_idf/case2_KS/case2_80.idf",
+  "idf": "shared/case_idf/case2_KS/case2_80.idf",
   "start": "01-01",
   "days": 1,
   "shadow_timestep": true,
@@ -73,7 +73,7 @@
  },
  {
   "name": "sizing_case2_A90",
-  "idf": "case_idf/case2_KS/case2_90.idf",
+  "idf": "shared/case_idf/case2_KS/case2_90.idf",
   "start": "01-01",
   "days": 1,
   "shadow_timestep": true,

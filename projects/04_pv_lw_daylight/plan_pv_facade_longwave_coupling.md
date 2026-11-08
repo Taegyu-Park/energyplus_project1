@@ -1,10 +1,10 @@
 # PV 온도 → 건물 외피 장파복사 연동 계획
 
 작성: 2026-10-26
-대상: `case_idf/case3_v3_KS/case3_v3_south.idf` (EnergyPlus 25.2, Timestep 6 = 10분)
-플러그인: `case_idf/case3_v3_KS/model_pythonpluginsystem_sun_tracking.py` (`KineticBIPVPlugin`)
+대상: `shared/case_idf/case3_v3_KS/case3_v3_south.idf` (EnergyPlus 25.2, Timestep 6 = 10분)
+플러그인: `shared/case_idf/case3_v3_KS/model_pythonpluginsystem_sun_tracking.py` (`KineticBIPVPlugin`)
 
-> 실험 규칙: 기존 파일은 수정하지 않고, 복사본을 `bipv_experiments/` 아래에 만들어 작업한다.
+> 실험 규칙: 기존 파일은 수정하지 않고, 복사본을 `projects/03_bipv_experiments/` 아래에 만들어 작업한다.
 
 ---
 
@@ -219,7 +219,7 @@ EnergyPlus는 주광계수(daylight factor)를 미리 계산해 두고 쓴다. �
 
 ## 8. 구현 현황 (2026-10-26)
 
-코드: `pv_lw_daylight/` (기존 파일은 수정하지 않음)
+코드: `projects/04_pv_lw_daylight/` (기존 파일은 수정하지 않음)
 
 | 파일 | 역할 |
 |---|---|
