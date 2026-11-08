@@ -244,33 +244,33 @@ backups/*.log
 backups/*.audit
 
 # Weather and non-PV data files
-data/*.epw
-data/*.ddy
-data/Kwangju_Hourly_Solar_Radiation.csv
-data/comparison_monthly.csv
-data/bipv_transmittance_annual.csv
+shared/data/*.epw
+shared/data/*.ddy
+shared/data/Kwangju_Hourly_Solar_Radiation.csv
+shared/data/comparison_monthly.csv
+shared/data/bipv_transmittance_annual.csv
 bipv_transmittance_annual.csv
 
 # EnergyPlus SQLite databases (usually >100MB)
 *.sql
 
 # Large simulation output files under case_analysis
-case_analysis/normal/case3/case3.csv
-case_analysis/**/*.csv
-case_analysis/**/*.sql
-case_analysis/**/*.htm
-case_analysis/**/*.eso
-case_analysis/**/*.err
-case_analysis/**/*.end
-case_analysis/**/*.audit
-case_analysis/**/*.bnd
-case_analysis/**/*.eio
-case_analysis/**/*.shd
-case_analysis/**/*.mtd
-case_analysis/**/*.mdd
-case_analysis/**/*.rdd
-case_analysis/**/*.dbg
-case_analysis/**/*.mtr
+projects/01_baseline_bipv/results/normal/case3/case3.csv
+projects/*/results/**/*.csv
+projects/*/results/**/*.sql
+projects/*/results/**/*.htm
+projects/*/results/**/*.eso
+projects/*/results/**/*.err
+projects/*/results/**/*.end
+projects/*/results/**/*.audit
+projects/*/results/**/*.bnd
+projects/*/results/**/*.eio
+projects/*/results/**/*.shd
+projects/*/results/**/*.mtd
+projects/*/results/**/*.mdd
+projects/*/results/**/*.rdd
+projects/*/results/**/*.dbg
+projects/*/results/**/*.mtr
 
 # Temporary & Test Simulation Directories
 test_run_dir/
@@ -299,7 +299,7 @@ selfshading_test/
 selfshadig_test/
 
 # Generated figure data
-figure/**/*.csv
+projects/*/figures/**/*.csv
 
 # DSF (Double Skin Facade) archiving directory - excluded from git tracking
 DSF/
@@ -333,20 +333,20 @@ eplusssz.csv
 sqlite.err
 *_run.idf
 # 시뮬레이션 실행 폴더
-bipv_experiments/runs/
-bipv_experiments/sizing/
-pv_lw_daylight/runs/
-pv_lw_daylight/results/
-bipv_mismatch/case2_KS*/
-bipv_mismatch/**/runs/
-bipv_experiments/mech_week/runs/
-bipv_mismatch/eplus_carryover/
-bipv_mismatch/tide_policy/eplus_*/
+projects/03_bipv_experiments/runs/
+projects/03_bipv_experiments/sizing/
+projects/04_pv_lw_daylight/runs/
+projects/04_pv_lw_daylight/results/
+projects/05_bipv_mismatch/case2_KS*/
+projects/05_bipv_mismatch/**/runs/
+projects/03_bipv_experiments/mech_week/runs/
+projects/05_bipv_mismatch/eplus_carryover/
+projects/05_bipv_mismatch/tide_policy/eplus_*/
 # 데이터셋·예측 결과 CSV
-bipv_mismatch/dataset*/
-bipv_mismatch/checkpoints/*.csv
-bipv_mismatch/tide_policy/out*/*.csv
-bipv_mismatch/eplus_jan13/*.csv
-bipv_mismatch/eplus_open/*.csv
-bipv_experiments/analysis/*_dataset.csv
-bipv_experiments/tide_c5/predictions/*lb36*.csv
+projects/05_bipv_mismatch/dataset*/
+projects/05_bipv_mismatch/checkpoints/*.csv
+projects/05_bipv_mismatch/tide_policy/out*/*.csv
+projects/05_bipv_mismatch/eplus_jan13/*.csv
+projects/05_bipv_mismatch/eplus_open/*.csv
+projects/03_bipv_experiments/analysis/*_dataset.csv
+projects/03_bipv_experiments/tide_c5/predictions/*lb36*.csv
