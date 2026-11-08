@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = "~=3.12.0"
 dependencies = [
     "besos>=2.2.3",
-    "dartwork-mpl",
+    "dartwork-mpl[mcp]",
     "eppy>=0.5.69",
     "google-genai>=1.73.1",
     "google-generativeai>=0.8.6",
@@ -29,3 +29,12 @@ torchvision = { index = "pytorch-cu124" }
 name = "pytorch-cu124"
 url = "https://download.pytorch.org/whl/cu124"
 explicit = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+# 경로 상수 모듈(shared/paths.py)만 패키지로 설치한다. 데이터·IDF는 포함하지 않는다.
+packages = ["shared"]
+only-include = ["shared/__init__.py", "shared/paths.py"]

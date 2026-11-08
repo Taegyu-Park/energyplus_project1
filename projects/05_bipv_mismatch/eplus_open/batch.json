@@ -1,0 +1,23 @@
+[
+  {
+    "name": "open_m0_wk",
+    "case": "case3",
+    "idf": "projects/03_bipv_experiments/idf/case3_v3_south_fixed.idf",
+    "schedule": "projects/05_bipv_mismatch/schedules/open_test_m+0.00.csv",
+    "weather": "shared/data/KOR_KJ_Gwangju.471560_TMYx.2011-2025.epw",
+    "start": "01-06",
+    "days": 10,
+    "lw": true,
+    "daylight_table": "projects/05_bipv_mismatch/eplus_winter/dl_mult_tmyx2011_L400.csv",
+    "solar_distribution": "FullExterior",
+    "ideal_sizing_from": "projects/03_bipv_experiments/sizing/case2_max_over_angles.eio",
+    "economizer": "DifferentialEnthalpy",
+    "pv_bandgap": 1.25,
+    "extra_outputs": [
+      "Generator Produced DC Electricity Energy",
+      "Zone Ideal Loads Supply Air Total Cooling Energy",
+      "Zone Ideal Loads Supply Air Total Heating Energy"
+    ],
+    "out_dir": "projects/05_bipv_mismatch/eplus_open/runs/open_m0_wk"
+  }
+]

@@ -6,8 +6,8 @@
 
 ## 1. 내부 발열 및 재실 스케줄 (Internal Loads & Occupancy)
 
-- **관련 코드**: [`fig41_occupancy_internal_loads_profile.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/figure/code/fig41_occupancy_internal_loads_profile.py)
-- **결과 그래프**: [`fig41_occupancy_internal_loads_profile.svg`](file:///c:/Users/taegyu/Codes/energyplus_project1/figure/plot/fig41_occupancy_internal_loads_profile/fig41_occupancy_internal_loads_profile.svg) / [PNG](file:///c:/Users/taegyu/Codes/energyplus_project1/figure/plot/fig41_occupancy_internal_loads_profile/fig41_occupancy_internal_loads_profile.png)
+- **관련 코드**: [`fig41_occupancy_internal_loads_profile.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/projects/03_bipv_experiments/figures/code/fig41_occupancy_internal_loads_profile.py)
+- **결과 그래프**: [`fig41_occupancy_internal_loads_profile.svg`](file:///c:/Users/taegyu/Codes/energyplus_project1/projects/03_bipv_experiments/figures/plot/fig41_occupancy_internal_loads_profile/fig41_occupancy_internal_loads_profile.svg) / [PNG](file:///c:/Users/taegyu/Codes/energyplus_project1/projects/03_bipv_experiments/figures/plot/fig41_occupancy_internal_loads_profile/fig41_occupancy_internal_loads_profile.png)
 
 ### 1.1 주중 스케줄 (Weekday, Monday – Friday)
 
@@ -38,8 +38,8 @@
 
 ## 2. HVAC 설정온도 및 셋백 스케줄 (HVAC Dual Setpoint & Setback)
 
-- **관련 코드**: [`fig42_hvac_setpoint_setback_schedule.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/figure/code/fig42_hvac_setpoint_setback_schedule.py)
-- **결과 그래프**: [`fig42_hvac_setpoint_setback_schedule.svg`](file:///c:/Users/taegyu/Codes/energyplus_project1/figure/plot/fig42_hvac_setpoint_setback_schedule/fig42_hvac_setpoint_setback_schedule.svg) / [PNG](file:///c:/Users/taegyu/Codes/energyplus_project1/figure/plot/fig42_hvac_setpoint_setback_schedule/fig42_hvac_setpoint_setback_schedule.png)
+- **관련 코드**: [`fig42_hvac_setpoint_setback_schedule.py`](file:///c:/Users/taegyu/Codes/energyplus_project1/projects/03_bipv_experiments/figures/code/fig42_hvac_setpoint_setback_schedule.py)
+- **결과 그래프**: [`fig42_hvac_setpoint_setback_schedule.svg`](file:///c:/Users/taegyu/Codes/energyplus_project1/projects/03_bipv_experiments/figures/plot/fig42_hvac_setpoint_setback_schedule/fig42_hvac_setpoint_setback_schedule.svg) / [PNG](file:///c:/Users/taegyu/Codes/energyplus_project1/projects/03_bipv_experiments/figures/plot/fig42_hvac_setpoint_setback_schedule/fig42_hvac_setpoint_setback_schedule.png)
 
 ### 2.1 주중 스케줄 (Weekday, Monday – Friday)
 
