@@ -1,7 +1,7 @@
 """
-pv_lw_daylight/bipv_schedule_lw_plugin.py
+projects/04_pv_lw_daylight/bipv_schedule_lw_plugin.py
 ==========================================================
-case3(각도 제어)용: bipv_experiments/bipv_schedule_plugin.KineticBIPVPlugin 를 그대로 쓰고,
+case3(각도 제어)용: projects/03_bipv_experiments/bipv_schedule_plugin.KineticBIPVPlugin 를 그대로 쓰고,
 같은 콜백에서 각도를 정한 직후 다음을 수행한다(같은 콜백이라 플러그인 인스턴스 실행 순서에 의존하지 않음).
 - PV 셀 온도 → 외피 장파복사 연동 (pv_lw_plugin.PVLongwaveCoupler, 설정에 surfaces 가 있을 때)
 - 주광 연동 조명 전력 (pv_lw_plugin.DaylightTableCoupler, 설정에 daylight_table 이 있을 때)

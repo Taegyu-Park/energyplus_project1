@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 # Setup SVG font settings for Figma editing
 mpl.rcParams['svg.fonttype'] = 'none'
@@ -41,8 +42,8 @@ def load_sql_solar_gain(sql_path):
 
 def main():
     script_dir   = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    plot_dir     = os.path.join(project_root, "figure", "plot", "fig28_window_solar_gain_comparison")
+    project_root = str(ROOT)
+    plot_dir     = os.path.join(BASELINE, "figures", "plot", "fig28_window_solar_gain_comparison")
     
     if not os.path.exists(plot_dir):
         os.makedirs(plot_dir)
@@ -51,7 +52,7 @@ def main():
     data = {}
 
     # 1. Case 2 (normal/case2_KS) - 10 fixed angles (0° to 90°)
-    case2_base_path = os.path.join(project_root, "case_analysis", "normal", "case2_KS")
+    case2_base_path = os.path.join(BASELINE_RESULTS, "normal", "case2_KS")
     for angle in angles:
         sql_path = os.path.join(case2_base_path, f"case2_{angle}", "eplusout.sql")
         print(f"Loading Case 2 ({angle}°) from {sql_path}...")
@@ -60,7 +61,7 @@ def main():
             data[f"Fixed_{angle}deg"] = df_angle['kWh'].values
 
     # 2. Case 3 (bipv_variation/5zone_NSEW_korean/case3_v3_south) - Kinetic BIPV South
-    case3_south_path = os.path.join(project_root, "case_analysis", "bipv_variation", "5zone_NSEW_korean", "case3_v3_south", "eplusout.sql")
+    case3_south_path = os.path.join(BASELINE_RESULTS, "bipv_variation", "5zone_NSEW_korean", "case3_v3_south", "eplusout.sql")
     print(f"Loading Case 3 (South) from {case3_south_path}...")
     df_c3 = load_sql_solar_gain(case3_south_path)
     if df_c3 is not None:

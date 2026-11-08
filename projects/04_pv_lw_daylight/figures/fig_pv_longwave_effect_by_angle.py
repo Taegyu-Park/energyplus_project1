@@ -1,12 +1,12 @@
 """
-pv_lw_daylight/figures/fig_pv_longwave_effect_by_angle.py
+projects/04_pv_lw_daylight/figures/fig_pv_longwave_effect_by_angle.py
 =========================================================
 PV 장파복사 연동이 연간 냉난방 열부하를 바꾸는 정도를 BIPV 고정각(case2, 0~90°)별로 보인다.
 
 연간 열부하 변화율 [%] = (PV 복사 연동 − 기준안) / 기준안 — 난방(감소), 냉방(증가)
 
-입력: pv_lw_daylight/runs/annual/c2_RF_{base,lw}_A<각도>/summary.json
-출력: pv_lw_daylight/figures/fig_pv_longwave_effect_by_angle.{png,svg}
+입력: projects/04_pv_lw_daylight/runs/annual/c2_RF_{base,lw}_A<각도>/summary.json
+출력: projects/04_pv_lw_daylight/figures/fig_pv_longwave_effect_by_angle.{png,svg}
 (결과가 없는 각도는 건너뜀 — 예: 90° 실행 실패 시 80°까지만 표시)
 """
 

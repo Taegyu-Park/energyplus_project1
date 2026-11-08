@@ -1,5 +1,5 @@
 """
-bipv_experiments/bipv_schedule_plugin.py
+projects/03_bipv_experiments/bipv_schedule_plugin.py
 (model_pythonpluginsystem_ai.py 를 복사해 스케줄 CSV 경로(BIPV_SCHEDULE_CSV)와 날짜 기반 인덱싱을 추가한 실험용 버전)
 
 Kinetic BIPV & Dynamic Shading TiDE AI Optimal Angle Control Plugin
@@ -20,6 +20,17 @@ import sys
 import math
 import csv
 from pathlib import Path
+
+
+def _repo_root():
+    """pyproject.toml 이 있는 리포 루트 (EnergyPlus 내장 Python 에서는 shared 패키지를 import 할 수 없음)."""
+    for p in Path(__file__).resolve().parents:
+        if (p / "pyproject.toml").exists():
+            return p
+    return Path(__file__).resolve().parent
+
+
+_ROOT = _repo_root()
 from pyenergyplus.plugin import EnergyPlusPlugin
 
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
@@ -71,11 +82,10 @@ class KineticBIPVPlugin(EnergyPlusPlugin):
         if env_csv:
             candidate_paths.append(Path(env_csv))
         candidate_paths += [
-            Path(__file__).resolve().parent / "ai_model" / "tide" / "data" / "predictions" / "bipv_optimal_angles_annual.csv",
-            Path(__file__).resolve().parent / "data" / "bipv_optimal_angles_annual.csv",
-            Path(r"c:\Users\taegyu\Codes\energyplus_project1\data\bipv_optimal_angles_annual.csv"),
-            Path("ai_model/tide/data/predictions/bipv_optimal_angles_annual.csv"),
-            Path("data/bipv_optimal_angles_annual.csv"),
+            _ROOT / "projects" / "02_tide_v1" / "data" / "predictions" / "bipv_optimal_angles_annual.csv",
+            _ROOT / "shared" / "data" / "bipv_optimal_angles_annual.csv",
+            Path("projects/02_tide_v1/data/predictions/bipv_optimal_angles_annual.csv"),
+            Path("shared/data/bipv_optimal_angles_annual.csv"),
             Path("../data/bipv_optimal_angles_annual.csv"),
             Path("../../data/bipv_optimal_angles_annual.csv")
         ]

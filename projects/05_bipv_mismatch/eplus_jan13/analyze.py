@@ -1,7 +1,7 @@
 """
 eplus_jan13/analyze.py
 ======================
-잉여 90° 실행(runs/jan13_surplus90)과 기준안 태양추적 연간 실행(pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400) 비교.
+잉여 90° 실행(runs/jan13_surplus90)과 기준안 태양추적 연간 실행(projects/04_pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400) 비교.
 
 - 검증: 1/6~1/12(스케줄 동일) 일별 PV·HVAC·조명이 연간 실행과 일치하는지
 - 평가: 1/13 07시 ~ 1/14 07시, 수요 L = 냉방/3.0 + 난방/2.5 + 조명, 구매 = Σ max(L − PV, 0) (10분)
@@ -16,11 +16,11 @@ from pathlib import Path
 import pandas as pd
 
 from plot_day import plot_day
+from shared.paths import PVLW, ROOT
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parent.parent
 RUNS = {
-    "suntracking": ROOT / "pv_lw_daylight" / "runs" / "annual" / "c3_FE_ST_lw_dl400" / "eplusout.sql",
+    "suntracking": PVLW / "runs" / "annual" / "c3_FE_ST_lw_dl400" / "eplusout.sql",
     "surplus90": HERE / "runs" / "jan13_surplus90" / "eplusout.sql",
 }
 VARS = {

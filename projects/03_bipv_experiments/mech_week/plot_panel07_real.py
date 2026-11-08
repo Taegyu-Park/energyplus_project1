@@ -1,5 +1,5 @@
 """
-bipv_experiments/mech_week/plot_panel07_real.py
+projects/03_bipv_experiments/mech_week/plot_panel07_real.py
 ===============================================
 공모전 패널 07 "각도 제어의 영향" 3판 (실제 자료, 2026-11-05). 그림 사이에 설명 글을 넣을 수 있게 두 조각으로 나눔.
   A) dm_panel07_base.svg : 기준(태양고도 추적) PV·수요 한 칸 + 루버 아이콘 (반폭)
@@ -18,9 +18,10 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Circle, FancyArrowPatch, Patch
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parents[1] / "bipv_mismatch" / "explain_surplus_heating"))
+sys.path.insert(0, str(MISMATCH / "explain_surplus_heating"))
 import plot_panel_dm as P  # noqa: E402
 from load_mech import RUNS, load  # noqa: E402
+from shared.paths import MISMATCH
 
 P.OUT = HERE / "figures"
 HEAT, PUR, BASE = "#be123c", "#94a3b8", "#94a3b8"

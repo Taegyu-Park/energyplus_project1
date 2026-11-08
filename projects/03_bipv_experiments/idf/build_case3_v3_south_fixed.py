@@ -2,7 +2,7 @@
 build_case3_v3_south_fixed.py
 =============================
 case3_v3_south.idf 의 차양 모델링 오류 2가지를 고친 case3_v3_south_fixed.idf 를 생성한다.
-원본 IDF(case_idf/case3_v3_KS/case3_v3_south.idf)는 읽기만 하고, 결과는 이 폴더에 쓴다.
+원본 IDF(shared/case_idf/case3_v3_KS/case3_v3_south.idf)는 읽기만 하고, 결과는 이 폴더에 쓴다.
 
 1. 0° 차양(TransSched_BIPV_A00)이 벽면과 같은 평면(y=0)에 있어 EnergyPlus가 그늘을 계산하지 않음
    → case2_0.idf 와 동일하게 y=-0.1 m 로 이격
@@ -13,9 +13,10 @@ case3_v3_south.idf 의 차양 모델링 오류 2가지를 고친 case3_v3_south_
 
 import re
 from pathlib import Path
+from shared.paths import CASE_IDF
 
 HERE = Path(__file__).resolve().parent
-SRC = HERE.parents[1] / "case_idf" / "case3_v3_KS" / "case3_v3_south.idf"  # 원본 (읽기만 함)
+SRC = CASE_IDF / "case3_v3_KS" / "case3_v3_south.idf"  # 원본 (읽기만 함)
 DST = HERE / "case3_v3_south_fixed.idf"
 A00_OFFSET_Y = -0.1  # case2_0.idf 와 동일
 

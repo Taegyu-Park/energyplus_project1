@@ -1,5 +1,5 @@
 """
-bipv_mismatch/tide_policy/train_tide_policy.py
+projects/05_bipv_mismatch/tide_policy/train_tide_policy.py
 ==============================================
 TIDE_POLICY_OBJECTIVE.md 1차 구현: TiDE가 하루치(07시 ~ 다음 날 07시, 144스텝) PV 각도 궤적을 직접 출력한다.
 
@@ -10,7 +10,7 @@ TIDE_POLICY_OBJECTIVE.md 1차 구현: TiDE가 하루치(07시 ~ 다음 날 07시
 - 각도: θ = θ_ST + (90 − θ_ST)·sigmoid(z), 조절 구간 M_d 밖은 θ_ST 고정
   M_d = 태양추적 잉여 스텝 {P_ST > D_ST}를 앞뒤 k스텝(기본 6 = 1시간) 넓힌 범위
 - P, D: case2 10개 고정각 결과(dataset_final/case2_mm_*.csv의 pv_gen_{a}, demand_elec_{a})를 각도 사이 선형 보간
-- θ_ST: data/bipv_suntracking_angles_annual_winter0_summer90.csv (52,560행, 순서대로 대응)
+- θ_ST: shared/data/bipv_suntracking_angles_annual_winter0_summer90.csv (52,560행, 순서대로 대응)
 - 입력:
     lookback 타깃   net_ST = P_ST − D_ST (전날 07시 ~ 당일 07시)
     과거 공변량     P_ST, D_ST, 남측 존 온도(θ_ST), 외기온, 직달·확산 일사, 운량
@@ -20,14 +20,14 @@ TIDE_POLICY_OBJECTIVE.md 1차 구현: TiDE가 하루치(07시 ~ 다음 날 07시
 - 비교: 태양추적(θ_ST), 잉여 구간 90° 규칙(태양추적 잉여 스텝만 90°), TiDE(w_def별)
   지표는 대리 모델(P_tab/D_tab 보간) 기준이며 E+ 폐루프 결과가 아니다.
 
-출력: bipv_mismatch/tide_policy/out/
+출력: projects/05_bipv_mismatch/tide_policy/out/
   w{w_def}_best.pt, scaler.json, history.json, summary.json
   week_angles.csv / week_angles.png: --week_split 의 --week_start 부터 --days 일 각도 궤적
   week_daily.csv: 같은 기간 날짜별 구매·잉여·미스매치
 
 사용 (데이터가 있는 PC, 저장소 루트에서):
-  uv run python bipv_mismatch/tide_policy/train_tide_policy.py
-  uv run python bipv_mismatch/tide_policy/train_tide_policy.py --week_split train --week_start 2006-01-09
+  uv run python projects/05_bipv_mismatch/tide_policy/train_tide_policy.py
+  uv run python projects/05_bipv_mismatch/tide_policy/train_tide_policy.py --week_split train --week_start 2006-01-09
 """
 
 import argparse
@@ -49,12 +49,12 @@ from torch.utils.data import DataLoader, Dataset  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 MM_DIR = HERE.parent
-ROOT = MM_DIR.parent
-sys.path.append(str(ROOT / "ai_model" / "tide"))
+sys.path.append(str(TIDE_V1))
 from tide_model import TiDEModel  # noqa: E402
+from shared.paths import DATA, ROOT, TIDE_V1
 
 DATA_DIR = MM_DIR / "dataset_final"
-ST_CSV = ROOT / "data" / "bipv_suntracking_angles_annual_winter0_summer90.csv"
+ST_CSV = DATA / "bipv_suntracking_angles_annual_winter0_summer90.csv"
 OUT_DIR = HERE / "out"
 
 ANGLES = list(range(0, 100, 10))

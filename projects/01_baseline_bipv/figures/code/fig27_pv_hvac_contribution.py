@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 # Setup SVG font settings for Figma editing
 mpl.rcParams['svg.fonttype'] = 'none'
@@ -69,8 +70,8 @@ def load_data_from_sql(sql_path):
 def main():
     # ── 경로 설정 ────────────────────────────────────────────────────────
     script_dir   = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    data_dir     = os.path.join(project_root, "case_analysis", "bipv_variation", "5zone_NSEW_korean")
+    project_root = str(ROOT)
+    data_dir     = os.path.join(BASELINE_RESULTS, "bipv_variation", "5zone_NSEW_korean")
     
     orientations = {
         "South": os.path.join(data_dir, "case3_v3_south", "eplusout.sql"),
@@ -185,7 +186,7 @@ def main():
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])
     
     # ── 결과 저장 ────────────────────────────────────────────────────────
-    output_dir = os.path.join(project_root, "figure", "plot", "fig27_pv_hvac_contribution")
+    output_dir = os.path.join(BASELINE, "figures", "plot", "fig27_pv_hvac_contribution")
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
         

@@ -11,13 +11,14 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib as mpl
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT
 mpl.rcParams['svg.fonttype'] = 'none'
 
 def main():
     # ── 경로 설정 ────────────────────────────────────────────────────────
     script_dir   = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    case2_sql    = os.path.join(project_root, "case_analysis", "normal", "case2", "90", "eplusout.sql")
+    project_root = str(ROOT)
+    case2_sql    = os.path.join(BASELINE_RESULTS, "normal", "case2", "90", "eplusout.sql")
     
     if not os.path.exists(case2_sql):
         raise FileNotFoundError(f"Case 2 90deg SQL file not found: {case2_sql}")

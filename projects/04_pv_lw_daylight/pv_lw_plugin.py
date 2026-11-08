@@ -1,5 +1,5 @@
 """
-pv_lw_daylight/pv_lw_plugin.py
+projects/04_pv_lw_daylight/pv_lw_plugin.py
 ================================================
 PV 셀 온도 → 남측 외피(창·외벽) 장파복사 연동.
 

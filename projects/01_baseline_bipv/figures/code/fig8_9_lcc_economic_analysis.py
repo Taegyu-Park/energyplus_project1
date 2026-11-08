@@ -20,10 +20,11 @@ import dartwork_mpl as dm
 plt.rcParams['svg.fonttype'] = 'none'
 from openpyxl import load_workbook
 from openpyxl.utils import column_index_from_string
+from shared.paths import ROOT
 
 # ── 경로 ─────────────────────────────────────────────────────────────
 script_dir  = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
+project_root = str(ROOT)
 script_name = os.path.splitext(os.path.basename(__file__))[0]
 figure_dir = os.path.normpath(os.path.join(script_dir, "..", "plot", script_name))
 excel_path  = os.path.join(project_root, "economy_analysis.xlsx")

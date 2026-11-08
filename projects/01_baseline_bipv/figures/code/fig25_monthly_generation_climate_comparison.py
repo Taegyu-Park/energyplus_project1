@@ -4,13 +4,14 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 # Preserve SVG fonts for editing in Illustrator/Figma
 mpl.rcParams['svg.fonttype'] = 'none'
 
 # Database paths
-project_root = r"c:\Users\taegyu\Codes\energyplus_project1"
-bipv_dir = os.path.join(project_root, "case_analysis", "bipv_variation", "5zone")
+project_root = ROOT
+bipv_dir = os.path.join(BASELINE_RESULTS, "bipv_variation", "5zone")
 
 CLIMATES = ["Helsinki", "Kwangju", "Phoenix"]
 COLORS = ["white", "light_gray_beige", "terracotta"]
@@ -54,7 +55,7 @@ for loc in CLIMATES:
         data[loc][col] = query_monthly_gen(path)
 
 # Setup output folders
-output_dir = os.path.join(project_root, "figure", "plot", "fig25_monthly_generation_climate_comparison")
+output_dir = os.path.join(BASELINE, "figures", "plot", "fig25_monthly_generation_climate_comparison")
 os.makedirs(output_dir, exist_ok=True)
 
 # -------------------------------------------------------------

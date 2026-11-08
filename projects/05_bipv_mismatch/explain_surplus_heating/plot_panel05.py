@@ -1,14 +1,14 @@
 """
-bipv_mismatch/explain_surplus_heating/plot_panel05.py
+projects/05_bipv_mismatch/explain_surplus_heating/plot_panel05.py
 =====================================================
 공모전 패널(Figma 26건물에너지시뮬레이션, Document 1660:938) 05번 칸용 그림 (2026-11-03).
 1/9 (IWEC, 평일) 태양고도 추적 제어의 PV 발전·전력 수요, 잉여(PV > 수요)·부족(수요 > PV) 음영.
 
-- 자료: pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400 (case3 E+), 수요 = 냉방/3.0 + 난방/2.5 + 조명
+- 자료: projects/04_pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400 (case3 E+), 수요 = 냉방/3.0 + 난방/2.5 + 조명
 - 패널 칸 폭(386 pt)에 맞춘 크기, 글꼴 Noto Sans KR, svg 텍스트는 글자 그대로 (Figma 에서 편집 가능)
 
 출력: explain_surplus_heating/figures/panel05_day0109_suntracking.{png,svg}
-실행: python bipv_mismatch/explain_surplus_heating/plot_panel05.py
+실행: python projects/05_bipv_mismatch/explain_surplus_heating/plot_panel05.py
 """
 
 import sys

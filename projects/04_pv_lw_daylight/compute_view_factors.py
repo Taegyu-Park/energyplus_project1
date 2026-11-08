@@ -1,5 +1,5 @@
 """
-pv_lw_daylight/compute_view_factors.py
+projects/04_pv_lw_daylight/compute_view_factors.py
 =======================================================
 남측 외피(창 2개 + 창을 뺀 외벽 2개)에서 본 PV 루버 6단의 뷰팩터를 각도(0~90°)별로 계산한다.
 
@@ -8,7 +8,7 @@ pv_lw_daylight/compute_view_factors.py
   (단끼리 서로 가리는 효과까지 포함, 같은 단의 16개 패널은 하나의 사각형으로 합침)
 - 출력: view_factors.csv (surface, angle, row, vf)
 
-사용: python pv_lw_daylight/compute_view_factors.py
+사용: python projects/04_pv_lw_daylight/compute_view_factors.py
 """
 
 import re
@@ -16,9 +16,10 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from shared.paths import EXPERIMENTS
 
 HERE = Path(__file__).resolve().parent
-IDF = HERE.parent / "bipv_experiments" / "idf" / "case3_v3_south_fixed.idf"
+IDF = EXPERIMENTS / "idf" / "case3_v3_south_fixed.idf"
 OUT = HERE / "view_factors.csv"
 ANGLES = list(range(0, 100, 10))
 ROWS = range(1, 7)

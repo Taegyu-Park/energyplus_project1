@@ -1,5 +1,5 @@
 """
-bipv_mismatch/tide_policy/train_tide_policy_free.py
+projects/05_bipv_mismatch/tide_policy/train_tide_policy_free.py
 ===================================================
 train_tide_policy.py 변형 (원본은 그대로 두고 불러와서 바꿈, 2026-11-02 사용자 지적 반영):
 - 태양추적을 벗어나는 구간 = 태양추적 잉여 스텝 그대로 (확장 없음, k_dilate = 0)
@@ -7,7 +7,7 @@ train_tide_policy.py 변형 (원본은 그대로 두고 불러와서 바꿈, 202
 - 각도 이동 벌점 없음 (λ_move = 0): 버퍼 개수·90° 유지 강제 없음
 - 출력: tide_policy/out_free/ (원본 out/ 과 같은 파일 구성)
 
-사용: python bipv_mismatch/tide_policy/train_tide_policy_free.py --weights 1.0,3.0 --week_split train
+사용: python projects/05_bipv_mismatch/tide_policy/train_tide_policy_free.py --weights 1.0,3.0 --week_split train
 """
 
 import sys

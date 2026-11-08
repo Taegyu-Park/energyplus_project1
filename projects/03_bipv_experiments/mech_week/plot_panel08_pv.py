@@ -1,13 +1,13 @@
 """
-bipv_experiments/mech_week/plot_panel08_pv.py
+projects/03_bipv_experiments/mech_week/plot_panel08_pv.py
 =============================================
 공모전 패널 8번 ② PV 발전·전력 수요 그래프 축소판 (2026-11-04).
 - plot_panel07_pv.py 와 같은 자료·스타일. 시간 범위만 09~21시로 자르고, 폭을 줄여 칸 왼쪽에 붙인다.
   오른쪽 남는 자리에는 Figma 에서 그래프 설명 글을 넣는다.
 - 왼쪽 여백은 plot_panel07_all.py 와 같은 고정 36 pt (위 ① 그래프와 y축 이름 자리 맞춤)
 - 원본 파일은 수정하지 않고 plot_panel_dm 의 함수만 가져온다.
-출력: bipv_experiments/mech_week/figures/dm_panel08_pv_day0109.svg (+ .png)
-실행: python bipv_experiments/mech_week/plot_panel08_pv.py
+출력: projects/03_bipv_experiments/mech_week/figures/dm_panel08_pv_day0109.svg (+ .png)
+실행: python projects/03_bipv_experiments/mech_week/plot_panel08_pv.py
 """
 
 import sys
@@ -20,8 +20,9 @@ import pandas as pd
 from matplotlib.ticker import FuncFormatter
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parents[1] / "bipv_mismatch" / "explain_surplus_heating"))
+sys.path.insert(0, str(MISMATCH / "explain_surplus_heating"))
 import plot_panel_dm as P  # noqa: E402
+from shared.paths import MISMATCH
 
 P.OUT = HERE / "figures"
 W, H = 228, 130  # pt

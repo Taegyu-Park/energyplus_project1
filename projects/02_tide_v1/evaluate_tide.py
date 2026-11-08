@@ -30,7 +30,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 
 CURRENT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = CURRENT_DIR.parent.parent
+PROJECT_ROOT = ROOT
 if str(CURRENT_DIR) not in sys.path:
     sys.path.append(str(CURRENT_DIR))
 
@@ -47,6 +47,7 @@ from train_tide import (
     CHECKPOINT_DIR,
     TEST_CSV,
 )
+from shared.paths import ROOT
 
 
 def compute_regression_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, float]:

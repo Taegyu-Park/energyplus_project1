@@ -2,22 +2,22 @@
 run_case2_tmyx.py
 =================
 case2_KS 고정각도(0~90°) IDF 10개를 TMYx(2011-2025) 기상으로 병렬 시뮬레이션한다.
-- 입력 IDF: case_idf/case2_KS/case2_{angle}.idf (수정하지 않고 그대로 사용)
-- 출력    : case_analysis/normal/case2_KS_TMYx/case2_{angle}/  (case2_KS와 동일 구조)
+- 입력 IDF: shared/case_idf/case2_KS/case2_{angle}.idf (수정하지 않고 그대로 사용)
+- 출력    : projects/01_baseline_bipv/results/normal/case2_KS_TMYx/case2_{angle}/  (case2_KS와 동일 구조)
 
-사용: python bipv_experiments/run_case2_tmyx.py --jobs 10
+사용: python projects/03_bipv_experiments/run_case2_tmyx.py --jobs 10
 """
 
 import argparse
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from shared.paths import BASELINE_RESULTS, CASE_IDF, DATA, ROOT
 
-ROOT = Path(__file__).resolve().parent.parent
 EP_EXE = Path(r"C:\EnergyPlusV25-2-0\energyplus.exe")
-EPW = ROOT / "data" / "KOR_KJ_Gwangju.471560_TMYx.2011-2025.epw"
-IDF_DIR = ROOT / "case_idf" / "case2_KS"
-OUT_ROOT = ROOT / "case_analysis" / "normal" / "case2_KS_TMYx"
+EPW = DATA / "KOR_KJ_Gwangju.471560_TMYx.2011-2025.epw"
+IDF_DIR = CASE_IDF / "case2_KS"
+OUT_ROOT = BASELINE_RESULTS / "normal" / "case2_KS_TMYx"
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 
 

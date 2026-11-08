@@ -1,13 +1,13 @@
 """
-bipv_experiments/mech_week/plot_panel08_day_stack.py
+projects/03_bipv_experiments/mech_week/plot_panel08_day_stack.py
 ====================================================
 공모전 패널 8번 ② 대표일(1/9) 하루 누적: 열부하·조명 부하(쌓은 막대)와 PV 발전량 (2026-11-04).
 - 정책별로 막대 두 개: 왼쪽 = 부하(열부하 + 조명 쌓기), 오른쪽 = PV 발전
 - 열부하 = 냉방/3 + 난방/2.5 (1/9 은 냉방 0), 조명 = 조명 전력, 단위 kWh/일 (0~24시)
 - 색은 7번 칸(plot_panel07_mech.py)과 같게: 난방 #be123c, 조명 #64748b, PV = TARGET
 - 크기는 ① 겨울 합계(plot_panel08_winter.py, 폭을 줄인 판)의 오른쪽 자리에 맞춤
-출력: bipv_experiments/mech_week/figures/dm_panel08_day_stack.svg (+ .png)
-실행: python bipv_experiments/mech_week/plot_panel08_day_stack.py
+출력: projects/03_bipv_experiments/mech_week/figures/dm_panel08_day_stack.svg (+ .png)
+실행: python projects/03_bipv_experiments/mech_week/plot_panel08_day_stack.py
 """
 
 import sys
@@ -17,8 +17,9 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parents[1] / "bipv_mismatch" / "explain_surplus_heating"))
+sys.path.insert(0, str(MISMATCH / "explain_surplus_heating"))
 import plot_panel_dm as P  # noqa: E402
+from shared.paths import MISMATCH
 
 P.OUT = HERE / "figures"
 W, H = 146, 112  # pt

@@ -1,5 +1,5 @@
 """
-bipv_mismatch/explain_surplus_heating/plot_panel_apptl.py
+projects/05_bipv_mismatch/explain_surplus_heating/plot_panel_apptl.py
 =========================================================
 공모전 패널(Figma 26건물에너지시뮬레이션, Document 1660:938) 05·07번 칸 그림을 A-PPTL 디자인 토큰 색으로 (2026-11-03).
 
@@ -10,9 +10,9 @@ bipv_mismatch/explain_surplus_heating/plot_panel_apptl.py
 1) panel05_day0109_suntracking_apptl : 1/9 태양고도 추적의 PV 발전·전력 수요, 잉여·부족 음영 (plot_panel05.py 와 같은 내용)
 2) panel07_day0109_cumulative        : 1/9 태양고도 추적 vs TiDE 최종, 난방 전력·조명 전력·PV 발전 누적 (0시부터)
 
-자료: case3 E+ (태양추적 pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400, TiDE tide_policy/eplus_week_oracle/runs/week_tide_oracle)
+자료: case3 E+ (태양추적 projects/04_pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400, TiDE tide_policy/eplus_week_oracle/runs/week_tide_oracle)
 출력: explain_surplus_heating/figures/panel0{5,7}_*.{png,svg}
-실행: python bipv_mismatch/explain_surplus_heating/plot_panel_apptl.py
+실행: python projects/05_bipv_mismatch/explain_surplus_heating/plot_panel_apptl.py
 """
 
 import sys

@@ -2,14 +2,14 @@
 run_case2_sim.py
 ================
 case2_KS 고정각도(0~90°) IDF 10개에 설정 보정과 출력 변수를 추가해 연간 시뮬레이션한다.
-- 입력 IDF : case_idf/case2_KS/case2_{angle}.idf (수정하지 않음)
+- 입력 IDF : shared/case_idf/case2_KS/case2_{angle}.idf (수정하지 않음)
 - 보정     : 그림자 Timestep 계산, DetailedSkyDiffuseModeling, Ideal Loads 용량 통일
-             (bipv_experiments/runs/c2_RF_A* 와 같은 설정, One-Diode PV)
-- 출력 IDF : bipv_mismatch/idf/case2_KS/case2_{angle}.idf
-- 결과     : bipv_mismatch/case2_KS/case2_{angle}/  (case_analysis/normal/case2_KS와 동일 구조)
-- --weather tmyx : 같은 IDF를 TMYx(2011-2025) 기상으로 실행 → bipv_mismatch/case2_KS_TMYx/ (일반화 test용)
+             (projects/03_bipv_experiments/runs/c2_RF_A* 와 같은 설정, One-Diode PV)
+- 출력 IDF : projects/05_bipv_mismatch/idf/case2_KS/case2_{angle}.idf
+- 결과     : projects/05_bipv_mismatch/case2_KS/case2_{angle}/  (projects/01_baseline_bipv/results/normal/case2_KS와 동일 구조)
+- --weather tmyx : 같은 IDF를 TMYx(2011-2025) 기상으로 실행 → projects/05_bipv_mismatch/case2_KS_TMYx/ (일반화 test용)
 
-사용: python bipv_mismatch/run_case2_sim.py --jobs 10 [--weather tmyx]
+사용: python projects/05_bipv_mismatch/run_case2_sim.py --jobs 10 [--weather tmyx]
 """
 
 import argparse
@@ -21,18 +21,18 @@ import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-sys.path.append(str(ROOT / "bipv_experiments"))
+sys.path.append(str(EXPERIMENTS))
 from runner import EP_DIR, WEATHER_PATH, prepare_idf  # noqa: E402
+from shared.paths import CASE_IDF, DATA, EXPERIMENTS, MISMATCH, ROOT
 
-WORK_DIR = ROOT / "bipv_mismatch"
-SRC_IDF_DIR = ROOT / "case_idf" / "case2_KS"
+WORK_DIR = MISMATCH
+SRC_IDF_DIR = CASE_IDF / "case2_KS"
 IDF_OUT_DIR = WORK_DIR / "idf" / "case2_KS"
 WEATHERS = {
     "iwec": (WEATHER_PATH, WORK_DIR / "case2_KS"),
-    "tmyx": (ROOT / "data" / "KOR_KJ_Gwangju.471560_TMYx.2011-2025.epw", WORK_DIR / "case2_KS_TMYx"),
+    "tmyx": (DATA / "KOR_KJ_Gwangju.471560_TMYx.2011-2025.epw", WORK_DIR / "case2_KS_TMYx"),
 }
-SIZING_EIO = ROOT / "bipv_experiments" / "sizing" / "case2_max_over_angles.eio"
+SIZING_EIO = EXPERIMENTS / "sizing" / "case2_max_over_angles.eio"
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 PV_BANDGAP = 1.25  # eV, E+ 파라미터 추출용 피팅값 (원본 1.12)
 

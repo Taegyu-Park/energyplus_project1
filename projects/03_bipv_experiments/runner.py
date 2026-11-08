@@ -1,5 +1,5 @@
 """
-bipv_experiments/runner.py
+projects/03_bipv_experiments/runner.py
 ==========================
 BIPV 각도 스케줄 실험용 EnergyPlus 러너 (프로젝트 기존 파일을 수정하지 않는 독립 실험 폴더용).
 
@@ -12,7 +12,7 @@ BIPV 각도 스케줄 실험용 EnergyPlus 러너 (프로젝트 기존 파일을
 - 상대 경로는 저장소 루트 기준
 
 사용 예:
-  python bipv_experiments/runner.py --batch bipv_experiments/schedules/diag5_batch.json --jobs 8
+  python projects/03_bipv_experiments/runner.py --batch projects/03_bipv_experiments/schedules/diag5_batch.json --jobs 8
 """
 
 import argparse
@@ -25,11 +25,12 @@ import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, timedelta
 from pathlib import Path
+from shared.paths import DATA, ROOT
 
 EXP_DIR = Path(__file__).resolve().parent
-CWD = EXP_DIR.parent
+CWD = ROOT
 IDF_PATH = EXP_DIR / "idf" / "case3_v3_south_fixed.idf"
-WEATHER_PATH = CWD / "data" / "KOR_Kwangju.471560_IWEC (1).epw"
+WEATHER_PATH = DATA / "KOR_Kwangju.471560_IWEC (1).epw"
 EP_DIR = Path(r"C:\EnergyPlusV25-2-0")
 COP_COOLING = 3.0
 COP_HEATING = 2.5
@@ -230,7 +231,7 @@ def run_one(schedule: Path | None, name: str, days: int | None = None, start: da
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--schedule", type=Path, help="각도 스케줄 CSV (optimal_angle 컬럼)")
-    parser.add_argument("--name", help="출력 폴더 이름 (bipv_experiments/runs/<name>)")
+    parser.add_argument("--name", help="출력 폴더 이름 (projects/03_bipv_experiments/runs/<name>)")
     parser.add_argument("--batch", type=Path, help='JSON 목록: [{"name": ..., "schedule": ...}, ...]')
     parser.add_argument("--idf", type=Path, default=IDF_PATH, help="실행할 IDF (기본 idf/case3_v3_south_fixed.idf)")
     parser.add_argument("--jobs", type=int, default=4, help="병렬 실행 수")

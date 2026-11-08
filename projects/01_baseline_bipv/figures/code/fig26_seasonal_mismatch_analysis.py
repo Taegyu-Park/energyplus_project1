@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 # Setup SVG font settings for Figma editing
 mpl.rcParams['svg.fonttype'] = 'none'
@@ -23,8 +24,8 @@ def parse_ep_datetime(df):
 def main():
     # ── 경로 설정 ────────────────────────────────────────────────────────
     script_dir   = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    data_dir     = os.path.join(project_root, "case_analysis", "bipv_variation")
+    project_root = str(ROOT)
+    data_dir     = os.path.join(BASELINE_RESULTS, "bipv_variation")
     
     # ── 데이터 파일 ───────────────────────────────────────────────────────
     files = {
@@ -121,7 +122,7 @@ def main():
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])
     
     # ── 결과 저장 ────────────────────────────────────────────────────────
-    output_dir = os.path.join(project_root, "figure", "plot", "fig26_seasonal_mismatch_analysis")
+    output_dir = os.path.join(BASELINE, "figures", "plot", "fig26_seasonal_mismatch_analysis")
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
         

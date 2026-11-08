@@ -1,5 +1,5 @@
 """
-pv_lw_daylight/figures/fig_lighting_schedule_representative_day.py
+projects/04_pv_lw_daylight/figures/fig_lighting_schedule_representative_day.py
 ==================================================================
 기존 조명 스케줄(항상 설계 전력 × 스케줄)과 주광 연동 조명(실내 조도 400 lx 일정 유지)을 대표일 하루 시간별로 비교한다.
 남측 2개 존(BIPV_office_1_S, BIPV_office_2_S) 합계, case2 고정각 0°·40°·90°.
@@ -7,8 +7,8 @@ pv_lw_daylight/figures/fig_lighting_schedule_representative_day.py
 (a) 남측 존 조명 전력 밀도 [W/m²] — 기존 스케줄 vs 400 lx 일정 제어 (각도별)
 (b) 창으로 들어온 자연광 조도 [lx] (1층 남측 기준점) — 400 lx 에 못 미치는 만큼 조명이 채움
 
-입력: pv_lw_daylight/runs/annual/c2_RF_lw_A40 (기존 스케줄), c2_RF_lw_dl400_A<각도> (주광 연동)
-출력: pv_lw_daylight/figures/fig_lighting_schedule_representative_day.{png,svg,csv}
+입력: projects/04_pv_lw_daylight/runs/annual/c2_RF_lw_A40 (기존 스케줄), c2_RF_lw_dl400_A<각도> (주광 연동)
+출력: projects/04_pv_lw_daylight/figures/fig_lighting_schedule_representative_day.{png,svg,csv}
 사용: python fig_lighting_schedule_representative_day.py [--date 04-12]
 """
 

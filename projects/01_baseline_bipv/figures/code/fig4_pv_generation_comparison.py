@@ -3,6 +3,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 import numpy as np
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT
 plt.rcParams['svg.fonttype'] = 'none'
 
 def get_monthly_pv(db_path):
@@ -55,12 +56,12 @@ def get_monthly_pv(db_path):
 def main():
     # Detect directories relative to this script
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(os.path.dirname(script_dir))
+    project_root = str(ROOT)
     
     # ------------------
     # Data for Case 2 (Fixed BIPV at each angle)
     # ------------------
-    case2_dir = os.path.join(project_root, "case_analysis", "normal", "case2")
+    case2_dir = os.path.join(BASELINE_RESULTS, "normal", "case2")
     angles = list(range(0, 100, 10))
     case2_annual = []
     
@@ -79,7 +80,7 @@ def main():
     # ------------------
     # Data for Case 3 (Kinetic BIPV)
     # ------------------
-    case3_db = os.path.join(project_root, "case_analysis", "normal", "case3", "eplusout.sql")
+    case3_db = os.path.join(BASELINE_RESULTS, "normal", "case3", "eplusout.sql")
     case3_monthly = get_monthly_pv(case3_db)
     if case3_monthly:
         case3_annual = sum(case3_monthly.values())

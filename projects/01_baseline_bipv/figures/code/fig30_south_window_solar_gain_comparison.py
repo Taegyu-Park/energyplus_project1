@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 # Setup SVG font settings for Figma editing
 mpl.rcParams['svg.fonttype'] = 'none'
@@ -56,8 +57,8 @@ def process_hourly_dataset(df_raw):
 
 def main():
     script_dir   = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    plot_dir     = os.path.join(project_root, "figure", "plot", "fig30_south_window_solar_gain_comparison")
+    project_root = str(ROOT)
+    plot_dir     = os.path.join(BASELINE, "figures", "plot", "fig30_south_window_solar_gain_comparison")
     
     if not os.path.exists(plot_dir):
         os.makedirs(plot_dir)
@@ -68,7 +69,7 @@ def main():
     heat_data = {}
 
     # 1. Case 1 (Base Case - No PV)
-    case1_path = os.path.join(project_root, "case_analysis", "normal", "case1_KS", "eplusout.sql")
+    case1_path = os.path.join(BASELINE_RESULTS, "normal", "case1_KS", "eplusout.sql")
     print(f"Loading Case 1 (Base Case - No PV)...")
     df_c1_cool = process_hourly_dataset(load_sql_south_zone_load(case1_path, 'Zone Ideal Loads Supply Air Total Cooling Energy'))
     df_c1_heat = process_hourly_dataset(load_sql_south_zone_load(case1_path, 'Zone Ideal Loads Supply Air Total Heating Energy'))
@@ -76,7 +77,7 @@ def main():
     if df_c1_heat is not None: heat_data["Base_Case1"] = df_c1_heat['kWh'].values
 
     # 2. Case 2 (Normal/case2_KS) - 10 fixed angles (0° to 90°)
-    case2_base_path = os.path.join(project_root, "case_analysis", "normal", "case2_KS")
+    case2_base_path = os.path.join(BASELINE_RESULTS, "normal", "case2_KS")
     for angle in angles:
         sql_path = os.path.join(case2_base_path, f"case2_{angle}", "eplusout.sql")
         print(f"Loading Case 2 ({angle}°)...")
@@ -86,7 +87,7 @@ def main():
         if df_c2_heat is not None: heat_data[f"Fixed_{angle}deg"] = df_c2_heat['kWh'].values
 
     # 3. Case 3 (bipv_variation/5zone_NSEW_korean/case3_v3_south) - Kinetic BIPV South
-    case3_south_path = os.path.join(project_root, "case_analysis", "bipv_variation", "5zone_NSEW_korean", "case3_v3_south", "eplusout.sql")
+    case3_south_path = os.path.join(BASELINE_RESULTS, "bipv_variation", "5zone_NSEW_korean", "case3_v3_south", "eplusout.sql")
     print(f"Loading Case 3 (Kinetic South)...")
     df_c3_cool = process_hourly_dataset(load_sql_south_zone_load(case3_south_path, 'Zone Ideal Loads Supply Air Total Cooling Energy'))
     df_c3_heat = process_hourly_dataset(load_sql_south_zone_load(case3_south_path, 'Zone Ideal Loads Supply Air Total Heating Energy'))

@@ -19,6 +19,7 @@ import pandas as pd
 BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR / "eplus_open"))
 import analyze_week as W  # noqa: E402
+from shared.paths import EXPERIMENTS, PVLW
 
 OUT = BASE_DIR / "figures_open" / "compare_c_vs_jan13.png"
 ANGLES = np.arange(0, 100, 10)
@@ -41,7 +42,7 @@ def day_slice(df, day):
 
 def jan13():
     W.EVAL = (pd.Timestamp("2006-01-13"), pd.Timestamp("2006-01-14"))
-    st = W.load_sql(BASE_DIR.parent / "pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400/eplusout.sql")
+    st = W.load_sql(PVLW / "runs" / "annual" / "c3_FE_ST_lw_dl400" / "eplusout.sql")
     s9 = W.load_sql(BASE_DIR / "eplus_jan13/runs/jan13_surplus90/eplusout.sql")
     ang = sched(BASE_DIR / "eplus_jan13/schedules/st_jan13_surplus90.csv")
     return day_slice(st, "2006-01-13"), day_slice(s9, "2006-01-13"), ang
@@ -93,7 +94,7 @@ def panel(ax, base, ctrl, ang, st_ang, title, lab):
 
 
 def main():
-    st_ang = sched(BASE_DIR.parent / "bipv_experiments/schedules/suntracking_w0s90.csv")
+    st_ang = sched(EXPERIMENTS / "schedules" / "suntracking_w0s90.csv")
     rows = [
         (*jan13(), "(1) IWEC 1/13 — case3 E+, 잉여 구간 전체 90° 수동 고정 (jan13_surplus90.png)", "기상 IWEC · 결과 E+ case3"),
         (*case2_c("2006-01-11"), "(2) TMYx2011 1/11 — TiDE 각도, case2 각도별 값으로 본 예상 (open_angles_test_m0.png (c))",

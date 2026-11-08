@@ -6,6 +6,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT, TIDE_V1_RESULTS
 
 # 1. Setup SVG font settings for Figma editing
 mpl.rcParams['svg.fonttype'] = 'none'
@@ -20,13 +21,13 @@ for w in range(100, 1000, 50):
 
 # 3. Path Configuration
 SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
+PROJECT_ROOT = ROOT
 PLOT_DIR = SCRIPT_DIR.parent / "plot" / "fig38_tide_strategy1_vs_strategy2_energy_comparison"
 PLOT_DIR.mkdir(parents=True, exist_ok=True)
 
-PATH_STRATEGY1 = PROJECT_ROOT / "case_analysis" / "case3_v3_south_tide" / "case3_south_tide_annual_summary.json"
-PATH_STRATEGY2 = PROJECT_ROOT / "case_analysis" / "case3_v3_south_tide_strategy2" / "case3_south_tide_annual_summary.json"
-PATH_BASELINE_SQL = PROJECT_ROOT / "case_analysis" / "bipv_variation" / "5zone_NSEW_korean" / "case3_v3_south" / "eplusout.sql"
+PATH_STRATEGY1 = TIDE_V1_RESULTS / "case3_v3_south_tide" / "case3_south_tide_annual_summary.json"
+PATH_STRATEGY2 = TIDE_V1_RESULTS / "case3_v3_south_tide_strategy2" / "case3_south_tide_annual_summary.json"
+PATH_BASELINE_SQL = BASELINE_RESULTS / "bipv_variation" / "5zone_NSEW_korean" / "case3_v3_south" / "eplusout.sql"
 
 # 4. Load Data
 # Baseline: Sun-Tracking Model (case3_v3_south)

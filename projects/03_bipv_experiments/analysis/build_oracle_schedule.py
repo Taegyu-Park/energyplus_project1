@@ -1,5 +1,5 @@
 """
-bipv_experiments/analysis/build_oracle_schedule.py
+projects/03_bipv_experiments/analysis/build_oracle_schedule.py
 ==================================================
 고정각 데이터셋에서 timestep별 '참' 최적 각도 스케줄을 만든다.
   --mode net  : net energy 최소 각도 (근시안적 oracle)
@@ -7,7 +7,7 @@ bipv_experiments/analysis/build_oracle_schedule.py
 모든 각도가 동률인 스텝(주로 야간)은 기준 스케줄(태양추적) 각도를 쓴다.
 
 사용 예:
-  python bipv_experiments/analysis/build_oracle_schedule.py --dataset <csv> --mode net --out bipv_experiments/schedules/oracle_stepwise.csv
+  python projects/03_bipv_experiments/analysis/build_oracle_schedule.py --dataset <csv> --mode net --out projects/03_bipv_experiments/schedules/oracle_stepwise.csv
 """
 
 import argparse

@@ -1,5 +1,5 @@
 """
-bipv_experiments/mech_week/plot_panel07_concept2.py
+projects/03_bipv_experiments/mech_week/plot_panel07_concept2.py
 ===================================================
 공모전 패널 07 "각도 제어의 작동 원리" 개념도 2판 (가상 자료, 2026-11-05).
 위: 기준(태양고도 추적, 발전 우선)의 PV·수요 한 줄. 정오 잉여와 오후 구매 두 문제만 표시

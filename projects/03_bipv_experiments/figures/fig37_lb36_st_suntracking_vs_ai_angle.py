@@ -4,12 +4,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.normpath(os.path.join(HERE, "..", ".."))
-sys.path.insert(0, os.path.join(ROOT, "figure", "code"))
+ROOT = str(ROOT)
+sys.path.insert(0, os.path.join(EXPERIMENTS, "figures", "code"))
 import fig37_suntracking_vs_ai_angle_representative_days as f37  # reuse style & panel
+from shared.paths import DATA, EXPERIMENTS, ROOT
 
-PRED = os.path.join(ROOT, "bipv_experiments", "tide_c5", "predictions")
-SUN_PATH = os.path.join(ROOT, "data", "bipv_suntracking_angles_annual_winter0_summer90.csv")
+PRED = os.path.join(EXPERIMENTS, "tide_c5", "predictions")
+SUN_PATH = os.path.join(DATA, "bipv_suntracking_angles_annual_winter0_summer90.csv")
 df_sun = pd.read_csv(SUN_PATH, parse_dates=["timestamp"])
 
 for st in (1, 2):

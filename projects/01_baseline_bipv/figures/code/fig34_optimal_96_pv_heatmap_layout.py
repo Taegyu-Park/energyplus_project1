@@ -12,13 +12,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 from matplotlib.colors import LinearSegmentedColormap
+from shared.paths import BASELINE, ROOT
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(os.path.dirname(script_dir))
+    project_root = str(ROOT)
     
     script_name = os.path.splitext(os.path.basename(__file__))[0]
-    figure_dir = os.path.normpath(os.path.join(project_root, "figure", "plot", script_name))
+    figure_dir = os.path.normpath(os.path.join(BASELINE, "figures", "plot", script_name))
     os.makedirs(figure_dir, exist_ok=True)
     
     plot_png_path = os.path.join(figure_dir, f"{script_name}.png")

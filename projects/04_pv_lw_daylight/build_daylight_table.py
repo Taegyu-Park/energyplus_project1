@@ -1,5 +1,5 @@
 """
-pv_lw_daylight/build_daylight_table.py
+projects/04_pv_lw_daylight/build_daylight_table.py
 =======================================================
 case2 각도별 주광 실행(runs/tbl_FE_L<lx>_A<각도>)에서 남측 2개 존의 'Daylighting Lighting Power Multiplier'를 뽑아
 case3 플러그인(DaylightTableCoupler)이 쓰는 표를 만든다.
@@ -8,7 +8,7 @@ case3 플러그인(DaylightTableCoupler)이 쓰는 표를 만든다.
 - 열: step, A00_BIPV_office_1_S, A00_BIPV_office_2_S, ..., A90_BIPV_office_2_S
 - 출력: daylight_tables/dl_mult_FE_L<lx>.csv
 
-사용: python pv_lw_daylight/build_daylight_table.py --lx 300 400 600
+사용: python projects/04_pv_lw_daylight/build_daylight_table.py --lx 300 400 600
 """
 
 import argparse

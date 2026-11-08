@@ -6,6 +6,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import dartwork_mpl as dm
+from shared.paths import DATA, ROOT, TIDE_V1
 
 # Setup SVG font settings for Figma editing
 mpl.rcParams['svg.fonttype'] = 'none'
@@ -24,8 +25,8 @@ COLOR_DIFF = "#dc2626"  # Absolute difference (Crimson)
 
 
 def load_data(project_root):
-    sun_path = os.path.join(project_root, "data", "bipv_suntracking_angles_annual.csv")
-    ai_path = os.path.join(project_root, "ai_model", "tide", "data", "predictions", "bipv_optimal_angles_annual.csv")
+    sun_path = os.path.join(DATA, "bipv_suntracking_angles_annual.csv")
+    ai_path = os.path.join(TIDE_V1, "data", "predictions", "bipv_optimal_angles_annual.csv")
 
     df_sun = pd.read_csv(sun_path, parse_dates=["timestamp"])
     df_ai = pd.read_csv(ai_path, parse_dates=["timestamp"])
@@ -51,8 +52,8 @@ def month_tick_positions(df):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    plot_dir = os.path.join(project_root, "figure", "plot", "fig36_suntracking_vs_ai_angle_comparison")
+    project_root = str(ROOT)
+    plot_dir = os.path.join(TIDE_V1, "figures", "plot", "fig36_suntracking_vs_ai_angle_comparison")
     os.makedirs(plot_dir, exist_ok=True)
 
     df = load_data(project_root)

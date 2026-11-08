@@ -4,28 +4,29 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from shared.paths import BASELINE_RESULTS, CASE_IDF, DATA, PLUGINS, ROOT
 
 # -------------------------------------------------------------
 # 설정 및 경로 정의
 # -------------------------------------------------------------
-CWD = Path(r"c:\Users\taegyu\Codes\energyplus_project1")
-IDF_PATH = CWD / "case_idf" / "case3_v3.idf"
-PLUGIN_PATH = CWD / "model_pythonpluginsystem.py"
-OUT_ROOT_DIR = CWD / "case_analysis"
+CWD = ROOT
+IDF_PATH = CASE_IDF / "case3_v3.idf"
+PLUGIN_PATH = PLUGINS / "model_pythonpluginsystem.py"
+OUT_ROOT_DIR = BASELINE_RESULTS
 
 # 백업 경로
-IDF_BACKUP = CWD / "case_idf" / "case3_v3.idf.bak"
-PLUGIN_BACKUP = CWD / "model_pythonpluginsystem.py.bak"
+IDF_BACKUP = CASE_IDF / "case3_v3.idf.bak"
+PLUGIN_BACKUP = PLUGINS / "model_pythonpluginsystem.py.bak"
 
 # 기후별 날씨 및 DDY 정의
 CLIMATES = {
     "Phoenix": {
-        "epw": CWD / "data" / "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.epw",
-        "ddy": CWD / "data" / "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.ddy"
+        "epw": DATA / "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.epw",
+        "ddy": DATA / "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.ddy"
     },
     "Helsinki": {
-        "epw": CWD / "data" / "FIN_Helsinki.029740_IWEC.epw",
-        "ddy": CWD / "data" / "FIN_Helsinki.029740_IWEC.ddy"
+        "epw": DATA / "FIN_Helsinki.029740_IWEC.epw",
+        "ddy": DATA / "FIN_Helsinki.029740_IWEC.ddy"
     }
 }
 
@@ -226,7 +227,7 @@ def run_simulation(climate_name, color, ep_dir, epw_path):
     
     env = os.environ.copy()
     ep_python_api_path = str(ep_dir / "api" / "python")
-    env["PYTHONPATH"] = ep_python_api_path + os.pathsep + env.get("PYTHONPATH", "")
+    env["PYTHONPATH"] = ep_python_api_path + os.pathsep + str(PLUGINS) + os.pathsep + env.get("PYTHONPATH", "")
 
     print(f"\n[{climate_name.upper()} - {color.upper()}] 시뮬레이션 구동 중...")
     

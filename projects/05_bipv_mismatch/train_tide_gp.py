@@ -1,7 +1,7 @@
 """
 train_tide_gp.py
 ================
-PLAN.md Step 4. ai_model/tide/train_tide.py를 복사·수정한 구매 전력 최소화용 TiDE 학습.
+PLAN.md Step 4. projects/02_tide_v1/train_tide.py를 복사·수정한 구매 전력 최소화용 TiDE 학습.
 
 - 타깃: Strategy 2 (PV·냉방·난방 × 10각도 = 30성분, kWh/10분)
 - 목적함수(구매 = max(HVAC − PV, 0))는 예측 후 계산 → 가치 기준이 바뀌어도 재학습 불필요
@@ -12,7 +12,7 @@ PLAN.md Step 4. ai_model/tide/train_tide.py를 복사·수정한 구매 전력 �
   - 모델 B: IWEC 365일 전체로 같은 스케줄을 best epoch까지 학습 → TMYx 365일 테스트
 - 테스트: 성분별 지표와 1단계 각도 선택(구매 최소, 동점이면 HVAC 최소)의 구매 전력 regret
 
-출력: bipv_mismatch/checkpoints/tide_gp_{A,B}_*, tide_gp_B_tmyx_{eval.json, predictions.csv}
+출력: projects/05_bipv_mismatch/checkpoints/tide_gp_{A,B}_*, tide_gp_B_tmyx_{eval.json, predictions.csv}
 """
 
 import sys
@@ -28,9 +28,10 @@ import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
 BASE_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = BASE_DIR.parent
-sys.path.append(str(PROJECT_ROOT / "ai_model" / "tide"))
+PROJECT_ROOT = ROOT
+sys.path.append(str(TIDE_V1))
 from tide_model import TiDEModel  # noqa: E402
+from shared.paths import ROOT, TIDE_V1
 
 DATA_DIR = BASE_DIR / "dataset"
 CKPT_DIR = BASE_DIR / "checkpoints"

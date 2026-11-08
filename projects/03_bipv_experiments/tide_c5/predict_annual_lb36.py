@@ -7,10 +7,10 @@ import numpy as np
 import pandas as pd
 import torch
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "ai_model" / "tide"))
+sys.path.insert(0, str(TIDE_V1))
 from tide_model import TiDEModel
 from train_tide import ANGLES, PAST_COV_COLS, FUTURE_COV_COLS, DATA_DIR
+from shared.paths import ROOT, TIDE_V1
 
 HERE = Path(__file__).resolve().parent
 CK = HERE / "checkpoints"

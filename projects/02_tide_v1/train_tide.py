@@ -25,15 +25,16 @@ from torch.utils.data import Dataset, DataLoader
 
 # Ensure ai_model directory is in Python path for local import
 CURRENT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = CURRENT_DIR.parent.parent
+PROJECT_ROOT = ROOT
 if str(CURRENT_DIR) not in sys.path:
     sys.path.append(str(CURRENT_DIR))
 
 from tide_model import TiDEModel
+from shared.paths import DATA, ROOT
 
 # ── 1. Configuration & Feature Schema ─────────────────────────────────────────
 LOCAL_DATA_DIR = CURRENT_DIR / "data" / "dataset"
-DATA_DIR = LOCAL_DATA_DIR if LOCAL_DATA_DIR.exists() else (PROJECT_ROOT / "data")
+DATA_DIR = LOCAL_DATA_DIR if LOCAL_DATA_DIR.exists() else (DATA)
 CHECKPOINT_ROOT = CURRENT_DIR / "checkpoints"
 
 # Dataset case -> (file prefix, checkpoint sub-directory)

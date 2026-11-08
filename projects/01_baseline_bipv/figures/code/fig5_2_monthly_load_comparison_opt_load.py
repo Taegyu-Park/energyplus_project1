@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT
 
 plt.rcParams['svg.fonttype'] = 'none'
 
@@ -57,7 +58,7 @@ def parse_case3_monthly_loads(csv_path):
 def main():
     # Detect directories relative to this script
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(os.path.dirname(script_dir))
+    project_root = str(ROOT)
     
     # ------------------
     # Data for Case 2 (Load-Minimizing BIPV Angle & Load)
@@ -65,7 +66,7 @@ def main():
     # BIPV 각도 정의:
     # - 0°: 외벽과 평행한 수직 밀폐 상태 (창문을 덮어 여름철 일사 차단에 유리)
     # - 90°: 외벽과 수직인 수평 차양 상태 (완전히 열려 겨울철 일사 획득에 유리)
-    case2_dir = os.path.join(project_root, "case_analysis", "normal", "case2")
+    case2_dir = os.path.join(BASELINE_RESULTS, "normal", "case2")
     angles = list(range(0, 100, 10))
     angle_results = {}
     
@@ -109,7 +110,7 @@ def main():
     # ------------------
     # Data for Case 3 (Monthly HVAC Load)
     # ------------------
-    case3_csv_path = os.path.join(project_root, "case_analysis", "normal", "case3", "case3.csv")
+    case3_csv_path = os.path.join(BASELINE_RESULTS, "normal", "case3", "case3.csv")
     case3_load_dict = parse_case3_monthly_loads(case3_csv_path)
     if not case3_load_dict:
         print("Error: Case 3 CSV file not found!")

@@ -1,7 +1,7 @@
 """
 build_dataset.py
 ================
-PLAN.md Step 3. bipv_mismatch/<기상 폴더>/case2_{a}/eplusout.sql 에서 TiDE 학습 데이터셋을 만든다.
+PLAN.md Step 3. projects/05_bipv_mismatch/<기상 폴더>/case2_{a}/eplusout.sql 에서 TiDE 학습 데이터셋을 만든다.
 
 기본(--set final, 2026-10-28): 최종 조건(PV 장파 연동, 주광 연동 400 lx, DifferentialEnthalpy, Eg 1.25)
 3개 기상 파일을 1년씩 학습/검증/테스트로 쓴다.
@@ -16,8 +16,8 @@ PLAN.md Step 3. bipv_mismatch/<기상 폴더>/case2_{a}/eplusout.sql 에서 TiDE
 - 각도 a의 PV 표면 기울기 = 90 − a (0° 수직, 90° 수평), 방위 180°
 - timestamp는 E+ 기상 연도 2006 그대로(요일 보존)
 
-출력: --set final  → bipv_mismatch/dataset_final/case2_mm_{train,val,test}.csv (기상 파일 1개 = CSV 1개)
-      --set legacy → bipv_mismatch/dataset/case2_gp_dataset.csv, case2_gp_{train,val,test}.csv,
+출력: --set final  → projects/05_bipv_mismatch/dataset_final/case2_mm_{train,val,test}.csv (기상 파일 1개 = CSV 1개)
+      --set legacy → projects/05_bipv_mismatch/dataset/case2_gp_dataset.csv, case2_gp_{train,val,test}.csv,
                      --weather tmyx 이면 case2_gp_tmyx_dataset.csv (옛 파일 이름 그대로)
 """
 

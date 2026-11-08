@@ -2,7 +2,7 @@
 verify_eg125.py
 ===============
 Eg 1.25 재실행 결과 검증: 완료 여부·Severe·스텝 수, 그리고 Eg 1.12 대비 연간 PV·HVAC 변화.
-사용: python bipv_mismatch/verify_eg125.py
+사용: python projects/05_bipv_mismatch/verify_eg125.py
 """
 
 import re

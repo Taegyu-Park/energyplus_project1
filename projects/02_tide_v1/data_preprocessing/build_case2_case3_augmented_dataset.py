@@ -3,7 +3,7 @@ build_case2_case3_augmented_dataset.py
 ======================================
 Augments the static BIPV dataset (case2_ks_bipv_tide_dataset.csv) by integrating
 the real dynamic tracking simulation results from:
-'case_analysis/bipv_variation/5zone_NSEW_korean/case3_v3_south/eplusout.sql'.
+'projects/01_baseline_bipv/results/bipv_variation/5zone_NSEW_korean/case3_v3_south/eplusout.sql'.
 
 Physical Rationale:
 - In static angle runs (case2_0 ~ case2_90), panels remain fixed all year, missing dynamic solar gains.
@@ -21,12 +21,13 @@ import sqlite3
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from shared.paths import BASELINE_RESULTS, DATA, ROOT, TIDE_V1
 
-BASE_DIR = Path("C:/Users/taegyu/Codes/energyplus_project1")
-DATASET_DIR = BASE_DIR / "ai_model" / "tide" / "data" / "dataset"
+BASE_DIR = ROOT
+DATASET_DIR = TIDE_V1 / "data" / "dataset"
 STATIC_CSV = DATASET_DIR / "case2_ks_bipv_tide_dataset.csv"
-SUN_SCHED_CSV = BASE_DIR / "data" / "bipv_suntracking_angles_annual.csv"
-CASE3_SQL = BASE_DIR / "case_analysis" / "bipv_variation" / "5zone_NSEW_korean" / "case3_v3_south" / "eplusout.sql"
+SUN_SCHED_CSV = DATA / "bipv_suntracking_angles_annual.csv"
+CASE3_SQL = BASELINE_RESULTS / "bipv_variation" / "5zone_NSEW_korean" / "case3_v3_south" / "eplusout.sql"
 OUT_CSV = DATASET_DIR / "case2_ks_bipv_tide_dataset.csv"
 
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]

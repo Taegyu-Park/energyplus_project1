@@ -1,7 +1,7 @@
 """fig40: TiDE vs sun-tracking net energy time series -- where does the TiDE angle choice go wrong?
 
-Data (One-Diode, final runs): bipv_experiments/analysis/c3_net_timeseries_onediode.csv
-  (cached by bipv_experiments/analysis/extract_c3_net_timeseries.py)
+Data (One-Diode, final runs): projects/03_bipv_experiments/analysis/c3_net_timeseries_onediode.csv
+  (cached by projects/03_bipv_experiments/analysis/extract_c3_net_timeseries.py)
 Expected gain (no inertia) = stitching the fixed-angle dataset c2_RF_fixed_angle_dataset.csv with each schedule.
 net energy = cooling/3.0 + heating/2.5 - PV  [kWh]  (lower is better)
 """
@@ -15,6 +15,7 @@ import matplotlib.font_manager as fm
 from matplotlib.patches import Patch
 from matplotlib.lines import Line2D
 import dartwork_mpl as dm
+from shared.paths import EXPERIMENTS, ROOT
 
 mpl.rcParams["svg.fonttype"] = "none"
 dm.style.use("presentation")
@@ -23,10 +24,10 @@ for w in range(100, 1000, 50):
     fm.weight_dict[str(w)] = w
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
+PROJECT_ROOT = ROOT
 PLOT_DIR = SCRIPT_DIR.parent / "plot" / "fig40_tide_vs_suntracking_net_timeseries"
 PLOT_DIR.mkdir(parents=True, exist_ok=True)
-EXP = PROJECT_ROOT / "bipv_experiments"
+EXP = EXPERIMENTS
 
 C_ST, C_S1, C_S2 = "#f59e0b", "#2563eb", "#10b981"
 C_BAD, C_GOOD = "#dc2626", "#0d9488"

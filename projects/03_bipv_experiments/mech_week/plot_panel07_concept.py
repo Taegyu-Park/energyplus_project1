@@ -1,5 +1,5 @@
 """
-bipv_experiments/mech_week/plot_panel07_concept.py
+projects/03_bipv_experiments/mech_week/plot_panel07_concept.py
 ==================================================
 공모전 패널 07 "각도 제어의 작동 원리" 개념도 (가상 자료, 2026-11-05).
 2행 × 3열. 행 1 = 각도↑ (TiDE: 일사 유입), 행 2 = 각도↓ (태양고도 추적: 발전 우선).
@@ -19,8 +19,9 @@ import numpy as np
 from matplotlib.patches import FancyArrowPatch, Circle
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parents[1] / "bipv_mismatch" / "explain_surplus_heating"))
+sys.path.insert(0, str(MISMATCH / "explain_surplus_heating"))
 import plot_panel_dm as P  # noqa: E402
+from shared.paths import MISMATCH
 
 P.OUT = HERE / "figures"
 HEAT = "#be123c"

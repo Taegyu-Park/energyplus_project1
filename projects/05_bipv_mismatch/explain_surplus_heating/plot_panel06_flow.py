@@ -1,5 +1,5 @@
 """
-bipv_mismatch/explain_surplus_heating/plot_panel06_flow.py
+projects/05_bipv_mismatch/explain_surplus_heating/plot_panel06_flow.py
 ==========================================================
 공모전 패널 06번 "case2 데이터 → 가공 → TiDE → PV 각도" 흐름도에 들어갈 미니 그래프 3개 (2026-11-04).
 대표일 1/17 (05번과 같음), 자료는 실제 결과.
@@ -10,7 +10,7 @@ bipv_mismatch/explain_surplus_heating/plot_panel06_flow.py
 
 스타일은 plot_panel_dm.py 와 같고, 흐름도 상자 글자(4.2pt)에 맞춰 글자만 4.2pt 로 줄임.
 출력: explain_surplus_heating/figures/dm_panel06_*.svg (+ .png)
-실행: python bipv_mismatch/explain_surplus_heating/plot_panel06_flow.py
+실행: python projects/05_bipv_mismatch/explain_surplus_heating/plot_panel06_flow.py
 """
 
 import matplotlib as mpl

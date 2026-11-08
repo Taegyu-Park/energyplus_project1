@@ -1,5 +1,5 @@
 """
-bipv_mismatch/tide_policy/train_tide_window.py
+projects/05_bipv_mismatch/tide_policy/train_tide_window.py
 ==============================================
 TiDE 가 조절 구간의 시작·끝과 구간 안 각도를 함께 고르는 정책 (2026-11-03 사용자 결정, 기존 스크립트는 그대로 둠).
 
@@ -15,7 +15,7 @@ TiDE 가 조절 구간의 시작·끝과 구간 안 각도를 함께 고르는 �
 - 입력·분할은 train_tide_policy.py 와 같음 (lookback 타깃만 3채널: net_ST, P_ST, D_ST)
 
 출력: tide_policy/out_window/{best.pt, scaler.json, history.json, summary.json}
-사용: python bipv_mismatch/tide_policy/train_tide_window.py
+사용: python projects/05_bipv_mismatch/tide_policy/train_tide_window.py
 """
 
 import argparse

@@ -1,10 +1,10 @@
 """
-bipv_mismatch/explain_surplus_heating/plot_jan13_bar.py
+projects/05_bipv_mismatch/explain_surplus_heating/plot_jan13_bar.py
 =======================================================
 대표일 (IWEC, 07시 ~ 다음 날 07시, 기본 1/9; 처음엔 1/13) 잉여 발전·부족(구매) 합계 막대 비교 (2026-11-03).
 
 - 고정 0°   : dataset_final/case2_mm_train.csv 의 pv_gen_0, demand_elec_0 (case2, jan13_fixed_angle0 그림과 같은 자료)
-- 태양추적  : pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400 (case3 E+)
+- 태양추적  : projects/04_pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400 (case3 E+)
 - TiDE 최종 : tide_policy/eplus_week_oracle/runs/week_tide_oracle (case3 E+, 오라클학습 + 1시간 고정 버퍼)
 - 수요 = 냉방/3.0 + 난방/2.5 + 조명, 잉여 = Σ max(PV − 수요, 0), 부족 = Σ max(수요 − PV, 0) (10분)
 - --window: 하루 합계 대신 TiDE 조절 구간(태양추적을 하지 않는 스텝, eplus_week_oracle/angles_week.csv 의 mask)만 합산
@@ -12,7 +12,7 @@ bipv_mismatch/explain_surplus_heating/plot_jan13_bar.py
 - --to-sunset: 시작은 --window 와 같고 끝을 일몰까지 (case2 sun_altitude 가 처음 0 이하가 되는 구간 종료 시각)
 
 출력: explain_surplus_heating/figures/day{MMDD}[_window|_sunset]_surplus_{deficit|load}_bar.{png,svg}
-실행: python bipv_mismatch/explain_surplus_heating/plot_jan13_bar.py [--window | --to-sunset] [--load]
+실행: python projects/05_bipv_mismatch/explain_surplus_heating/plot_jan13_bar.py [--window | --to-sunset] [--load]
 """
 
 import argparse

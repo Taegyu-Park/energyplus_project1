@@ -9,6 +9,7 @@ import sqlite3
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 def get_monthly_metric(c, var_name):
     c.execute("SELECT ReportDataDictionaryIndex FROM ReportDataDictionary WHERE Name = ?", (var_name,))
@@ -57,10 +58,10 @@ def get_case_loads(db_path):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(os.path.dirname(script_dir))
+    project_root = str(ROOT)
     
-    dir_case1 = os.path.join(project_root, "case_analysis", "normal", "case1_KS")
-    dir_case3 = os.path.join(project_root, "case_analysis", "bipv_variation", "5zone_NSEW_korean", "case3_v3_south")
+    dir_case1 = os.path.join(BASELINE_RESULTS, "normal", "case1_KS")
+    dir_case3 = os.path.join(BASELINE_RESULTS, "bipv_variation", "5zone_NSEW_korean", "case3_v3_south")
     
     db_case1 = os.path.join(dir_case1, "eplusout.sql")
     db_case3 = os.path.join(dir_case3, "eplusout.sql")
@@ -105,7 +106,7 @@ def main():
 
     # Visualization
     script_name = os.path.splitext(os.path.basename(__file__))[0]
-    figure_dir = os.path.normpath(os.path.join(project_root, "figure", "plot", script_name))
+    figure_dir = os.path.normpath(os.path.join(BASELINE, "figures", "plot", script_name))
     os.makedirs(figure_dir, exist_ok=True)
     
     plot_png_path = os.path.join(figure_dir, f"{script_name}.png")

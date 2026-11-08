@@ -2,7 +2,7 @@
 
   Top   : summer weekdays Aug 7 ~ 11 (demand >> PV, PV fully absorbed, deficit only)
   Bottom: autumn weekdays Oct 2 ~ 6 (PV covers daytime demand on all 5 days, surplus only)
-Data (One-Diode, final run c3_FE_suntracking_od, IWEC): bipv_experiments/analysis/c3_net_timeseries_onediode.csv
+Data (One-Diode, final run c3_FE_suntracking_od, IWEC): projects/03_bipv_experiments/analysis/c3_net_timeseries_onediode.csv
   -- same sun-tracking baseline as fig41 / fig41_1
 Resolution: native 10-min timestep (kWh per 10 min)
 Demand = cooling/3.0 + heating/2.5 (HVAC electricity, ideal loads)  [kWh]
@@ -18,6 +18,7 @@ import matplotlib.font_manager as fm
 from matplotlib.patches import Patch
 from matplotlib.lines import Line2D
 import dartwork_mpl as dm
+from shared.paths import EXPERIMENTS, ROOT
 
 mpl.rcParams["svg.fonttype"] = "none"
 dm.style.use("presentation")
@@ -26,10 +27,10 @@ for w in range(100, 1000, 50):
     fm.weight_dict[str(w)] = w
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
+PROJECT_ROOT = ROOT
 PLOT_DIR = SCRIPT_DIR.parent / "plot" / "fig43_surplus_week_generation_demand_mismatch"
 PLOT_DIR.mkdir(parents=True, exist_ok=True)
-DATA = PROJECT_ROOT / "bipv_experiments" / "analysis" / "c3_net_timeseries_onediode.csv"
+DATA = EXPERIMENTS / "analysis" / "c3_net_timeseries_onediode.csv"
 
 COP_COOLING = 3.0
 COP_HEATING = 2.5

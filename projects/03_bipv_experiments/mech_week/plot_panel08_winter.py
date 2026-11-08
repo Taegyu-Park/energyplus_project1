@@ -1,16 +1,16 @@
 """
-bipv_experiments/mech_week/plot_panel08_winter.py
+projects/03_bipv_experiments/mech_week/plot_panel08_winter.py
 =================================================
 공모전 패널 8번 ① 겨울철 전체(11~3월) 잉여 발전·전체 부하 합계 막대 (2026-11-04).
-- 원본: bipv_mismatch/tide_policy/eplus_winter_oracle/plot_winter_bar.py (수정하지 않고 load() 와 자료 경로만 가져옴)
+- 원본: projects/05_bipv_mismatch/tide_policy/eplus_winter_oracle/plot_winter_bar.py (수정하지 않고 load() 와 자료 경로만 가져옴)
 - 원본과 다른 점: 고정 0° 제외(태양고도 추적 vs TiDE 만), 'TiDE 최종' → 'TiDE', y축 'MWh / 겨울' → 'MWh',
   그림 안 큰 제목 없음(Figma 칸 제목으로 대신), 변화율은 두 막대 사이 회색 사다리꼴 위에 표시(2026-11-04), 패널 스타일(plot_panel_dm: scientific-kr, 6pt, A-PPTL 색)
-- 자료: 태양추적 = pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400 (case3 E+ 연간)
+- 자료: 태양추적 = projects/04_pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400 (case3 E+ 연간)
         TiDE   = eplus_winter_oracle/runs/winter_tide_{jan,feb,mar,nov,dec} (case3 E+, 월별 조각, 예열 구간은 버림)
   집계 = angles_winter.csv 의 평가 스텝(149일, 하루 = 07시 ~ 다음 날 07시), 수요 = 냉방/3 + 난방/2.5 + 조명
 - 왼쪽 여백 36 pt 는 ② 그래프(plot_panel08_pv.py)와 같게 해서 두 그래프의 y축을 세로로 맞춘다.
-출력: bipv_experiments/mech_week/figures/dm_panel08_winter_bar.svg (+ .png)
-실행: python bipv_experiments/mech_week/plot_panel08_winter.py
+출력: projects/03_bipv_experiments/mech_week/figures/dm_panel08_winter_bar.svg (+ .png)
+실행: python projects/03_bipv_experiments/mech_week/plot_panel08_winter.py
 """
 
 import sys
@@ -20,12 +20,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
-WIN = ROOT / "bipv_mismatch" / "tide_policy" / "eplus_winter_oracle"
-sys.path.insert(0, str(ROOT / "bipv_mismatch" / "explain_surplus_heating"))
+WIN = MISMATCH / "tide_policy" / "eplus_winter_oracle"
+sys.path.insert(0, str(MISMATCH / "explain_surplus_heating"))
 sys.path.insert(0, str(WIN))
 import plot_panel_dm as P  # noqa: E402
 import plot_winter_bar as WB  # noqa: E402
+from shared.paths import MISMATCH, ROOT
 
 P.OUT = HERE / "figures"
 W, H = 200, 112  # pt (오른쪽에 ② 시간 누적(178 pt)을 넣기 위해 386 → 232 → 200 으로 줄임, 2026-11-04)

@@ -1,5 +1,5 @@
 """
-pv_lw_daylight/figures/fig_pv_cell_indoor_temperature_summer_day.py
+projects/04_pv_lw_daylight/figures/fig_pv_cell_indoor_temperature_summer_day.py
 ===================================================================
 TMYx.2011-2025, case2 고정 0° (PV 장파 연동 + 주광 400 lx, 최종 조건) 여름 대표일 하루의
 PV 셀 온도와 2층 남측 실내 온도를 한 축에 그린다. 외기 건구온도는 얇은 점선.
@@ -9,9 +9,9 @@ PV 셀 온도와 2층 남측 실내 온도를 한 축에 그린다. 외기 건�
 - 실내: BIPV_OFFICE_2_S Zone Mean Air Temperature
 - 모두 10분 타임스텝 출력. 외기는 EPW 시간값을 E+가 타임스텝마다 선형 보간한 값
 
-입력: bipv_mismatch/case2_KS_TMYx2011_final/case2_0/{eplusout.sql, pvlw_config.json} (PV 복사 적용)
-      pv_lw_daylight/runs/annual/c2_mm_tmyx2011_base_A00/eplusout.sql (PV 복사 미적용)
-출력: pv_lw_daylight/figures/fig_pv_cell_indoor_temperature_summer_day.{png,svg,csv}
+입력: projects/05_bipv_mismatch/case2_KS_TMYx2011_final/case2_0/{eplusout.sql, pvlw_config.json} (PV 복사 적용)
+      projects/04_pv_lw_daylight/runs/annual/c2_mm_tmyx2011_base_A00/eplusout.sql (PV 복사 미적용)
+출력: projects/04_pv_lw_daylight/figures/fig_pv_cell_indoor_temperature_summer_day.{png,svg,csv}
 사용: python fig_pv_cell_indoor_temperature_summer_day.py [--date 08-02]
 """
 
@@ -25,6 +25,7 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 import pandas as pd
 import dartwork_mpl as dm
+from shared.paths import MISMATCH
 
 mpl.rcParams["svg.fonttype"] = "none"
 dm.style.use("presentation")
@@ -33,7 +34,7 @@ for w in range(100, 1000, 50):  # SVG 내보내기 시 숫자 font weight KeyErr
     fm.weight_dict[str(w)] = w
 
 HERE = Path(__file__).resolve().parent
-RUN = HERE.parent.parent / "bipv_mismatch" / "case2_KS_TMYx2011_final" / "case2_0"
+RUN = MISMATCH / "case2_KS_TMYx2011_final" / "case2_0"
 BASE_RUN = HERE.parent / "runs" / "annual" / "c2_mm_tmyx2011_base_A00"
 OUT = HERE / "fig_pv_cell_indoor_temperature_summer_day"
 

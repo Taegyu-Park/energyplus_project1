@@ -1,13 +1,13 @@
 """
-pv_lw_daylight/figures/fig_lighting_schedule_suntracking_day.py
+projects/04_pv_lw_daylight/figures/fig_lighting_schedule_suntracking_day.py
 ===============================================================
 같은 날, PV 태양고도 추적형(case3) 기준으로 조명 전력을 좌우 비교한다.
   왼쪽: 기존 조명 스케줄 (설계 전력 × 스케줄)
   오른쪽: 실내 조도 400 lx 일정 유지 (주광 연동, Continuous)
 남측 2개 존(BIPV_office_1_S, BIPV_office_2_S) 합계 [W/m²], 10분 해상도.
 
-입력: pv_lw_daylight/runs/annual/c3_FE_ST_lw (기존 스케줄), c3_FE_ST_lw_dl400 (400 lx)
-출력: pv_lw_daylight/figures/fig_lighting_schedule_suntracking_day.{png,svg,csv}
+입력: projects/04_pv_lw_daylight/runs/annual/c3_FE_ST_lw (기존 스케줄), c3_FE_ST_lw_dl400 (400 lx)
+출력: projects/04_pv_lw_daylight/figures/fig_lighting_schedule_suntracking_day.{png,svg,csv}
 사용: python fig_lighting_schedule_suntracking_day.py [--date 04-12]
 """
 
@@ -21,6 +21,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import dartwork_mpl as dm
+from shared.paths import EXPERIMENTS
 
 mpl.rcParams["svg.fonttype"] = "none"
 dm.style.use("presentation")
@@ -30,7 +31,7 @@ for w in range(100, 1000, 50):  # SVG 내보내기 시 숫자 font weight KeyErr
 
 HERE = Path(__file__).resolve().parent
 RUNS = HERE.parent / "runs" / "annual"
-ANGLE_CSV = HERE.parents[1] / "bipv_experiments" / "schedules" / "suntracking_w0s90.csv"  # c3_FE_ST_* 각도 입력
+ANGLE_CSV = EXPERIMENTS / "schedules" / "suntracking_w0s90.csv"  # c3_FE_ST_* 각도 입력
 OUT = HERE / "fig_lighting_schedule_suntracking_day"
 
 ZONES = ("BIPV_OFFICE_1_S", "BIPV_OFFICE_2_S")

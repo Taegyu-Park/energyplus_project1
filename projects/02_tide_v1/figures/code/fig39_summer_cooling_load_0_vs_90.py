@@ -6,6 +6,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT, TIDE_V1
 
 # Setup SVG font settings for Figma editing
 mpl.rcParams['svg.fonttype'] = 'none'
@@ -69,11 +70,11 @@ def get_south_zone_cooling_day_data(sql_path, month, day):
 
 def main():
     script_dir   = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    plot_dir     = os.path.join(project_root, "figure", "plot", "fig39_summer_cooling_load_0_vs_90")
+    project_root = str(ROOT)
+    plot_dir     = os.path.join(TIDE_V1, "figures", "plot", "fig39_summer_cooling_load_0_vs_90")
     os.makedirs(plot_dir, exist_ok=True)
     
-    base_dir = os.path.join(project_root, "case_analysis", "normal", "case2_KS")
+    base_dir = os.path.join(BASELINE_RESULTS, "normal", "case2_KS")
     angles = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
     
     print("Loading simulation datasets for all 10 angles (0° to 90°)...")

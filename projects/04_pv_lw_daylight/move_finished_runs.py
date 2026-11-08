@@ -11,9 +11,10 @@ import shutil
 import subprocess
 import time
 from pathlib import Path
+from shared.paths import EXPERIMENTS
 
 HERE = Path(__file__).resolve().parent
-OLD = HERE.parent / "bipv_experiments" / "pv_lw_daylight" / "runs"
+OLD = EXPERIMENTS / "pv_lw_daylight" / "runs"
 
 
 def group(name: str) -> str:

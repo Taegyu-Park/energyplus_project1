@@ -1,11 +1,11 @@
 """
-bipv_experiments/mech_week/plot_panel07_mech.py
+projects/03_bipv_experiments/mech_week/plot_panel07_mech.py
 ===============================================
 공모전 패널 7번 ① 메커니즘 그래프 (2026-11-05). 1/9, 태양고도 추적 vs TiDE, 같은 x축(0~24시) 4단:
   1) 루버 각도  2) 남측 창 투과 일사  3) 남측 존 바닥 표면 온도(축열)  4) 시간별 부하 변화 (TiDE − 추적: 난방·조명·PV)
 자료: mech_week/runs/{mech_st, mech_tide}. eplus_week_oracle 과 같은 설정·같은 시작일(1/2)이며
       창 투과 일사·표면 온도·표면 열류를 추가로 출력함 (batch.json)
-스타일은 bipv_mismatch/explain_surplus_heating/plot_panel_dm.py 를 가져와 씀 (원본 수정 안 함)
+스타일은 projects/05_bipv_mismatch/explain_surplus_heating/plot_panel_dm.py 를 가져와 씀 (원본 수정 안 함)
 출력: mech_week/figures/dm_panel07_mech_day0109.svg (+ .png)
 """
 
@@ -16,9 +16,10 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parents[1] / "bipv_mismatch" / "explain_surplus_heating"))
+sys.path.insert(0, str(MISMATCH / "explain_surplus_heating"))
 import plot_panel_dm as P  # noqa: E402
 from load_mech import RUNS, load  # noqa: E402
+from shared.paths import MISMATCH
 
 P.OUT = HERE / "figures"
 HEAT, LIGHT = "#be123c", "#64748b"

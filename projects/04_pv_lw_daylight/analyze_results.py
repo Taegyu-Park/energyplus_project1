@@ -1,5 +1,5 @@
 """
-pv_lw_daylight/analyze_results.py
+projects/04_pv_lw_daylight/analyze_results.py
 ==================================================
 PV 복사·주광 연동 조명의 효과를 case2(각도별)·case3(태양추적)에 대해 정리한다.
 
@@ -12,7 +12,7 @@ PV 복사·주광 연동 조명의 효과를 case2(각도별)·case3(태양추�
   * 설정조도 민감도 = lw_dl300, lw_dl600 − base
 - 출력: results/summary_long.csv, results/effects.csv, 화면에 요약표
 
-사용: python pv_lw_daylight/analyze_results.py
+사용: python projects/04_pv_lw_daylight/analyze_results.py
 """
 
 import sqlite3

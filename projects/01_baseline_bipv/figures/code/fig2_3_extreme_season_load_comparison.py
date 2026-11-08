@@ -3,6 +3,7 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT
 plt.rcParams['svg.fonttype'] = 'none'
 
 def parse_case_hourly_loads(csv_path):
@@ -62,12 +63,12 @@ def parse_case_hourly_loads(csv_path):
     return heating_kwh, cooling_kwh
 
 def main():
-    project_root = r"c:\Users\taegyu\Codes\EnergyPlus_Project1"
+    project_root = ROOT
     
     # 1. 파일 경로 및 컬럼 인덱스 설정 (이전 조사 결과 바탕)
-    case1_path = os.path.join(project_root, "case_analysis", "normal", "case1", "case1.csv")
-    case2_path = os.path.join(project_root, "case_analysis", "normal", "case2", "90", "case2_90.csv")
-    case3_path = os.path.join(project_root, "case_analysis", "normal", "case3", "case3.csv")
+    case1_path = os.path.join(BASELINE_RESULTS, "normal", "case1", "case1.csv")
+    case2_path = os.path.join(BASELINE_RESULTS, "normal", "case2", "90", "case2_90.csv")
+    case3_path = os.path.join(BASELINE_RESULTS, "normal", "case3", "case3.csv")
     
     # 8760 시간별 데이터 파싱 (자동 컬럼 매핑 및 타임스텝 누계 처리)
     c1_h, c1_c = parse_case_hourly_loads(case1_path)

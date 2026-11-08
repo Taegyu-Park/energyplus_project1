@@ -1,5 +1,5 @@
 """
-bipv_mismatch/tide_policy/train_tide_oracle.py
+projects/05_bipv_mismatch/tide_policy/train_tide_oracle.py
 ==============================================
 TiDE 각도 정책을 case2 스텝별 최적 각도(오라클)로 지도학습 (2026-11-02 사용자 결정, train_tide_policy.py 는 그대로 둠).
 
@@ -13,7 +13,7 @@ TiDE 각도 정책을 case2 스텝별 최적 각도(오라클)로 지도학습 (
 - 입력·분할·평가는 train_tide_policy.py 와 같음 (train IWEC / val TMYx2004 / test TMYx2011)
 
 출력: tide_policy/out_oracle/{best.pt, scaler.json, history.json, summary.json} (대표 주 각도·E+ 스케줄은 eplus_week_oracle/prepare.py)
-사용: python bipv_mismatch/tide_policy/train_tide_oracle.py --week_split train
+사용: python projects/05_bipv_mismatch/tide_policy/train_tide_oracle.py --week_split train
 """
 
 import argparse

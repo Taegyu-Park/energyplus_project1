@@ -19,10 +19,11 @@ import pandas as pd
 import numpy as np
 import argparse
 from pathlib import Path
+from shared.paths import CASE_IDF, DATA, PLUGINS, ROOT, TIDE_V1_RESULTS
 
-CWD = Path(__file__).resolve().parent
-IDF_PATH = CWD / "case_idf" / "case3_v3_KS" / "case3_v3_south.idf"
-WEATHER_PATH = CWD / "data" / "KOR_Kwangju.471560_IWEC (1).epw"
+CWD = ROOT
+IDF_PATH = CASE_IDF / "case3_v3_KS" / "case3_v3_south.idf"
+WEATHER_PATH = DATA / "KOR_Kwangju.471560_IWEC (1).epw"
 EP_DIR = Path(r"C:\EnergyPlusV25-2-0")
 
 COP_COOLING = 3.0
@@ -30,7 +31,7 @@ COP_HEATING = 2.5
 
 
 def run_simulation(strategy: int = 2):
-    out_dir = CWD / "case_analysis" / f"case3_v3_south_tide_strategy{strategy}"
+    out_dir = TIDE_V1_RESULTS / f"case3_v3_south_tide_strategy{strategy}"
     print("=" * 80)
     print(f"Starting EnergyPlus Case3 South (TiDE AI Strategy {strategy} Controlled BIPV) Annual Simulation")
     print("=" * 80)
@@ -56,6 +57,7 @@ def run_simulation(strategy: int = 2):
     env["PYTHONPATH"] = (
         ep_python_api_path + os.pathsep +
         plugin_search_path + os.pathsep +
+        str(PLUGINS) + os.pathsep +
         str(CWD) + os.pathsep +
         env.get("PYTHONPATH", "")
     )

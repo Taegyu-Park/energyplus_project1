@@ -1,5 +1,5 @@
 """
-bipv_mismatch/explain_surplus_heating/plot_factors.py
+projects/05_bipv_mismatch/explain_surplus_heating/plot_factors.py
 =====================================================
 "잉여 발전 → 난방 부하 저감" 개념 설명용 그림을 요소별로 나눠 그림 (2026-11-03).
 
@@ -11,7 +11,7 @@ bipv_mismatch/explain_surplus_heating/plot_factors.py
 
 하루 = 07시 ~ 다음 날 07시, 수요 = 냉방/3.0 + 난방/2.5 + 조명 (기존과 같음)
 출력: explain_surplus_heating/figures/*.{png,svg}
-실행: python bipv_mismatch/explain_surplus_heating/plot_factors.py
+실행: python projects/05_bipv_mismatch/explain_surplus_heating/plot_factors.py
 """
 
 import sys

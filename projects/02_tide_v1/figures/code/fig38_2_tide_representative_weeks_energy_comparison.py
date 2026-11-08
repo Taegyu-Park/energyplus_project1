@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib.font_manager as fm
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT, TIDE_V1_RESULTS
 
 mpl.rcParams['svg.fonttype'] = 'none'
 dm.style.use("presentation")
@@ -15,15 +16,14 @@ for w in range(100, 1000, 50):
     fm.weight_dict[str(w)] = w
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
+PROJECT_ROOT = ROOT
 PLOT_DIR = SCRIPT_DIR.parent / "plot" / "fig38_2_tide_representative_weeks_energy_comparison"
 PLOT_DIR.mkdir(parents=True, exist_ok=True)
 
-CA = PROJECT_ROOT / "case_analysis"
 SQL_PATHS = {
-    "Kinetic (Sun-Tracking)": CA / "bipv_variation" / "5zone_NSEW_korean" / "case3_v3_south" / "eplusout.sql",
-    "TiDE Strategy 1": CA / "case3_v3_south_tide" / "eplusout.sql",
-    "TiDE Strategy 2": CA / "case3_v3_south_tide_strategy2" / "eplusout.sql",
+    "Kinetic (Sun-Tracking)": BASELINE_RESULTS / "bipv_variation" / "5zone_NSEW_korean" / "case3_v3_south" / "eplusout.sql",
+    "TiDE Strategy 1": TIDE_V1_RESULTS / "case3_v3_south_tide" / "eplusout.sql",
+    "TiDE Strategy 2": TIDE_V1_RESULTS / "case3_v3_south_tide_strategy2" / "eplusout.sql",
 }
 COLORS = {
     "Kinetic (Sun-Tracking)": "#f59e0b",

@@ -1,5 +1,5 @@
 """
-bipv_experiments/mech_week/plot_panel08_day_cum.py
+projects/03_bipv_experiments/mech_week/plot_panel08_day_cum.py
 ==================================================
 공모전 패널 8번 ② 대표일(1/9) 시간에 따른 누적 에너지 (쌓은 면적) (2026-11-04).
 - x = 시각(0~24시), y = 그 시각까지의 누적 kWh. 정책별 작은 그래프 두 개(태양고도 추적 | TiDE), y축 공유
@@ -9,8 +9,8 @@ bipv_experiments/mech_week/plot_panel08_day_cum.py
   · 잉여 = max(PV − 부하, 0)
 - 색은 7번 칸(plot_panel07_mech.py)과 같게: 난방 #be123c, 조명 #64748b, PV(잉여) = TARGET
 - 이전 판 plot_panel08_day_stack.py(하루 합계 막대)는 그대로 둠
-출력: bipv_experiments/mech_week/figures/dm_panel08_day_cum.svg (+ .png)
-실행: python bipv_experiments/mech_week/plot_panel08_day_cum.py
+출력: projects/03_bipv_experiments/mech_week/figures/dm_panel08_day_cum.svg (+ .png)
+실행: python projects/03_bipv_experiments/mech_week/plot_panel08_day_cum.py
 """
 
 import sys
@@ -20,8 +20,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parents[1] / "bipv_mismatch" / "explain_surplus_heating"))
+sys.path.insert(0, str(MISMATCH / "explain_surplus_heating"))
 import plot_panel_dm as P  # noqa: E402
+from shared.paths import MISMATCH
 
 P.OUT = HERE / "figures"
 W, H = 178, 112  # pt (① 겨울 합계 200 pt 오른쪽, 사이 8 pt)

@@ -2,7 +2,7 @@
 build_case2_ks_tide_dataset.py
 ==============================
 Extracts simulation results from 10 discrete BIPV tilt angles (0° to 90°)
-in 'case_analysis/normal/case2_KS/case2_{angle}/eplusout.sql',
+in 'projects/01_baseline_bipv/results/normal/case2_KS/case2_{angle}/eplusout.sql',
 calculates zone heating/cooling electrical loads and PV generation (kWh),
 computes net energy for all angles, derives optimal tilt angle labels,
 and exports a comprehensive, ready-to-train time-series dataset for TiDE / Supervised Learning.
@@ -14,11 +14,12 @@ import time
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from shared.paths import BASELINE_RESULTS, ROOT, TIDE_V1
 
 # ── 1. Configuration & Constants ─────────────────────────────────────────────
-BASE_DIR = Path("C:/Users/taegyu/Codes/energyplus_project1")
-CASE_DIR = BASE_DIR / "case_analysis" / "normal" / "case2_KS"
-OUT_CSV  = BASE_DIR / "ai_model" / "tide" / "data" / "dataset" / "case2_ks_bipv_tide_dataset.csv"
+BASE_DIR = ROOT
+CASE_DIR = BASELINE_RESULTS / "normal" / "case2_KS"
+OUT_CSV  = TIDE_V1 / "data" / "dataset" / "case2_ks_bipv_tide_dataset.csv"
 
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 COP_COOLING = 3.0

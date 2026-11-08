@@ -16,6 +16,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import dartwork_mpl as dm
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 # Save SVGs as vector paths for Illustrator/Figma editability
 plt.rcParams['svg.fonttype'] = 'none'
@@ -58,11 +59,11 @@ def get_incident_solar_val(sun_alt, sun_azi, dn_rad, df_rad, tilt_deg):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    db_path = os.path.join(project_root, "case_analysis", "normal", "case3", "eplusout.sql")
+    project_root = str(ROOT)
+    db_path = os.path.join(BASELINE_RESULTS, "normal", "case3", "eplusout.sql")
     
     script_name = os.path.splitext(os.path.basename(__file__))[0]
-    figure_dir = os.path.normpath(os.path.join(project_root, "figure", "plot", script_name))
+    figure_dir = os.path.normpath(os.path.join(BASELINE, "figures", "plot", script_name))
     os.makedirs(figure_dir, exist_ok=True)
     
     plot_png_path = os.path.join(figure_dir, "pv_efficiency_analysis.png")

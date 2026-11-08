@@ -1,5 +1,5 @@
 """
-bipv_experiments/mech_week/plot_panel07_angle.py
+projects/03_bipv_experiments/mech_week/plot_panel07_angle.py
 ================================================
 공모전 패널 07 "각도 제어의 영향": 태양고도 추적 제어 그래프 옆에 들어갈 1/9 PV 각도 선택 그래프 (2026-11-05).
 - 자료: tide_policy/eplus_week_oracle/angles_week.csv (theta_st = 태양고도 추적, tide = E+ 에 넣은 TiDE 각도, mask = 조절 구간)

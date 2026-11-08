@@ -1,5 +1,5 @@
 """
-bipv_mismatch/explain_surplus_heating/plot_panel06_flow2.py
+projects/05_bipv_mismatch/explain_surplus_heating/plot_panel06_flow2.py
 ===========================================================
 공모전 패널 06번 흐름도 2판(예시형)에 들어갈 미니 그래프 2개 (2026-11-04).
 대표일 1/17, case2 고정 40° 실제 결과 (dataset_final/case2_mm_train.csv).
@@ -10,7 +10,7 @@ bipv_mismatch/explain_surplus_heating/plot_panel06_flow2.py
 PV 발전과 전력 수요는 두 그래프 모두 같은 기준(둘 중 큰 값)으로 나눠, 2)의 선이 1)의 선과 정확히 같은 모양이 되게 함.
 스타일·글자 크기는 plot_panel06_flow.py 와 같음 (4.2pt).
 출력: explain_surplus_heating/figures/dm_panel06_{d_raw,e_extract}.svg (+ .png)
-실행: python bipv_mismatch/explain_surplus_heating/plot_panel06_flow2.py
+실행: python projects/05_bipv_mismatch/explain_surplus_heating/plot_panel06_flow2.py
 """
 
 import matplotlib.pyplot as plt

@@ -3,7 +3,7 @@ build_window_features.py
 ========================
 잉여 구간 각도 제어용 TiDE 데이터 준비 (2026-10-30 사용자 결정).
 
-- 대상: 11~3월 평일, 태양추적(bipv_experiments/schedules/suntracking_w0s90.csv) 기준 잉여 구간
+- 대상: 11~3월 평일, 태양추적(projects/03_bipv_experiments/schedules/suntracking_w0s90.csv) 기준 잉여 구간
   window = PV_θST > L_θST, L = 난방/2.5 + 냉방/3.0 + 조명 (case2 각도별 결과에서 시점마다 θ_ST 열 선택)
   (IWEC 에서 case3 태양추적 연간 결과 잉여 시점의 97%와 일치, case2 기준이 부분집합)
 - 태양추적 경로 열(_st): 실제 운전에서 관측 가능한 값의 대리 (TiDE 과거 입력)
@@ -20,12 +20,12 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from shared.paths import EXPERIMENTS, ROOT
 
 BASE_DIR = Path(__file__).resolve().parent
-ROOT = BASE_DIR.parent
 SRC_DIR = BASE_DIR / "dataset_final"
 OUT_DIR = BASE_DIR / "dataset_open"
-SUNTRACKING = ROOT / "bipv_experiments" / "schedules" / "suntracking_w0s90.csv"
+SUNTRACKING = EXPERIMENTS / "schedules" / "suntracking_w0s90.csv"
 
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 COP_COOLING, COP_HEATING = 3.0, 2.5

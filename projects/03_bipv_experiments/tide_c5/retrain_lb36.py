@@ -9,12 +9,12 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-ROOT = Path(__file__).resolve().parents[2]
-TIDE = ROOT / "ai_model" / "tide"
+TIDE = TIDE_V1
 sys.path.insert(0, str(TIDE))
 from tide_model import TiDEModel
 from train_tide import (ContiguousBlockTiDEDataset, PAST_COV_COLS, FUTURE_COV_COLS,
                         STRATEGY_1_TARGETS, STRATEGY_2_TARGETS, ANGLES, DATA_DIR)
+from shared.paths import ROOT, TIDE_V1
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "results"; OUT.mkdir(exist_ok=True)

@@ -18,7 +18,7 @@ import torch
 from torch.utils.data import DataLoader, TensorDataset
 
 CURRENT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = CURRENT_DIR.parent.parent
+PROJECT_ROOT = ROOT
 if str(CURRENT_DIR) not in sys.path:
     sys.path.append(str(CURRENT_DIR))
 
@@ -30,6 +30,7 @@ from train_tide import (
     CHECKPOINT_DIR,
     DATA_DIR
 )
+from shared.paths import ROOT
 PRED_DIR = CURRENT_DIR / "data" / "predictions"
 PRED_DIR.mkdir(parents=True, exist_ok=True)
 

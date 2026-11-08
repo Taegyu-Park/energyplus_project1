@@ -20,17 +20,18 @@ import matplotlib.ticker as mticker
 import dartwork_mpl as dm
 from openpyxl import load_workbook
 from openpyxl.utils import column_index_from_string
+from shared.paths import BASELINE_RESULTS, ROOT
 
 # Save SVGs as vector paths for Illustrator/Figma editability
 plt.rcParams['svg.fonttype'] = 'none'
 
 # ── Paths ─────────────────────────────────────────────────────────────
 script_dir   = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
+project_root = str(ROOT)
 script_name  = os.path.splitext(os.path.basename(__file__))[0]
 figure_dir   = os.path.normpath(os.path.join(script_dir, "..", "plot", script_name))
 excel_path   = os.path.join(project_root, "economy_analysis.xlsx")
-data_dir     = os.path.join(project_root, "case_analysis", "bipv_variation")
+data_dir     = os.path.join(BASELINE_RESULTS, "bipv_variation")
 os.makedirs(figure_dir, exist_ok=True)
 
 # ── Load PV Generation from CSVs (kWh/yr) ──────────────────────────────

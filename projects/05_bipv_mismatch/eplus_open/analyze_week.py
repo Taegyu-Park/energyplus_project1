@@ -16,12 +16,13 @@ import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from shared.paths import EXPERIMENTS
 
 HERE = Path(__file__).resolve().parent
 MM = HERE.parent
 RUNS = {"태양추적": MM / "eplus_winter" / "runs" / "w_suntracking_wk" / "eplusout.sql",
         "TiDE": HERE / "runs" / "open_m0_wk" / "eplusout.sql"}
-SCHED = {"태양추적": MM.parent / "bipv_experiments" / "schedules" / "suntracking_w0s90.csv",
+SCHED = {"태양추적": EXPERIMENTS / "schedules" / "suntracking_w0s90.csv",
          "TiDE": MM / "schedules" / "open_test_m+0.00.csv"}
 VARS = {"Generator Produced DC Electricity Energy": "pv",
         "Zone Ideal Loads Supply Air Total Cooling Energy": "cool",

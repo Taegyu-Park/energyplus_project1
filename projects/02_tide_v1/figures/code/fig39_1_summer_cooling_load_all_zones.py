@@ -14,6 +14,7 @@ dm.style.use("presentation")
 
 # Patch matplotlib font_manager for SVG export compatibility (resolves numeric font weight KeyError)
 import matplotlib.font_manager as fm
+from shared.paths import BASELINE_RESULTS, ROOT, TIDE_V1
 for w in range(100, 1000, 50):
     fm.weight_dict[w] = w
     fm.weight_dict[str(w)] = w
@@ -68,11 +69,11 @@ def get_all_zones_cooling_day_data(sql_path, month, day):
 
 def main():
     script_dir   = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    plot_dir     = os.path.join(project_root, "figure", "plot", "fig39_1_summer_cooling_load_all_zones")
+    project_root = str(ROOT)
+    plot_dir     = os.path.join(TIDE_V1, "figures", "plot", "fig39_1_summer_cooling_load_all_zones")
     os.makedirs(plot_dir, exist_ok=True)
     
-    base_dir = os.path.join(project_root, "case_analysis", "normal", "case2_KS")
+    base_dir = os.path.join(BASELINE_RESULTS, "normal", "case2_KS")
     angles = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
     
     print("Loading simulation datasets for all 10 angles (0° to 90°) across all zones (Aug 02)...")
@@ -84,7 +85,7 @@ def main():
         
     # Load Kinetic BIPV (Sun-Tracking) Case 3 South Data
     kinetic_sql_p = os.path.join(
-        project_root, "case_analysis", "bipv_variation", "5zone_NSEW_korean", "case3_v3_south", "eplusout.sql"
+        BASELINE_RESULTS, "bipv_variation", "5zone_NSEW_korean", "case3_v3_south", "eplusout.sql"
     )
     print("Loading simulation dataset for Kinetic BIPV (case3_v3_south) across all zones (Aug 02)...")
     df_kinetic = get_all_zones_cooling_day_data(kinetic_sql_p, 8, 2)

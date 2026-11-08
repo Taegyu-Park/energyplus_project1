@@ -3,6 +3,7 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT
 plt.rcParams['svg.fonttype'] = 'none'
 
 def parse_case_annual_totals(csv_path):
@@ -64,14 +65,14 @@ def parse_case_annual_totals(csv_path):
     return heating_kwh, cooling_kwh
 
 def main():
-    project_root = r"c:\Users\taegyu\Codes\EnergyPlus_Project1"
+    project_root = ROOT
     
     cases = []
     heating = []
     cooling = []
     
     # 1. Case 1 (No Shade)
-    c1_path = os.path.join(project_root, "case_analysis","normal", "case1", "case1.csv")
+    c1_path = os.path.join(BASELINE_RESULTS, "normal", "case1", "case1.csv")
     h1, c1 = parse_case_annual_totals(c1_path)
     if h1 is not None:
         cases.append('Case 1\n(No Shade)')
@@ -81,7 +82,7 @@ def main():
     # 2. Case 2 (Fixed Angles 0 to 90)
     for angle in range(0, 100, 10):
         folder_name = f"{angle}_v2" if angle == 0 else f"{angle}"
-        c2_path = os.path.join(project_root, "case_analysis", "normal", "case2", folder_name, f"case2_{angle}.csv")
+        c2_path = os.path.join(BASELINE_RESULTS, "normal", "case2", folder_name, f"case2_{angle}.csv")
         h2, c2 = parse_case_annual_totals(c2_path)
         if h2 is not None:
             cases.append(f'Fixed-{angle}°')
@@ -89,7 +90,7 @@ def main():
             cooling.append(c2)
             
     # 3. Case 3 (Kinetic)
-    c3_path = os.path.join(project_root, "case_analysis", "normal", "case3", "case3.csv")
+    c3_path = os.path.join(BASELINE_RESULTS, "normal", "case3", "case3.csv")
     h3, c3 = parse_case_annual_totals(c3_path)
     if h3 is not None:
         cases.append('Case 3\n(Kinetic)')

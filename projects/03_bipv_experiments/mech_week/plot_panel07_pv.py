@@ -1,12 +1,12 @@
 """
-bipv_experiments/mech_week/plot_panel07_pv.py
+projects/03_bipv_experiments/mech_week/plot_panel07_pv.py
 =============================================
 공모전 패널 7번의 기존 ① 그래프(dm_panel07a)에서 위쪽 각도 칸을 뺀 판. PV 발전·전력 수요만 그린다 (2026-11-05).
-자료와 스타일은 bipv_mismatch/explain_surplus_heating/plot_panel_dm.py 의 panel07a 와 같다. 원본 파일은 수정하지 않고 함수만 가져온다.
-- 태양고도 추적: pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400
-- TiDE: bipv_mismatch/tide_policy/eplus_week_oracle/runs/week_tide_oracle
-출력: bipv_experiments/mech_week/figures/dm_panel07_pv_day0109.svg (+ .png)
-실행: python bipv_experiments/mech_week/plot_panel07_pv.py
+자료와 스타일은 projects/05_bipv_mismatch/explain_surplus_heating/plot_panel_dm.py 의 panel07a 와 같다. 원본 파일은 수정하지 않고 함수만 가져온다.
+- 태양고도 추적: projects/04_pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400
+- TiDE: projects/05_bipv_mismatch/tide_policy/eplus_week_oracle/runs/week_tide_oracle
+출력: projects/03_bipv_experiments/mech_week/figures/dm_panel07_pv_day0109.svg (+ .png)
+실행: python projects/03_bipv_experiments/mech_week/plot_panel07_pv.py
 """
 
 import sys
@@ -15,8 +15,9 @@ from pathlib import Path
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parents[1] / "bipv_mismatch" / "explain_surplus_heating"))
+sys.path.insert(0, str(MISMATCH / "explain_surplus_heating"))
 import plot_panel_dm as P  # noqa: E402
+from shared.paths import MISMATCH
 
 P.OUT = HERE / "figures"
 

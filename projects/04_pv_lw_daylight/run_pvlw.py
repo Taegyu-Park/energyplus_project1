@@ -1,16 +1,16 @@
 """
-pv_lw_daylight/run_pvlw.py
+projects/04_pv_lw_daylight/run_pvlw.py
 ===========================================
 PV 장파복사 연동 + 남측 주광 연동 조명 제어를 case2(고정각)·case3(각도 제어) IDF에 적용해 실행한다.
 (plan_pv_facade_longwave_coupling.md 구현, 기존 파일은 수정하지 않음)
 
-- IDF 설정 변경(그림자 갱신, 하늘 확산, 일사 분배, 용량 고정, RunPeriod)은 bipv_experiments/runner.prepare_idf 를 재사용
+- IDF 설정 변경(그림자 갱신, 하늘 확산, 일사 분배, 용량 고정, RunPeriod)은 projects/03_bipv_experiments/runner.prepare_idf 를 재사용
 - 그 위에 patch_idf() 로 다음을 추가
   * lw:       남측 창·외벽 4면에 SurfaceProperty:SurroundingSurfaces/LocalEnvironment + 온도 스케줄,
               PythonPlugin(case2: pv_lw_plugin.PVLongwaveFixedPlugin, case3: bipv_schedule_lw_plugin)
   * daylight: BIPV_office_{1,2}_S 에 Daylighting:ReferencePoint/Controls (SplitFlux, 설정조도 lx)
   * 검증용 출력 변수
-- 결과: pv_lw_daylight/runs/<group>/<name>/ (group: tests | daylight_table | annual, summary.json 포함)
+- 결과: projects/04_pv_lw_daylight/runs/<group>/<name>/ (group: tests | daylight_table | annual, summary.json 포함)
 
 배치 JSON job 필드:
   name, group("tests"|"daylight_table"|"annual"), case("case2"|"case3"), idf, schedule(case3), angle(case2),
@@ -19,9 +19,9 @@ PV 장파복사 연동 + 남측 주광 연동 조명 제어를 case2(고정각)�
   lw_test_temp(고정 온도 C, 검증용), lw_vf_zero(bool, 뷰팩터 0 검증용),
   pv_simple(bool, PV 결과가 필요 없는 주광 표 실행용), pv_bandgap(예: 1.25), economizer(예: "DifferentialEnthalpy"), weather(EPW 경로), start("MM-DD"), days, sky_diffuse, shadow_timestep, solar_distribution, ideal_sizing_from, subs([[정규식, 치환]]), extra_outputs([변수명], 진단용),
   out_dir(결과 폴더, 루트 기준 상대경로 — 지정 시 runs/<group>/<name> 대신 사용),
-  mismatch_outputs(bool, case2: bipv_mismatch/run_case2_sim.py 의 데이터셋용 출력 변수 추가)
+  mismatch_outputs(bool, case2: projects/05_bipv_mismatch/run_case2_sim.py 의 데이터셋용 출력 변수 추가)
 
-사용: python pv_lw_daylight/run_pvlw.py --batch <json> --jobs 10
+사용: python projects/04_pv_lw_daylight/run_pvlw.py --batch <json> --jobs 10
 """
 
 import argparse
@@ -39,12 +39,13 @@ from pathlib import Path
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-CWD = HERE.parent
-EXP_DIR = CWD / "bipv_experiments"  # runner.py, bipv_schedule_plugin.py, case3 IDF
+CWD = ROOT
+EXP_DIR = EXPERIMENTS  # runner.py, bipv_schedule_plugin.py, case3 IDF
 sys.path.insert(0, str(EXP_DIR))
 sys.path.insert(0, str(HERE))
-import runner  # noqa: E402  (bipv_experiments/runner.py)
+import runner  # noqa: E402  (projects/03_bipv_experiments/runner.py)
 from compute_view_factors import parse_polygons  # noqa: E402
+from shared.paths import EXPERIMENTS, MISMATCH, ROOT
 
 RUNS_ROOT = HERE / "runs"  # tests/ daylight_table/ annual/
 VF_CSV = HERE / "view_factors.csv"
@@ -204,7 +205,7 @@ def run_job(j: dict) -> dict:
         j.get("solar_distribution"), (CWD / j["ideal_sizing_from"]) if j.get("ideal_sizing_from") else None,
         j.get("pv_simple", False))
     text = idf_copy.read_text(encoding="utf-8")
-    if j.get("pv_bandgap"):  # One-Diode Eg 보정 (bipv_mismatch/run_case2_sim.py 와 동일, 1.25 → Rs 양수)
+    if j.get("pv_bandgap"):  # One-Diode Eg 보정 (projects/05_bipv_mismatch/run_case2_sim.py 와 동일, 1.25 → Rs 양수)
         text, n = re.subn(r"\b1\.12(,\s*!- Semiconductor Bandgap)", rf"{j['pv_bandgap']}\g<1>", text)
         if n != 1:
             raise RuntimeError(f"{name}: Semiconductor Bandgap 치환 실패 ({n})")
@@ -239,7 +240,7 @@ def run_job(j: dict) -> dict:
     if j.get("mismatch_outputs"):  # TiDE 데이터셋(build_dataset.py)용 출력 — run_case2_sim.py 와 같은 목록
         if case != "case2":
             raise RuntimeError(f"{name}: mismatch_outputs 는 case2 전용")
-        sys.path.insert(0, str(CWD / "bipv_mismatch"))
+        sys.path.insert(0, str(MISMATCH))
         from run_case2_sim import extra_outputs as mismatch_extra_outputs
         text += mismatch_extra_outputs(text, fixed)
     idf_copy.write_text(text, encoding="utf-8")

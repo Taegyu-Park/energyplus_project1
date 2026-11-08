@@ -36,14 +36,14 @@ import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
 
 BASE_DIR = Path(__file__).resolve().parent
-ROOT = BASE_DIR.parent
-sys.path.append(str(ROOT / "ai_model" / "tide"))
+sys.path.append(str(TIDE_V1))
 from tide_model import ResidualBlock, TiDEModel  # noqa: E402
+from shared.paths import EXPERIMENTS, ROOT, TIDE_V1
 
 DATA_DIR = BASE_DIR / "dataset_open"
 CKPT_DIR = BASE_DIR / "checkpoints"
 SCHED_DIR = BASE_DIR / "schedules"
-SUNTRACKING = ROOT / "bipv_experiments" / "schedules" / "suntracking_w0s90.csv"
+SUNTRACKING = EXPERIMENTS / "schedules" / "suntracking_w0s90.csv"
 
 ANGLES = np.array([0, 10, 20, 30, 40, 50, 60, 70, 80, 90])
 NA = len(ANGLES)

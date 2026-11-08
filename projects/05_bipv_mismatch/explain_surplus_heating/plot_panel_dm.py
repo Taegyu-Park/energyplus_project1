@@ -1,5 +1,5 @@
 """
-bipv_mismatch/explain_surplus_heating/plot_panel_dm.py
+projects/05_bipv_mismatch/explain_surplus_heating/plot_panel_dm.py
 ======================================================
 공모전 패널(Figma 26건물에너지시뮬레이션, Document 1660:938)에 넣는 그림 전부를 dartwork-mpl 논문 스타일로 (2026-11-03).
 
@@ -34,9 +34,9 @@ bipv_mismatch/explain_surplus_heating/plot_panel_dm.py
 5) dm_panel07c_day0109_ledger  : 1/9 하루 변화 폭포 그래프 (TiDE − 태양고도 추적)
 6) dm_panel07d_weekdays        : 평일 1/9~1/13 날짜별 잉여·부족, 태양고도 추적 vs TiDE
 
-자료: IWEC EPW(data/KOR_Kwangju.471560_IWEC (1).epw), case3 E+ (태양추적 pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400,
+자료: IWEC EPW(shared/data/KOR_Kwangju.471560_IWEC (1).epw), case3 E+ (태양추적 projects/04_pv_lw_daylight/runs/annual/c3_FE_ST_lw_dl400,
       TiDE tide_policy/eplus_week_oracle/runs/week_tide_oracle, 날짜별 합 eplus_week_oracle/results_daily.csv)
-실행: python bipv_mismatch/explain_surplus_heating/plot_panel_dm.py
+실행: python projects/05_bipv_mismatch/explain_surplus_heating/plot_panel_dm.py
 """
 
 import re
@@ -53,14 +53,14 @@ from matplotlib.ticker import FuncFormatter
 
 HERE = Path(__file__).resolve().parent
 BM = HERE.parent
-ROOT = BM.parent
 sys.path.insert(0, str(BM / "tide_policy" / "eplus_week"))
 from analyze import RUNS, load  # noqa: E402
 
 sys.path.insert(0, str(BM / "eplus_jan13"))
 from plot_day import flatten_svg  # noqa: E402
+from shared.paths import DATA, ROOT
 
-EPW = ROOT / "data" / "KOR_Kwangju.471560_IWEC (1).epw"
+EPW = DATA / "KOR_Kwangju.471560_IWEC (1).epw"
 TIDE = BM / "tide_policy" / "eplus_week_oracle" / "runs" / "week_tide_oracle" / "eplusout.sql"
 ANGLES = BM / "tide_policy" / "eplus_week_oracle" / "angles_week.csv"
 DAILY = BM / "tide_policy" / "eplus_week_oracle" / "results_daily.csv"

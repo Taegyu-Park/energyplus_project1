@@ -4,19 +4,20 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from shared.paths import BASELINE_RESULTS, CASE_IDF, DATA, PLUGINS, ROOT
 
 # -------------------------------------------------------------
 # 설정 및 경로 정의
 # -------------------------------------------------------------
-CWD = Path(r"c:\Users\taegyu\Codes\energyplus_project1")
-IDF_PATH = CWD / "case_idf" / "case3_v3.idf"
-PLUGIN_PATH = CWD / "model_pythonpluginsystem.py"
-WEATHER_PATH = CWD / "data" / "KOR_Kwangju.471560_IWEC (1).epw"
-OUT_ROOT_DIR = CWD / "case_analysis"
+CWD = ROOT
+IDF_PATH = CASE_IDF / "case3_v3.idf"
+PLUGIN_PATH = PLUGINS / "model_pythonpluginsystem.py"
+WEATHER_PATH = DATA / "KOR_Kwangju.471560_IWEC (1).epw"
+OUT_ROOT_DIR = BASELINE_RESULTS
 
 # 백업 경로
-IDF_BACKUP = CWD / "case_idf" / "case3_v3.idf.bak"
-PLUGIN_BACKUP = CWD / "model_pythonpluginsystem.py.bak"
+IDF_BACKUP = CASE_IDF / "case3_v3.idf.bak"
+PLUGIN_BACKUP = PLUGINS / "model_pythonpluginsystem.py.bak"
 
 # 색상별 성능 사양 정의
 COLOR_SPECS = {
@@ -173,7 +174,7 @@ def run_simulation(color, ep_dir):
     # EnergyPlus Python API를 찾을 수 있도록 PYTHONPATH 환경 변수 구성
     env = os.environ.copy()
     ep_python_api_path = str(ep_dir / "api" / "python")
-    env["PYTHONPATH"] = ep_python_api_path + os.pathsep + env.get("PYTHONPATH", "")
+    env["PYTHONPATH"] = ep_python_api_path + os.pathsep + str(PLUGINS) + os.pathsep + env.get("PYTHONPATH", "")
 
     print(f"\n[{color.upper()}] 시뮬레이션 프로세스 구동 중...")
     print(f"  출력 디렉토리: {out_dir}")
@@ -265,8 +266,8 @@ def main():
         print("="*60)
         
         # 글로벌 경로 동적 업데이트
-        IDF_PATH = CWD / "case_idf" / f"case3_v3_{direction}.idf"
-        IDF_BACKUP = CWD / "case_idf" / f"case3_v3_{direction}.idf.bak"
+        IDF_PATH = CASE_IDF / f"case3_v3_{direction}.idf"
+        IDF_BACKUP = CASE_IDF / f"case3_v3_{direction}.idf.bak"
         
         if not IDF_PATH.exists():
             print(f"ERROR: {IDF_PATH} 파일이 존재하지 않습니다. 생략합니다.")

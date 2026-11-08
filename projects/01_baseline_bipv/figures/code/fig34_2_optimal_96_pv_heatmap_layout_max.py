@@ -13,19 +13,20 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 from matplotlib.colors import LinearSegmentedColormap
 import dartwork_mpl as dm
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(os.path.dirname(script_dir))
+    project_root = str(ROOT)
     
     script_name = os.path.splitext(os.path.basename(__file__))[0]
-    figure_dir = os.path.normpath(os.path.join(project_root, "figure", "plot", script_name))
+    figure_dir = os.path.normpath(os.path.join(BASELINE, "figures", "plot", script_name))
     os.makedirs(figure_dir, exist_ok=True)
     
     plot_png_path = os.path.join(figure_dir, f"{script_name}.png")
     plot_svg_path = os.path.join(figure_dir, f"{script_name}.svg")
 
-    db_path = os.path.join(project_root, "case_analysis", "bipv_variation", "5zone_NSEW_korean", "case3_v3_max", "eplusout.sql")
+    db_path = os.path.join(BASELINE_RESULTS, "bipv_variation", "5zone_NSEW_korean", "case3_v3_max", "eplusout.sql")
     if not os.path.exists(db_path):
         print(f"Error: SQL database file not found at '{db_path}'")
         return

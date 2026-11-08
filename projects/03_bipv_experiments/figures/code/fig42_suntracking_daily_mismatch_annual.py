@@ -1,6 +1,6 @@
 """fig42: annual daily generation-demand mismatch of case3 sun-tracking BIPV (weekdays only).
 
-Data (One-Diode, final run c3_FE_suntracking_od): bipv_experiments/analysis/c3_net_timeseries_onediode.csv
+Data (One-Diode, final run c3_FE_suntracking_od): projects/03_bipv_experiments/analysis/c3_net_timeseries_onediode.csv
 Weekday follows the simulation calendar (eplusout.sql Time.DayType; Jan 1 = Sunday).
 Demand = cooling/3.0 + heating/2.5 (HVAC electricity, ideal loads)  [kWh]
 Per 10-min step: surplus = max(PV - demand, 0), deficit = max(demand - PV, 0); summed per day.
@@ -25,13 +25,14 @@ for w in range(100, 1000, 50):
     fm.weight_dict[str(w)] = w
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
+PROJECT_ROOT = ROOT
 PLOT_DIR = SCRIPT_DIR.parent / "plot" / "fig42_suntracking_daily_mismatch_annual"
 PLOT_DIR.mkdir(parents=True, exist_ok=True)
-EXP = PROJECT_ROOT / "bipv_experiments"
+EXP = EXPERIMENTS
 RUN_SQL = EXP / "runs" / "c3_FE_suntracking_od" / "eplusout.sql"
 sys.path.insert(0, str(EXP / "analysis"))
 from sql_extract import COP_COOLING, COP_HEATING  # noqa: E402
+from shared.paths import EXPERIMENTS, ROOT
 
 C_SURPLUS = "#10b981"  # PV > demand (export)
 C_DEFICIT = "#dc2626"  # demand > PV (grid purchase)

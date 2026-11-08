@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT
 
 plt.rcParams['svg.fonttype'] = 'none'
 
@@ -80,10 +81,10 @@ def get_monthly_details(db_path):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
+    project_root = str(ROOT)
     
     # 1. Load Case 3 Monthly Data
-    case3_db = os.path.join(project_root, "case_analysis", "normal", "case3", "eplusout.sql")
+    case3_db = os.path.join(BASELINE_RESULTS, "normal", "case3", "eplusout.sql")
     print("Loading Case 3 data...")
     c3_monthly = get_monthly_details(case3_db)
     
@@ -92,7 +93,7 @@ def main():
     c2_monthly_by_angle = {}
     for angle in angles:
         print(f"Loading Case 2 - {angle}° data...")
-        db_path = os.path.join(project_root, "case_analysis", "normal", "case2", f"{angle}", "eplusout.sql")
+        db_path = os.path.join(BASELINE_RESULTS, "normal", "case2", f"{angle}", "eplusout.sql")
         res = get_monthly_details(db_path)
         if res is not None:
             c2_monthly_by_angle[angle] = res

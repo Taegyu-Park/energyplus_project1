@@ -18,7 +18,7 @@ from openpyxl.utils import column_index_from_string
 
 # ── 경로 ─────────────────────────────────────────────────────────────
 script_dir   = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
+project_root = str(ROOT)
 figure_dir   = os.path.normpath(os.path.join(script_dir, "LLC_dcf"))
 excel_path   = os.path.join(project_root, "economy_analysis.xlsx")
 os.makedirs(figure_dir, exist_ok=True)
@@ -112,6 +112,7 @@ print(f"[Case 3    ] PV={PV3_kwh:.0f}kWh  "
 
 # ── 플롯 ─────────────────────────────────────────────────────────────
 import matplotlib.cm as cm
+from shared.paths import ROOT
 dm.style.use("presentation")
 plt.rcParams.update({"xtick.labelsize": 12, "ytick.labelsize": 12})
 

@@ -1,5 +1,5 @@
 """
-bipv_experiments/mech_week/plot_panel08_winter_cum.py
+projects/03_bipv_experiments/mech_week/plot_panel08_winter_cum.py
 =====================================================
 공모전 패널 8번 ② 겨울철 전체(11~3월, 149일) '오후 부하 저감' 누적 (2026-11-04).
 - 2026-11-04 수정: 실제 부족 전력 차 점선은 빼고 오후 수요 감소(③ 청록 면)만 표시, 범례 없음(제목으로 대신)
@@ -10,8 +10,8 @@ bipv_experiments/mech_week/plot_panel08_winter_cum.py
 - 같은 구간의 실제 부족 전력 차(부족·태양추적 − 부족·TiDE)도 같이 출력한다(그림에는 점선으로 표시).
 - 자료: 태양추적 = c3_FE_ST_lw_dl400 (case3 E+ 연간), TiDE = eplus_winter_oracle/runs/winter_tide_* (월별 조각)
   하루 = 07시 ~ 다음 날 07시 (plot_winter_bar.py 와 같은 평가 스텝)
-출력: bipv_experiments/mech_week/figures/dm_panel08_winter_cum.svg (+ .png)
-실행: python bipv_experiments/mech_week/plot_panel08_winter_cum.py
+출력: projects/03_bipv_experiments/mech_week/figures/dm_panel08_winter_cum.svg (+ .png)
+실행: python projects/03_bipv_experiments/mech_week/plot_panel08_winter_cum.py
 """
 
 import sys
@@ -22,12 +22,12 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
-WIN = ROOT / "bipv_mismatch" / "tide_policy" / "eplus_winter_oracle"
-sys.path.insert(0, str(ROOT / "bipv_mismatch" / "explain_surplus_heating"))
+WIN = MISMATCH / "tide_policy" / "eplus_winter_oracle"
+sys.path.insert(0, str(MISMATCH / "explain_surplus_heating"))
 sys.path.insert(0, str(WIN))
 import plot_panel_dm as P  # noqa: E402
 import plot_winter_bar as WB  # noqa: E402
+from shared.paths import MISMATCH, ROOT
 
 P.OUT = HERE / "figures"
 W, H = 178, 112  # pt (① 겨울 합계 200 pt 오른쪽)

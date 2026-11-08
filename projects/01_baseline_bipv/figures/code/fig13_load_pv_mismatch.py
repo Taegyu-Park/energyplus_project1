@@ -10,13 +10,14 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib as mpl
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT
 mpl.rcParams['svg.fonttype'] = 'none'
 
 def main():
     # ── 경로 설정 ────────────────────────────────────────────────────────
     script_dir   = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    case3_csv    = os.path.join(project_root, "case_analysis", "normal", "case3", "case3.csv")
+    project_root = str(ROOT)
+    case3_csv    = os.path.join(BASELINE_RESULTS, "normal", "case3", "case3.csv")
     
     if not os.path.exists(case3_csv):
         raise FileNotFoundError(f"Case 3 CSV file not found: {case3_csv}")

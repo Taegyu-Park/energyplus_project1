@@ -3,6 +3,7 @@ import sqlite3
 
 import dartwork_mpl as dm
 import matplotlib.pyplot as plt
+from shared.paths import BASELINE_RESULTS, ROOT
 
 plt.rcParams["svg.fonttype"] = "none"
 
@@ -49,13 +50,12 @@ def add_case(cases, heating, cooling, label, sql_path):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
+    project_root = str(ROOT)
 
-    case1_sql = os.path.join(project_root, "case_analysis", "normal", "case1_KS", "eplusout.sql")
-    case2_base = os.path.join(project_root, "case_analysis", "normal", "case2_KS")
+    case1_sql = os.path.join(BASELINE_RESULTS, "normal", "case1_KS", "eplusout.sql")
+    case2_base = os.path.join(BASELINE_RESULTS, "normal", "case2_KS")
     case3_sql = os.path.join(
-        project_root,
-        "case_analysis",
+        BASELINE_RESULTS,
         "bipv_variation",
         "5zone_NSEW_korean",
         "case3_v3_south",

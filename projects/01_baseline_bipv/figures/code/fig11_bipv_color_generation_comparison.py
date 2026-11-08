@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS, ROOT
 plt.rcParams['svg.fonttype'] = 'none'
 
 def load_monthly_generation_mwh(file_path):
@@ -35,8 +36,8 @@ def load_monthly_generation_mwh(file_path):
 def main():
     # ── 경로 설정 ────────────────────────────────────────────────────────
     script_dir   = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    data_dir     = os.path.join(project_root, "case_analysis", "bipv_variation")
+    project_root = str(ROOT)
+    data_dir     = os.path.join(BASELINE_RESULTS, "bipv_variation")
     
     # ── 데이터 로드 ───────────────────────────────────────────────────────
     cases = {

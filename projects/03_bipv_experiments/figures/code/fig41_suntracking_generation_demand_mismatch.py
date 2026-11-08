@@ -1,7 +1,7 @@
 """fig41: case3 sun-tracking BIPV -- hourly generation vs HVAC electricity demand on extreme days.
 
 Resolution: native 10-min timestep (kWh per 10 min, no hourly aggregation)
-Data (One-Diode, final run c3_FE_suntracking_od): bipv_experiments/analysis/c3_net_timeseries_onediode.csv
+Data (One-Diode, final run c3_FE_suntracking_od): projects/03_bipv_experiments/analysis/c3_net_timeseries_onediode.csv
 Demand = cooling/3.0 + heating/2.5 (HVAC electricity, ideal loads)  [kWh]
 Representative days = lowest / highest daily-mean outdoor temperature among weekdays
   winter: 01/13 (mean -6.2 C), summer: 08/08 (mean 29.0 C)
@@ -24,12 +24,13 @@ for w in range(100, 1000, 50):
     fm.weight_dict[str(w)] = w
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
+PROJECT_ROOT = ROOT
 PLOT_DIR = SCRIPT_DIR.parent / "plot" / "fig41_suntracking_generation_demand_mismatch"
 PLOT_DIR.mkdir(parents=True, exist_ok=True)
-EXP = PROJECT_ROOT / "bipv_experiments"
+EXP = EXPERIMENTS
 sys.path.insert(0, str(EXP / "analysis"))
 from sql_extract import COP_COOLING, COP_HEATING  # noqa: E402
+from shared.paths import EXPERIMENTS, ROOT
 
 C_PV = "#f59e0b"       # PV generation (Amber)
 C_DEM = "#1e293b"      # HVAC demand (Slate)

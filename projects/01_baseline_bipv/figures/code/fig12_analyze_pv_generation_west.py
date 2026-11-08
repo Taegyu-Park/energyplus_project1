@@ -14,17 +14,18 @@ import sqlite3
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(os.path.dirname(script_dir))
+    project_root = str(ROOT)
     
     db_path = os.path.normpath(os.path.join(
-        project_root, "case_analysis", "bipv_variation", "5zone_NSEW_korean", "case3_v3_west", "eplusout.sql"
+        BASELINE_RESULTS, "bipv_variation", "5zone_NSEW_korean", "case3_v3_west", "eplusout.sql"
     ))
     
     script_name = os.path.splitext(os.path.basename(__file__))[0]
-    figure_dir = os.path.normpath(os.path.join(project_root, "figure", "plot", script_name))
+    figure_dir = os.path.normpath(os.path.join(BASELINE, "figures", "plot", script_name))
     os.makedirs(figure_dir, exist_ok=True)
     
     plot_png_path = os.path.join(figure_dir, f"{script_name}.png")

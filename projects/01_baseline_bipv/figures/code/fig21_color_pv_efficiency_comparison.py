@@ -18,6 +18,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import dartwork_mpl as dm
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 # Save SVGs as vector paths for Illustrator/Figma editability
 plt.rcParams['svg.fonttype'] = 'none'
@@ -107,12 +108,12 @@ def load_and_calculate_efficiency(file_path):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.normpath(os.path.join(script_dir, "..", ".."))
-    data_dir = os.path.join(project_root, "case_analysis", "bipv_variation")
+    project_root = str(ROOT)
+    data_dir = os.path.join(BASELINE_RESULTS, "bipv_variation")
     
     # Figure directory (named matching script filename)
     script_name = os.path.splitext(os.path.basename(__file__))[0]
-    figure_dir = os.path.normpath(os.path.join(project_root, "figure", "plot", script_name))
+    figure_dir = os.path.normpath(os.path.join(BASELINE, "figures", "plot", script_name))
     os.makedirs(figure_dir, exist_ok=True)
     
     # Artifact directory for embedding in the response

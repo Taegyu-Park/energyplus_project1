@@ -1,5 +1,5 @@
 """
-bipv_mismatch/explain_surplus_heating/plot_panel_layout2.py
+projects/05_bipv_mismatch/explain_surplus_heating/plot_panel_layout2.py
 ===========================================================
 공모전 패널(Figma 26건물에너지시뮬레이션, Document 1660:938) 2차 배치용 그림, 글자 6pt (2026-11-03).
 색은 A-PPTL 토큰 값 (plot_panel_apptl.py 와 같음).
@@ -11,9 +11,9 @@ bipv_mismatch/explain_surplus_heating/plot_panel_layout2.py
 5) panel07c_day0109_ledger  : 1/9 하루 변화 폭포 그래프 (TiDE − 태양추적): PV 감소 중 자가소비분 → 난방 → 조명 → 구매 전력
 6) panel07d_weekdays        : 평일 1/9~1/13 날짜별 잉여·부족, 태양추적 vs TiDE (eplus_week_oracle/results_daily.csv)
 
-자료: IWEC EPW(data/KOR_Kwangju.471560_IWEC (1).epw), case3 E+ (태양추적 c3_FE_ST_lw_dl400, TiDE eplus_week_oracle/week_tide_oracle)
+자료: IWEC EPW(shared/data/KOR_Kwangju.471560_IWEC (1).epw), case3 E+ (태양추적 c3_FE_ST_lw_dl400, TiDE eplus_week_oracle/week_tide_oracle)
 출력: explain_surplus_heating/figures/*.{png,svg}
-실행: python bipv_mismatch/explain_surplus_heating/plot_panel_layout2.py
+실행: python projects/05_bipv_mismatch/explain_surplus_heating/plot_panel_layout2.py
 """
 
 import sys
@@ -28,13 +28,13 @@ from matplotlib.ticker import FuncFormatter
 
 HERE = Path(__file__).resolve().parent
 BM = HERE.parent
-ROOT = BM.parent
 sys.path.insert(0, str(BM / "tide_policy" / "eplus_week"))
 from analyze import RUNS, load  # noqa: E402
 
 import plot_panel_apptl as A  # noqa: E402  (색 상수, hour_axis, save)
+from shared.paths import DATA, ROOT
 
-EPW = ROOT / "data" / "KOR_Kwangju.471560_IWEC (1).epw"
+EPW = DATA / "KOR_Kwangju.471560_IWEC (1).epw"
 TIDE = A.TIDE
 ANGLES = BM / "tide_policy" / "eplus_week_oracle" / "angles_week.csv"
 DAY, STEP = A.DAY, A.STEP

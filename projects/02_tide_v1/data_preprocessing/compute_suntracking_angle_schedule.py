@@ -9,17 +9,18 @@ EnergyPlus 시뮬레이션을 돌리지 않고 순수 Python으로 재현한다.
 사용하며, 이는 EnergyPlus WeatherManager의 태양 위치 계산과 동일 계열의 방법이라
 10도 단위 버킷팅 정확도(<0.5도 오차) 수준에서 실질적으로 동일한 결과를 낸다.
 
-Output: data/bipv_suntracking_angles_annual.csv (timestamp, sun_altitude, optimal_angle)
+Output: shared/data/bipv_suntracking_angles_annual.csv (timestamp, sun_altitude, optimal_angle)
 """
 
 import math
 import csv
 from pathlib import Path
 from datetime import datetime, timedelta
+from shared.paths import DATA, ROOT
 
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-EPW_PATH = PROJECT_ROOT / "data" / "KOR_Kwangju.471560_IWEC (1).epw"
-OUT_PATH = PROJECT_ROOT / "data" / "bipv_suntracking_angles_annual.csv"
+PROJECT_ROOT = ROOT
+EPW_PATH = DATA / "KOR_Kwangju.471560_IWEC (1).epw"
+OUT_PATH = DATA / "bipv_suntracking_angles_annual.csv"
 
 ANGLES = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 LABEL_YEAR = 2026  # data/bipv_optimal_angles_annual.csv 와 동일한 라벨 연도 (물리량엔 무관, 둘 다 평년)

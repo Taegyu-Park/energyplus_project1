@@ -12,15 +12,16 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import numpy as np
 import pandas as pd
+from shared.paths import BASELINE, BASELINE_RESULTS, ROOT
 
 plt.rcParams['svg.fonttype'] = 'none'
 
 dm.style.use("presentation")
 plt.rcParams.update({"xtick.labelsize": 12, "ytick.labelsize": 12})
 
-BASE = Path("C:/Users/taegyu/Codes/EnergyPlus_Project1")
-RUN  = BASE / "case_analysis/normal"
-OUT  = BASE / "figure/net_energy_analysis"
+BASE = ROOT
+RUN  = BASELINE_RESULTS / "normal"
+OUT  = BASELINE / "figures" / "net_energy_analysis"
 
 C_HEAT     = "oc.blue6"
 C_PV_GREEN = "oc.green6"

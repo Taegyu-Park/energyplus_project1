@@ -1,8 +1,8 @@
 """
-bipv_experiments/analysis/sql_extract.py
+projects/03_bipv_experiments/analysis/sql_extract.py
 ========================================
 EnergyPlus eplusout.sql 에서 timestep(10분) 단위 기상·부하·PV 를 추출하는 공용 함수.
-(ai_model/tide/data_preprocessing/build_case2_ks_tide_dataset.py 의 추출 로직과 동일한 정의)
+(projects/02_tide_v1/data_preprocessing/build_case2_ks_tide_dataset.py 의 추출 로직과 동일한 정의)
 
 net_energy = cooling/3.0 + heating/2.5 - PV  (kWh, zone 합계)
 """

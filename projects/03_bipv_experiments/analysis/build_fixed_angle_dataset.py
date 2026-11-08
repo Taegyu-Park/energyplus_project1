@@ -1,11 +1,11 @@
 """
-bipv_experiments/analysis/build_fixed_angle_dataset.py
+projects/03_bipv_experiments/analysis/build_fixed_angle_dataset.py
 ======================================================
 고정각(0~90°) 연간 run 10개(runs/<prefix>A00 ~ A90)에서 timestep 데이터셋을 만든다.
 컬럼 형식은 ai_model/tide 의 case2 데이터셋과 같다 (pv_gen_{a}, cool_load_{a}, heat_load_{a}, net_energy_{a}).
 
 사용 예:
-  python bipv_experiments/analysis/build_fixed_angle_dataset.py --prefix fixed_ --out bipv_experiments/analysis/case3_fixed_angle_dataset.csv
+  python projects/03_bipv_experiments/analysis/build_fixed_angle_dataset.py --prefix fixed_ --out projects/03_bipv_experiments/analysis/case3_fixed_angle_dataset.csv
 """
 
 import argparse

@@ -1,13 +1,13 @@
 """
-pv_lw_daylight/figures/fig_pv_cell_temperature_day.py
+projects/04_pv_lw_daylight/figures/fig_pv_cell_temperature_day.py
 =====================================================
 case2 고정각 30° (PV 장파 연동 실행) 하루 동안의 PV 셀 온도를 외기·하늘 온도, 일사와 함께 그린다.
 
 (a) PV 셀 온도 [°C] — 단별 대표 모듈(1·3·5·6단) 평균 + 외기 건구온도, 하늘 온도
 (b) 일사 [W/m²] — 법선면 직달, 수평면 산란
 
-입력: pv_lw_daylight/runs/annual/c2_RF_lw_A30 (셀 온도 타임스텝 출력이 있는 모듈만 사용)
-출력: pv_lw_daylight/figures/fig_pv_cell_temperature_day.{png,svg,csv}
+입력: projects/04_pv_lw_daylight/runs/annual/c2_RF_lw_A30 (셀 온도 타임스텝 출력이 있는 모듈만 사용)
+출력: projects/04_pv_lw_daylight/figures/fig_pv_cell_temperature_day.{png,svg,csv}
 사용: python fig_pv_cell_temperature_day.py [--date 05-18]
 """
 

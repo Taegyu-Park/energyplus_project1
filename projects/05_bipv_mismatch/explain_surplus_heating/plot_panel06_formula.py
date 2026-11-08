@@ -1,5 +1,5 @@
 """
-bipv_mismatch/explain_surplus_heating/plot_panel06_formula.py
+projects/05_bipv_mismatch/explain_surplus_heating/plot_panel06_formula.py
 =============================================================
 공모전 패널 06번 설정 표 아래 "목적 함수" 줄에 넣을 수식 svg (2026-11-04).
 글꼴은 LaTeX 기본(Computer Modern, mathtext "cm"), arg min 아래에 각도 범위.
@@ -9,7 +9,7 @@ bipv_mismatch/explain_surplus_heating/plot_panel06_formula.py
   |PV − 수요| 가 최소인 각도 (태양추적 각도 ~ 90° 범위). 수요 = 냉방/3.0 + 난방/2.5 + 조명.
 
 출력: explain_surplus_heating/figures/dm_panel06_formula.svg (+ .png)
-실행: python bipv_mismatch/explain_surplus_heating/plot_panel06_formula.py
+실행: python projects/05_bipv_mismatch/explain_surplus_heating/plot_panel06_formula.py
 """
 
 from pathlib import Path

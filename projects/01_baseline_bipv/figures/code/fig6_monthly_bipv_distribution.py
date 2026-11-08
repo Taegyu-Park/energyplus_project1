@@ -8,12 +8,13 @@ import sqlite3
 import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
+from shared.paths import BASELINE_RESULTS
 plt.rcParams['svg.fonttype'] = 'none'
 
 # ── 경로 ────────────────────────────────────────────────────────────
 script_dir   = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
-db_path      = os.path.normpath(os.path.join(project_root, "..", "case_analysis", "normal", "case3", "eplusout.sql"))
+db_path      = os.path.normpath(os.path.join(BASELINE_RESULTS, "normal", "case3", "eplusout.sql"))
 
 # ── DB 로드 ─────────────────────────────────────────────────────────
 conn = sqlite3.connect(db_path)

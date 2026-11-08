@@ -14,11 +14,12 @@ import json
 import sqlite3
 import pandas as pd
 from pathlib import Path
+from shared.paths import BASELINE_RESULTS, CASE_IDF, DATA, PLUGINS, ROOT
 
-CWD = Path(__file__).resolve().parent
-IDF_PATH = CWD / "case_idf" / "case3_v3_KS" / "case3_v3_south.idf"
-WEATHER_PATH = CWD / "data" / "KOR_Kwangju.471560_IWEC (1).epw"
-OUT_DIR = CWD / "case_analysis" / "bipv_variation" / "5zone_NSEW_korean" / "case3_v3_south"
+CWD = ROOT
+IDF_PATH = CASE_IDF / "case3_v3_KS" / "case3_v3_south.idf"
+WEATHER_PATH = DATA / "KOR_Kwangju.471560_IWEC (1).epw"
+OUT_DIR = BASELINE_RESULTS / "bipv_variation" / "5zone_NSEW_korean" / "case3_v3_south"
 EP_DIR = Path(r"C:\EnergyPlusV25-2-0")
 
 COP_COOLING = 3.0
@@ -52,6 +53,7 @@ def run_simulation():
     env["PYTHONPATH"] = (
         ep_python_api_path + os.pathsep +
         plugin_search_path + os.pathsep +
+        str(PLUGINS) + os.pathsep +
         str(CWD) + os.pathsep +
         env.get("PYTHONPATH", "")
     )
