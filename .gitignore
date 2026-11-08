@@ -309,3 +309,44 @@ DSF_new/
 *.pt
 *.pth
 *.bin
+
+# ---- repo cleanup (2026-11-08) ----
+# 브라우저 MCP 로그
+.playwright-mcp/
+# 한글 문서
+*.hwpx
+# EnergyPlus 출력 (sql/htm/err/log는 위에서 이미 무시)
+*.eso
+*.eio
+*.shd
+*.mtd
+*.bnd
+*.audit
+*.rdd
+*.mdd
+*.end
+*.mtr
+*.dbg
+*.db
+epluszsz.csv
+eplusssz.csv
+sqlite.err
+*_run.idf
+# 시뮬레이션 실행 폴더
+bipv_experiments/runs/
+bipv_experiments/sizing/
+pv_lw_daylight/runs/
+pv_lw_daylight/results/
+bipv_mismatch/case2_KS*/
+bipv_mismatch/**/runs/
+bipv_experiments/mech_week/runs/
+bipv_mismatch/eplus_carryover/
+bipv_mismatch/tide_policy/eplus_*/
+# 데이터셋·예측 결과 CSV
+bipv_mismatch/dataset*/
+bipv_mismatch/checkpoints/*.csv
+bipv_mismatch/tide_policy/out*/*.csv
+bipv_mismatch/eplus_jan13/*.csv
+bipv_mismatch/eplus_open/*.csv
+bipv_experiments/analysis/*_dataset.csv
+bipv_experiments/tide_c5/predictions/*lb36*.csv
